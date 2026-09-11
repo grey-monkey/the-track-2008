@@ -1,10 +1,10 @@
-# The Track: 2008 — prototype 0.3
+# The Track: 2008 — prototype 0.3.1
 
 A new, dependency-light web/PWA prototype. The v0.1/v0.2 implementation is not reused.
 
 ## Play
 
-Choose a rider, board and visual rope length. Drag sideways to carve; hold still to crouch; lift after a crouch to ollie when the rider and board permit it. Flick upward to throw the rope. Gentle bends work without input.
+Choose a rider, board and visual rope length. Drag sideways to carve; hold still to crouch; lift after a crouch to ollie when the rider and board permit it. Flick upward to throw the rope. The launch is gentle, but turns need active carving: momentum can swing the rider into a curb or the car. Car speed is 5% above v0.3.
 
 Keyboard: Left/Right carve, Space crouch and release to ollie, Up throws the rope, Escape pauses.
 
@@ -20,7 +20,7 @@ The existing service-worker URL is retained so installed copies can upgrade from
 
 ## Validation
 
-`npm test` runs 12 physics/gesture checks. `node tests/offline.test.mjs` checks offline asset coverage, cache isolation and the PWA manifest. Details are in `docs/VALIDATION.md`.
+`npm test` runs 13 physics/gesture checks. `node tests/offline.test.mjs` checks offline asset coverage, cache isolation and the PWA manifest. Details are in `docs/VALIDATION.md`.
 
 Append `?debug=1` to expose the top-down map, motion values and repeatable cul-de-sac tests. These are developer tools and are hidden from normal play.
 

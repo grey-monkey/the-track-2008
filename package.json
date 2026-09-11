@@ -1,1 +1,1 @@
-{"name":"the-track-2008","version":"0.3.0","private":true,"type":"module","scripts":{"test":"node tests/physics.test.mjs","start":"node server.mjs"}}
+{"name":"the-track-2008","version":"0.3.1","private":true,"type":"module","scripts":{"test":"node tests/physics.test.mjs","start":"node server.mjs"}}

@@ -1,7 +1,7 @@
 import {sample,heading,curvature,height,roadDistance,clamp,mix,angle,LENGTH,RIDERS,BOARDS} from './world.js';
 export const STEP=1/120;
 export class Ride {
- constructor(options={}){this.options={rider:'DOG',board:'LONGBOARD',rope:.45,seed:8,...options};this.driver=this.options.rider==='DOG'?'SALLY':'DOG';this.rope=mix(2.44,7.62,this.options.rope);this.time=0;this.phase='riding';this.phaseTime=0;this.laps=0;this.car={s:options.start??0,speed:0,accel:0,brake:false};this.updateCarPosition();const c=this.car;this.rider={x:c.hx-Math.cos(c.heading)*(this.rope-.08),z:c.hz-Math.sin(c.heading)*(this.rope-.08),vx:0,vz:0,heading:c.heading,lean:0,wobble:0,tension:0,height:0,up:0,holding:true,dirt:false};this.prevRoad=roadDistance(this.rider.x,this.rider.z);this.stats={maxStretch:0,maxSpeed:0,maxStep:0,maxAhead:-Infinity,crashReason:null};this.speedFactor=options.speedFactor??1;}
+ constructor(options={}){this.options={rider:'DOG',board:'LONGBOARD',rope:.45,seed:8,...options};this.driver=this.options.rider==='DOG'?'SALLY':'DOG';this.rope=mix(2.44,7.62,this.options.rope);this.time=0;this.phase='riding';this.phaseTime=0;this.laps=0;this.car={s:options.start??0,speed:0,accel:0,brake:false};this.updateCarPosition();const c=this.car;this.rider={x:c.hx-Math.cos(c.heading)*(this.rope-.08),z:c.hz-Math.sin(c.heading)*(this.rope-.08),vx:0,vz:0,heading:c.heading,lean:0,wobble:0,tension:0,height:0,up:0,holding:true,dirt:false};this.prevRoad=roadDistance(this.rider.x,this.rider.z);this.stats={maxStretch:0,maxSpeed:0,maxStep:0,maxAhead:-Infinity,crashReason:null};this.speedFactor=1.05*(options.speedFactor??1);}
  updateCarPosition(){const c=this.car,p=sample(c.s);c.x=p.x;c.z=p.z;c.heading=heading(c.s);c.hx=c.x-Math.cos(c.heading)*2.28;c.hz=c.z-Math.sin(c.heading)*2.28;}
  targetSpeed(){const c=this.car,sally=this.driver==='SALLY';const burst=!sally&&Math.sin((Math.floor(c.s/LENGTH)+this.options.seed)*1.71)>.2;const base=(sally?7.4:burst?7.1:5.9)*this.speedFactor;let v=base;for(let d=0;d<48;d+=2){const k=Math.abs(curvature(c.s+d));const curve=Math.sqrt((sally?2.15:1.55)/Math.max(.0001,k))*this.speedFactor;v=Math.min(v,Math.sqrt(curve*curve+2*1.45*d));}return v;}
  release(){if(this.phase!=='riding'||!this.rider.holding)return false;this.rider.holding=false;this.rider.tension=0;this.phase='coasting';this.phaseTime=0;return true;}
@@ -18,7 +18,9 @@ export class Ride {
  const b=BOARDS[this.options.board],cfg=RIDERS[this.options.rider],steer=clamp(input.steer||0,-1,1),crouch=!!input.crouch;
  const towAngle=Math.atan2(c.hz-r.z,c.hx-r.x),velAngle=sp>.25?Math.atan2(r.vz,r.vx):r.heading;
  const novice=this.options.rider==='DOG'?mix(1,.64,clamp((sp-5)/5,0,1)):1;
- const neutral=r.holding?velAngle+angle(towAngle-velAngle)*.85:velAngle;
+ // The trucks follow the board's momentum; the rope pulls the body but
+ // does not automatically point the board at the hitch. Carving supplies that turn.
+ const neutral=r.holding?velAngle+angle(towAngle-velAngle)*.12:velAngle;
  const desiredHeading=neutral+steer*b.steer*cfg.control*novice;
  r.heading+=clamp(angle(desiredHeading-r.heading)*3.2,-1.3,1.3)*dt;
  r.lean+=((steer*.48)-r.lean)*(1-Math.exp(-dt*7));
@@ -38,7 +40,7 @@ export class Ride {
  if(r.holding){const dx=r.x-c.hx,dz=r.z-c.hz,dist=Math.max(.001,Math.hypot(dx,dz)),ux=dx/dist,uz=dz/dist;const radial=(r.vx-c.hvx)*ux+(r.vz-c.hvz)*uz;const extension=dist-this.rope;
   // Implicit damped unilateral spring. Only pulls. No position projection,
   // rear cone, forward motor, road attraction or velocity cap on the rider.
-  const omega=32,damping=2*omega*.95;
+  const omega=32,damping=2*omega*.7;
   if(extension>0||extension+radial*dt>0){const a=Math.max(0,(omega*omega*extension+(damping+omega*omega*dt)*radial)/(1+damping*dt+omega*omega*dt*dt));r.vx-=ux*a*dt;r.vz-=uz*a*dt;r.tension=a;}
   this.stats.maxStretch=Math.max(this.stats.maxStretch,extension);
  }
