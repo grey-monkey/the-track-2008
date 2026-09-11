@@ -1,13 +1,15 @@
-# THE TRACK: 2008 — Physics Prototype 0.1
+# THE TRACK: 2008 — Physics Prototype 0.2
 
-This is the first **feel prototype**, not an art prototype. It is intentionally simple. The goal is to answer one question before we invest in finished art: **is being towed behind the Mercedes fun and readable on a phone?**
+This is the second **feel prototype**, not an art prototype. It is intentionally simple. The goal is to answer one question before we invest in finished art: **is being towed behind the Mercedes fun and readable on a phone?**
 
 ## What is in this build
 
 - Portrait-first responsive canvas game.
 - Web/PWA architecture intended to behave the same on iPhone and Android.
-- Approximate Track geometry based on the annotated aerial, including the large cul-de-sac and the flat / slight-downhill / uphill rhythm.
-- Variable human-ish Mercedes driving line and speed.
+- Rebuilt Track geometry based much more closely on the annotated aerial: long western side, real cul-de-sac detour, lower connector, slight downhill Copperleaf section, then uphill return.
+- Slower Mercedes starts and much more deliberate speed reduction on curves / through the cul-de-sac.
+- Hard rope-length tether plus stronger tow pull so the rider reads as being dragged by the Mercedes rather than racing it.
+- Camera now frames the tow relationship (rider → rope → car) rather than simply following rider velocity.
 - Rope physics with slack, tension and different hidden lengths selected by a SHORT ↔ LONG slider.
 - Drag left/right to carve.
 - Hold to crouch/stabilize.
@@ -64,7 +66,7 @@ Open the same GitHub Pages URL in Chrome. The exact same core build should run t
 
 ## What Grey should judge first
 
-Do **not** worry about how ugly it is. After several cul-de-sac attempts and at least one full lap, the useful questions are:
+Do **not** worry about how ugly it is. v0.2 specifically attacks the major v0.1 problems Grey found: weak tow feeling, inaccurate/over-curvy course geometry, excessive curve speed, impossible cul-de-sac, and a camera that did not frame the tow correctly. After several cul-de-sac attempts and at least one full lap, the useful questions are:
 
 1. Does left/right carving feel connected to body weight, or does it feel like steering a car?
 2. Can you read trouble early enough from the rope, car and rider motion?

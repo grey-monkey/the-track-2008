@@ -53,36 +53,79 @@ makeChips('boards', Object.keys(boards), 'board');
 makeChips('tests', tests, 'test');
 
 // ---------- Track ----------
-// Feet, intentionally simplified from Grey's annotated aerial. Shape and section rhythm matter more than survey accuracy in 0.1.
-const control = [
-  {x: 0, y: 320}, {x:-18,y:278}, {x:-37,y:220}, {x:-55,y:158}, {x:-72,y:105},
-  {x:-82,y:72},
-  // Open asphalt cul-de-sac / bulb, ~150 ft working diameter.
-  {x:-122,y:58}, {x:-151,y:22}, {x:-151,y:-22}, {x:-123,y:-58}, {x:-78,y:-75},
-  {x:-32,y:-58}, {x:-7,y:-22}, {x:-12,y:20}, {x:-34,y:53},
-  // Lower flat connector.
-  {x:20,y:69}, {x:78,y:83}, {x:137,y:104},
-  // Slight downhill while travelling this section.
-  {x:181,y:134}, {x:211,y:180}, {x:225,y:231}, {x:224,y:268},
-  // Back uphill toward start / flat.
-  {x:211,y:309}, {x:184,y:347}, {x:143,y:374}, {x:96,y:387}, {x:51,y:374}, {x:17,y:348},
-  {x:0,y:320}
-];
+// Feet. v0.2 is rebuilt from Grey's annotated aerial rather than using a loose "curvy loop."
+// The route intentionally has long, calm road sections, one real cul-de-sac detour, a lower connector,
+// then the slight downhill / uphill return. The cul-de-sac throat is traversed in and back out, as in the real layout.
+let raw=[];
 
-function catmull(p0,p1,p2,p3,t) {
-  const t2=t*t, t3=t2*t;
+function pushRaw(x,y,zone='flat') {
+  const last=raw[raw.length-1];
+  if(last && Math.hypot(last.x-x,last.y-y)<.05) return;
+  raw.push({x,y,zone});
+}
+function addLine(a,b,zone='flat',spacing=4){
+  const d=Math.hypot(b.x-a.x,b.y-a.y), n=Math.max(2,Math.ceil(d/spacing));
+  for(let i=0;i<n;i++){ const t=i/n; pushRaw(lerp(a.x,b.x,t),lerp(a.y,b.y,t),zone); }
+}
+function bezierPoint(p0,p1,p2,p3,t){
+  const u=1-t;
   return {
-    x: .5*((2*p1.x)+(-p0.x+p2.x)*t+(2*p0.x-5*p1.x+4*p2.x-p3.x)*t2+(-p0.x+3*p1.x-3*p2.x+p3.x)*t3),
-    y: .5*((2*p1.y)+(-p0.y+p2.y)*t+(2*p0.y-5*p1.y+4*p2.y-p3.y)*t2+(-p0.y+3*p1.y-3*p2.y+p3.y)*t3)
+    x:u*u*u*p0.x+3*u*u*t*p1.x+3*u*t*t*p2.x+t*t*t*p3.x,
+    y:u*u*u*p0.y+3*u*u*t*p1.y+3*u*t*t*p2.y+t*t*t*p3.y
   };
 }
-
-let raw=[];
-const pts = control.slice(0,-1);
-for (let i=0;i<pts.length;i++) {
-  const p0=pts[(i-1+pts.length)%pts.length], p1=pts[i], p2=pts[(i+1)%pts.length], p3=pts[(i+2)%pts.length];
-  for (let j=0;j<18;j++) raw.push(catmull(p0,p1,p2,p3,j/18));
+function addBezier(p0,p1,p2,p3,zone='flat',steps=38){
+  for(let i=0;i<steps;i++){ const q=bezierPoint(p0,p1,p2,p3,i/steps); pushRaw(q.x,q.y,zone); }
 }
+function addArc(cx,cy,r,a0,a1,zone='culde',steps=88){
+  for(let i=0;i<steps;i++){
+    const t=i/steps, a=lerp(a0,a1,t);
+    pushRaw(cx+Math.cos(a)*r,cy+Math.sin(a)*r,zone);
+  }
+}
+
+// Start / gate area near the top of the western side.
+const P_START={x:0,y:330};
+const P_JUNCTION={x:-100,y:30};
+
+// Long western Greenbriar side: intentionally mostly straight / gently bending.
+addBezier(
+  P_START,
+  {x:-10,y:245},
+  {x:-78,y:105},
+  P_JUNCTION,
+  'flat', 72
+);
+
+// Short throat into the cul-de-sac.
+const CUL_CX=-150, CUL_CY=-30, CUL_R=60;
+const CUL_ENTRY_ANGLE=0.72; // northeast side of the open asphalt bulb
+const P_CUL_ENTRY={x:CUL_CX+Math.cos(CUL_ENTRY_ANGLE)*CUL_R, y:CUL_CY+Math.sin(CUL_ENTRY_ANGLE)*CUL_R};
+addBezier(P_JUNCTION,{x:-103,y:22},{x:P_CUL_ENTRY.x-2,y:P_CUL_ENTRY.y+6},P_CUL_ENTRY,'culde',12);
+
+const CULDE_START_RAW = raw.length-1;
+// One complete clockwise circle, returning to the same throat.
+addArc(CUL_CX,CUL_CY,CUL_R,CUL_ENTRY_ANGLE,CUL_ENTRY_ANGLE-TAU,'culde',112);
+pushRaw(P_CUL_ENTRY.x,P_CUL_ENTRY.y,'culde');
+const CULDE_END_RAW = raw.length-1;
+
+// Back out through the same throat.
+addBezier(P_CUL_ENTRY,{x:P_CUL_ENTRY.x-2,y:P_CUL_ENTRY.y+6},{x:-103,y:22},P_JUNCTION,'flat',12);
+
+// Lower connector: mostly flat and visually calm.
+const P_LOWER_EAST={x:122,y:80};
+addBezier(P_JUNCTION,{x:-45,y:21},{x:55,y:45},P_LOWER_EAST,'flat',58);
+
+// Copperleaf side: slight downhill.
+const P_RED_END={x:191,y:238};
+addBezier(P_LOWER_EAST,{x:158,y:104},{x:193,y:171},P_RED_END,'down',44);
+
+// Upper return: uphill back to the start / gate end.
+const P_BLUE_TOP={x:143,y:348};
+addBezier(P_RED_END,{x:193,y:294},{x:177,y:330},P_BLUE_TOP,'up',30);
+addBezier(P_BLUE_TOP,{x:102,y:369},{x:36,y:352},P_START,'up',44);
+pushRaw(P_START.x,P_START.y,'flat');
+
 // Arc-length table.
 let track=[]; let totalS=0;
 for (let i=0;i<raw.length;i++) {
@@ -90,7 +133,7 @@ for (let i=0;i<raw.length;i++) {
   if (i>0) totalS += Math.hypot(raw[i].x-prev.x, raw[i].y-prev.y);
   const next=raw[(i+1)%raw.length];
   const ang=Math.atan2(next.y-prev.y,next.x-prev.x);
-  track.push({x:raw[i].x,y:raw[i].y,s:totalS,ang});
+  track.push({x:raw[i].x,y:raw[i].y,s:totalS,ang,zone:raw[i].zone});
 }
 const closing = Math.hypot(track[0].x-track[track.length-1].x, track[0].y-track[track.length-1].y);
 const TRACK_LEN = totalS + closing;
@@ -107,7 +150,7 @@ function sampleAtS(s) {
   if (i===0) { as=track[track.length-1].s; bs=TRACK_LEN; if (s < track[0].s+1) s += TRACK_LEN; }
   const t=clamp((s-as)/Math.max(.001,bs-as),0,1);
   const ang=angleLerp(a.ang,b.ang,t);
-  return {x:lerp(a.x,b.x,t), y:lerp(a.y,b.y,t), ang, s:sNorm(s)};
+  return {x:lerp(a.x,b.x,t), y:lerp(a.y,b.y,t), ang, zone:b.zone||a.zone||'flat', s:sNorm(s)};
 }
 function nearestTrack(x,y) {
   let best=Infinity, bi=0;
@@ -118,11 +161,13 @@ function nearestTrack(x,y) {
   const p=track[bi];
   const nx=-Math.sin(p.ang), ny=Math.cos(p.ang);
   const signed=(x-p.x)*nx+(y-p.y)*ny;
-  return {dist:Math.sqrt(best), signed, s:p.s, ang:p.ang, index:bi};
+  return {dist:Math.sqrt(best), signed, s:p.s, ang:p.ang, zone:p.zone, index:bi};
 }
 function nearestSForPoint(x,y) { return nearestTrack(x,y).s; }
-const CULDE_START_S = nearestSForPoint(-72,120);
 
+// Record the real cul-de-sac section in route-distance terms.
+const CULDE_START_S = track[Math.max(0,CULDE_START_RAW)].s;
+const CULDE_END_S = track[Math.min(track.length-1,CULDE_END_RAW)].s;
 // Fixed obstacles. These are prototype placements, not claims about exact historical positions.
 const manholes = [
   {s: sNorm(CULDE_START_S-55), lateral: 2},
@@ -154,19 +199,19 @@ function startRun() {
   configRope();
   setup.classList.remove('show'); restartBtn.classList.add('hidden'); setupBtn.classList.add('hidden');
   ended=false; running=true; elapsed=0; runStart=performance.now(); releaseTime=0;
-  const startS = selection.test === 'CUL-DE-SAC' ? sNorm(CULDE_START_S-115) : 0;
+  const startS = selection.test === 'CUL-DE-SAC' ? sNorm(CULDE_START_S-105) : 0;
   const cp=sampleAtS(startS);
   const carHeading=cp.ang;
-  car={s:startS, distance:0, speed: selection.test==='CUL-DE-SAC'?31:25, x:cp.x,y:cp.y,ang:carHeading,lateral:0, targetLat:0, brake:0, seed:Math.random()*10};
+  car={s:startS, distance:0, speed: selection.test==='CUL-DE-SAC'?11:6, x:cp.x,y:cp.y,ang:carHeading,lateral:0, targetLat:0, brake:0, seed:Math.random()*10};
   const rearX=car.x-Math.cos(carHeading)*7, rearY=car.y-Math.sin(carHeading)*7;
   rider={
     x:rearX-Math.cos(carHeading)*(ropeLength-.8), y:rearY-Math.sin(carHeading)*(ropeLength-.8),
-    vx:Math.cos(carHeading)*car.speed, vy:Math.sin(carHeading)*car.speed, heading:carHeading,
+    vx:0, vy:0, heading:carHeading,
     z:0,vz:0,wobble:0,holding:true,crashed:false,crashSpin:0, roadPrev:0,
     tension:0, dirt:false
   };
   looseBoard=null;
-  const behind=14;
+  const behind=11;
   camera={x:rider.x-Math.cos(carHeading)*behind,y:rider.y-Math.sin(carHeading)*behind,heading:carHeading};
   input={active:false,id:null,startX:0,startY:0,lastX:0,lastY:0,lastT:0,steer:0,crouch:false,downAt:0,moved:0,minVy:0};
   lapBase=Math.floor(startS/TRACK_LEN); lastLap=0;
@@ -272,92 +317,119 @@ function softPulse(){ if(navigator.vibrate) navigator.vibrate(9); }
 function tensionPulse(){ if(navigator.vibrate) navigator.vibrate(12); }
 
 // ---------- Physics ----------
-function roadZone(s) {
-  const p=sampleAtS(s);
-  if (p.x>130 && p.y>95 && p.y<275) return 'down';
-  if (p.y>270 && p.x>-5) return 'up';
-  return 'flat';
+function roadZone(s) { return sampleAtS(s).zone || 'flat'; }
+function curvatureSigned(s) {
+  const a=sampleAtS(s-16).ang, b=sampleAtS(s+16).ang;
+  return wrapAngle(b-a)/32;
 }
-function curvatureAt(s) {
-  const a=sampleAtS(s-12).ang, b=sampleAtS(s+12).ang;
-  return Math.abs(wrapAngle(b-a))/24;
-}
+function curvatureAt(s) { return Math.abs(curvatureSigned(s)); }
 function driverLateral(t, s) {
-  const curvSign = wrapAngle(sampleAtS(s+18).ang-sampleAtS(s).ang);
-  const setupWide = clamp(-curvSign*65,-4.0,4.0);
-  const human = 1.4*Math.sin(t*.41+car.seed)+.8*Math.sin(t*.17+car.seed*2.1);
-  return clamp(setupWide+human,-5.2,5.2);
+  const turn=curvatureSigned(s+12);
+  const zone=roadZone(s+8);
+  // On meaningful bends the driver favors the inside half of the road, leaving the rider more room outside.
+  // Human variation remains, but it is intentionally modest in v0.2 so the tow reads as helpful rather than erratic.
+  const inside=clamp(turn*72,-3.4,3.4);
+  const human=(zone==='culde'?.45:.75)*Math.sin(t*.36+car.seed)+.35*Math.sin(t*.13+car.seed*1.7);
+  return clamp(inside+human,-4.0,4.0);
 }
 function update(dt) {
   elapsed=(performance.now()-runStart)/1000;
   if(!running) return;
 
   if(!rider.crashed && !ended) {
-    // Car: deliberately human, variable, imperfect.
-    const zone=roadZone(car.s); const curv=curvatureAt(car.s+15);
-    let target=34 + 2.0*Math.sin(elapsed*.23+car.seed) + 1.0*Math.sin(elapsed*.71);
-    if(zone==='down') target+=3.2;
-    if(zone==='up') target-=2.4;
-    target-=clamp(curv*95,0,6.0);
-    if(selection.test==='CUL-DE-SAC' && elapsed<1.5) target-=2;
-    if(car.brake>0) { target=10; car.brake-=dt; }
-    car.speed += clamp(target-car.speed,-5*dt,3.5*dt);
+    // ----- CAR -----
+    // v0.2 starts gently and very visibly owns the forward motion.
+    // Straights build speed; meaningful bends slow down; the cul-de-sac is deliberately cautious.
+    const zone=roadZone(car.s); const curv=curvatureAt(car.s+18);
+    let target=25.5 + 1.0*Math.sin(elapsed*.20+car.seed); // ~17 mph cruise on flat ground
+    if(zone==='down') target=28.0 + .8*Math.sin(elapsed*.18+car.seed);
+    if(zone==='up') target=23.0 + .7*Math.sin(elapsed*.18+car.seed);
+    if(zone==='culde') target=16.2 + .45*Math.sin(elapsed*.30+car.seed); // ~11 mph through the bulb
+    if(zone!=='culde') target-=clamp(curv*150,0,7.0);
+    target=Math.max(zone==='culde'?14.5:18.0,target);
+    if(selection.test==='CUL-DE-SAC' && elapsed<1.8) target=Math.min(target,15.0);
+    if(car.brake>0) { target=7; car.brake-=dt; }
+    car.speed += clamp(target-car.speed,-7.0*dt,2.35*dt);
     car.distance += car.speed*dt;
     car.s=sNorm(car.s+car.speed*dt);
     car.targetLat=driverLateral(elapsed,car.s);
-    car.lateral += (car.targetLat-car.lateral)*(1-Math.exp(-dt*1.0));
+    car.lateral += (car.targetLat-car.lateral)*(1-Math.exp(-dt*.85));
     const cp=sampleAtS(car.s); car.ang=cp.ang;
     const cnx=-Math.sin(cp.ang), cny=Math.cos(cp.ang);
     car.x=cp.x+cnx*car.lateral; car.y=cp.y+cny*car.lateral;
 
-    // Controls.
+    // ----- PLAYER INPUT / BOARD -----
     let steer=input?.active?input.steer:0;
     if(keys.ArrowLeft) steer=-1; if(keys.ArrowRight) steer=1;
     if(input?.active && performance.now()-input.downAt>150 && input.lastY-input.startY>-42) input.crouch=true;
     const crouch=!!(input?.crouch||keys.ArrowDown);
-    const sp=Math.max(1,len(rider.vx,rider.vy));
     const rCfg=riders[selection.rider], bCfg=boards[selection.board];
-    const speedT=clamp((sp-20)/30,0,1);
-    let controlAtSpeed=lerp(1,.63,speedT);
+    let sp=Math.max(.01,len(rider.vx,rider.vy));
+    const speedT=clamp((sp-18)/24,0,1);
+    let controlAtSpeed=lerp(1,.72,speedT);
     if(selection.rider==='DOG') controlAtSpeed*=lerp(1,rCfg.highSpeedControl,speedT);
-    const yawRate=1.22*rCfg.turn*bCfg.turn*controlAtSpeed;
+    const yawRate=.72*rCfg.turn*bCfg.turn*controlAtSpeed;
     rider.heading += steer*yawRate*dt;
 
-    // Surface + traction.
-    const near=nearestTrack(rider.x,rider.y);
-    const absRoad=Math.abs(near.signed); const wasRoad=rider.roadPrev<=ROAD_HALF;
-    rider.dirt=absRoad>ROAD_HALF;
-    const grip=rider.dirt?1.15:4.1;
-    const fx=Math.cos(rider.heading), fy=Math.sin(rider.heading), rx=-fy, ry=fx;
+    const nearBefore=nearestTrack(rider.x,rider.y);
+    rider.dirt=Math.abs(nearBefore.signed)>ROAD_HALF;
+
+    // A skateboard tracks strongly along its deck heading. Lateral velocity is scrubbed away by wheel grip.
+    let fx=Math.cos(rider.heading), fy=Math.sin(rider.heading), rx=-fy, ry=fx;
     let fwd=rider.vx*fx+rider.vy*fy, lat=rider.vx*rx+rider.vy*ry;
-    lat*=Math.exp(-grip*dt*(crouch?1.16:1));
+    const grip=rider.dirt?1.35:5.25;
+    lat*=Math.exp(-grip*dt*(crouch?1.22:1));
+
+    // Rolling resistance matters: without the car, the rider visibly starts losing speed.
+    const rolling=rider.dirt?8.0:1.45;
+    if(Math.abs(fwd)>0.01) fwd-=Math.sign(fwd)*Math.min(Math.abs(fwd),rolling*dt);
     rider.vx=fx*fwd+rx*lat; rider.vy=fy*fwd+ry*lat;
 
-    // Rolling resistance, much worse in clay/dirt.
-    const drag=rider.dirt?.78:.035;
-    const dragMul=Math.exp(-drag*dt);
-    rider.vx*=dragMul; rider.vy*=dragMul;
+    // When the player is not actively carving, let the deck gradually settle into the direction it is actually travelling.
+    sp=len(rider.vx,rider.vy);
+    if(sp>3 && Math.abs(steer)<.10){
+      rider.heading=angleLerp(rider.heading,Math.atan2(rider.vy,rider.vx),1-Math.exp(-dt*.75));
+      fx=Math.cos(rider.heading); fy=Math.sin(rider.heading);
+    }
 
     // Grade is subtle; towing remains dominant.
-    const zoneR=roadZone(near.s); const gradeA=zoneR==='down'?1.0:zoneR==='up'?-.75:0;
-    rider.vx+=Math.cos(near.ang)*gradeA*dt; rider.vy+=Math.sin(near.ang)*gradeA*dt;
+    const zoneR=roadZone(nearBefore.s); const gradeA=zoneR==='down'?.72:zoneR==='up'?-.58:0;
+    rider.vx+=Math.cos(nearBefore.ang)*gradeA*dt; rider.vy+=Math.sin(nearBefore.ang)*gradeA*dt;
 
-    // Rope spring-damper.
+    // ----- ROPE / TOW -----
+    // This is a tow, not a race. The rope provides the rider's forward energy and is treated as a hard maximum length.
     let lateralLoad=0;
+    let hitch=null;
     if(rider.holding) {
       const rearX=car.x-Math.cos(car.ang)*7, rearY=car.y-Math.sin(car.ang)*7;
-      const dx=rearX-rider.x, dy=rearY-rider.y, dist=Math.max(.001,len(dx,dy));
-      const nx=dx/dist, ny=dy/dist;
       const carVx=Math.cos(car.ang)*car.speed, carVy=Math.sin(car.ang)*car.speed;
-      const rel=(carVx-rider.vx)*nx+(carVy-rider.vy)*ny;
-      const stretch=Math.max(0,dist-ropeLength);
-      let acc=stretch*10.5+Math.max(0,rel)*1.7;
-      acc=clamp(acc,0,70);
-      if(stretch>0 || rel>1) { rider.vx+=nx*acc*dt; rider.vy+=ny*acc*dt; }
-      rider.tension=clamp(acc/48,0,1);
+      hitch={x:rearX,y:rearY,vx:carVx,vy:carVy};
+      let ox=rider.x-rearX, oy=rider.y-rearY, dist=Math.max(.001,len(ox,oy));
+      const outx=ox/dist, outy=oy/dist; // hitch -> rider
+      const towardX=-outx, towardY=-outy;
+      const relOut=(rider.vx-carVx)*outx+(rider.vy-carVy)*outy;
+      const stretch=Math.max(0,dist-ropeLength*.985);
+      const nearTaut=clamp((dist-ropeLength*.90)/(ropeLength*.095),0,1);
+      let pull=stretch*30 + Math.max(0,relOut)*7.2 + nearTaut*3.0;
+      pull=clamp(pull,0,105);
+      rider.vx+=towardX*pull*dt; rider.vy+=towardY*pull*dt;
+      rider.tension=clamp(pull/58,0,1);
+
+      // Soft tow-cone guardrail: the rider can swing very wide, but should not routinely overtake the tow car.
+      const backx=-Math.cos(car.ang), backy=-Math.sin(car.ang);
+      const backDot=outx*backx+outy*backy;
+      if(backDot<.10){
+        const tx=rearX+backx*ropeLength*.92, ty=rearY+backy*ropeLength*.92;
+        const ddx=tx-rider.x, ddy=ty-rider.y, dl=Math.max(.01,len(ddx,ddy));
+        const corr=clamp((.10-backDot)*34,0,25);
+        rider.vx+=ddx/dl*corr*dt; rider.vy+=ddy/dl*corr*dt;
+      }
+
       const velAng=Math.atan2(rider.vy,rider.vx);
-      lateralLoad=Math.abs(Math.sin(wrapAngle(Math.atan2(dy,dx)-velAng)))*rider.tension;
-    } else rider.tension+=(0-rider.tension)*(1-Math.exp(-dt*8));
+      lateralLoad=Math.abs(Math.sin(wrapAngle(Math.atan2(towardY,towardX)-velAng)))*rider.tension;
+    } else {
+      rider.tension+=(0-rider.tension)*(1-Math.exp(-dt*8));
+    }
 
     // Vertical / ollie.
     if(rider.z>0 || rider.vz>0) {
@@ -365,20 +437,48 @@ function update(dt) {
       if(rider.z<=0){ rider.z=0; if(rider.vz<-7) rider.wobble+=.10; rider.vz=0; softPulse(); }
     }
 
-    // Wobble: readable, recoverable, but not fake.
-    const speedRisk=clamp((sp-25)/25,0,1);
-    let gain=(Math.abs(steer)*speedRisk*.22 + lateralLoad*.64);
-    if(rider.dirt) gain+=.78;
+    // Wobble: readable and recoverable. v0.2 is more forgiving at normal tow speeds.
+    sp=len(rider.vx,rider.vy);
+    const speedRisk=clamp((sp-23)/22,0,1);
+    let gain=(Math.abs(steer)*speedRisk*.15 + lateralLoad*.43);
+    if(rider.dirt) gain+=.64;
     gain/=Math.max(.65,rCfg.stability*bCfg.stability);
-    if(crouch) gain*=.52;
+    if(crouch) gain*=.48;
     rider.wobble += gain*dt;
-    rider.wobble -= (crouch?.48:.28)*rCfg.stability*bCfg.stability*dt;
+    rider.wobble -= (crouch?.58:.36)*rCfg.stability*bCfg.stability*dt;
     rider.wobble=clamp(rider.wobble,0,1.3);
 
-    // Curbs. New residential curb = serious consequence.
-    if(wasRoad && absRoad>ROAD_HALF && rider.z<.28 && sp>9) {
+    // Integrate motion.
+    let nsp=len(rider.vx,rider.vy);
+    if(rider.holding){
+      // Slingshots can outrun the car briefly, but not by absurd racing-game amounts.
+      const softMax=car.speed+11;
+      if(nsp>softMax){ const damp=Math.exp(-1.8*dt); rider.vx*=damp; rider.vy*=damp; nsp=len(rider.vx,rider.vy); }
+      if(nsp>car.speed+16){ const cap=car.speed+16; rider.vx*=cap/nsp; rider.vy*=cap/nsp; }
+    } else if(nsp>55){ rider.vx*=55/nsp; rider.vy*=55/nsp; }
+    rider.x+=rider.vx*dt; rider.y+=rider.vy*dt;
+
+    // Hard rope-length constraint after integration. This is what makes the rider feel physically tethered to the Mercedes.
+    if(rider.holding && hitch){
+      let ox=rider.x-hitch.x, oy=rider.y-hitch.y, dist=Math.max(.001,len(ox,oy));
+      if(dist>ropeLength){
+        const outx=ox/dist, outy=oy/dist;
+        rider.x=hitch.x+outx*ropeLength; rider.y=hitch.y+outy*ropeLength;
+        const relOut=(rider.vx-hitch.vx)*outx+(rider.vy-hitch.vy)*outy;
+        if(relOut>0){ rider.vx-=outx*relOut; rider.vy-=outy*relOut; }
+        rider.tension=Math.max(rider.tension,.42);
+      }
+    }
+
+    // ----- SURFACE / FAILURE -----
+    const near=nearestTrack(rider.x,rider.y);
+    const absRoad=Math.abs(near.signed); const wasRoad=rider.roadPrev<=ROAD_HALF;
+    rider.dirt=absRoad>ROAD_HALF;
+
+    // Curbs. The curb is serious, but the slower v0.2 cul-de-sac allows a recoverable line before impact.
+    if(wasRoad && absRoad>ROAD_HALF && rider.z<.28 && sp>8) {
       const shallow=Math.abs(Math.sin(wrapAngle(Math.atan2(rider.vy,rider.vx)-near.ang)));
-      if(sp>20 || shallow>.2) crash('CURB'); else rider.wobble+=.5;
+      if(sp>22 || shallow>.28) crash('CURB'); else rider.wobble+=.42;
     }
     rider.roadPrev=absRoad;
 
@@ -388,16 +488,11 @@ function update(dt) {
         const mp=sampleAtS(m.s), mnx=-Math.sin(mp.ang),mny=Math.cos(mp.ang);
         const mx=mp.x+mnx*m.lateral,my=mp.y+mny*m.lateral;
         if(Math.hypot(rider.x-mx,rider.y-my)<2.2) {
-          rider.wobble+=.16+Math.abs(steer)*.12; softPulse();
+          rider.wobble+=.13+Math.abs(steer)*.09; softPulse();
         }
       }
     }
-    if(rider.wobble>1.02) crash('WOBBLE');
-
-    // Cap absurd numerical explosions while keeping big slingshots possible.
-    const nsp=len(rider.vx,rider.vy);
-    if(nsp>62){ rider.vx*=62/nsp; rider.vy*=62/nsp; }
-    rider.x+=rider.vx*dt; rider.y+=rider.vy*dt;
+    if(rider.wobble>1.07) crash('WOBBLE');
 
     // Clean release ends after a few seconds of coasting; in final game the car would circle/stop naturally.
     if(!rider.holding && elapsed-releaseTime>4.3) endRun('COASTED OUT');
@@ -415,13 +510,19 @@ function update(dt) {
     if(elapsed-rider.crashAt>2.6 && !ended) endRun('WIPEOUT');
   }
 
-  // Camera: follows rider, but does not snap. Stable horizon > racing-game shake.
+  // Camera: frame the tow relationship, not the rider's raw velocity vector.
+  // This keeps the Mercedes visually ahead and removes the cheap-racing-game feeling from lateral swings.
   const sp=len(rider.vx,rider.vy);
-  const desiredHeading = sp>3?Math.atan2(rider.vy,rider.vx):nearestTrack(rider.x,rider.y).ang;
-  camera.heading=angleLerp(camera.heading,desiredHeading,1-Math.exp(-dt*2.2));
-  const behind=14;
+  const roadHead=nearestTrack(rider.x,rider.y).ang;
+  let desiredHeading=roadHead;
+  if(rider.holding && car){
+    const toCar=Math.atan2(car.y-rider.y,car.x-rider.x);
+    desiredHeading=angleLerp(roadHead,toCar,.64);
+  } else if(sp>4) desiredHeading=angleLerp(roadHead,Math.atan2(rider.vy,rider.vx),.45);
+  camera.heading=angleLerp(camera.heading,desiredHeading,1-Math.exp(-dt*2.8));
+  const behind=10.5;
   const tx=rider.x-Math.cos(camera.heading)*behind, ty=rider.y-Math.sin(camera.heading)*behind;
-  camera.x+= (tx-camera.x)*(1-Math.exp(-dt*5.0)); camera.y+=(ty-camera.y)*(1-Math.exp(-dt*5.0));
+  camera.x+= (tx-camera.x)*(1-Math.exp(-dt*4.1)); camera.y+=(ty-camera.y)*(1-Math.exp(-dt*4.1));
 
   updateAudio();
 }
@@ -452,12 +553,12 @@ function project(x,y,z=0){
   const dx=x-camera.x, dy=y-camera.y;
   const c=Math.cos(camera.heading),s=Math.sin(camera.heading);
   const forward=dx*c+dy*s, right=-dx*s+dy*c;
-  const camH=6.4, pitch=.17, cp=Math.cos(pitch),sp=Math.sin(pitch), zr=z-camH;
+  const camH=7.6, pitch=.115, cp=Math.cos(pitch),sp=Math.sin(pitch), zr=z-camH;
   const depth=forward*cp+zr*sp;
   if(depth<1.2) return null;
   const vert=zr*cp-forward*sp;
-  const focal=H*.82;
-  return {x:W*.5+right/depth*focal,y:H*.40-vert/depth*focal,depth,scale:focal/depth};
+  const focal=H*.72;
+  return {x:W*.5+right/depth*focal,y:H*.36-vert/depth*focal,depth,scale:focal/depth};
 }
 function groundPalette(){
   const t=dayT();
@@ -479,7 +580,7 @@ function render(){
   ctx.fillStyle=pal.clay;ctx.fillRect(0,horizon+48,W,H);
 
   // Road quads from far to near.
-  const nr=nearestTrack(rider?.x||0,rider?.y||320); const baseS=nr.s;
+  const nr=nearestTrack(rider?.x||0,rider?.y||320); const baseS=car?sNorm(car.s-(ropeLength+10)):nr.s;
   const samples=[];
   for(let d=-20;d<=290;d+=6){
     const p=sampleAtS(baseS+d),nx=-Math.sin(p.ang),ny=Math.cos(p.ang);
