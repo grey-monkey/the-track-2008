@@ -1,4 +1,8 @@
-# Prototype 0.3.1 validation
+# Prototype 0.3.2 map validation
+
+The aerial-derived road trace passes the same 13 physics/gesture checks below, including all 48 controlled rider/board/rope setups, default coarse carving, hands-off turn failures, road clearance and route heading continuity. Offline checks pass with cache v032-aerial-1. See MAP-MEASUREMENTS.md for calibration and uncertainty. Phone feel needs another playtest because the route is longer and the asphalt slightly wider.
+
+## Previous 0.3.1 physics update
 
 The September 2026 feel update reduces automatic board-to-rope alignment from 85% to 12%, lowers rope spring damping from 0.95 to 0.70 of critical damping, and increases planned car speeds by 5%. Launch acceleration and route geometry are unchanged. The rope still only pulls; there are no position snaps, random shove forces or inactivity timers.
 

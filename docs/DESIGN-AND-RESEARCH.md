@@ -2,7 +2,7 @@
 
 ## User decisions, September 10, 2026
 
-- Follow gentle bends naturally without input; the player steers for deliberate carving and recovery.
+- Updated after playtesting: reduce automatic alignment; tight turns require active carving and can cause hands-off wipeouts.
 - Normally rideable speeds. SALLY drives faster; DOG sometimes speeds up on straights.
 - A safe release preserves the coast, then the crew regroups for another tow.
 - Keep riding across laps until a wipeout. Every new run starts at the line.
@@ -11,7 +11,7 @@
 
 ## Engineering choices
 
-The world uses metres. The aerial scale bar yields an estimated 804 m driven lap, 7.3 m road width and 29 m open bulb diameter. These are screenshot-based estimates; the earlier handoff's unconfirmed 150 ft bulb diameter is not used. The supplied current aerial defines road shape, while the 2008 environment excludes its modern houses and landscaped island. A separate route-review image compares the reconstruction to the reference.
+The world uses metres. The new Google Maps trace yields an estimated 883 m driven lap, 8.5 m road width and 30 m open bulb diameter. These are screenshot-based estimates; the earlier handoff's unconfirmed 150 ft bulb diameter is not used. The supplied current aerial defines road shape, while the 2008 environment excludes its modern houses and landscaped island. A separate route-review image compares the reconstruction to the reference.
 
 Road membership is the union of a road ribbon, a flared bulb throat and an open disk. It never depends on the nearest point of the car's driving route. Car corners are tested against this surface. The car takes a tangent-continuous path through the bulb and previews curvature for braking. Forward planning uses a lateral-acceleration speed bound and braking-distance envelope; this is a deliberately simplified version of curvature-aware planning, not an autonomous-driving system. [Carnegie Mellon motion-planning research](https://www.ri.cmu.edu/pub_files/pub4/urmson_christopher_2006_1/urmson_christopher_2006_1.pdf).
 
