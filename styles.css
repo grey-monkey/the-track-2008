@@ -1,0 +1,122 @@
+:root {
+  --ink: #f4f1e8;
+  --dim: rgba(244,241,232,.66);
+  --panel: rgba(9,11,14,.92);
+  --line: rgba(244,241,232,.18);
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: #0d1014;
+  overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: none;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+body { -webkit-user-select: none; user-select: none; }
+#app { position: fixed; inset: 0; background: #0d1014; }
+#game { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+.panel {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: calc(24px + env(safe-area-inset-top)) 22px calc(28px + env(safe-area-inset-bottom));
+  background: linear-gradient(rgba(12,14,18,.78), rgba(8,9,12,.92));
+  color: var(--ink);
+}
+.panel.show { display: flex; }
+.setup-inner { width: min(420px, 100%); text-align: center; }
+.eyebrow { font-size: 10px; letter-spacing: .22em; color: var(--dim); margin-bottom: 8px; }
+h1 { margin: 0; font-size: clamp(38px, 11vw, 54px); letter-spacing: .12em; font-weight: 650; line-height: .94; }
+.year { margin-top: 8px; margin-bottom: 30px; letter-spacing: .35em; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--dim); font-size: 13px; }
+.pick-block { margin: 18px 0; }
+.pick-label { font-size: 10px; letter-spacing: .24em; color: var(--dim); margin-bottom: 9px; }
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.chip {
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.02);
+  color: var(--dim);
+  border-radius: 999px;
+  padding: 9px 13px 8px;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.chip.active { color: var(--ink); border-color: rgba(244,241,232,.72); background: rgba(255,255,255,.08); }
+.compact .chip { padding: 7px 11px; font-size: 10px; }
+.rope-block { padding: 0 4px; }
+.rope-head { display: flex; justify-content: space-between; color: var(--dim); font-size: 10px; letter-spacing: .15em; margin-bottom: 2px; }
+input[type=range] { width: 100%; accent-color: #f4f1e8; }
+.ride {
+  margin-top: 14px;
+  border: 1px solid rgba(244,241,232,.72);
+  background: transparent;
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 13px 34px 12px;
+  letter-spacing: .24em;
+  font-size: 12px;
+}
+.instructions { margin-top: 19px; color: var(--ink); opacity: .8; font-size: 12px; line-height: 1.45; }
+.note { margin: 13px auto 0; max-width: 350px; color: var(--dim); font-size: 11px; line-height: 1.45; }
+.status {
+  position: absolute;
+  left: 50%;
+  top: calc(28px + env(safe-area-inset-top));
+  transform: translateX(-50%);
+  color: rgba(255,255,255,.9);
+  text-shadow: 0 1px 8px rgba(0,0,0,.6);
+  font: 11px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: .18em;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .25s;
+}
+.status.show { opacity: 1; }
+.restart, .setup-btn {
+  position: absolute;
+  bottom: calc(30px + env(safe-area-inset-bottom));
+  border: 1px solid rgba(255,255,255,.55);
+  background: rgba(10,12,15,.56);
+  backdrop-filter: blur(8px);
+  color: white;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 10px;
+  letter-spacing: .18em;
+}
+.restart { left: 50%; transform: translateX(-50%); }
+.setup-btn { right: 18px; }
+.hidden { display: none !important; }
+.rotate {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  background: #0d1014;
+  color: white;
+  z-index: 10;
+  font-size: 12px;
+  letter-spacing: .18em;
+}
+.debug {
+  position: absolute;
+  left: 8px;
+  bottom: calc(8px + env(safe-area-inset-bottom));
+  color: #fff;
+  background: rgba(0,0,0,.52);
+  padding: 7px 8px;
+  border-radius: 5px;
+  font: 10px/1.35 ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space: pre;
+  pointer-events: none;
+}
+@media (orientation: landscape) and (max-height: 600px) {
+  .rotate { display: flex; }
+}

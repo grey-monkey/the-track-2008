@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no" />
+  <meta name="theme-color" content="#0f1114" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="The Track" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <title>The Track: 2008 — Prototype 0.1</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="game" aria-label="The Track: 2008 prototype"></canvas>
+
+    <div id="setup" class="panel show">
+      <div class="setup-inner">
+        <div class="eyebrow">PHYSICS PROTOTYPE 0.1</div>
+        <h1>THE TRACK</h1>
+        <div class="year">2008</div>
+
+        <div class="pick-block">
+          <div class="pick-label">RIDER</div>
+          <div id="riders" class="chips"></div>
+        </div>
+
+        <div class="pick-block">
+          <div class="pick-label">BOARD</div>
+          <div id="boards" class="chips"></div>
+        </div>
+
+        <div class="pick-block rope-block">
+          <div class="rope-head"><span>SHORT</span><span>LONG</span></div>
+          <input id="ropeSlider" type="range" min="0" max="100" value="45" aria-label="Rope length from short to long" />
+        </div>
+
+        <div class="pick-block">
+          <div class="pick-label">TEST</div>
+          <div id="tests" class="chips compact"></div>
+        </div>
+
+        <button id="rideBtn" class="ride">RIDE</button>
+        <div class="instructions">drag to carve · hold to crouch · release to pop · swipe up to throw the rope</div>
+        <div class="note">This version is intentionally ugly. The point is to judge the tow, carve, release and cul-de-sac feel.</div>
+      </div>
+    </div>
+
+    <div id="status" class="status"></div>
+    <button id="restartBtn" class="restart hidden">AGAIN</button>
+    <button id="setupBtn" class="setup-btn hidden">SETUP</button>
+    <div id="rotate" class="rotate">TURN YOUR PHONE UPRIGHT</div>
+    <div id="debug" class="debug hidden"></div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
