@@ -1,4 +1,4 @@
-// Metres, traced against the supplied 1366 x 768 aerial. North is -z.
+// Metres; north is -z. Legacy pixel conversion below serves approximate terrain only.
 // Scale bar: approximately 67 pixels / 200 feet. These are estimates, not a survey.
 export const SCALE=60.96/67, ROAD_HALF=4.25;
 export const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
@@ -24,6 +24,15 @@ const east=[
  ...B([762,239],[749,240],[730,285],[717,310],40)
 ];
 export const roadPoints=[...west,...B([510,746],[511,788],[500,813],[550,791],45),...east];
+// Entrance close-up registered to the northern junction. The approach is not part of the lap.
+export const entrancePoints=[...B([762,239],[779,207],[799,174],[834,161],48),...B([834,161],[851,155],[865,150],[878,148],24),aerialPoint(878,148)];
+export const entranceJunction=Array.from({length:32},(_,i)=>{const p=aerialPoint(762,239),a=i/32*Math.PI*2;return{x:p.x+6.5*Math.cos(a),z:p.z+6.5*Math.sin(a)};});
+export const ENTRANCE_HOUSES=[
+ {name:'Blue roof',...aerialPoint(784,129),roof:0x4b6477,wall:0xd3cdc0,width:17,depth:13,rotation:.85,drive:aerialPoint(808,164)},
+ {name:'Gray roof',...aerialPoint(753,176),roof:0x818681,wall:0xc8c4b5,width:16,depth:12,rotation:.85,drive:aerialPoint(783,202)},
+ {name:'Brown roof',...aerialPoint(715,217),roof:0x796653,wall:0xd2bea4,width:18,depth:13,rotation:.85,drive:aerialPoint(745,238)}
+];
+export function entranceDistance(x,z){let d=Infinity;for(let i=1;i<entrancePoints.length;i++)d=Math.min(d,segmentDistance({x,z},entrancePoints[i-1],entrancePoints[i]));return d-ROAD_HALF;}
 export const throat=[aerialPoint(512,797),aerialPoint(463,787)];
 export const throatPolygon=[[461,772],[480,784],[501,785],[512,774],[526,792],[535,805],[492,810],[460,805]].map(p=>aerialPoint(...p));
 // Preserve the remembered clockwise open-bulb driving route, independent of curbs.
@@ -48,7 +57,7 @@ function segmentDistance(p,a,b){const dx=b.x-a.x,dz=b.z-a.z,t=clamp(((p.x-a.x)*d
 export function laneDistance(x,z){const p={x,z};let d=Infinity;for(let i=0;i<roadPoints.length;i++)d=Math.min(d,segmentDistance(p,roadPoints[i],roadPoints[(i+1)%roadPoints.length]));return d;}
 // Union of road ribbon, throat and open asphalt disk. Never distance to car path.
 export function polygonDistance(x,z,poly){let inside=false,d=Infinity;for(let i=0,j=poly.length-1;i<poly.length;j=i++){const a=poly[i],b=poly[j];if((a.z>z)!==(b.z>z)&&x<(b.x-a.x)*(z-a.z)/(b.z-a.z)+a.x)inside=!inside;d=Math.min(d,segmentDistance({x,z},a,b));}return inside?-d:d;}
-export function roadDistance(x,z){return Math.min(laneDistance(x,z)-ROAD_HALF,polygonDistance(x,z,throatPolygon),Math.hypot(x-bulb.x,z-bulb.z)-bulb.r);}
+export function roadDistance(x,z){return Math.min(laneDistance(x,z)-ROAD_HALF,entranceDistance(x,z),polygonDistance(x,z,entranceJunction),polygonDistance(x,z,throatPolygon),Math.hypot(x-bulb.x,z-bulb.z)-bulb.r);}
 export const CUL_START=route.find(p=>Math.hypot(p.x-bulb.x,p.z-bulb.z)<15)?.s??260;
 // Visible central path; obscured sections are interpolated, not surveyed.
 export const FOOTPATH=[[782,264],[766,287],[754,334],[750,396],[750,465],[741,525],[720,568],[687,585],[648,598],[618,631],[607,673],[610,727],[630,750]].map(p=>aerialPoint(...p));
