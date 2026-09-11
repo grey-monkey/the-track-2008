@@ -1,4 +1,4 @@
-# The Track: 2008 — prototype 0.3.1
+# The Track: 2008 — prototype 0.3.2
 
 A new, dependency-light web/PWA prototype. The v0.1/v0.2 implementation is not reused.
 

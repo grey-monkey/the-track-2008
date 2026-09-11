@@ -1,4 +1,4 @@
-const CACHE='track-2008-v031-whip-1';
+const CACHE='track-2008-v032-aerial-1';
 const ASSETS=['./','./index.html','./style.css','./app.js','./render.js','./world.js','./physics.js','./input.js','./vendor/three.module.js','./vendor/three.core.js','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil((async()=>{
