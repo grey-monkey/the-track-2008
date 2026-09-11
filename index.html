@@ -1,60 +1,15 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no" />
-  <meta name="theme-color" content="#0f1114" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="The Track" />
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
-  <title>The Track: 2008 — Prototype 0.2</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div id="app">
-    <canvas id="game" aria-label="The Track: 2008 prototype"></canvas>
-
-    <div id="setup" class="panel show">
-      <div class="setup-inner">
-        <div class="eyebrow">PHYSICS PROTOTYPE 0.2</div>
-        <h1>THE TRACK</h1>
-        <div class="year">2008</div>
-
-        <div class="pick-block">
-          <div class="pick-label">RIDER</div>
-          <div id="riders" class="chips"></div>
-        </div>
-
-        <div class="pick-block">
-          <div class="pick-label">BOARD</div>
-          <div id="boards" class="chips"></div>
-        </div>
-
-        <div class="pick-block rope-block">
-          <div class="rope-head"><span>SHORT</span><span>LONG</span></div>
-          <input id="ropeSlider" type="range" min="0" max="100" value="45" aria-label="Rope length from short to long" />
-        </div>
-
-        <div class="pick-block">
-          <div class="pick-label">TEST</div>
-          <div id="tests" class="chips compact"></div>
-        </div>
-
-        <button id="rideBtn" class="ride">RIDE</button>
-        <div class="instructions">drag to carve · hold to crouch · release to pop · swipe up to throw the rope</div>
-        <div class="note">This version is intentionally ugly. The point is to judge the tow, carve, release and cul-de-sac feel.</div>
-      </div>
-    </div>
-
-    <div id="status" class="status"></div>
-    <button id="restartBtn" class="restart hidden">AGAIN</button>
-    <button id="setupBtn" class="setup-btn hidden">SETUP</button>
-    <div id="rotate" class="rotate">TURN YOUR PHONE UPRIGHT</div>
-    <div id="debug" class="debug hidden"></div>
-  </div>
-
-  <script src="game.js"></script>
-</body>
-</html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#17212b"><meta name="description" content="An evening at The Track. A portrait skateboarding tow game set in 2008."><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>The Track: 2008</title><link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icon-192.png"><link rel="apple-touch-icon" href="./icon-192.png"><link rel="stylesheet" href="./style.css"></head>
+<body><main id="game" aria-label="The Track skateboarding game"><canvas id="scene" aria-label="Ride behind the Mercedes. Drag sideways to carve, hold to crouch, swipe up to release the rope." tabindex="0"></canvas><div id="vignette"></div>
+<header id="masthead"><p class="eyebrow">AN EVENING WITH THE CREW</p><h1>THE TRACK<span>2008</span></h1></header>
+<div id="toolbar" hidden><button id="pause" aria-label="Pause">Ⅱ</button><span id="lapMessage" aria-live="polite"></span><button id="sound" aria-label="Turn sound off">Sound on</button></div>
+<section id="setup" aria-label="Choose your ride"><p id="load" role="status">Finding the keys…</p><div class="choice"><button id="riderPrev" aria-label="Previous rider">‹</button><div><small>WHO’S UP?</small><strong id="riderName">DOG</strong><span id="driverName">SALLY’S DRIVING</span></div><button id="riderNext" aria-label="Next rider">›</button></div>
+<div class="choice board-choice"><button id="boardPrev" aria-label="Previous board">‹</button><button id="boardNext" aria-label="Choose next board"><canvas id="boardPreview" width="220" height="44" aria-hidden="true"></canvas><span id="boardName">The nice longboard</span></button><button id="boardForward" aria-label="Next board">›</button></div>
+<label class="rope-label" for="rope">THE ROPE</label><div class="rope-row"><span>SHORT</span><input id="rope" type="range" min="0" max="100" value="45" aria-label="Rope length, short to long"><span>LONG</span></div>
+<button id="start" class="primary" disabled>Let’s ride</button><div class="setup-footer"><button id="how">How to ride</button><span>FEEL TEST · 0.3</span></div></section>
+<p id="hint" aria-live="polite"></p>
+<section id="panel" class="panel" hidden aria-label="Ride menu"><p class="eyebrow" id="panelKicker">TAKE A BREATH</p><h2 id="panelTitle">Still here.</h2><p id="panelBody"></p><button id="resume" class="primary">Keep riding</button><button id="restart" class="secondary">Back to the crew</button></section>
+<section id="instructions" class="panel" hidden aria-label="How to ride"><p class="eyebrow">ONE THUMB. THAT’S IT.</p><h2>Feel the pull.</h2><p><b>Drag left or right</b> to lean into a carve.</p><p><b>Hold your thumb still</b> to crouch and settle the board.</p><p><b>Lift after a hold</b> to try a small ollie.</p><p><b>Flick up</b> to throw the rope. You’ll coast until the crew can regroup.</p><p class="muted">You’ll follow gentle bends naturally. Give yourself room before the tight ones.</p><p class="desktop-help">Keyboard: ← → carve · Space crouch / ollie · ↑ let go · Esc pause.</p><button id="closeHow" class="primary">Got it</button></section>
+<div id="error" class="panel" hidden role="alert"><h2>Couldn’t start the ride.</h2><p id="errorText">Please reload, or try opening this in Chrome or Safari.</p><button onclick="location.reload()" class="primary">Try again</button></div>
+<div id="debug" hidden><canvas id="map" width="340" height="390"></canvas><pre id="telemetry"></pre><button id="lab">Cul-de-sac test</button><button id="stress">Faster test</button></div>
+<noscript>This game needs JavaScript enabled.</noscript></main><script type="module" src="./app.js"></script></body></html>

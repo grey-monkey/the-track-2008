@@ -1,92 +1,31 @@
-# THE TRACK: 2008 — Physics Prototype 0.2
+# The Track: 2008 — prototype 0.3
 
-This is the second **feel prototype**, not an art prototype. It is intentionally simple. The goal is to answer one question before we invest in finished art: **is being towed behind the Mercedes fun and readable on a phone?**
+A new, dependency-light web/PWA prototype. The v0.1/v0.2 implementation is not reused.
 
-## What is in this build
+## Play
 
-- Portrait-first responsive canvas game.
-- Web/PWA architecture intended to behave the same on iPhone and Android.
-- Rebuilt Track geometry based much more closely on the annotated aerial: long western side, real cul-de-sac detour, lower connector, slight downhill Copperleaf section, then uphill return.
-- Slower Mercedes starts and much more deliberate speed reduction on curves / through the cul-de-sac.
-- Hard rope-length tether plus stronger tow pull so the rider reads as being dragged by the Mercedes rather than racing it.
-- Camera now frames the tow relationship (rider → rope → car) rather than simply following rider velocity.
-- Rope physics with slack, tension and different hidden lengths selected by a SHORT ↔ LONG slider.
-- Drag left/right to carve.
-- Hold to crouch/stabilize.
-- Release after a hold to ollie **only when both the rider and board can ollie**.
-- Quick upward swipe to throw the tow handle.
-- Basic wobble, curb, dirt and manhole interactions.
-- Hidden rider/board differences, including DOG's speed-related loss of control and the nice longboard's high-speed stability.
-- Two prototype starts: FULL LAP and CUL-DE-SAC, so the signature turn can be tested repeatedly without waiting through a lap.
-- Placeholder procedural wheel/engine/tension audio. No copyrighted music or finished sound design.
+Choose a rider, board and visual rope length. Drag sideways to carve; hold still to crouch; lift after a crouch to ollie when the rider and board permit it. Flick upward to throw the rope. Gentle bends work without input.
 
-## Rider / board rules currently encoded
+Keyboard: Left/Right carve, Space crouch and release to ollie, Up throws the rope, Escape pauses.
 
-The game itself does not show these stats. They exist only under the hood.
-
-- DOG cannot ollie and progressively loses control authority as speed rises.
-- NICE LONGBOARD cannot ollie and has the best high-speed stability.
-- HAND-ME-DOWN longboard cannot ollie.
-- CRUISER / SURFER can ollie.
-- STREET DECK can ollie.
+SALLY drives when DOG rides. DOG drives for the other riders. SALLY is faster; DOG sometimes has a faster straight-line pace. A run continues across laps until a wipeout. A safe release leads to a regroup and a new tow from that location; a new run starts at the original line.
 
 ## Run locally
 
-Any simple static web server works. For example, from this folder:
+Play at https://grey-monkey.github.io/the-track-2008/ .
 
-```bash
-python3 -m http.server 8000
-```
+With Node.js installed, run `npm start` in this directory and open `http://127.0.0.1:4173`. No dependency installation is needed. GitHub Pages publishes the static files at the repository root. All runtime libraries are vendored; the game does not need a CDN.
 
-Then open `http://localhost:8000`.
+The existing service-worker URL is retained so installed copies can upgrade from v0.1/v0.2. The upgrade replaces only Track caches and refreshes legacy pages after the new assets are cached. Earlier prototype source remains available in repository history; the old `game.js` and `styles.css` are no longer loaded by the new entrypoint.
 
-Opening `index.html` directly also runs the core prototype in most desktop browsers, but PWA/offline features require a web server (or GitHub Pages).
+## Validation
 
-## GitHub Pages
+`npm test` runs 12 physics/gesture checks. `node tests/offline.test.mjs` checks offline asset coverage, cache isolation and the PWA manifest. Details are in `docs/VALIDATION.md`.
 
-1. Put the contents of this folder at the root of a GitHub repository.
-2. In the repository, open **Settings → Pages**.
-3. Set Pages to deploy from the main branch/root.
-4. Open the generated HTTPS Pages address.
+Append `?debug=1` to expose the top-down map, motion values and repeatable cul-de-sac tests. These are developer tools and are hidden from normal play.
 
-HTTPS is important for installable PWA behavior.
+## Scope
 
-## iPhone test flow
+This is a feel prototype. The Mercedes, rider, landscape, crashes and sounds are simplified. It does not include the full crew gathering, Sprad's passenger scene, rare memory events, soundtrack, progression, APK packaging or finished character likenesses. Actual Samsung A17 and iPhone Safari/Home Screen validation remains necessary.
 
-1. Open the GitHub Pages URL in **Safari**.
-2. Tap **Share**.
-3. Choose **Add to Home Screen**.
-4. Launch **The Track** from its Home Screen icon.
-
-The prototype includes Apple standalone/PWA metadata, safe-area-aware UI and a portrait manifest. Real iPhone testing is still required before we consider the experience validated.
-
-## Android test flow
-
-Open the same GitHub Pages URL in Chrome. The exact same core build should run there. Later, this same web game can be wrapped as an Android APK / Google Play app without creating a second game codebase.
-
-## What Grey should judge first
-
-Do **not** worry about how ugly it is. v0.2 specifically attacks the major v0.1 problems Grey found: weak tow feeling, inaccurate/over-curvy course geometry, excessive curve speed, impossible cul-de-sac, and a camera that did not frame the tow correctly. After several cul-de-sac attempts and at least one full lap, the useful questions are:
-
-1. Does left/right carving feel connected to body weight, or does it feel like steering a car?
-2. Can you read trouble early enough from the rope, car and rider motion?
-3. When the curb starts coming, does the upward rope-release flick feel instinctive?
-4. Does the long rope feel meaningfully different rather than merely harder?
-5. Does crouching actually feel like a useful "hold this together" action?
-6. Is the cul-de-sac tense/fun, or frustrating/unreadable?
-7. Does the Mercedes feel human enough in its line, or annoyingly random?
-8. Is the trailing portrait camera calm and atmospheric, or does it read like a cheap racing game?
-9. Do DOG and the different boards feel different even though no stats are shown?
-10. Most important: after crashing, do you immediately want to try it again?
-
-## Debug mode
-
-Add `?debug=1` to the URL to expose temporary developer readouts for speed, hidden rope length, tension, wobble and road position. These are for tuning only and are not part of the intended game interface.
-
-Example:
-
-`https://YOUR-NAME.github.io/YOUR-REPO/?debug=1`
-
-## Prototype philosophy
-
-We will tune the physics from real phone play before polishing the world. Finished characters, the actual Mercedes art, sunset/night lighting, the model house, crew scenes, Caribou, progression and memory events come after the tow loop proves itself.
+Three.js 0.180.0 is included under its MIT license in `vendor/LICENSE-three.txt`.
