@@ -1,6 +1,6 @@
-# The Track: 2008 — Study 42
+# The Track: 2008 — Study 43
 
-[Play the current game](https://grey-monkey.github.io/the-track-2008/painted.html?v=42).
+[Play the current game](https://grey-monkey.github.io/the-track-2008/painted.html?v=43).
 
 Faster full-body crash contact and refined house facades are integrated with the approved neighborhood, Mercedes and native skater. See [Release 41](RELEASE-41.md) for changes and validation; asset credits are retained in the game’s How to ride panel.
 
@@ -39,4 +39,6 @@ This is a feel prototype. The Mercedes, rider, landscape, crashes and sounds are
 Three.js 0.180.0 is included under its MIT license in `vendor/LICENSE-three.txt`.
 
 
-Study 42 adds four downloaded board models. See [the board viewer](https://grey-monkey.github.io/the-track-2008/boards.html) and RELEASE-42.md for sources and assessment.
+Study 43 adds four downloaded board models. See [the board viewer](https://grey-monkey.github.io/the-track-2008/boards.html) and RELEASE-42.md for sources and assessment.
+
+Study 43 refines the vintage cruiser and surf-shaped hand-me-down. See [Release 43](RELEASE-43.md).
