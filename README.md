@@ -1,3 +1,11 @@
+# The Track: 2008 — Study 40
+
+[Play the current game](https://grey-monkey.github.io/the-track-2008/painted.html?v=40).
+
+The approved neighborhood environment is now integrated with the Mercedes and native skater. See [Release 40](RELEASE-40.md) for changes and validation; asset credits are retained in the game’s How to ride panel.
+
+---
+
 # The Track: 2008 — prototype 0.3.3
 
 A new, dependency-light web/PWA prototype. The v0.1/v0.2 implementation is not reused.
