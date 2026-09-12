@@ -1,8 +1,8 @@
-# The Track: 2008 — Study 40
+# The Track: 2008 — Study 41
 
-[Play the current game](https://grey-monkey.github.io/the-track-2008/painted.html?v=40).
+[Play the current game](https://grey-monkey.github.io/the-track-2008/painted.html?v=41).
 
-The approved neighborhood environment is now integrated with the Mercedes and native skater. See [Release 40](RELEASE-40.md) for changes and validation; asset credits are retained in the game’s How to ride panel.
+Faster full-body crash contact and refined house facades are integrated with the approved neighborhood, Mercedes and native skater. See [Release 41](RELEASE-41.md) for changes and validation; asset credits are retained in the game’s How to ride panel.
 
 ---
 
