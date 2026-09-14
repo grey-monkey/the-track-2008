@@ -1,0 +1,24 @@
+<!doctype html><html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#11151c"><title>The Track — Still Study 84</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#11151c;color:#f5eee3;font:15px/1.45 system-ui,sans-serif}main{max-width:720px;margin:auto;padding:16px 16px calc(18px + env(safe-area-inset-bottom))}header{display:flex;justify-content:space-between;align-items:center;gap:10px}header span{color:#aaa7a4;font-size:12px}h1{font-size:18px;margin:0;font-weight:550}h2{font-size:17px;margin:12px 0 3px}p{margin:0 0 12px;color:#c3beb8;font-size:13px}figure{margin:0;text-align:center}figure a{display:block;background:#080b10;border-radius:7px;overflow:hidden}img{display:block;max-width:100%;width:auto;height:auto;max-height:calc(100svh - 235px);min-height:180px;margin:auto;object-fit:contain}nav{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-top:14px}button{font:inherit;color:inherit;background:#252c36;border:1px solid #48505c;border-radius:6px;min-height:46px;padding:9px 20px;touch-action:manipulation}button:disabled{opacity:.35}button:focus-visible,a:focus-visible{outline:3px solid #edc594;outline-offset:3px}#count{color:#c4beb5;font-variant-numeric:tabular-nums}.note{text-align:center;margin-top:10px;color:#969da5;font-size:12px}a{color:inherit}
+</style>
+<main><header><h1>The Track: 2008</h1><span>Still study 84</span></header>
+<section aria-live="polite"><h2 id="title">1 · Lower camera</h2><p id="description">Camera lowered 30 cm. How does the rider sit against the car and road ahead?</p></section>
+<figure><a id="full" href="01-camera.png" target="_blank" rel="noopener" aria-label="Open full-size image for zooming"><img id="frame" src="01-camera.png" alt="Lower riding camera on the warm-up straight"></a></figure>
+<nav aria-label="Study images"><button id="prev" disabled>Previous</button><span id="count" aria-live="polite">1 / 5</span><button id="next">Next</button></nav>
+<p class="note">Tap the image to open and zoom. Refer to its number in your feedback.</p></main>
+<noscript>Enable JavaScript to navigate these five still images.</noscript>
+<script>
+const frames=[
+ ['01-camera.png','Lower camera','Camera lowered 30 cm. How does the rider sit against the car and road ahead?'],
+ ['02-woodland.png','Woodland framing','The loop and distant canopy, at the same sunset time as the other daylight frames.'],
+ ['03-house-approach.png','House approach','Roadside detail and the approach to the houses. The restored road and dirt textures remain.'],
+ ['04-house-detail.png','House details','Closer view of the window recesses, eave shading, and brick-to-siding transition.'],
+ ['05-night-selection.png','Night lighting','A readability check of the rider, board, crew, and Mercedes at full night.']
+];
+let current=Math.max(0,Math.min(4,Math.floor(Number(location.hash.slice(1))||1)-1));const el=id=>document.getElementById(id);
+function show(){const [file,title,description]=frames[current];el('frame').src=file;el('frame').alt=title;el('full').href=file;el('title').textContent=(current+1)+' · '+title;el('description').textContent=description;el('count').textContent=(current+1)+' / '+frames.length;el('prev').disabled=current===0;el('next').disabled=current===frames.length-1;history.replaceState(null,'','#'+(current+1));if(current+1<frames.length){const next=new Image();next.src=frames[current+1][0];}}
+el('prev').onclick=()=>{if(current>0){current--;show();}};el('next').onclick=()=>{if(current<4){current++;show();}};
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')el('next').click();if(e.key==='ArrowLeft')el('prev').click();});show();
+</script></html>
