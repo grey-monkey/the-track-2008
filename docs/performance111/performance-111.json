@@ -1,0 +1,377 @@
+{
+  "build": "111",
+  "readyMs": 97600,
+  "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "measurements": [
+    {
+      "name": "straight",
+      "samples": 45,
+      "times": {
+        "draw": {
+          "p50": 4.9000000059604645,
+          "p95": 6.299999997019768,
+          "max": 7.100000001490116
+        },
+        "audio": {
+          "p50": 0.09999999403953552,
+          "p95": 0.20000000298023224,
+          "max": 0.6000000014901161
+        },
+        "boardSupport": {
+          "p50": 0.7999999970197678,
+          "p95": 1,
+          "max": 1.3999999985098839
+        },
+        "riderSupport": {
+          "p50": 0,
+          "p95": 0,
+          "max": 0.10000000149011612
+        },
+        "renderSubmission": {
+          "p50": 3.3000000044703484,
+          "p95": 4.399999998509884,
+          "max": 5.0999999940395355
+        }
+      },
+      "drawCalls": 232,
+      "triangles": 935553,
+      "programs": 248
+    },
+    {
+      "name": "cul-de-sac",
+      "samples": 45,
+      "times": {
+        "draw": {
+          "p50": 4,
+          "p95": 4.799999997019768,
+          "max": 5.199999995529652
+        },
+        "audio": {
+          "p50": 0.10000000149011612,
+          "p95": 0.20000000298023224,
+          "max": 0.6999999955296516
+        },
+        "boardSupport": {
+          "p50": 0.5,
+          "p95": 0.8999999985098839,
+          "max": 1
+        },
+        "riderSupport": {
+          "p50": 0,
+          "p95": 0.09999999403953552,
+          "max": 0.10000000149011612
+        },
+        "renderSubmission": {
+          "p50": 2.899999998509884,
+          "p95": 3.7000000029802322,
+          "max": 4.199999995529652
+        }
+      },
+      "drawCalls": 157,
+      "triangles": 796265,
+      "programs": 248
+    },
+    {
+      "name": "night",
+      "samples": 45,
+      "times": {
+        "draw": {
+          "p50": 3.8000000044703484,
+          "p95": 4.799999997019768,
+          "max": 6.0999999940395355
+        },
+        "audio": {
+          "p50": 0.10000000149011612,
+          "p95": 0.20000000298023224,
+          "max": 0.3999999985098839
+        },
+        "boardSupport": {
+          "p50": 0.4000000059604645,
+          "p95": 0.6000000014901161,
+          "max": 0.7999999970197678
+        },
+        "riderSupport": {
+          "p50": 0,
+          "p95": 0.09999999403953552,
+          "max": 0.10000000149011612
+        },
+        "renderSubmission": {
+          "p50": 2.899999998509884,
+          "p95": 3.7999999970197678,
+          "max": 4.799999997019768
+        }
+      },
+      "drawCalls": 165,
+      "triangles": 841824,
+      "programs": 248
+    },
+    {
+      "name": "wipeout",
+      "samples": 45,
+      "times": {
+        "draw": {
+          "p50": 6.399999998509884,
+          "p95": 8.399999998509884,
+          "max": 8.799999997019768
+        },
+        "audio": {
+          "p50": 0.10000000149011612,
+          "p95": 0.3999999985098839,
+          "max": 0.5
+        },
+        "boardSupport": {
+          "p50": 0.10000000149011612,
+          "p95": 0.29999999701976776,
+          "max": 0.29999999701976776
+        },
+        "riderSupport": {
+          "p50": 2.899999998509884,
+          "p95": 4.700000002980232,
+          "max": 4.800000004470348
+        },
+        "renderSubmission": {
+          "p50": 2.8000000044703484,
+          "p95": 3.600000001490116,
+          "max": 3.8000000044703484
+        }
+      },
+      "drawCalls": 163,
+      "triangles": 841812,
+      "programs": 248
+    }
+  ],
+  "drawingBuffer": {
+    "width": 645,
+    "height": 1275
+  },
+  "geometryBytes": 60370150,
+  "meshes": [
+    {
+      "name": "Mesh",
+      "triangles": 245000,
+      "visible": true
+    },
+    {
+      "name": "Mesh",
+      "triangles": 109813,
+      "visible": true
+    },
+    {
+      "name": "Asphalt with settled utility trench and repairs",
+      "triangles": 53592,
+      "visible": true
+    },
+    {
+      "name": "Circuit poured curb",
+      "triangles": 20477,
+      "visible": true
+    },
+    {
+      "name": "Residential lantern streetlight",
+      "triangles": 19624,
+      "visible": true
+    },
+    {
+      "name": "Residential lantern streetlight",
+      "triangles": 19624,
+      "visible": true
+    },
+    {
+      "name": "Residential lantern streetlight",
+      "triangles": 19624,
+      "visible": true
+    },
+    {
+      "name": "Residential lantern streetlight",
+      "triangles": 19624,
+      "visible": true
+    },
+    {
+      "name": "Residential lantern streetlight",
+      "triangles": 19624,
+      "visible": true
+    },
+    {
+      "name": "Residential lantern streetlight",
+      "triangles": 19624,
+      "visible": true
+    },
+    {
+      "name": "Residential lantern streetlight",
+      "triangles": 19624,
+      "visible": true
+    },
+    {
+      "name": "Residential lantern streetlight",
+      "triangles": 19624,
+      "visible": true
+    },
+    {
+      "name": "Residential lantern streetlight",
+      "triangles": 19624,
+      "visible": true
+    },
+    {
+      "name": "Residential lantern streetlight",
+      "triangles": 19624,
+      "visible": true
+    },
+    {
+      "name": "DOG",
+      "triangles": 19382,
+      "visible": true
+    },
+    {
+      "name": "BOSS",
+      "triangles": 19382,
+      "visible": true
+    },
+    {
+      "name": "SALLY",
+      "triangles": 19382,
+      "visible": true
+    },
+    {
+      "name": "Selected rider warm light and cast shadow",
+      "triangles": 18432,
+      "visible": true
+    },
+    {
+      "name": "Selected rider warm light and cast shadow",
+      "triangles": 18432,
+      "visible": true
+    },
+    {
+      "name": "Junction poured curb",
+      "triangles": 17845,
+      "visible": true
+    },
+    {
+      "name": "BLACK",
+      "triangles": 17256,
+      "visible": true
+    },
+    {
+      "name": "DOG",
+      "triangles": 17256,
+      "visible": true
+    },
+    {
+      "name": "SALLY",
+      "triangles": 17256,
+      "visible": true
+    },
+    {
+      "name": "BLACK",
+      "triangles": 17256,
+      "visible": true
+    },
+    {
+      "name": "Bulb poured curb",
+      "triangles": 16981,
+      "visible": true
+    }
+  ],
+  "rendererMemory": {
+    "geometries": 1004,
+    "textures": 111
+  },
+  "audio": {
+    "loaded": 25,
+    "loops": 9,
+    "voices": 2,
+    "pcmBytes": 13440460,
+    "scene": {
+      "night": 0,
+      "edgeDistance": 35.12531398876073,
+      "quiet": 0.6221529600187651,
+      "patchMask": 0,
+      "nextDog": 70
+    },
+    "state": {
+      "board": {
+        "roll": 1,
+        "lowpass": 7200,
+        "pitch": 1.1,
+        "click": 1.05,
+        "chatter": 0.8
+      },
+      "speed": 6,
+      "live": true,
+      "ground": false,
+      "slide": 0,
+      "roll": 0,
+      "load": 0,
+      "carSpeed": 6
+    },
+    "braking": 0,
+    "bodyLanded": true,
+    "boardDirt": false,
+    "boardSpeed": 6.36,
+    "carDistance": 6.772799686803776,
+    "errors": []
+  },
+  "resources": [
+    {
+      "file": "p46-e3541fb633de4fc7.mp3",
+      "bytes": 6788923,
+      "ms": 6155.89999999851
+    },
+    {
+      "file": "p46-cea6422dd43c32cf.model.gz",
+      "bytes": 6480354,
+      "ms": 23.399999998509884
+    },
+    {
+      "file": "p46-3aefcdc6151f9e74.model.gz",
+      "bytes": 5383984,
+      "ms": 18.200000002980232
+    },
+    {
+      "file": "p46-aae58cff565320e0.model.gz",
+      "bytes": 4713289,
+      "ms": 14.399999998509884
+    },
+    {
+      "file": "p46-ec8828f4ee51cd30.model.gz",
+      "bytes": 2589603,
+      "ms": 9.399999998509884
+    },
+    {
+      "file": "p46-3978428480020f39.png",
+      "bytes": 2509497,
+      "ms": 27.69999999552965
+    },
+    {
+      "file": "p46-f44ed243e087f14a.model.gz",
+      "bytes": 1145230,
+      "ms": 5.899999998509884
+    },
+    {
+      "file": "p46-bbbfa2bba4d57c87.model.gz",
+      "bytes": 1144208,
+      "ms": 5.399999998509884
+    },
+    {
+      "file": "p46-fc9307cbd4b23a47.png",
+      "bytes": 1129651,
+      "ms": 5.9000000059604645
+    },
+    {
+      "file": "p46-e5038b8562544f1d.model.gz",
+      "bytes": 1074419,
+      "ms": 5.5
+    },
+    {
+      "file": "p46-dd7fc03e152eb8c2.jpg",
+      "bytes": 1042065,
+      "ms": 4.899999998509884
+    },
+    {
+      "file": "p46-b6149aafeddc6440.model.gz",
+      "bytes": 1035695,
+      "ms": 5
+    }
+  ],
+  "errors": []
+}

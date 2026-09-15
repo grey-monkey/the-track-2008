@@ -1,0 +1,537 @@
+{
+  "finishTrials": [
+    {
+      "legacy": true,
+      "p50Ms": 0,
+      "p95Ms": 0.10000000149011612
+    },
+    {
+      "legacy": false,
+      "p50Ms": 0,
+      "p95Ms": 0.09999999403953552
+    }
+  ],
+  "finishPixelComparison": {
+    "changedBytes": 0,
+    "maxDifference": 0,
+    "pixels": 65536
+  },
+  "entryTrials": [
+    {
+      "end": 0,
+      "board": "LONGBOARD",
+      "phase": "coasting",
+      "reason": null
+    },
+    {
+      "end": 0,
+      "board": "HANDMEDOWN",
+      "phase": "coasting",
+      "reason": null
+    },
+    {
+      "end": 0,
+      "board": "CRUISER",
+      "phase": "coasting",
+      "reason": null
+    },
+    {
+      "end": 0,
+      "board": "STREET",
+      "phase": "coasting",
+      "reason": null
+    },
+    {
+      "end": 12,
+      "board": "LONGBOARD",
+      "phase": "coasting",
+      "reason": null
+    },
+    {
+      "end": 12,
+      "board": "HANDMEDOWN",
+      "phase": "coasting",
+      "reason": null
+    },
+    {
+      "end": 12,
+      "board": "CRUISER",
+      "phase": "coasting",
+      "reason": null
+    },
+    {
+      "end": 12,
+      "board": "STREET",
+      "phase": "coasting",
+      "reason": null
+    }
+  ],
+  "tests": [
+    {
+      "end": 0,
+      "radius": 3.048,
+      "maxHeightStepPer4cm": 0.010093727418132081,
+      "frame": {
+        "x": 36.674843291185304,
+        "z": -26.40592746369933,
+        "nx": -0.7274711807810137,
+        "nz": 0.6861382376264112,
+        "tx": -0.6861382376264112,
+        "tz": -0.7274711807810137,
+        "d": 2.6350852171011954
+      }
+    },
+    {
+      "end": 12,
+      "radius": 3.048,
+      "maxHeightStepPer4cm": 0.009760330871513845,
+      "frame": {
+        "x": -47.55674516877173,
+        "z": 233.16036385676097,
+        "nx": -0.4379507360507378,
+        "nz": -0.898998972631569,
+        "tx": 0.898998972631569,
+        "tz": -0.4379507360507378,
+        "d": 2.3624572821678207
+      }
+    }
+  ],
+  "trials": {
+    "LONGBOARD": {
+      "launch": true,
+      "phase": "coasting",
+      "reason": null
+    },
+    "HANDMEDOWN": {
+      "launch": true,
+      "phase": "coasting",
+      "reason": null
+    },
+    "CRUISER": {
+      "launch": true,
+      "phase": "coasting",
+      "reason": null
+    },
+    "STREET": {
+      "launch": true,
+      "phase": "coasting",
+      "reason": null
+    }
+  },
+  "checked": 136,
+  "meshes": [
+    {
+      "houseBatch": false,
+      "names": [
+        "Mesh",
+        "Scene"
+      ],
+      "triangles": 245000,
+      "material": "MeshBasicMaterial",
+      "bounds": {
+        "isBox3": true,
+        "min": {
+          "x": -350,
+          "y": -5.27974271774292,
+          "z": -270
+        },
+        "max": {
+          "x": 350,
+          "y": 2.5260820388793945,
+          "z": 430
+        }
+      },
+      "parameters": {
+        "width": 700,
+        "height": 700,
+        "widthSegments": 350,
+        "heightSegments": 350
+      }
+    },
+    {
+      "houseBatch": true,
+      "names": [
+        "Mesh",
+        "Scene"
+      ],
+      "triangles": 109813,
+      "material": "MeshBasicMaterial",
+      "bounds": {
+        "isBox3": true,
+        "min": {
+          "x": -11.444637298583984,
+          "y": 1.6665011644363403,
+          "z": -106.60324096679688
+        },
+        "max": {
+          "x": 49.46088790893555,
+          "y": 12.265589714050293,
+          "z": -39.26132583618164
+        }
+      }
+    },
+    {
+      "houseBatch": false,
+      "names": [
+        "Asphalt with settled utility trench and repairs",
+        "Scene"
+      ],
+      "triangles": 53592,
+      "material": "MeshBasicMaterial",
+      "bounds": {
+        "isBox3": true,
+        "min": {
+          "x": -161.4905242919922,
+          "y": -4.764993190765381,
+          "z": -90.8221206665039
+        },
+        "max": {
+          "x": 93.12493133544922,
+          "y": 0.07999999821186066,
+          "z": 269.50738525390625
+        }
+      }
+    },
+    {
+      "houseBatch": false,
+      "names": [
+        "Circuit poured curb",
+        "Scene"
+      ],
+      "triangles": 20477,
+      "material": "MeshBasicMaterial",
+      "bounds": {
+        "isBox3": true,
+        "min": {
+          "x": -115.44154357910156,
+          "y": -4.760910987854004,
+          "z": -29.136962890625
+        },
+        "max": {
+          "x": 93.52527618408203,
+          "y": 0.1889999955892563,
+          "z": 263.167724609375
+        }
+      }
+    },
+    {
+      "houseBatch": false,
+      "names": [
+        "Mesh",
+        "Residential lantern streetlight",
+        "Scene"
+      ],
+      "triangles": 19624,
+      "material": "MeshBasicMaterial",
+      "bounds": {
+        "isBox3": true,
+        "min": {
+          "x": -0.4003399908542633,
+          "y": 0,
+          "z": -0.21977999806404114
+        },
+        "max": {
+          "x": 0.4003399908542633,
+          "y": 4.400000095367432,
+          "z": 0.21977999806404114
+        }
+      }
+    },
+    {
+      "houseBatch": false,
+      "names": [
+        "Mesh",
+        "Residential lantern streetlight",
+        "Scene"
+      ],
+      "triangles": 19624,
+      "material": "MeshBasicMaterial",
+      "bounds": {
+        "isBox3": true,
+        "min": {
+          "x": -0.4003399908542633,
+          "y": 0,
+          "z": -0.21977999806404114
+        },
+        "max": {
+          "x": 0.4003399908542633,
+          "y": 4.400000095367432,
+          "z": 0.21977999806404114
+        }
+      }
+    },
+    {
+      "houseBatch": false,
+      "names": [
+        "Mesh",
+        "Residential lantern streetlight",
+        "Scene"
+      ],
+      "triangles": 19624,
+      "material": "MeshBasicMaterial",
+      "bounds": {
+        "isBox3": true,
+        "min": {
+          "x": -0.4003399908542633,
+          "y": 0,
+          "z": -0.21977999806404114
+        },
+        "max": {
+          "x": 0.4003399908542633,
+          "y": 4.400000095367432,
+          "z": 0.21977999806404114
+        }
+      }
+    },
+    {
+      "houseBatch": false,
+      "names": [
+        "Mesh",
+        "Residential lantern streetlight",
+        "Scene"
+      ],
+      "triangles": 19624,
+      "material": "MeshBasicMaterial",
+      "bounds": {
+        "isBox3": true,
+        "min": {
+          "x": -0.4003399908542633,
+          "y": 0,
+          "z": -0.21977999806404114
+        },
+        "max": {
+          "x": 0.4003399908542633,
+          "y": 4.400000095367432,
+          "z": 0.21977999806404114
+        }
+      }
+    },
+    {
+      "houseBatch": false,
+      "names": [
+        "Mesh",
+        "Residential lantern streetlight",
+        "Scene"
+      ],
+      "triangles": 19624,
+      "material": "MeshBasicMaterial",
+      "bounds": {
+        "isBox3": true,
+        "min": {
+          "x": -0.4003399908542633,
+          "y": 0,
+          "z": -0.21977999806404114
+        },
+        "max": {
+          "x": 0.4003399908542633,
+          "y": 4.400000095367432,
+          "z": 0.21977999806404114
+        }
+      }
+    },
+    {
+      "houseBatch": false,
+      "names": [
+        "Mesh",
+        "Residential lantern streetlight",
+        "Scene"
+      ],
+      "triangles": 19624,
+      "material": "MeshBasicMaterial",
+      "bounds": {
+        "isBox3": true,
+        "min": {
+          "x": -0.4003399908542633,
+          "y": 0,
+          "z": -0.21977999806404114
+        },
+        "max": {
+          "x": 0.4003399908542633,
+          "y": 4.400000095367432,
+          "z": 0.21977999806404114
+        }
+      }
+    },
+    {
+      "houseBatch": false,
+      "names": [
+        "Mesh",
+        "Residential lantern streetlight",
+        "Scene"
+      ],
+      "triangles": 19624,
+      "material": "MeshBasicMaterial",
+      "bounds": {
+        "isBox3": true,
+        "min": {
+          "x": -0.4003399908542633,
+          "y": 0,
+          "z": -0.21977999806404114
+        },
+        "max": {
+          "x": 0.4003399908542633,
+          "y": 4.400000095367432,
+          "z": 0.21977999806404114
+        }
+      }
+    },
+    {
+      "houseBatch": false,
+      "names": [
+        "Mesh",
+        "Residential lantern streetlight",
+        "Scene"
+      ],
+      "triangles": 19624,
+      "material": "MeshBasicMaterial",
+      "bounds": {
+        "isBox3": true,
+        "min": {
+          "x": -0.4003399908542633,
+          "y": 0,
+          "z": -0.21977999806404114
+        },
+        "max": {
+          "x": 0.4003399908542633,
+          "y": 4.400000095367432,
+          "z": 0.21977999806404114
+        }
+      }
+    },
+    {
+      "houseBatch": false,
+      "names": [
+        "Mesh",
+        "Residential lantern streetlight",
+        "Scene"
+      ],
+      "triangles": 19624,
+      "material": "MeshBasicMaterial",
+      "bounds": {
+        "isBox3": true,
+        "min": {
+          "x": -0.4003399908542633,
+          "y": 0,
+          "z": -0.21977999806404114
+        },
+        "max": {
+          "x": 0.4003399908542633,
+          "y": 4.400000095367432,
+          "z": 0.21977999806404114
+        }
+      }
+    },
+    {
+      "houseBatch": false,
+      "names": [
+        "Mesh",
+        "Residential lantern streetlight",
+        "Scene"
+      ],
+      "triangles": 19624,
+      "material": "MeshBasicMaterial",
+      "bounds": {
+        "isBox3": true,
+        "min": {
+          "x": -0.4003399908542633,
+          "y": 0,
+          "z": -0.21977999806404114
+        },
+        "max": {
+          "x": 0.4003399908542633,
+          "y": 4.400000095367432,
+          "z": 0.21977999806404114
+        }
+      }
+    },
+    {
+      "houseBatch": false,
+      "names": [
+        "Mesh",
+        "SALLY",
+        "Group",
+        "Group",
+        "Scene"
+      ],
+      "triangles": 19382,
+      "material": "MeshBasicMaterial",
+      "bounds": {
+        "isBox3": true,
+        "min": {
+          "x": -1.3865999979898334,
+          "y": -1.530300009995699,
+          "z": -2.137500047683716
+        },
+        "max": {
+          "x": 1.4088000282645226,
+          "y": 1.8801000257954001,
+          "z": 1.4456999637186527
+        }
+      }
+    },
+    {
+      "houseBatch": false,
+      "names": [
+        "Mesh",
+        "BOSS",
+        "Group",
+        "Group",
+        "Scene"
+      ],
+      "triangles": 19382,
+      "material": "MeshBasicMaterial",
+      "bounds": {
+        "isBox3": true,
+        "min": {
+          "x": -1.3091999921016395,
+          "y": -1.621800035238266,
+          "z": -2.137500047683716
+        },
+        "max": {
+          "x": 1.3311000019311905,
+          "y": 1.9868999850004911,
+          "z": 1.4456999637186527
+        }
+      }
+    }
+  ],
+  "pavementMemory": {
+    "before": 4182912,
+    "after": 1128816,
+    "saved": 3054096
+  },
+  "programsBefore": 236,
+  "beforeCrash": 245,
+  "afterCrash": 245,
+  "physics": [
+    {
+      "board": "LONGBOARD",
+      "steps": 1939,
+      "meanMs": 0.030221763796539514,
+      "maxMs": 0.6000000014901161,
+      "phase": "ended"
+    },
+    {
+      "board": "HANDMEDOWN",
+      "steps": 1931,
+      "meanMs": 0.024702226823163982,
+      "maxMs": 0.5,
+      "phase": "ended"
+    },
+    {
+      "board": "CRUISER",
+      "steps": 1822,
+      "meanMs": 0.024533479694281136,
+      "maxMs": 0.5,
+      "phase": "ended"
+    },
+    {
+      "board": "STREET",
+      "steps": 1841,
+      "meanMs": 0.0236827811020862,
+      "maxMs": 0.6000000014901161,
+      "phase": "ended"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,4550 @@
+{
+  "build": "111",
+  "quality": "reference",
+  "meta": {
+    "viewport": [
+      384,
+      692,
+      2.8125
+    ],
+    "buffer": [
+      576,
+      1038
+    ],
+    "gpu": "ANGLE (ARM, Mali-G68, OpenGL ES 3.2)",
+    "ua": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Mobile Safari/537.36"
+  },
+  "mid": {
+    "phase": "ended",
+    "time": 12.658333333333255,
+    "reason": "DIRT"
+  },
+  "report": {
+    "build": "111",
+    "settings": [
+      {
+        "board": "STREET",
+        "rider": "BLACK",
+        "rope": 0.45,
+        "pace": 1,
+        "frames": 367
+      }
+    ],
+    "graphics": {
+      "pixelRatio": 1.5,
+      "paintSamples": 8,
+      "name": "reference",
+      "powerPreference": "low-power"
+    },
+    "replay": false,
+    "stages": {
+      "moduleReadyMs": 6512.700000047684,
+      "sceneConstructionMs": 9657.5,
+      "warmupMs": 7819.399999976158,
+      "firstPreviewMs": 25407.400000035763
+    },
+    "gpu": {
+      "available": false
+    },
+    "stalls": [
+      {
+        "timeMs": 36575.10000002384,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 34.39999997615814,
+        "drawMs": 25.80000001192093,
+        "boardMs": 1.5999999642372131,
+        "riderMs": 0,
+        "submitMs": 20.399999976158142,
+        "route": -9.981922743055557,
+        "speed": 0.1276041666666667,
+        "drawCalls": 228,
+        "triangles": 966064
+      },
+      {
+        "timeMs": 36612.40000003576,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 17.399999976158142,
+        "drawMs": 15.900000035762787,
+        "boardMs": 1.199999988079071,
+        "riderMs": 0,
+        "submitMs": 7.599999964237213,
+        "route": -9.975937500000002,
+        "speed": 0.15468750000000003,
+        "drawCalls": 228,
+        "triangles": 966064
+      },
+      {
+        "timeMs": 36645.90000003576,
+        "phase": "riding",
+        "intervalMs": 33.39999999999418,
+        "cpuMs": 35.30000001192093,
+        "drawMs": 26.5,
+        "boardMs": 8,
+        "riderMs": 0,
+        "submitMs": 13.699999928474426,
+        "route": -9.970295138888893,
+        "speed": 0.1782291666666667,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 36705,
+        "phase": "riding",
+        "intervalMs": 55.60000000000582,
+        "cpuMs": 38.80000001192093,
+        "drawMs": 18.80000001192093,
+        "boardMs": 3.100000023841858,
+        "riderMs": 0.10000002384185791,
+        "submitMs": 10.900000095367432,
+        "route": -9.958415798611115,
+        "speed": 0.22343749999999998,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 36748.40000003576,
+        "phase": "riding",
+        "intervalMs": 44.39999999999418,
+        "cpuMs": 25.69999998807907,
+        "drawMs": 24.5,
+        "boardMs": 3.300000011920929,
+        "riderMs": 7.200000047683716,
+        "submitMs": 11.599999964237213,
+        "route": -9.948232638888893,
+        "speed": 0.2585416666666666,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 36844.30000001192,
+        "phase": "riding",
+        "intervalMs": 66.69999999999709,
+        "cpuMs": 49.60000002384186,
+        "drawMs": 46.799999952316284,
+        "boardMs": 1.5,
+        "riderMs": 0,
+        "submitMs": 43.09999996423721,
+        "route": -9.92063715277778,
+        "speed": 0.33645833333333325,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 36901.90000003576,
+        "phase": "riding",
+        "intervalMs": 55.599999999998545,
+        "cpuMs": 15.899999976158142,
+        "drawMs": 14.800000011920929,
+        "boardMs": 1.199999988079071,
+        "riderMs": 0,
+        "submitMs": 10.999999940395355,
+        "route": -9.899357638888892,
+        "speed": 0.38604166666666656,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 36976.10000002384,
+        "phase": "riding",
+        "intervalMs": 55.599999999998545,
+        "cpuMs": 18.899999976158142,
+        "drawMs": 17.599999964237213,
+        "boardMs": 1.300000011920929,
+        "riderMs": 0,
+        "submitMs": 14.200000047683716,
+        "route": -9.867748263888892,
+        "speed": 0.44979166666666653,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 37017.10000002384,
+        "phase": "riding",
+        "intervalMs": 22.200000000004366,
+        "cpuMs": 34.19999998807907,
+        "drawMs": 33.40000003576279,
+        "boardMs": 1.300000011920929,
+        "riderMs": 0,
+        "submitMs": 24.80000001192093,
+        "route": -9.848121527777781,
+        "speed": 0.4852083333333332,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 37146.5,
+        "phase": "riding",
+        "intervalMs": 44.39999999999418,
+        "cpuMs": 13.800000011920929,
+        "drawMs": 12.699999988079071,
+        "boardMs": 1.4000000357627869,
+        "riderMs": 0,
+        "submitMs": 6.800000011920929,
+        "route": -9.77539930555556,
+        "speed": 0.5985416666666665,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 37263,
+        "phase": "riding",
+        "intervalMs": 100.19999999999709,
+        "cpuMs": 44.700000047683716,
+        "drawMs": 21.599999964237213,
+        "boardMs": 1.399999976158142,
+        "riderMs": 0,
+        "submitMs": 16,
+        "route": -9.699371527777782,
+        "speed": 0.6977083333333332,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 37314.60000002384,
+        "phase": "riding",
+        "intervalMs": 44.30000000000291,
+        "cpuMs": 30.30000001192093,
+        "drawMs": 25.900000035762787,
+        "boardMs": 1.399999976158142,
+        "riderMs": 0,
+        "submitMs": 21,
+        "route": -9.66941493055556,
+        "speed": 0.7331249999999998,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 37374.40000003576,
+        "phase": "riding",
+        "intervalMs": 44.39999999999418,
+        "cpuMs": 29.099999964237213,
+        "drawMs": 21,
+        "boardMs": 4.399999976158142,
+        "riderMs": 0,
+        "submitMs": 9.700000047683716,
+        "route": -9.637982638888893,
+        "speed": 0.7685416666666665,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 37405.5,
+        "phase": "riding",
+        "intervalMs": 55.700000000004366,
+        "cpuMs": 18,
+        "drawMs": 10.699999988079071,
+        "boardMs": 1.199999988079071,
+        "riderMs": 0,
+        "submitMs": 7.799999952316284,
+        "route": -9.591498263888893,
+        "speed": 0.8181249999999998,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 37559.90000003576,
+        "phase": "riding",
+        "intervalMs": 133.40000000000146,
+        "cpuMs": 16.19999998807907,
+        "drawMs": 14.100000023841858,
+        "boardMs": 1.5,
+        "riderMs": 0,
+        "submitMs": 8.600000023841858,
+        "route": -9.48985243055556,
+        "speed": 0.9172916666666664,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 37605.700000047684,
+        "phase": "riding",
+        "intervalMs": 33.299999999995634,
+        "cpuMs": 53.39999997615814,
+        "drawMs": 52,
+        "boardMs": 9,
+        "riderMs": 0,
+        "submitMs": 37.999999940395355,
+        "route": -9.458685763888893,
+        "speed": 0.9456249999999997,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 37663.200000047684,
+        "phase": "riding",
+        "intervalMs": 66.70000000000437,
+        "cpuMs": 29.599999964237213,
+        "drawMs": 22.599999964237213,
+        "boardMs": 2.699999988079071,
+        "riderMs": 0.10000002384185791,
+        "submitMs": 14.000000059604645,
+        "route": -9.393519097222226,
+        "speed": 1.0022916666666664,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 37698.90000003576,
+        "phase": "riding",
+        "intervalMs": 33.400000000001455,
+        "cpuMs": 25.599999964237213,
+        "drawMs": 23.399999976158142,
+        "boardMs": 1.300000011920929,
+        "riderMs": 0,
+        "submitMs": 19.900000035762787,
+        "route": -9.350871527777782,
+        "speed": 1.037708333333333,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 37728.60000002384,
+        "phase": "riding",
+        "intervalMs": 33.19999999999709,
+        "cpuMs": 34.30000001192093,
+        "drawMs": 33.09999996423721,
+        "boardMs": 2.400000035762787,
+        "riderMs": 0,
+        "submitMs": 22.200000047683716,
+        "route": -9.324574652777782,
+        "speed": 1.058958333333333,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 37817.30000001192,
+        "phase": "riding",
+        "intervalMs": 89,
+        "cpuMs": 42.90000003576279,
+        "drawMs": 31.600000023841858,
+        "boardMs": 6.599999964237213,
+        "riderMs": 0.10000002384185791,
+        "submitMs": 17.199999928474426,
+        "route": -9.223607638888893,
+        "speed": 1.1368749999999996,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 37862.30000001192,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 26.19999998807907,
+        "drawMs": 25.100000023841858,
+        "boardMs": 1.300000011920929,
+        "riderMs": 0.09999996423721313,
+        "submitMs": 15.800000011920929,
+        "route": -9.165524305555559,
+        "speed": 1.1793749999999996,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 37926.40000003576,
+        "phase": "riding",
+        "intervalMs": 33.400000000001455,
+        "cpuMs": 24.099999964237213,
+        "drawMs": 22.900000035762787,
+        "boardMs": 2.300000011920929,
+        "riderMs": 0.10000002384185791,
+        "submitMs": 16.600000023841858,
+        "route": -9.09507465277778,
+        "speed": 1.228958333333333,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 37979.60000002384,
+        "phase": "riding",
+        "intervalMs": 33.299999999995634,
+        "cpuMs": 54,
+        "drawMs": 50.30000001192093,
+        "boardMs": 1.300000011920929,
+        "riderMs": 0,
+        "submitMs": 46.89999997615814,
+        "route": -9.021732638888892,
+        "speed": 1.2785416666666662,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 38040.80000001192,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 18.600000023841858,
+        "drawMs": 17.69999998807907,
+        "boardMs": 2.300000011920929,
+        "riderMs": 0,
+        "submitMs": 12.800000011920929,
+        "route": -8.967574652777781,
+        "speed": 1.313958333333333,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 38064.90000003576,
+        "phase": "riding",
+        "intervalMs": 33.400000000001455,
+        "cpuMs": 30.599999964237213,
+        "drawMs": 29.30000001192093,
+        "boardMs": 4.199999988079071,
+        "riderMs": 0,
+        "submitMs": 22.80000001192093,
+        "route": -8.911940972222226,
+        "speed": 1.3493749999999995,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 38136.700000047684,
+        "phase": "riding",
+        "intervalMs": 33.299999999995634,
+        "cpuMs": 83.5,
+        "drawMs": 81.29999995231628,
+        "boardMs": 1.300000011920929,
+        "riderMs": 0,
+        "submitMs": 31.899999976158142,
+        "route": -8.831574652777782,
+        "speed": 1.3989583333333329,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 38231.10000002384,
+        "phase": "riding",
+        "intervalMs": 100,
+        "cpuMs": 53.19999998807907,
+        "drawMs": 37.69999998807907,
+        "boardMs": 7.199999988079071,
+        "riderMs": 0.10000002384185791,
+        "submitMs": 23.5,
+        "route": -8.687074652777783,
+        "speed": 1.4839583333333328,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 38289.30000001192,
+        "phase": "riding",
+        "intervalMs": 55.599999999998545,
+        "cpuMs": 43.69999998807907,
+        "drawMs": 42.200000047683716,
+        "boardMs": 1.5999999642372131,
+        "riderMs": 0,
+        "submitMs": 38.09999996423721,
+        "route": -8.598857638888894,
+        "speed": 1.5335416666666661,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 38338.200000047684,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 17.69999998807907,
+        "drawMs": 16.600000023841858,
+        "boardMs": 4.5,
+        "riderMs": 0,
+        "submitMs": 7.399999976158142,
+        "route": -8.520940972222228,
+        "speed": 1.5760416666666661,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 38383.200000047684,
+        "phase": "riding",
+        "intervalMs": 22.19999999999709,
+        "cpuMs": 43.09999996423721,
+        "drawMs": 42.19999998807907,
+        "boardMs": 1.4000000357627869,
+        "riderMs": 0.09999996423721313,
+        "submitMs": 13.599999964237213,
+        "route": -8.44089930555556,
+        "speed": 1.618541666666666,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 38451.10000002384,
+        "phase": "riding",
+        "intervalMs": 66.60000000000582,
+        "cpuMs": 54.60000002384186,
+        "drawMs": 52.5,
+        "boardMs": 1.7999999523162842,
+        "riderMs": 0,
+        "submitMs": 46.500000059604645,
+        "route": -8.330871527777783,
+        "speed": 1.6752083333333327,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 38507.40000003576,
+        "phase": "riding",
+        "intervalMs": 55.599999999998545,
+        "cpuMs": 46.30000001192093,
+        "drawMs": 34.10000002384186,
+        "boardMs": 2,
+        "riderMs": 0,
+        "submitMs": 28.899999976158142,
+        "route": -8.231498263888893,
+        "speed": 1.724791666666666,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 38568,
+        "phase": "riding",
+        "intervalMs": 55.599999999998545,
+        "cpuMs": 22.900000035762787,
+        "drawMs": 21.899999976158142,
+        "boardMs": 1.5999999642372131,
+        "riderMs": 0,
+        "submitMs": 18.400000035762787,
+        "route": -8.129232638888894,
+        "speed": 1.7743749999999994,
+        "drawCalls": 230,
+        "triangles": 966068
+      },
+      {
+        "timeMs": 38679.80000001192,
+        "phase": "riding",
+        "intervalMs": 77.80000000000291,
+        "cpuMs": 18.900000035762787,
+        "drawMs": 17.599999964237213,
+        "boardMs": 1.5,
+        "riderMs": 0,
+        "submitMs": 14.200000047683716,
+        "route": -7.91602430555556,
+        "speed": 1.873541666666666,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 38803.80000001192,
+        "phase": "riding",
+        "intervalMs": 88.90000000000146,
+        "cpuMs": 19.600000023841858,
+        "drawMs": 16.900000035762787,
+        "boardMs": 1.2999999523162842,
+        "riderMs": 0,
+        "submitMs": 12.299999952316284,
+        "route": -7.674748263888893,
+        "speed": 1.979791666666666,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 38843.200000047684,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 35.299999952316284,
+        "drawMs": 29.69999998807907,
+        "boardMs": 6.100000023841858,
+        "riderMs": 0.10000002384185791,
+        "submitMs": 19.19999998807907,
+        "route": -7.591371527777782,
+        "speed": 2.0152083333333333,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 38944.700000047684,
+        "phase": "riding",
+        "intervalMs": 100,
+        "cpuMs": 16.299999952316284,
+        "drawMs": 14.800000011920929,
+        "boardMs": 1.399999976158142,
+        "riderMs": 0.10000002384185791,
+        "submitMs": 7.299999952316284,
+        "route": -7.385246527777782,
+        "speed": 2.100208333333336,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 38998.5,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 40.700000047683716,
+        "drawMs": 36.59999996423721,
+        "boardMs": 1.5,
+        "riderMs": 0,
+        "submitMs": 32.5,
+        "route": -7.261081597222226,
+        "speed": 2.1497916666666708,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 39048.5,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 46.30000001192093,
+        "drawMs": 41.69999998807907,
+        "boardMs": 7.199999988079071,
+        "riderMs": 0,
+        "submitMs": 28.299999952316284,
+        "route": -7.170621527777781,
+        "speed": 2.1852083333333385,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 39096,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 36.200000047683716,
+        "drawMs": 35.30000001192093,
+        "boardMs": 2.399999976158142,
+        "riderMs": 0,
+        "submitMs": 31.19999998807907,
+        "route": -7.060121527777781,
+        "speed": 2.22770833333334,
+        "drawCalls": 230,
+        "triangles": 966068
+      },
+      {
+        "timeMs": 39133.90000003576,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 23.30000001192093,
+        "drawMs": 22.5,
+        "boardMs": 1.5,
+        "riderMs": 0,
+        "submitMs": 19.099999964237213,
+        "route": -6.966414930555558,
+        "speed": 2.2631250000000076,
+        "drawCalls": 230,
+        "triangles": 966068
+      },
+      {
+        "timeMs": 39343.40000003576,
+        "phase": "riding",
+        "intervalMs": 177.8000000000029,
+        "cpuMs": 49.69999998807907,
+        "drawMs": 48.19999998807907,
+        "boardMs": 1.100000023841858,
+        "riderMs": 0.09999996423721313,
+        "submitMs": 45.000000059604645,
+        "route": -6.65663715277778,
+        "speed": 2.3764583333333444,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 39395.10000002384,
+        "phase": "riding",
+        "intervalMs": 44.599999999998545,
+        "cpuMs": 12.5,
+        "drawMs": 11.699999988079071,
+        "boardMs": 1,
+        "riderMs": 0,
+        "submitMs": 8.800000011920929,
+        "route": -6.55673263888889,
+        "speed": 2.411875000000012,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 39417,
+        "phase": "riding",
+        "intervalMs": 11,
+        "cpuMs": 40.80000001192093,
+        "drawMs": 40,
+        "boardMs": 4.799999952316284,
+        "riderMs": 0.10000002384185791,
+        "submitMs": 32.799999952316284,
+        "route": -6.5163576388888895,
+        "speed": 2.4260416666666793,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 39473.80000001192,
+        "phase": "riding",
+        "intervalMs": 66.69999999999709,
+        "cpuMs": 24.19999998807907,
+        "drawMs": 16.400000035762787,
+        "boardMs": 1.7999999523162842,
+        "riderMs": 0,
+        "submitMs": 11.599999964237213,
+        "route": -6.352496527777777,
+        "speed": 2.4827083333333477,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 39548.60000002384,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 28.80000001192093,
+        "drawMs": 28,
+        "boardMs": 1.600000023841858,
+        "riderMs": 0.09999996423721313,
+        "submitMs": 16.5,
+        "route": -6.163637152777777,
+        "speed": 2.5464583333333497,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 39645.200000047684,
+        "phase": "riding",
+        "intervalMs": 66.69999999999709,
+        "cpuMs": 21.099999964237213,
+        "drawMs": 14.300000011920929,
+        "boardMs": 2.300000011920929,
+        "riderMs": 0,
+        "submitMs": 10.099999964237213,
+        "route": -5.904387152777774,
+        "speed": 2.6314583333333523,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 39748.5,
+        "phase": "riding",
+        "intervalMs": 55.599999999998545,
+        "cpuMs": 40.40000003576279,
+        "drawMs": 31.19999998807907,
+        "boardMs": 8.100000023841858,
+        "riderMs": 0,
+        "submitMs": 15.499999940395355,
+        "route": -5.636637152777773,
+        "speed": 2.716458333333355,
+        "drawCalls": 230,
+        "triangles": 966068
+      },
+      {
+        "timeMs": 39800.80000001192,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 23.900000035762787,
+        "drawMs": 21.099999964237213,
+        "boardMs": 1.300000011920929,
+        "riderMs": 0.10000002384185791,
+        "submitMs": 16.399999976158142,
+        "route": -5.522565972222216,
+        "speed": 2.7518750000000227,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 39835.40000003576,
+        "phase": "riding",
+        "intervalMs": 33.30000000000291,
+        "cpuMs": 34.80000001192093,
+        "drawMs": 16.80000001192093,
+        "boardMs": 2.200000047683716,
+        "riderMs": 0,
+        "submitMs": 8.499999940395355,
+        "route": -5.430246527777771,
+        "speed": 2.780208333333357,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 39875,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 26.200000047683716,
+        "drawMs": 23,
+        "boardMs": 1.399999976158142,
+        "riderMs": 0,
+        "submitMs": 12.699999928474426,
+        "route": -5.28999652777777,
+        "speed": 2.8227083333333582,
+        "drawCalls": 229,
+        "triangles": 966066
+      },
+      {
+        "timeMs": 39955.80000001192,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 14,
+        "drawMs": 13.200000047683716,
+        "boardMs": 1,
+        "riderMs": 0,
+        "submitMs": 9.900000035762787,
+        "route": 311.00097554748226,
+        "speed": 4.033854166666667,
+        "drawCalls": 214,
+        "triangles": 909864
+      },
+      {
+        "timeMs": 39970.5,
+        "phase": "riding",
+        "intervalMs": 22.19999999999709,
+        "cpuMs": 39,
+        "drawMs": 37.30000001192093,
+        "boardMs": 1.5999999642372131,
+        "riderMs": 0,
+        "submitMs": 18,
+        "route": 311.10214134609333,
+        "speed": 4.052916666666667,
+        "drawCalls": 211,
+        "triangles": 907377
+      },
+      {
+        "timeMs": 40011.80000001192,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 54.10000002384186,
+        "drawMs": 50.59999996423721,
+        "boardMs": 4.400000035762787,
+        "riderMs": 0.09999996423721313,
+        "submitMs": 39.09999996423721,
+        "route": 311.27176374192663,
+        "speed": 4.082604166666667,
+        "drawCalls": 206,
+        "triangles": 904730
+      },
+      {
+        "timeMs": 40071.200000047684,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 41.19999998807907,
+        "drawMs": 37.30000001192093,
+        "boardMs": 3.400000035762787,
+        "riderMs": 0,
+        "submitMs": 27.800000071525574,
+        "route": 311.4425597488711,
+        "speed": 4.109895833333335,
+        "drawCalls": 200,
+        "triangles": 884736
+      },
+      {
+        "timeMs": 40113.30000001192,
+        "phase": "riding",
+        "intervalMs": 55.5,
+        "cpuMs": 14.699999988079071,
+        "drawMs": 14,
+        "boardMs": 1.399999976158142,
+        "riderMs": 0,
+        "submitMs": 9.499999940395355,
+        "route": 311.6836404780377,
+        "speed": 4.150729166666668,
+        "drawCalls": 197,
+        "triangles": 882249
+      },
+      {
+        "timeMs": 40181.90000003576,
+        "phase": "riding",
+        "intervalMs": 33.400000000001455,
+        "cpuMs": 22.399999976158142,
+        "drawMs": 21.5,
+        "boardMs": 4.799999952316284,
+        "riderMs": 0,
+        "submitMs": 15.000000059604645,
+        "route": 311.9272732905377,
+        "speed": 4.196666666666669,
+        "drawCalls": 191,
+        "triangles": 862255
+      },
+      {
+        "timeMs": 40213.700000047684,
+        "phase": "riding",
+        "intervalMs": 44.39999999999418,
+        "cpuMs": 15.699999988079071,
+        "drawMs": 14.900000035762787,
+        "boardMs": 0.800000011920929,
+        "riderMs": 0,
+        "submitMs": 11.100000023841858,
+        "route": 312.1030154780377,
+        "speed": 4.231979166666668,
+        "drawCalls": 189,
+        "triangles": 859770
+      },
+      {
+        "timeMs": 40267,
+        "phase": "riding",
+        "intervalMs": 55.700000000004366,
+        "cpuMs": 16.400000035762787,
+        "drawMs": 11.5,
+        "boardMs": 0.9000000357627869,
+        "riderMs": 0,
+        "submitMs": 8.599999964237213,
+        "route": 312.3515337072044,
+        "speed": 4.2815625,
+        "drawCalls": 183,
+        "triangles": 850120
+      },
+      {
+        "timeMs": 40333.40000003576,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 17.899999976158142,
+        "drawMs": 15.600000023841858,
+        "boardMs": 0.800000011920929,
+        "riderMs": 0,
+        "submitMs": 12.399999976158142,
+        "route": 312.6390962072044,
+        "speed": 4.338229166666665,
+        "drawCalls": 181,
+        "triangles": 846520
+      },
+      {
+        "timeMs": 40411.700000047684,
+        "phase": "riding",
+        "intervalMs": 55.599999999998545,
+        "cpuMs": 16.69999998807907,
+        "drawMs": 15.599999964237213,
+        "boardMs": 1,
+        "riderMs": 0,
+        "submitMs": 13,
+        "route": 312.9670873476415,
+        "speed": 4.400442573828323,
+        "drawCalls": 176,
+        "triangles": 841406
+      },
+      {
+        "timeMs": 40479.5,
+        "phase": "riding",
+        "intervalMs": 55.69999999999709,
+        "cpuMs": 41.700000047683716,
+        "drawMs": 33.89999997615814,
+        "boardMs": 3.5,
+        "riderMs": 0.10000002384185791,
+        "submitMs": 23.999999940395355,
+        "route": 313.2623771897279,
+        "speed": 4.451033720718706,
+        "drawCalls": 175,
+        "triangles": 832510
+      },
+      {
+        "timeMs": 40551,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 37.30000001192093,
+        "drawMs": 35.69999998807907,
+        "boardMs": 3.300000011920929,
+        "riderMs": 0,
+        "submitMs": 24.899999976158142,
+        "route": 313.44855534467376,
+        "speed": 4.479423161800183,
+        "drawCalls": 173,
+        "triangles": 810461
+      },
+      {
+        "timeMs": 40589.10000002384,
+        "phase": "riding",
+        "intervalMs": 66.69999999999709,
+        "cpuMs": 33.69999998807907,
+        "drawMs": 32.80000001192093,
+        "boardMs": 2.399999976158142,
+        "riderMs": 0,
+        "submitMs": 26.600000023841858,
+        "route": 313.74872025525866,
+        "speed": 4.519429600863878,
+        "drawCalls": 163,
+        "triangles": 796813
+      },
+      {
+        "timeMs": 40625.80000001192,
+        "phase": "riding",
+        "intervalMs": 33.30000000000291,
+        "cpuMs": 45.10000002384186,
+        "drawMs": 42.89999997615814,
+        "boardMs": 4,
+        "riderMs": 0,
+        "submitMs": 29.099999964237213,
+        "route": 313.8997368993055,
+        "speed": 4.536932820395726,
+        "drawCalls": 160,
+        "triangles": 796761
+      },
+      {
+        "timeMs": 40673.200000047684,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 23.799999952316284,
+        "drawMs": 20.5,
+        "boardMs": 3.699999988079071,
+        "riderMs": 0.10000002384185791,
+        "submitMs": 11.500000059604645,
+        "route": 314.12727335131865,
+        "speed": 4.560062649693498,
+        "drawCalls": 158,
+        "triangles": 795753
+      },
+      {
+        "timeMs": 40736.60000002384,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 10.100000023841858,
+        "drawMs": 9.399999976158142,
+        "boardMs": 0.800000011920929,
+        "riderMs": 0,
+        "submitMs": 6.800000011920929,
+        "route": 314.4322517277631,
+        "speed": 4.585069088757193,
+        "drawCalls": 159,
+        "triangles": 795755
+      },
+      {
+        "timeMs": 40803.60000002384,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 20.399999976158142,
+        "drawMs": 17.5,
+        "boardMs": 3.400000035762787,
+        "riderMs": 0.10000002384185791,
+        "submitMs": 10.5,
+        "route": 314.7386472001451,
+        "speed": 4.6034088611542225,
+        "drawCalls": 159,
+        "triangles": 795755
+      },
+      {
+        "timeMs": 40847.5,
+        "phase": "riding",
+        "intervalMs": 22.299999999995634,
+        "cpuMs": 37.5,
+        "drawMs": 35.30000001192093,
+        "boardMs": 3.5,
+        "riderMs": 0.10000002384185791,
+        "submitMs": 26.30000001192093,
+        "route": 314.93066650677576,
+        "speed": 4.611485802235699,
+        "drawCalls": 158,
+        "triangles": 795753
+      },
+      {
+        "timeMs": 40912.40000003576,
+        "phase": "riding",
+        "intervalMs": 66.70000000000437,
+        "cpuMs": 41.69999998807907,
+        "drawMs": 36.30000001192093,
+        "boardMs": 3.300000011920929,
+        "riderMs": 0,
+        "submitMs": 27.30000001192093,
+        "route": 315.23841684338976,
+        "speed": 4.618992241299395,
+        "drawCalls": 158,
+        "triangles": 795753
+      },
+      {
+        "timeMs": 40957.700000047684,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 37,
+        "drawMs": 33.60000002384186,
+        "boardMs": 3.400000035762787,
+        "riderMs": 0,
+        "submitMs": 24.90000009536743,
+        "route": 315.43091618669314,
+        "speed": 4.620298349047538,
+        "drawCalls": 158,
+        "triangles": 795753
+      },
+      {
+        "timeMs": 40996.700000047684,
+        "phase": "riding",
+        "intervalMs": 33.299999999995634,
+        "cpuMs": 34.39999997615814,
+        "drawMs": 32.39999997615814,
+        "boardMs": 3.199999988079071,
+        "riderMs": 0,
+        "submitMs": 23.80000001192093,
+        "route": 315.5849131779016,
+        "speed": 4.619468235246053,
+        "drawCalls": 158,
+        "triangles": 795753
+      },
+      {
+        "timeMs": 41033.10000002384,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 42.5,
+        "drawMs": 38.90000003576279,
+        "boardMs": 6.699999988079071,
+        "riderMs": 0.19999998807907104,
+        "submitMs": 26.499999940395355,
+        "route": 315.815774317324,
+        "speed": 4.615098064543824,
+        "drawCalls": 158,
+        "triangles": 795753
+      },
+      {
+        "timeMs": 41077.700000047684,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 36.19999998807907,
+        "drawMs": 33.5,
+        "boardMs": 3.599999964237213,
+        "riderMs": 0.19999998807907104,
+        "submitMs": 22.69999998807907,
+        "route": 316.0079160907626,
+        "speed": 4.6085916722919675,
+        "drawCalls": 158,
+        "triangles": 795753
+      },
+      {
+        "timeMs": 41115.5,
+        "phase": "riding",
+        "intervalMs": 33.30000000000291,
+        "cpuMs": 36.60000002384186,
+        "drawMs": 33.30000001192093,
+        "boardMs": 3.800000011920929,
+        "riderMs": 0.09999996423721313,
+        "submitMs": 23.399999976158142,
+        "route": 316.16139265107927,
+        "speed": 4.601511558490482,
+        "drawCalls": 158,
+        "triangles": 795753
+      },
+      {
+        "timeMs": 41154.200000047684,
+        "phase": "riding",
+        "intervalMs": 33.39999999999418,
+        "cpuMs": 39.59999996423721,
+        "drawMs": 37.39999997615814,
+        "boardMs": 4.899999976158142,
+        "riderMs": 0,
+        "submitMs": 26.30000001192093,
+        "route": 316.3145984853803,
+        "speed": 4.592764778022331,
+        "drawCalls": 158,
+        "triangles": 795753
+      },
+      {
+        "timeMs": 41195.5,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 39.90000003576279,
+        "drawMs": 36.80000001192093,
+        "boardMs": 4,
+        "riderMs": 0.10000002384185791,
+        "submitMs": 26,
+        "route": 316.50564043438055,
+        "speed": 4.57948755243714,
+        "drawCalls": 158,
+        "triangles": 795753
+      },
+      {
+        "timeMs": 41237.5,
+        "phase": "riding",
+        "intervalMs": 44.30000000000291,
+        "cpuMs": 35,
+        "drawMs": 31.80000001192093,
+        "boardMs": 3.399999976158142,
+        "riderMs": 0,
+        "submitMs": 23.100000023841858,
+        "route": 316.7340659954642,
+        "speed": 4.56023207794465,
+        "drawCalls": 158,
+        "triangles": 795753
+      },
+      {
+        "timeMs": 41273.30000001192,
+        "phase": "riding",
+        "intervalMs": 33.5,
+        "cpuMs": 21.600000023841858,
+        "drawMs": 21,
+        "boardMs": 8.199999988079071,
+        "riderMs": 0.10000002384185791,
+        "submitMs": 5.599999964237213,
+        "route": 316.8857995212265,
+        "speed": 4.547152283991045,
+        "drawCalls": 158,
+        "triangles": 795753
+      },
+      {
+        "timeMs": 41379.80000001192,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 11.100000023841858,
+        "drawMs": 10.399999976158142,
+        "boardMs": 0.800000011920929,
+        "riderMs": 0,
+        "submitMs": 7.599999964237213,
+        "route": 317.37614519908414,
+        "speed": 4.509186691145856,
+        "drawCalls": 157,
+        "triangles": 795751
+      },
+      {
+        "timeMs": 41436.40000003576,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 13,
+        "drawMs": 8.399999976158142,
+        "boardMs": 0.800000011920929,
+        "riderMs": 0.10000002384185791,
+        "submitMs": 5.599999964237213,
+        "route": 317.6385787977704,
+        "speed": 4.491335066370181,
+        "drawCalls": 157,
+        "triangles": 795751
+      },
+      {
+        "timeMs": 41467.80000001192,
+        "phase": "riding",
+        "intervalMs": 33.400000000001455,
+        "cpuMs": 7,
+        "drawMs": 6.5,
+        "boardMs": 0.6000000238418579,
+        "riderMs": 0,
+        "submitMs": 4.500000059604645,
+        "route": 317.7880866337163,
+        "speed": 4.481636055523202,
+        "drawCalls": 157,
+        "triangles": 795751
+      },
+      {
+        "timeMs": 41535.40000003576,
+        "phase": "riding",
+        "intervalMs": 55.5,
+        "cpuMs": 7.399999976158142,
+        "drawMs": 6.400000035762787,
+        "boardMs": 0.699999988079071,
+        "riderMs": 0,
+        "submitMs": 4.399999976158142,
+        "route": 318.08618567120595,
+        "speed": 4.463961087993175,
+        "drawCalls": 157,
+        "triangles": 795751
+      },
+      {
+        "timeMs": 41601.80000001192,
+        "phase": "riding",
+        "intervalMs": 55.5,
+        "cpuMs": 9.100000023841858,
+        "drawMs": 8.400000035762787,
+        "boardMs": 1.199999988079071,
+        "riderMs": 0.10000002384185791,
+        "submitMs": 6,
+        "route": 318.3831628082915,
+        "speed": 4.44765976152016,
+        "drawCalls": 157,
+        "triangles": 795751
+      },
+      {
+        "timeMs": 41656.40000003576,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 7.800000011920929,
+        "drawMs": 7.199999988079071,
+        "boardMs": 0.699999988079071,
+        "riderMs": 0,
+        "submitMs": 4.900000035762787,
+        "route": 318.60522689520855,
+        "speed": 4.436808569080112,
+        "drawCalls": 157,
+        "triangles": 795751
+      },
+      {
+        "timeMs": 41704.40000003576,
+        "phase": "riding",
+        "intervalMs": 33.400000000001455,
+        "cpuMs": 8.899999976158142,
+        "drawMs": 8.5,
+        "boardMs": 0.800000011920929,
+        "riderMs": 0,
+        "submitMs": 6.100000023841858,
+        "route": 318.8267606726568,
+        "speed": 4.426403852139493,
+        "drawCalls": 157,
+        "triangles": 795751
+      },
+      {
+        "timeMs": 41802,
+        "phase": "riding",
+        "intervalMs": 44.39999999999418,
+        "cpuMs": 9.400000035762787,
+        "drawMs": 8.599999964237213,
+        "boardMs": 0.8999999761581421,
+        "riderMs": 0,
+        "submitMs": 4.899999916553497,
+        "route": 319.2683950187416,
+        "speed": 4.408136086751,
+        "drawCalls": 159,
+        "triangles": 808407
+      },
+      {
+        "timeMs": 41857.30000001192,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 9.600000023841858,
+        "drawMs": 8.800000011920929,
+        "boardMs": 1,
+        "riderMs": 0,
+        "submitMs": 6.300000071525574,
+        "route": 319.4885602986619,
+        "speed": 4.400104755450792,
+        "drawCalls": 159,
+        "triangles": 808407
+      },
+      {
+        "timeMs": 41919.10000002384,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 10.5,
+        "drawMs": 7.400000035762787,
+        "boardMs": 0.6000000238418579,
+        "riderMs": 0,
+        "submitMs": 5.299999952316284,
+        "route": 319.7449344046267,
+        "speed": 4.391202186185697,
+        "drawCalls": 163,
+        "triangles": 831968
+      },
+      {
+        "timeMs": 41971,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 10.700000047683716,
+        "drawMs": 9.399999976158142,
+        "boardMs": 1,
+        "riderMs": 0,
+        "submitMs": 6.699999988079071,
+        "route": 320.00081589174124,
+        "speed": 4.383323429772609,
+        "drawCalls": 164,
+        "triangles": 840864
+      },
+      {
+        "timeMs": 42012.5,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 9.300000011920929,
+        "drawMs": 6.800000011920929,
+        "boardMs": 0.7000000476837158,
+        "riderMs": 0,
+        "submitMs": 4.999999940395355,
+        "route": 320.1833174355609,
+        "speed": 4.377878318849881,
+        "drawCalls": 162,
+        "triangles": 839352
+      },
+      {
+        "timeMs": 42072.200000047684,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 10.599999964237213,
+        "drawMs": 9.5,
+        "boardMs": 1,
+        "riderMs": 0,
+        "submitMs": 7.300000011920929,
+        "route": 320.43845584642816,
+        "speed": 4.3709466361389735,
+        "drawCalls": 162,
+        "triangles": 839352
+      },
+      {
+        "timeMs": 42111.700000047684,
+        "phase": "riding",
+        "intervalMs": 33.5,
+        "cpuMs": 10.699999988079071,
+        "drawMs": 9.700000047683716,
+        "boardMs": 1.600000023841858,
+        "riderMs": 0.09999996423721313,
+        "submitMs": 6.500000059604645,
+        "route": 320.62046758152457,
+        "speed": 4.366428161088732,
+        "drawCalls": 162,
+        "triangles": 839352
+      },
+      {
+        "timeMs": 42168.90000003576,
+        "phase": "riding",
+        "intervalMs": 55.400000000001455,
+        "cpuMs": 10.800000011920929,
+        "drawMs": 8,
+        "boardMs": 0.6000000238418579,
+        "riderMs": 0,
+        "submitMs": 6,
+        "route": 320.8749689337956,
+        "speed": 4.360296875267613,
+        "drawCalls": 162,
+        "triangles": 839352
+      },
+      {
+        "timeMs": 42223.5,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 13.200000047683716,
+        "drawMs": 11.5,
+        "boardMs": 2,
+        "riderMs": 0,
+        "submitMs": 7.800000011920929,
+        "route": 321.0928553689168,
+        "speed": 4.355796732273593,
+        "drawCalls": 162,
+        "triangles": 839352
+      },
+      {
+        "timeMs": 42279.10000002384,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 10.600000023841858,
+        "drawMs": 9.399999976158142,
+        "boardMs": 0.699999988079071,
+        "riderMs": 0,
+        "submitMs": 7.399999976158142,
+        "route": 321.34676679730836,
+        "speed": 4.350561268521715,
+        "drawCalls": 163,
+        "triangles": 839354
+      },
+      {
+        "timeMs": 42378.80000001192,
+        "phase": "riding",
+        "intervalMs": 55.599999999998545,
+        "cpuMs": 12.199999988079071,
+        "drawMs": 10.800000011920929,
+        "boardMs": 1.100000023841858,
+        "riderMs": 0,
+        "submitMs": 8.300000011920929,
+        "route": 321.7814114347907,
+        "speed": 4.342918509704168,
+        "drawCalls": 162,
+        "triangles": 837554
+      },
+      {
+        "timeMs": 42482.5,
+        "phase": "riding",
+        "intervalMs": 55.599999999998545,
+        "cpuMs": 15,
+        "drawMs": 12.5,
+        "boardMs": 0.699999988079071,
+        "riderMs": 0,
+        "submitMs": 10.400000035762787,
+        "route": 322.1792103522013,
+        "speed": 4.336889750646231,
+        "drawCalls": 162,
+        "triangles": 839352
+      },
+      {
+        "timeMs": 42589.60000002384,
+        "phase": "riding",
+        "intervalMs": 55.5,
+        "cpuMs": 11.5,
+        "drawMs": 10.199999988079071,
+        "boardMs": 1.100000023841858,
+        "riderMs": 0,
+        "submitMs": 7.5,
+        "route": 322.68475742317514,
+        "speed": 4.3302492242692505,
+        "drawCalls": 159,
+        "triangles": 808407
+      },
+      {
+        "timeMs": 42643.80000001192,
+        "phase": "riding",
+        "intervalMs": 33.39999999999418,
+        "cpuMs": 8.699999988079071,
+        "drawMs": 7.800000011920929,
+        "boardMs": 0.800000011920929,
+        "riderMs": 0.09999996423721313,
+        "submitMs": 5.500000059604645,
+        "route": 322.9011940632726,
+        "speed": 4.327820834251884,
+        "drawCalls": 158,
+        "triangles": 795753
+      },
+      {
+        "timeMs": 42677.80000001192,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 8.400000035762787,
+        "drawMs": 7.5,
+        "boardMs": 1,
+        "riderMs": 0,
+        "submitMs": 5.099999964237213,
+        "route": 323.0814728890847,
+        "speed": 4.325871967698174,
+        "drawCalls": 158,
+        "triangles": 795753
+      },
+      {
+        "timeMs": 42758.5,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 10.700000047683716,
+        "drawMs": 9.599999964237213,
+        "boardMs": 1.0999999642372131,
+        "riderMs": 0,
+        "submitMs": 6.5,
+        "route": 323.40577100926413,
+        "speed": 4.32271704018067,
+        "drawCalls": 159,
+        "triangles": 795755
+      },
+      {
+        "timeMs": 42803.80000001192,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 8.900000035762787,
+        "drawMs": 7.699999988079071,
+        "boardMs": 0.6000000238418579,
+        "riderMs": 0,
+        "submitMs": 5.899999976158142,
+        "route": 323.6218483943394,
+        "speed": 4.320678793810555,
+        "drawCalls": 159,
+        "triangles": 795755
+      },
+      {
+        "timeMs": 42879,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 12.200000047683716,
+        "drawMs": 10.900000035762787,
+        "boardMs": 0.5999999642372131,
+        "riderMs": 0,
+        "submitMs": 9.000000059604645,
+        "route": 323.9457847059396,
+        "speed": 4.318151874881008,
+        "drawCalls": 158,
+        "triangles": 795753
+      },
+      {
+        "timeMs": 42938.60000002384,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 12.899999976158142,
+        "drawMs": 11.300000011920929,
+        "boardMs": 0.800000011920929,
+        "riderMs": 0,
+        "submitMs": 8.799999952316284,
+        "route": 324.1976072869697,
+        "speed": 4.316089345366151,
+        "drawCalls": 158,
+        "triangles": 795753
+      },
+      {
+        "timeMs": 42992.40000003576,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 10.899999976158142,
+        "drawMs": 8.700000047683716,
+        "boardMs": 1.2000000476837158,
+        "riderMs": 0,
+        "submitMs": 6.100000023841858,
+        "route": 324.41336959991423,
+        "speed": 4.3148093988959735,
+        "drawCalls": 158,
+        "triangles": 795753
+      },
+      {
+        "timeMs": 43058.700000047684,
+        "phase": "riding",
+        "intervalMs": 55.5,
+        "cpuMs": 12.799999952316284,
+        "drawMs": 11.600000023841858,
+        "boardMs": 0.9000000357627869,
+        "riderMs": 0,
+        "submitMs": 7.300000071525574,
+        "route": 324.70094734764996,
+        "speed": 4.312797455445931,
+        "drawCalls": 157,
+        "triangles": 795529
+      },
+      {
+        "timeMs": 43153.90000003576,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 16.30000001192093,
+        "drawMs": 10.699999988079071,
+        "boardMs": 1.9000000357627869,
+        "riderMs": 0,
+        "submitMs": 7.600000023841858,
+        "route": 325.09618280434654,
+        "speed": 4.310669503469465,
+        "drawCalls": 157,
+        "triangles": 795529
+      },
+      {
+        "timeMs": 43211.40000003576,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 8.699999988079071,
+        "drawMs": 7.800000011920929,
+        "boardMs": 1.300000011920929,
+        "riderMs": 0.10000002384185791,
+        "submitMs": 5.099999964237213,
+        "route": 325.383504023625,
+        "speed": 4.309376052421401,
+        "drawCalls": 157,
+        "triangles": 795529
+      },
+      {
+        "timeMs": 43272.10000002384,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 11.300000011920929,
+        "drawMs": 9.5,
+        "boardMs": 0.7999999523162842,
+        "riderMs": 0,
+        "submitMs": 7.499999940395355,
+        "route": 325.6348415763926,
+        "speed": 4.308085043216373,
+        "drawCalls": 158,
+        "triangles": 795531
+      },
+      {
+        "timeMs": 43322.60000002384,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 10.399999976158142,
+        "drawMs": 9.400000035762787,
+        "boardMs": 1.100000023841858,
+        "riderMs": 0,
+        "submitMs": 6.699999988079071,
+        "route": 325.85021823609156,
+        "speed": 4.307309210302299,
+        "drawCalls": 158,
+        "triangles": 795309
+      },
+      {
+        "timeMs": 43413,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 10.900000035762787,
+        "drawMs": 10,
+        "boardMs": 1.100000023841858,
+        "riderMs": 0,
+        "submitMs": 7.199999988079071,
+        "route": 326.24497302413323,
+        "speed": 4.305630606431979,
+        "drawCalls": 157,
+        "triangles": 795307
+      },
+      {
+        "timeMs": 43472.40000003576,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 12.099999964237213,
+        "drawMs": 10.800000011920929,
+        "boardMs": 0.8999999761581421,
+        "riderMs": 0,
+        "submitMs": 5.899999976158142,
+        "route": 326.4961170553347,
+        "speed": 4.3049745577506755,
+        "drawCalls": 157,
+        "triangles": 795307
+      },
+      {
+        "timeMs": 43527,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 12.400000035762787,
+        "drawMs": 11.700000047683716,
+        "boardMs": 1.300000011920929,
+        "riderMs": 0,
+        "submitMs": 8.099999964237213,
+        "route": 326.71134158387895,
+        "speed": 4.304153546046053,
+        "drawCalls": 157,
+        "triangles": 795085
+      },
+      {
+        "timeMs": 43623.200000047684,
+        "phase": "riding",
+        "intervalMs": 33.39999999999418,
+        "cpuMs": 10,
+        "drawMs": 9.199999988079071,
+        "boardMs": 1,
+        "riderMs": 0,
+        "submitMs": 6.699999988079071,
+        "route": 327.1417040949333,
+        "speed": 4.303018982680318,
+        "drawCalls": 157,
+        "triangles": 795085
+      },
+      {
+        "timeMs": 43701.30000001192,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 19.600000023841858,
+        "drawMs": 18.19999998807907,
+        "boardMs": 1.800000011920929,
+        "riderMs": 0,
+        "submitMs": 14.799999952316284,
+        "route": 327.50025553352845,
+        "speed": 4.302259163664317,
+        "drawCalls": 157,
+        "triangles": 795085
+      },
+      {
+        "timeMs": 43735.5,
+        "phase": "riding",
+        "intervalMs": 33.400000000001455,
+        "cpuMs": 10.800000011920929,
+        "drawMs": 10.200000047683716,
+        "boardMs": 1.300000011920929,
+        "riderMs": 0.09999996423721313,
+        "submitMs": 7.699999988079071,
+        "route": 327.64365534559687,
+        "speed": 4.3018381497229505,
+        "drawCalls": 157,
+        "triangles": 794863
+      },
+      {
+        "timeMs": 43790.5,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 10.5,
+        "drawMs": 9.700000047683716,
+        "boardMs": 1,
+        "riderMs": 0,
+        "submitMs": 7.100000023841858,
+        "route": 327.85873719119166,
+        "speed": 4.301609990301186,
+        "drawCalls": 157,
+        "triangles": 794737
+      },
+      {
+        "timeMs": 43849,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 9.100000023841858,
+        "drawMs": 8.099999964237213,
+        "boardMs": 1,
+        "riderMs": 0,
+        "submitMs": 5.799999952316284,
+        "route": 328.1096418898617,
+        "speed": 4.300941734749872,
+        "drawCalls": 157,
+        "triangles": 794737
+      },
+      {
+        "timeMs": 43900.90000003576,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 10.300000011920929,
+        "drawMs": 9.5,
+        "boardMs": 0.8999999761581421,
+        "riderMs": 0,
+        "submitMs": 7.399999976158142,
+        "route": 328.36051783205,
+        "speed": 4.300693348093226,
+        "drawCalls": 156,
+        "triangles": 794735
+      },
+      {
+        "timeMs": 43995.90000003576,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 10.5,
+        "drawMs": 9.800000011920929,
+        "boardMs": 3.199999988079071,
+        "riderMs": 0,
+        "submitMs": 5.299999952316284,
+        "route": 328.7188703695801,
+        "speed": 4.299879552561296,
+        "drawCalls": 155,
+        "triangles": 792937
+      },
+      {
+        "timeMs": 44048.30000001192,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 13.100000023841858,
+        "drawMs": 11.800000011920929,
+        "boardMs": 1.5,
+        "riderMs": 0,
+        "submitMs": 8.599999964237213,
+        "route": 328.96969615382176,
+        "speed": 4.299687558912327,
+        "drawCalls": 156,
+        "triangles": 792939
+      },
+      {
+        "timeMs": 44103.30000001192,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 13,
+        "drawMs": 12,
+        "boardMs": 3.099999964237213,
+        "riderMs": 0,
+        "submitMs": 6.999999940395355,
+        "route": 329.22049452606,
+        "speed": 4.299223842929494,
+        "drawCalls": 156,
+        "triangles": 792939
+      },
+      {
+        "timeMs": 44162.40000003576,
+        "phase": "riding",
+        "intervalMs": 44.5,
+        "cpuMs": 13.300000011920929,
+        "drawMs": 11.900000035762787,
+        "boardMs": 5.199999988079071,
+        "riderMs": 0,
+        "submitMs": 5.199999988079071,
+        "route": 329.4354577394131,
+        "speed": 4.299133055372404,
+        "drawCalls": 156,
+        "triangles": 792939
+      },
+      {
+        "timeMs": 44244.30000001192,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 12.400000035762787,
+        "drawMs": 11.300000011920929,
+        "boardMs": 4.199999988079071,
+        "riderMs": 0.10000002384185791,
+        "submitMs": 5.899999976158142,
+        "route": 329.82951725061116,
+        "speed": 4.298792256267454,
+        "drawCalls": 157,
+        "triangles": 792941
+      },
+      {
+        "timeMs": 44302,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 23.80000001192093,
+        "drawMs": 14.599999964237213,
+        "boardMs": 5.700000047683716,
+        "riderMs": 0,
+        "submitMs": 6.899999976158142,
+        "route": 330.08026559536046,
+        "speed": 4.298361461489017,
+        "drawCalls": 158,
+        "triangles": 792943
+      },
+      {
+        "timeMs": 44445.30000001192,
+        "phase": "riding",
+        "intervalMs": 55.599999999998545,
+        "cpuMs": 12.800000011920929,
+        "drawMs": 11.699999988079071,
+        "boardMs": 4.699999988079071,
+        "riderMs": 0,
+        "submitMs": 5.499999940395355,
+        "route": 330.6891677320873,
+        "speed": 4.29781614773621,
+        "drawCalls": 154,
+        "triangles": 789827
+      },
+      {
+        "timeMs": 44500.700000047684,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 15.699999988079071,
+        "drawMs": 14.399999976158142,
+        "boardMs": 5.300000011920929,
+        "riderMs": 0,
+        "submitMs": 7.600000023841858,
+        "route": 330.9398784550249,
+        "speed": 4.297778147279253,
+        "drawCalls": 158,
+        "triangles": 794741
+      },
+      {
+        "timeMs": 44565,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 16.900000035762787,
+        "drawMs": 15,
+        "boardMs": 5.400000035762787,
+        "riderMs": 0.10000002384185791,
+        "submitMs": 8.300000071525574,
+        "route": 331.1547585829709,
+        "speed": 4.2974804012715415,
+        "drawCalls": 158,
+        "triangles": 794741
+      },
+      {
+        "timeMs": 44661.30000001192,
+        "phase": "riding",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 11.300000011920929,
+        "drawMs": 9.899999976158142,
+        "boardMs": 3.899999976158142,
+        "riderMs": 0,
+        "submitMs": 4.900000035762787,
+        "route": 331.58450825354646,
+        "speed": 4.2972771439368636,
+        "drawCalls": 154,
+        "triangles": 791625
+      },
+      {
+        "timeMs": 44691.200000047684,
+        "phase": "riding",
+        "intervalMs": 33.400000000001455,
+        "cpuMs": 13.899999976158142,
+        "drawMs": 12.199999988079071,
+        "boardMs": 4.100000023841858,
+        "riderMs": 0,
+        "submitMs": 6.800000011920929,
+        "route": 331.72775030844167,
+        "speed": 4.297367864247511,
+        "drawCalls": 153,
+        "triangles": 791623
+      },
+      {
+        "timeMs": 44906.200000047684,
+        "phase": "crashed",
+        "intervalMs": 44.5,
+        "cpuMs": 15.799999952316284,
+        "drawMs": 14.900000035762787,
+        "boardMs": 5.100000023841858,
+        "riderMs": 3.599999964237213,
+        "submitMs": 4.800000071525574,
+        "route": 332.6575829052476,
+        "speed": 4.276522365822224,
+        "drawCalls": 138,
+        "triangles": 767967
+      },
+      {
+        "timeMs": 44923,
+        "phase": "crashed",
+        "intervalMs": 22.200000000004366,
+        "cpuMs": 40.10000002384186,
+        "drawMs": 39.19999998807907,
+        "boardMs": 27.600000023841858,
+        "riderMs": 5,
+        "submitMs": 5.199999988079071,
+        "route": 332.7288042284233,
+        "speed": 4.272163676562796,
+        "drawCalls": 133,
+        "triangles": 767847
+      },
+      {
+        "timeMs": 45034.5,
+        "phase": "crashed",
+        "intervalMs": 55.5,
+        "cpuMs": 22.80000001192093,
+        "drawMs": 21.69999998807907,
+        "boardMs": 2.300000011920929,
+        "riderMs": 13.400000035762787,
+        "submitMs": 4.599999964237213,
+        "route": 333.22478471344346,
+        "speed": 4.229986185080138,
+        "drawCalls": 118,
+        "triangles": 734179
+      },
+      {
+        "timeMs": 45157.60000002384,
+        "phase": "crashed",
+        "intervalMs": 55.5,
+        "cpuMs": 19.399999976158142,
+        "drawMs": 18,
+        "boardMs": 2.200000047683716,
+        "riderMs": 10.100000023841858,
+        "submitMs": 4.300000011920929,
+        "route": 333.7145684494574,
+        "speed": 4.167392026930814,
+        "drawCalls": 114,
+        "triangles": 725989
+      },
+      {
+        "timeMs": 45197.80000001192,
+        "phase": "crashed",
+        "intervalMs": 33.400000000001455,
+        "cpuMs": 21.900000035762787,
+        "drawMs": 20.099999964237213,
+        "boardMs": 3.699999988079071,
+        "riderMs": 10.099999964237213,
+        "submitMs": 5,
+        "route": 333.8530351480248,
+        "speed": 4.145757981745292,
+        "drawCalls": 114,
+        "triangles": 725989
+      },
+      {
+        "timeMs": 45257,
+        "phase": "crashed",
+        "intervalMs": 44.5,
+        "cpuMs": 19.30000001192093,
+        "drawMs": 17.80000001192093,
+        "boardMs": 4,
+        "riderMs": 8.600000023841858,
+        "submitMs": 4.100000023841858,
+        "route": 334.1276454184189,
+        "speed": 4.0974898913742495,
+        "drawCalls": 114,
+        "triangles": 725989
+      },
+      {
+        "timeMs": 45456.10000002384,
+        "phase": "crashed",
+        "intervalMs": 55.599999999998545,
+        "cpuMs": 23.69999998807907,
+        "drawMs": 19.400000035762787,
+        "boardMs": 3.599999964237213,
+        "riderMs": 10.800000011920929,
+        "submitMs": 3.600000023841858,
+        "route": 334.9288912156748,
+        "speed": 3.912685620261122,
+        "drawCalls": 109,
+        "triangles": 678366
+      },
+      {
+        "timeMs": 45556.30000001192,
+        "phase": "crashed",
+        "intervalMs": 55.599999999998545,
+        "cpuMs": 15.5,
+        "drawMs": 14,
+        "boardMs": 2.699999988079071,
+        "riderMs": 6.5,
+        "submitMs": 3.699999988079071,
+        "route": 335.3140600439694,
+        "speed": 3.7977834847045586,
+        "drawCalls": 109,
+        "triangles": 678366
+      },
+      {
+        "timeMs": 45633.90000003576,
+        "phase": "crashed",
+        "intervalMs": 66.69999999999709,
+        "cpuMs": 16,
+        "drawMs": 14.600000023841858,
+        "boardMs": 2.400000035762787,
+        "riderMs": 6.100000023841858,
+        "submitMs": 5.000000059604645,
+        "route": 335.6256998187672,
+        "speed": 3.6905733717407556,
+        "drawCalls": 109,
+        "triangles": 678366
+      },
+      {
+        "timeMs": 45703.10000002384,
+        "phase": "crashed",
+        "intervalMs": 55.599999999998545,
+        "cpuMs": 15.300000011920929,
+        "drawMs": 13.5,
+        "boardMs": 0.800000011920929,
+        "riderMs": 6.899999976158142,
+        "submitMs": 4.400000095367432,
+        "route": 335.8682769484943,
+        "speed": 3.5973052813697133,
+        "drawCalls": 108,
+        "triangles": 678142
+      },
+      {
+        "timeMs": 45769.60000002384,
+        "phase": "crashed",
+        "intervalMs": 55.599999999998545,
+        "cpuMs": 13.600000023841858,
+        "drawMs": 12.5,
+        "boardMs": 0.30000001192092896,
+        "riderMs": 6.900000035762787,
+        "submitMs": 3.699999988079071,
+        "route": 336.10438620553003,
+        "speed": 3.497370524332004,
+        "drawCalls": 107,
+        "triangles": 677918
+      },
+      {
+        "timeMs": 45814.5,
+        "phase": "crashed",
+        "intervalMs": 44.299999999995634,
+        "cpuMs": 13.800000011920929,
+        "drawMs": 13,
+        "boardMs": 0.30000001192092896,
+        "riderMs": 7,
+        "submitMs": 4.100000023841858,
+        "route": 336.2484725419373,
+        "speed": 3.4315258845167693,
+        "drawCalls": 107,
+        "triangles": 677918
+      },
+      {
+        "timeMs": 45878.90000003576,
+        "phase": "crashed",
+        "intervalMs": 55.5,
+        "cpuMs": 16.80000001192093,
+        "drawMs": 15.699999988079071,
+        "boardMs": 0.30000001192092896,
+        "riderMs": 10,
+        "submitMs": 4.100000023841858,
+        "route": 336.47312395524915,
+        "speed": 3.320801722108774,
+        "drawCalls": 104,
+        "triangles": 677342
+      },
+      {
+        "timeMs": 45957.80000001192,
+        "phase": "crashed",
+        "intervalMs": 66.59999999999854,
+        "cpuMs": 14.5,
+        "drawMs": 13.5,
+        "boardMs": 0.30000001192092896,
+        "riderMs": 3.5,
+        "submitMs": 7.199999928474426,
+        "route": 336.7168715844073,
+        "speed": 3.193301722108774,
+        "drawCalls": 103,
+        "triangles": 675544
+      },
+      {
+        "timeMs": 46027,
+        "phase": "crashed",
+        "intervalMs": 55.5,
+        "cpuMs": 17.200000047683716,
+        "drawMs": 13,
+        "boardMs": 2.199999988079071,
+        "riderMs": 3.900000035762787,
+        "submitMs": 5.600000083446503,
+        "route": 336.9255083658811,
+        "speed": 3.0799683887754408,
+        "drawCalls": 100,
+        "triangles": 672430
+      },
+      {
+        "timeMs": 46102.5,
+        "phase": "crashed",
+        "intervalMs": 33.39999999999418,
+        "cpuMs": 27,
+        "drawMs": 26.400000035762787,
+        "boardMs": 0.699999988079071,
+        "riderMs": 6.599999964237213,
+        "submitMs": 16.19999998807907,
+        "route": 337.1756793427235,
+        "speed": 2.938301722108774,
+        "drawCalls": 100,
+        "triangles": 672430
+      },
+      {
+        "timeMs": 46162,
+        "phase": "crashed",
+        "intervalMs": 55.60000000000582,
+        "cpuMs": 10.900000035762787,
+        "drawMs": 10,
+        "boardMs": 0.19999998807907104,
+        "riderMs": 3.599999964237213,
+        "submitMs": 4.699999988079071,
+        "route": 337.32011526216235,
+        "speed": 2.853301722108774,
+        "drawCalls": 100,
+        "triangles": 672430
+      },
+      {
+        "timeMs": 46202.80000001192,
+        "phase": "crashed",
+        "intervalMs": 44.39999999999418,
+        "cpuMs": 11.699999988079071,
+        "drawMs": 10.400000035762787,
+        "boardMs": 0.3999999761581421,
+        "riderMs": 3.100000023841858,
+        "submitMs": 5.599999964237213,
+        "route": 337.46030118160104,
+        "speed": 2.7683017221087742,
+        "drawCalls": 100,
+        "triangles": 672430
+      },
+      {
+        "timeMs": 46271.200000047684,
+        "phase": "crashed",
+        "intervalMs": 55.599999999998545,
+        "cpuMs": 14.899999976158142,
+        "drawMs": 12.399999976158142,
+        "boardMs": 0.5,
+        "riderMs": 6.599999964237213,
+        "submitMs": 4.099999964237213,
+        "route": 337.6406046297417,
+        "speed": 2.654968388775441,
+        "drawCalls": 99,
+        "triangles": 672428
+      },
+      {
+        "timeMs": 46313.5,
+        "phase": "crashed",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 16.100000023841858,
+        "drawMs": 15.199999988079071,
+        "boardMs": 0.30000001192092896,
+        "riderMs": 3.5,
+        "submitMs": 9.999999940395355,
+        "route": 337.749457479274,
+        "speed": 2.5841350554421076,
+        "drawCalls": 99,
+        "triangles": 672428
+      },
+      {
+        "timeMs": 46381.5,
+        "phase": "crashed",
+        "intervalMs": 55.599999999998545,
+        "cpuMs": 23.100000023841858,
+        "drawMs": 19,
+        "boardMs": 1.5999999642372131,
+        "riderMs": 9.5,
+        "submitMs": 5.099999964237213,
+        "route": 337.9174831496368,
+        "speed": 2.4708017221087744,
+        "drawCalls": 99,
+        "triangles": 672428
+      },
+      {
+        "timeMs": 46446.5,
+        "phase": "crashed",
+        "intervalMs": 44.5,
+        "cpuMs": 25.80000001192093,
+        "drawMs": 24.900000035762787,
+        "boardMs": 0.30000001192092896,
+        "riderMs": 13.800000011920929,
+        "submitMs": 9.200000047683716,
+        "route": 338.0779532644441,
+        "speed": 2.357468388775441,
+        "drawCalls": 99,
+        "triangles": 672428
+      },
+      {
+        "timeMs": 46516.90000003576,
+        "phase": "crashed",
+        "intervalMs": 44.5,
+        "cpuMs": 29.19999998807907,
+        "drawMs": 26.69999998807907,
+        "boardMs": 1.100000023841858,
+        "riderMs": 17.899999976158142,
+        "submitMs": 5,
+        "route": 338.2308678236958,
+        "speed": 2.244135055442108,
+        "drawCalls": 101,
+        "triangles": 673940
+      },
+      {
+        "timeMs": 46556.90000003576,
+        "phase": "crashed",
+        "intervalMs": 44.5,
+        "cpuMs": 38,
+        "drawMs": 35.69999998807907,
+        "boardMs": 0.30000001192092896,
+        "riderMs": 19.599999964237213,
+        "submitMs": 13.800000011920929,
+        "route": 338.32260261767254,
+        "speed": 2.1733017221087745,
+        "drawCalls": 101,
+        "triangles": 673940
+      },
+      {
+        "timeMs": 46641,
+        "phase": "crashed",
+        "intervalMs": 77.79999999999563,
+        "cpuMs": 25.80000001192093,
+        "drawMs": 24.899999976158142,
+        "boardMs": 0.5,
+        "riderMs": 16,
+        "submitMs": 7.099999904632568,
+        "route": 338.4972180389594,
+        "speed": 2.031635055442108,
+        "drawCalls": 101,
+        "triangles": 673940
+      },
+      {
+        "timeMs": 46667.90000003576,
+        "phase": "crashed",
+        "intervalMs": 33.400000000001455,
+        "cpuMs": 21.30000001192093,
+        "drawMs": 20.899999976158142,
+        "boardMs": 0.3999999761581421,
+        "riderMs": 15.100000023841858,
+        "submitMs": 4.199999988079071,
+        "route": 338.5637586519185,
+        "speed": 1.9749683887754412,
+        "drawCalls": 101,
+        "triangles": 673940
+      },
+      {
+        "timeMs": 46744.200000047684,
+        "phase": "crashed",
+        "intervalMs": 44.39999999999418,
+        "cpuMs": 26.399999976158142,
+        "drawMs": 26,
+        "boardMs": 0.30000001192092896,
+        "riderMs": 15.100000023841858,
+        "submitMs": 5.100000023841858,
+        "route": 338.70656878107667,
+        "speed": 1.8474683887754413,
+        "drawCalls": 102,
+        "triangles": 686594
+      },
+      {
+        "timeMs": 46782.60000002384,
+        "phase": "crashed",
+        "intervalMs": 33.30000000000291,
+        "cpuMs": 44.69999998807907,
+        "drawMs": 42.80000001192093,
+        "boardMs": 1.4000000357627869,
+        "riderMs": 27.69999998807907,
+        "submitMs": 4,
+        "route": 338.76697050514696,
+        "speed": 1.7908017221087746,
+        "drawCalls": 102,
+        "triangles": 686594
+      },
+      {
+        "timeMs": 46828.60000002384,
+        "phase": "crashed",
+        "intervalMs": 44.5,
+        "cpuMs": 21.80000001192093,
+        "drawMs": 21.200000047683716,
+        "boardMs": 0.5,
+        "riderMs": 14.199999988079071,
+        "submitMs": 4.199999988079071,
+        "route": 338.83981641023485,
+        "speed": 1.7199683887754413,
+        "drawCalls": 102,
+        "triangles": 686594
+      },
+      {
+        "timeMs": 46924.40000003576,
+        "phase": "crashed",
+        "intervalMs": 44.5,
+        "cpuMs": 26,
+        "drawMs": 23.899999976158142,
+        "boardMs": 1.5,
+        "riderMs": 15.300000011920929,
+        "submitMs": 4.799999952316284,
+        "route": 339.00260491577905,
+        "speed": 1.5499683887754414,
+        "drawCalls": 103,
+        "triangles": 696018
+      },
+      {
+        "timeMs": 46993,
+        "phase": "crashed",
+        "intervalMs": 44.299999999995634,
+        "cpuMs": 51.40000003576279,
+        "drawMs": 50.80000001192093,
+        "boardMs": 0.30000001192092896,
+        "riderMs": 44.40000003576279,
+        "submitMs": 4.899999976158142,
+        "route": 339.1016861416974,
+        "speed": 1.4366350554421081,
+        "drawCalls": 105,
+        "triangles": 727327
+      },
+      {
+        "timeMs": 47045.60000002384,
+        "phase": "crashed",
+        "intervalMs": 55.599999999998545,
+        "cpuMs": 20.69999998807907,
+        "drawMs": 20,
+        "boardMs": 1.100000023841858,
+        "riderMs": 12.600000023841858,
+        "submitMs": 4.800000011920929,
+        "route": 339.1821842977093,
+        "speed": 1.3374683887754415,
+        "drawCalls": 109,
+        "triangles": 756266
+      },
+      {
+        "timeMs": 47157.700000047684,
+        "phase": "crashed",
+        "intervalMs": 55.599999999998545,
+        "cpuMs": 28.099999964237213,
+        "drawMs": 27.700000047683716,
+        "boardMs": 0.3999999761581421,
+        "riderMs": 21.899999976158142,
+        "submitMs": 4.400000035762787,
+        "route": 339.3163336509378,
+        "speed": 1.153301722108775,
+        "drawCalls": 109,
+        "triangles": 756266
+      },
+      {
+        "timeMs": 47187.10000002384,
+        "phase": "crashed",
+        "intervalMs": 22.19999999999709,
+        "cpuMs": 39.5,
+        "drawMs": 33,
+        "boardMs": 0.5,
+        "riderMs": 27.399999976158142,
+        "submitMs": 3.699999988079071,
+        "route": 339.34445872871277,
+        "speed": 1.1109058887754415,
+        "drawCalls": 110,
+        "triangles": 765162
+      },
+      {
+        "timeMs": 47227.80000001192,
+        "phase": "crashed",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 19.5,
+        "drawMs": 19,
+        "boardMs": 0.30000001192092896,
+        "riderMs": 12.300000011920929,
+        "submitMs": 4.800000011920929,
+        "route": 339.3890190435229,
+        "speed": 1.0421558887754416,
+        "drawCalls": 110,
+        "triangles": 765162
+      },
+      {
+        "timeMs": 47248.10000002384,
+        "phase": "crashed",
+        "intervalMs": 22.19999999999709,
+        "cpuMs": 38.89999997615814,
+        "drawMs": 38.19999998807907,
+        "boardMs": 0.40000003576278687,
+        "riderMs": 15.199999988079071,
+        "submitMs": 21.000000059604645,
+        "route": 339.4144045379645,
+        "speed": 1.0021558887754416,
+        "drawCalls": 110,
+        "triangles": 765162
+      },
+      {
+        "timeMs": 47291.200000047684,
+        "phase": "crashed",
+        "intervalMs": 44.5,
+        "cpuMs": 23.599999964237213,
+        "drawMs": 22,
+        "boardMs": 0.3999999761581421,
+        "riderMs": 13.699999988079071,
+        "submitMs": 6.300000011920929,
+        "route": 339.4545377694413,
+        "speed": 0.9375725554421082,
+        "drawCalls": 110,
+        "triangles": 765162
+      },
+      {
+        "timeMs": 47315.700000047684,
+        "phase": "crashed",
+        "intervalMs": 22.200000000004366,
+        "cpuMs": 48.799999952316284,
+        "drawMs": 48.200000047683716,
+        "boardMs": 0.40000003576278687,
+        "riderMs": 25,
+        "submitMs": 21.40000009536743,
+        "route": 339.4773503472162,
+        "speed": 0.9000725554421082,
+        "drawCalls": 110,
+        "triangles": 765162
+      },
+      {
+        "timeMs": 47365.60000002384,
+        "phase": "crashed",
+        "intervalMs": 44.5,
+        "cpuMs": 28,
+        "drawMs": 27.599999964237213,
+        "boardMs": 0.5,
+        "riderMs": 14,
+        "submitMs": 11.5,
+        "route": 339.5133342731374,
+        "speed": 0.8396558887754415,
+        "drawCalls": 110,
+        "triangles": 765162
+      },
+      {
+        "timeMs": 47395.10000002384,
+        "phase": "crashed",
+        "intervalMs": 33.400000000001455,
+        "cpuMs": 30.899999976158142,
+        "drawMs": 30.400000035762787,
+        "boardMs": 0.8999999761581421,
+        "riderMs": 20.69999998807907,
+        "submitMs": 6.699999988079071,
+        "route": 339.54035058054103,
+        "speed": 0.7931975554421081,
+        "drawCalls": 110,
+        "triangles": 765162
+      },
+      {
+        "timeMs": 47490.5,
+        "phase": "crashed",
+        "intervalMs": 33.400000000001455,
+        "cpuMs": 27.5,
+        "drawMs": 26.69999998807907,
+        "boardMs": 0.5,
+        "riderMs": 19.599999964237213,
+        "submitMs": 5.100000023841858,
+        "route": 339.6125383916408,
+        "speed": 0.663822555442108,
+        "drawCalls": 110,
+        "triangles": 765162
+      },
+      {
+        "timeMs": 47557.700000047684,
+        "phase": "crashed",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 33.19999998807907,
+        "drawMs": 30.100000023841858,
+        "boardMs": 2.800000011920929,
+        "riderMs": 17.80000001192093,
+        "submitMs": 4.699999988079071,
+        "route": 339.65383489533684,
+        "speed": 0.5859058887754411,
+        "drawCalls": 110,
+        "triangles": 765162
+      },
+      {
+        "timeMs": 47628.10000002384,
+        "phase": "crashed",
+        "intervalMs": 33.400000000001455,
+        "cpuMs": 31.30000001192093,
+        "drawMs": 30.900000035762787,
+        "boardMs": 0.3999999761581421,
+        "riderMs": 20.5,
+        "submitMs": 8.800000011920929,
+        "route": 339.6901869545886,
+        "speed": 0.514655888775441,
+        "drawCalls": 110,
+        "triangles": 765162
+      },
+      {
+        "timeMs": 47661.10000002384,
+        "phase": "crashed",
+        "intervalMs": 33.30000000000291,
+        "cpuMs": 36.60000002384186,
+        "drawMs": 35.89999997615814,
+        "boardMs": 1.9000000357627869,
+        "riderMs": 28.30000001192093,
+        "submitMs": 4.5,
+        "route": 339.7066477064367,
+        "speed": 0.4815308887754409,
+        "drawCalls": 110,
+        "triangles": 765162
+      },
+      {
+        "timeMs": 47698.700000047684,
+        "phase": "crashed",
+        "intervalMs": 33.400000000001455,
+        "cpuMs": 24.19999998807907,
+        "drawMs": 23.69999998807907,
+        "boardMs": 0.6000000238418579,
+        "riderMs": 15.699999988079071,
+        "submitMs": 5.100000023841858,
+        "route": 339.72203901384034,
+        "speed": 0.4500725554421075,
+        "drawCalls": 110,
+        "triangles": 765162
+      },
+      {
+        "timeMs": 47785.40000003576,
+        "phase": "crashed",
+        "intervalMs": 33.39999999999418,
+        "cpuMs": 35.09999996423721,
+        "drawMs": 34.60000002384186,
+        "boardMs": 0.3999999761581421,
+        "riderMs": 27.100000023841858,
+        "submitMs": 5.399999976158142,
+        "route": 339.75930434531136,
+        "speed": 0.37215588877544054,
+        "drawCalls": 110,
+        "triangles": 765162
+      },
+      {
+        "timeMs": 47851.5,
+        "phase": "crashed",
+        "intervalMs": 66.70000000000437,
+        "cpuMs": 32.200000047683716,
+        "drawMs": 30.400000035762787,
+        "boardMs": 5.5,
+        "riderMs": 19,
+        "submitMs": 4.400000035762787,
+        "route": 339.78225015456303,
+        "speed": 0.3234058887754403,
+        "drawCalls": 110,
+        "triangles": 765162
+      },
+      {
+        "timeMs": 47885.10000002384,
+        "phase": "crashed",
+        "intervalMs": 33.299999999995634,
+        "cpuMs": 69.80000001192093,
+        "drawMs": 67.89999997615814,
+        "boardMs": 0.8999999761581421,
+        "riderMs": 61.60000002384186,
+        "submitMs": 4.299999952316284,
+        "route": 339.79257028141103,
+        "speed": 0.30153088877544015,
+        "drawCalls": 110,
+        "triangles": 765162
+      },
+      {
+        "timeMs": 47956.5,
+        "phase": "crashed",
+        "intervalMs": 77.70000000000437,
+        "cpuMs": 71.70000004768372,
+        "drawMs": 70.90000003576279,
+        "boardMs": 0.30000001192092896,
+        "riderMs": 41.10000002384186,
+        "submitMs": 27.000000059604645,
+        "route": 339.81333613973584,
+        "speed": 0.25840588877543985,
+        "drawCalls": 110,
+        "triangles": 765162
+      },
+      {
+        "timeMs": 48030.10000002384,
+        "phase": "crashed",
+        "intervalMs": 66.69999999999709,
+        "cpuMs": 42.19999998807907,
+        "drawMs": 41.39999997615814,
+        "boardMs": 0.30000001192092896,
+        "riderMs": 26.5,
+        "submitMs": 5.999999940395355,
+        "route": 339.8293548656541,
+        "speed": 0.22715588877543955,
+        "drawCalls": 110,
+        "triangles": 765162
+      },
+      {
+        "timeMs": 48073.90000003576,
+        "phase": "crashed",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 40.5,
+        "drawMs": 30.100000023841858,
+        "boardMs": 0.5,
+        "riderMs": 15.599999964237213,
+        "submitMs": 5.200000047683716,
+        "route": 339.84014147953735,
+        "speed": 0.20809338877543934,
+        "drawCalls": 110,
+        "triangles": 765162
+      },
+      {
+        "timeMs": 48116.90000003576,
+        "phase": "crashed",
+        "intervalMs": 44.599999999998545,
+        "cpuMs": 47.19999998807907,
+        "drawMs": 46.5,
+        "boardMs": 1.199999988079071,
+        "riderMs": 24.099999964237213,
+        "submitMs": 19.399999976158142,
+        "route": 339.848477231668,
+        "speed": 0.19500003391574622,
+        "drawCalls": 110,
+        "triangles": 765162
+      },
+      {
+        "timeMs": 48165.700000047684,
+        "phase": "crashed",
+        "intervalMs": 44.30000000000291,
+        "cpuMs": 29.599999964237213,
+        "drawMs": 28.899999976158142,
+        "boardMs": 1.100000023841858,
+        "riderMs": 15.900000035762787,
+        "submitMs": 8.800000011920929,
+        "route": 339.8563025762842,
+        "speed": 0.1831134344987988,
+        "drawCalls": 111,
+        "triangles": 766962
+      },
+      {
+        "timeMs": 48197,
+        "phase": "crashed",
+        "intervalMs": 33.400000000001455,
+        "cpuMs": 41.700000047683716,
+        "drawMs": 39.69999998807907,
+        "boardMs": 0.3999999761581421,
+        "riderMs": 24.80000001192093,
+        "submitMs": 6.399999976158142,
+        "route": 339.86221798369814,
+        "speed": 0.17412800551553728,
+        "drawCalls": 111,
+        "triangles": 766962
+      },
+      {
+        "timeMs": 48240.200000047684,
+        "phase": "crashed",
+        "intervalMs": 44.5,
+        "cpuMs": 35.799999952316284,
+        "drawMs": 34.80000001192093,
+        "boardMs": 0.5,
+        "riderMs": 28.19999998807907,
+        "submitMs": 4.699999928474426,
+        "route": 339.87055131602983,
+        "speed": 0.16146977918899008,
+        "drawCalls": 111,
+        "triangles": 766962
+      },
+      {
+        "timeMs": 48284.700000047684,
+        "phase": "crashed",
+        "intervalMs": 44.39999999999418,
+        "cpuMs": 45.299999952316284,
+        "drawMs": 44.19999998807907,
+        "boardMs": 0.5999999642372131,
+        "riderMs": 36.19999998807907,
+        "submitMs": 5.800000011920929,
+        "route": 339.8770310926836,
+        "speed": 0.15162708047442597,
+        "drawCalls": 111,
+        "triangles": 766962
+      },
+      {
+        "timeMs": 48331.30000001192,
+        "phase": "crashed",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 38.10000002384186,
+        "drawMs": 37.59999996423721,
+        "boardMs": 0.699999988079071,
+        "riderMs": 19.30000001192093,
+        "submitMs": 7.200000047683716,
+        "route": 339.88311588217834,
+        "speed": 0.1423843622544923,
+        "drawCalls": 111,
+        "triangles": 766962
+      },
+      {
+        "timeMs": 48375.5,
+        "phase": "crashed",
+        "intervalMs": 44.5,
+        "cpuMs": 57.60000002384186,
+        "drawMs": 53.59999996423721,
+        "boardMs": 1.100000023841858,
+        "riderMs": 34.5,
+        "submitMs": 14.199999988079071,
+        "route": 339.88993004286425,
+        "speed": 0.13203373842782914,
+        "drawCalls": 111,
+        "triangles": 766962
+      },
+      {
+        "timeMs": 48434.40000003576,
+        "phase": "crashed",
+        "intervalMs": 66.59999999999854,
+        "cpuMs": 52.39999997615814,
+        "drawMs": 51.59999996423721,
+        "boardMs": 3.599999964237213,
+        "riderMs": 41.60000002384186,
+        "submitMs": 4.699999988079071,
+        "route": 339.8982513393481,
+        "speed": 0.11939379440173988,
+        "drawCalls": 111,
+        "triangles": 766962
+      },
+      {
+        "timeMs": 48495.90000003576,
+        "phase": "crashed",
+        "intervalMs": 55.60000000000582,
+        "cpuMs": 33.59999996423721,
+        "drawMs": 31.80000001192093,
+        "boardMs": 1.899999976158142,
+        "riderMs": 20.399999976158142,
+        "submitMs": 5.300000071525574,
+        "route": 339.90396522876046,
+        "speed": 0.11071446871229691,
+        "drawCalls": 111,
+        "triangles": 766962
+      },
+      {
+        "timeMs": 48538.700000047684,
+        "phase": "crashed",
+        "intervalMs": 33.299999999995634,
+        "cpuMs": 36.19999998807907,
+        "drawMs": 35.39999997615814,
+        "boardMs": 0.6000000238418579,
+        "riderMs": 24.399999976158142,
+        "submitMs": 4.699999988079071,
+        "route": 339.9075418160865,
+        "speed": 0.10528167783730297,
+        "drawCalls": 111,
+        "triangles": 766962
+      },
+      {
+        "timeMs": 48579.30000001192,
+        "phase": "crashed",
+        "intervalMs": 44.400000000001455,
+        "cpuMs": 24.19999998807907,
+        "drawMs": 23.399999976158142,
+        "boardMs": 0.5,
+        "riderMs": 13.700000047683716,
+        "submitMs": 7.5,
+        "route": 339.91258033477425,
+        "speed": 0.09762823172932295,
+        "drawCalls": 111,
+        "triangles": 766962
+      },
+      {
+        "timeMs": 48604.40000003576,
+        "phase": "crashed",
+        "intervalMs": 33.400000000001455,
+        "cpuMs": 26.80000001192093,
+        "drawMs": 26.299999952316284,
+        "boardMs": 0.3999999761581421,
+        "riderMs": 18.19999998807907,
+        "submitMs": 5.999999940395355,
+        "route": 339.91573417636624,
+        "speed": 0.0928375862730444,
+        "drawCalls": 111,
+        "triangles": 766962
+      },
+      {
+        "timeMs": 48658.30000001192,
+        "phase": "crashed",
+        "intervalMs": 55.5,
+        "cpuMs": 43.10000002384186,
+        "drawMs": 41,
+        "boardMs": 0.5,
+        "riderMs": 24,
+        "submitMs": 15.299999952316284,
+        "route": 339.92017715184846,
+        "speed": 0.08608876275568267,
+        "drawCalls": 112,
+        "triangles": 766964
+      },
+      {
+        "timeMs": 48719.90000003576,
+        "phase": "crashed",
+        "intervalMs": 33.400000000001455,
+        "cpuMs": 42.89999997615814,
+        "drawMs": 42.19999998807907,
+        "boardMs": 0.5,
+        "riderMs": 29.900000035762787,
+        "submitMs": 9.699999988079071,
+        "route": 339.92295821543814,
+        "speed": 0.08186436236629939,
+        "drawCalls": 112,
+        "triangles": 766964
+      },
+      {
+        "timeMs": 48763.80000001192,
+        "phase": "crashed",
+        "intervalMs": 66.69999999999709,
+        "cpuMs": 46.5,
+        "drawMs": 45.10000002384186,
+        "boardMs": 1.199999988079071,
+        "riderMs": 37.80000001192093,
+        "submitMs": 5,
+        "route": 339.9281176363469,
+        "speed": 0.07402726731496806,
+        "drawCalls": 112,
+        "triangles": 766964
+      },
+      {
+        "timeMs": 48811.5,
+        "phase": "crashed",
+        "intervalMs": 55.5,
+        "cpuMs": 25.5,
+        "drawMs": 24.700000047683716,
+        "boardMs": 0.5,
+        "riderMs": 13.800000011920929,
+        "submitMs": 9.200000047683716,
+        "route": 339.9322252950627,
+        "speed": 0.06778778572133588,
+        "drawCalls": 112,
+        "triangles": 766964
+      },
+      {
+        "timeMs": 48838.700000047684,
+        "phase": "crashed",
+        "intervalMs": 22.19999999999709,
+        "cpuMs": 52.09999996423721,
+        "drawMs": 51.5,
+        "boardMs": 0.800000011920929,
+        "riderMs": 43.10000002384186,
+        "submitMs": 6.300000011920929,
+        "route": 339.93387797429773,
+        "speed": 0.06527738688332367,
+        "drawCalls": 112,
+        "triangles": 766964
+      },
+      {
+        "timeMs": 48899,
+        "phase": "crashed",
+        "intervalMs": 44.5,
+        "cpuMs": 46.80000001192093,
+        "drawMs": 44,
+        "boardMs": 13,
+        "riderMs": 22.899999976158142,
+        "submitMs": 5.900000035762787,
+        "route": 339.9364975535755,
+        "speed": 0.06129827911966851,
+        "drawCalls": 112,
+        "triangles": 766964
+      }
+    ],
+    "longFrames": [
+      {
+        "startMs": 32699.200000047684,
+        "durationMs": 760.8999999761581,
+        "blockingMs": 708.5,
+        "renderStart": 32701.900000035763,
+        "scripts": [
+          {
+            "durationMs": 757.8000000119209,
+            "invoker": "FrameRequestCallback",
+            "file": ""
+          }
+        ]
+      },
+      {
+        "startMs": 33460.30000001192,
+        "durationMs": 174.10000002384186,
+        "blockingMs": 123.7,
+        "renderStart": 33460.90000003576,
+        "scripts": [
+          {
+            "durationMs": 173,
+            "invoker": "FrameRequestCallback",
+            "file": ""
+          }
+        ]
+      },
+      {
+        "startMs": 33634.60000002384,
+        "durationMs": 361.30000001192093,
+        "blockingMs": 310.7,
+        "renderStart": 33635.30000001192,
+        "scripts": [
+          {
+            "durationMs": 287.69999998807907,
+            "invoker": "FrameRequestCallback",
+            "file": ""
+          }
+        ]
+      },
+      {
+        "startMs": 34054.80000001192,
+        "durationMs": 69.69999998807907,
+        "blockingMs": 17.7,
+        "renderStart": 34056.80000001192,
+        "scripts": [
+          {
+            "durationMs": 67.40000003576279,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 34126.30000001192,
+        "durationMs": 101.30000001192093,
+        "blockingMs": 50.5,
+        "renderStart": 34127.30000001192,
+        "scripts": [
+          {
+            "durationMs": 53.19999998807907,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 34228.700000047684,
+        "durationMs": 83.69999998807907,
+        "blockingMs": 16.2,
+        "renderStart": 34246.30000001192,
+        "scripts": [
+          {
+            "durationMs": 65.5,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 34312.80000001192,
+        "durationMs": 930.1999999880791,
+        "blockingMs": 784.5,
+        "renderStart": 35163.40000003576,
+        "scripts": [
+          {
+            "durationMs": 211,
+            "invoker": "BUTTON#start.onclick",
+            "file": "p111-app-2IJBLW5F.js"
+          },
+          {
+            "durationMs": 79.09999996423721,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 35250.200000047684,
+        "durationMs": 98.19999998807907,
+        "blockingMs": 37.7,
+        "renderStart": 35322.10000002384,
+        "scripts": [
+          {
+            "durationMs": 26.099999964237213,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 35438,
+        "durationMs": 86.60000002384186,
+        "blockingMs": 35.6,
+        "renderStart": 35444.40000003576,
+        "scripts": [
+          {
+            "durationMs": 79.69999998807907,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 35525.40000003576,
+        "durationMs": 78.39999997615814,
+        "blockingMs": 24.7,
+        "renderStart": 35548.200000047684,
+        "scripts": [
+          {
+            "durationMs": 54.90000003576279,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 35654.90000003576,
+        "durationMs": 61.5,
+        "blockingMs": 10.9,
+        "renderStart": 35667.5,
+        "scripts": [
+          {
+            "durationMs": 48.30000001192093,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 35927.40000003576,
+        "durationMs": 66.09999996423721,
+        "blockingMs": 9.9,
+        "renderStart": 35934.700000047684,
+        "scripts": [
+          {
+            "durationMs": 58.19999998807907,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 36079.80000001192,
+        "durationMs": 82.80000001192093,
+        "blockingMs": 0,
+        "renderStart": 36116.700000047684,
+        "scripts": [
+          {
+            "durationMs": 45.59999996423721,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 36196.90000003576,
+        "durationMs": 99.19999998807907,
+        "blockingMs": 0,
+        "renderStart": 36252.30000001192,
+        "scripts": [
+          {
+            "durationMs": 43.59999996423721,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 36296.5,
+        "durationMs": 56.200000047683716,
+        "blockingMs": 5.7,
+        "renderStart": 36298.80000001192,
+        "scripts": [
+          {
+            "durationMs": 53.60000002384186,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 36402.40000003576,
+        "durationMs": 75.09999996423721,
+        "blockingMs": 0,
+        "renderStart": 36460.200000047684,
+        "scripts": [
+          {
+            "durationMs": 17.19999998807907,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 36631,
+        "durationMs": 50.80000001192093,
+        "blockingMs": 0,
+        "renderStart": 36645.90000003576,
+        "scripts": [
+          {
+            "durationMs": 35.5,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 36682.90000003576,
+        "durationMs": 61.39999997615814,
+        "blockingMs": 1.2,
+        "renderStart": 36705,
+        "scripts": [
+          {
+            "durationMs": 39.10000002384186,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 36804.5,
+        "durationMs": 89.80000001192093,
+        "blockingMs": 1.3,
+        "renderStart": 36843.90000003576,
+        "scripts": [
+          {
+            "durationMs": 50.10000002384186,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 36918.5,
+        "durationMs": 54.80000001192093,
+        "blockingMs": 0,
+        "renderStart": 36944,
+        "scripts": [
+          {
+            "durationMs": 29.100000023841858,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 37189.5,
+        "durationMs": 118.60000002384186,
+        "blockingMs": 0,
+        "renderStart": 37262.90000003576,
+        "scripts": [
+          {
+            "durationMs": 45,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 37470,
+        "durationMs": 106.40000003576279,
+        "blockingMs": 0,
+        "renderStart": 37559.80000001192,
+        "scripts": [
+          {
+            "durationMs": 6.899999976158142,
+            "invoker": "BaseAudioContext.decodeAudioData.then",
+            "file": "p111-app-2IJBLW5F.js"
+          },
+          {
+            "durationMs": 16.30000001192093,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 37576.700000047684,
+        "durationMs": 83.5,
+        "blockingMs": 4.9,
+        "renderStart": 37605.700000047684,
+        "scripts": [
+          {
+            "durationMs": 53.69999998807907,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 37768.60000002384,
+        "durationMs": 92,
+        "blockingMs": 0,
+        "renderStart": 37817.10000002384,
+        "scripts": [
+          {
+            "durationMs": 43.09999996423721,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 37975.200000047684,
+        "durationMs": 61.39999997615814,
+        "blockingMs": 7.2,
+        "renderStart": 37979.5,
+        "scripts": [
+          {
+            "durationMs": 56.80000001192093,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 38120.60000002384,
+        "durationMs": 101.30000001192093,
+        "blockingMs": 36,
+        "renderStart": 38136.5,
+        "scripts": [
+          {
+            "durationMs": 84.19999998807907,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 38224.10000002384,
+        "durationMs": 60.60000002384186,
+        "blockingMs": 8.3,
+        "renderStart": 38230.90000003576,
+        "scripts": [
+          {
+            "durationMs": 53.5,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 38426.90000003576,
+        "durationMs": 79.30000001192093,
+        "blockingMs": 6.5,
+        "renderStart": 38451,
+        "scripts": [
+          {
+            "durationMs": 54.80000001192093,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 38743.10000002384,
+        "durationMs": 81,
+        "blockingMs": 0,
+        "renderStart": 38803.700000047684,
+        "scripts": [
+          {
+            "durationMs": 20,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 38825.10000002384,
+        "durationMs": 53.69999998807907,
+        "blockingMs": 0,
+        "renderStart": 38843.10000002384,
+        "scripts": [
+          {
+            "durationMs": 35.5,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 38890.60000002384,
+        "durationMs": 70.80000001192093,
+        "blockingMs": 0,
+        "renderStart": 38944.60000002384,
+        "scripts": [
+          {
+            "durationMs": 16.600000023841858,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 39041.200000047684,
+        "durationMs": 54,
+        "blockingMs": 0,
+        "renderStart": 39048.30000001192,
+        "scripts": [
+          {
+            "durationMs": 46.40000003576279,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 39203.80000001192,
+        "durationMs": 189.69999998807907,
+        "blockingMs": 0.1,
+        "renderStart": 39343.40000003576,
+        "scripts": [
+          {
+            "durationMs": 49.80000001192093,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 39408.10000002384,
+        "durationMs": 50.19999998807907,
+        "blockingMs": 0,
+        "renderStart": 39416.90000003576,
+        "scripts": [
+          {
+            "durationMs": 41.19999998807907,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 39612.80000001192,
+        "durationMs": 53.90000003576279,
+        "blockingMs": 0,
+        "renderStart": 39645,
+        "scripts": [
+          {
+            "durationMs": 21.30000001192093,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 40011.200000047684,
+        "durationMs": 55.39999997615814,
+        "blockingMs": 5.1,
+        "renderStart": 40011.5,
+        "scripts": [
+          {
+            "durationMs": 54.19999998807907,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 40232.700000047684,
+        "durationMs": 51.09999996423721,
+        "blockingMs": 0,
+        "renderStart": 40266.90000003576,
+        "scripts": [
+          {
+            "durationMs": 16.400000035762787,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 40375.10000002384,
+        "durationMs": 53.69999998807907,
+        "blockingMs": 0,
+        "renderStart": 40411.60000002384,
+        "scripts": [
+          {
+            "durationMs": 16.899999976158142,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 40439.200000047684,
+        "durationMs": 82.89999997615814,
+        "blockingMs": 0,
+        "renderStart": 40479.5,
+        "scripts": [
+          {
+            "durationMs": 42,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 40522.80000001192,
+        "durationMs": 65.80000001192093,
+        "blockingMs": 0,
+        "renderStart": 40550.90000003576,
+        "scripts": [
+          {
+            "durationMs": 37.5,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 40773.200000047684,
+        "durationMs": 51.39999997615814,
+        "blockingMs": 0,
+        "renderStart": 40803.40000003576,
+        "scripts": [
+          {
+            "durationMs": 20.69999998807907,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 40886.30000001192,
+        "durationMs": 68.80000001192093,
+        "blockingMs": 0,
+        "renderStart": 40912.200000047684,
+        "scripts": [
+          {
+            "durationMs": 42.19999998807907,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 41484.30000001192,
+        "durationMs": 58.80000001192093,
+        "blockingMs": 0,
+        "renderStart": 41535.30000001192,
+        "scripts": [
+          {
+            "durationMs": 7.5,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 41552.700000047684,
+        "durationMs": 58.5,
+        "blockingMs": 0,
+        "renderStart": 41601.60000002384,
+        "scripts": [
+          {
+            "durationMs": 9.399999976158142,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 41875.80000001192,
+        "durationMs": 54.10000002384186,
+        "blockingMs": 0,
+        "renderStart": 41919,
+        "scripts": [
+          {
+            "durationMs": 10.700000047683716,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 42123.10000002384,
+        "durationMs": 56.89999997615814,
+        "blockingMs": 0,
+        "renderStart": 42168.700000047684,
+        "scripts": [
+          {
+            "durationMs": 11.100000023841858,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 42334.200000047684,
+        "durationMs": 57.09999996423721,
+        "blockingMs": 0,
+        "renderStart": 42378.80000001192,
+        "scripts": [
+          {
+            "durationMs": 12.300000011920929,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 42419.40000003576,
+        "durationMs": 78.39999997615814,
+        "blockingMs": 0,
+        "renderStart": 42482.40000003576,
+        "scripts": [
+          {
+            "durationMs": 15.199999988079071,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 42544.5,
+        "durationMs": 57,
+        "blockingMs": 0,
+        "renderStart": 42589.5,
+        "scripts": [
+          {
+            "durationMs": 11.699999988079071,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 42901.60000002384,
+        "durationMs": 50.5,
+        "blockingMs": 0,
+        "renderStart": 42938.5,
+        "scripts": [
+          {
+            "durationMs": 13.200000047683716,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 43013.60000002384,
+        "durationMs": 58.30000001192093,
+        "blockingMs": 0,
+        "renderStart": 43058.60000002384,
+        "scripts": [
+          {
+            "durationMs": 12.899999976158142,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 43109.10000002384,
+        "durationMs": 61.5,
+        "blockingMs": 0,
+        "renderStart": 43153.80000001192,
+        "scripts": [
+          {
+            "durationMs": 16.5,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 43232.80000001192,
+        "durationMs": 51.10000002384186,
+        "blockingMs": 0,
+        "renderStart": 43272,
+        "scripts": [
+          {
+            "durationMs": 11.399999976158142,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 43664.90000003576,
+        "durationMs": 56.69999998807907,
+        "blockingMs": 0,
+        "renderStart": 43701.200000047684,
+        "scripts": [
+          {
+            "durationMs": 20.100000023841858,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 43952.40000003576,
+        "durationMs": 54.39999997615814,
+        "blockingMs": 0,
+        "renderStart": 43995.5,
+        "scripts": [
+          {
+            "durationMs": 10.699999988079071,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 44270.80000001192,
+        "durationMs": 55.30000001192093,
+        "blockingMs": 0,
+        "renderStart": 44301.90000003576,
+        "scripts": [
+          {
+            "durationMs": 24,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 44406.60000002384,
+        "durationMs": 51.80000001192093,
+        "blockingMs": 0,
+        "renderStart": 44445.200000047684,
+        "scripts": [
+          {
+            "durationMs": 12.900000035762787,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 44530.200000047684,
+        "durationMs": 52.09999996423721,
+        "blockingMs": 0,
+        "renderStart": 44564.700000047684,
+        "scripts": [
+          {
+            "durationMs": 17.299999952316284,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 44719.10000002384,
+        "durationMs": 142.89999997615814,
+        "blockingMs": 56.4,
+        "renderStart": 44755.80000001192,
+        "scripts": [
+          {
+            "durationMs": 105.90000003576279,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 44998.700000047684,
+        "durationMs": 59.09999996423721,
+        "blockingMs": 0,
+        "renderStart": 45033.700000047684,
+        "scripts": [
+          {
+            "durationMs": 23.600000023841858,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 45425.5,
+        "durationMs": 54.60000002384186,
+        "blockingMs": 0,
+        "renderStart": 45456,
+        "scripts": [
+          {
+            "durationMs": 23.900000035762787,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 45513.200000047684,
+        "durationMs": 58.89999997615814,
+        "blockingMs": 0,
+        "renderStart": 45556.200000047684,
+        "scripts": [
+          {
+            "durationMs": 15.699999988079071,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 45584.90000003576,
+        "durationMs": 65.39999997615814,
+        "blockingMs": 0,
+        "renderStart": 45633.80000001192,
+        "scripts": [
+          {
+            "durationMs": 16.30000001192093,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 45663.80000001192,
+        "durationMs": 54.90000003576279,
+        "blockingMs": 0,
+        "renderStart": 45703,
+        "scripts": [
+          {
+            "durationMs": 15.5,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 45733.40000003576,
+        "durationMs": 50.19999998807907,
+        "blockingMs": 0,
+        "renderStart": 45769.200000047684,
+        "scripts": [
+          {
+            "durationMs": 14.100000023841858,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 46341.40000003576,
+        "durationMs": 63.59999996423721,
+        "blockingMs": 0,
+        "renderStart": 46381.30000001192,
+        "scripts": [
+          {
+            "durationMs": 23.30000001192093,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 46419.90000003576,
+        "durationMs": 53.19999998807907,
+        "blockingMs": 0,
+        "renderStart": 46446.30000001192,
+        "scripts": [
+          {
+            "durationMs": 26.400000035762787,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 46496,
+        "durationMs": 50.60000002384186,
+        "blockingMs": 0,
+        "renderStart": 46516.80000001192,
+        "scripts": [
+          {
+            "durationMs": 29.399999976158142,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 46595.60000002384,
+        "durationMs": 71.60000002384186,
+        "blockingMs": 0,
+        "renderStart": 46641,
+        "scripts": [
+          {
+            "durationMs": 25.900000035762787,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 46689.80000001192,
+        "durationMs": 53.90000003576279,
+        "blockingMs": 0,
+        "renderStart": 46722.5,
+        "scripts": [
+          {
+            "durationMs": 21,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 46771.200000047684,
+        "durationMs": 56.5,
+        "blockingMs": 0,
+        "renderStart": 46782.5,
+        "scripts": [
+          {
+            "durationMs": 44.89999997615814,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 46900,
+        "durationMs": 50.700000047683716,
+        "blockingMs": 0,
+        "renderStart": 46924.200000047684,
+        "scripts": [
+          {
+            "durationMs": 26.19999998807907,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 46982.10000002384,
+        "durationMs": 62.60000002384186,
+        "blockingMs": 2,
+        "renderStart": 46992.90000003576,
+        "scripts": [
+          {
+            "durationMs": 51.59999996423721,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 47132.80000001192,
+        "durationMs": 53.5,
+        "blockingMs": 0,
+        "renderStart": 47157.60000002384,
+        "scripts": [
+          {
+            "durationMs": 28.399999976158142,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 47822,
+        "durationMs": 62,
+        "blockingMs": 0,
+        "renderStart": 47851.40000003576,
+        "scripts": [
+          {
+            "durationMs": 32.39999997615814,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 47884.90000003576,
+        "durationMs": 70.39999997615814,
+        "blockingMs": 20.4,
+        "renderStart": 47885,
+        "scripts": [
+          {
+            "durationMs": 70,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 47956.30000001192,
+        "durationMs": 72.69999998807907,
+        "blockingMs": 22.6,
+        "renderStart": 47956.5,
+        "scripts": [
+          {
+            "durationMs": 72.20000004768372,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 48370.700000047684,
+        "durationMs": 62.799999952316284,
+        "blockingMs": 8.2,
+        "renderStart": 48375.5,
+        "scripts": [
+          {
+            "durationMs": 57.700000047683716,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 48434.200000047684,
+        "durationMs": 53.09999996423721,
+        "blockingMs": 2.9,
+        "renderStart": 48434.40000003576,
+        "scripts": [
+          {
+            "durationMs": 52.59999996423721,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      },
+      {
+        "startMs": 48701.90000003576,
+        "durationMs": 61.30000001192093,
+        "blockingMs": 0,
+        "renderStart": 48719.80000001192,
+        "scripts": [
+          {
+            "durationMs": 43.09999996423721,
+            "invoker": "FrameRequestCallback",
+            "file": "p111-app-2IJBLW5F.js"
+          }
+        ]
+      }
+    ],
+    "drawingBuffer": {
+      "width": 576,
+      "height": 1038
+    },
+    "scope": "Observed animation-frame spacing and main-thread CPU. Render submission is included in draw CPU; GPU samples are separate asynchronous timings when supported. No presented-FPS guarantee.",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Mobile Safari/537.36",
+    "viewport": {
+      "width": 384,
+      "height": 692,
+      "dpr": 2.8125
+    },
+    "recordedFrames": 367,
+    "retainedFrames": 367,
+    "readyMs": 33901.700000047684,
+    "phases": {
+      "riding": {
+        "intervalMs": {
+          "samples": 259,
+          "p50": 33.400000000001455,
+          "p95": 66.70000000000437,
+          "p99": 100.19999999999709,
+          "max": 333.3000000000029
+        },
+        "frameCpuMs": {
+          "samples": 259,
+          "p50": 14.400000035762787,
+          "p95": 46.30000001192093,
+          "p99": 54.60000002384186,
+          "max": 83.5
+        },
+        "simulationMs": {
+          "samples": 259,
+          "p50": 0.699999988079071,
+          "p95": 5.5,
+          "p99": 16.899999976158142,
+          "max": 22.700000047683716
+        },
+        "drawCpuMs": {
+          "samples": 259,
+          "p50": 12.699999988079071,
+          "p95": 42.89999997615814,
+          "p99": 53.69999998807907,
+          "max": 81.29999995231628
+        },
+        "boardContactMs": {
+          "samples": 259,
+          "p50": 1.399999976158142,
+          "p95": 6.599999964237213,
+          "p99": 9,
+          "max": 21.5
+        },
+        "riderContactMs": {
+          "samples": 259,
+          "p50": 0,
+          "p95": 0.10000002384185791,
+          "p99": 0.19999998807907104,
+          "max": 7.200000047683716
+        },
+        "audioMs": {
+          "samples": 259,
+          "p50": 0.20000004768371582,
+          "p95": 1.300000011920929,
+          "p99": 5.800000011920929,
+          "max": 34
+        },
+        "renderSubmitMs": {
+          "samples": 259,
+          "p50": 8.300000071525574,
+          "p95": 31.899999976158142,
+          "p99": 43.09999996423721,
+          "max": 46.89999997615814
+        },
+        "intervalsOver33ms": 136,
+        "intervalsOver50ms": 46
+      },
+      "crashed": {
+        "intervalMs": {
+          "samples": 108,
+          "p50": 33.400000000001455,
+          "p95": 66.59999999999854,
+          "p99": 66.70000000000437,
+          "max": 77.79999999999563
+        },
+        "frameCpuMs": {
+          "samples": 108,
+          "p50": 24.099999964237213,
+          "p95": 48.799999952316284,
+          "p99": 57.60000002384186,
+          "max": 71.70000004768372
+        },
+        "simulationMs": {
+          "samples": 108,
+          "p50": 0.5,
+          "p95": 3.300000011920929,
+          "p99": 5.899999976158142,
+          "max": 9.599999964237213
+        },
+        "drawCpuMs": {
+          "samples": 108,
+          "p50": 22,
+          "p95": 48.200000047683716,
+          "p99": 53.59999996423721,
+          "max": 70.90000003576279
+        },
+        "boardContactMs": {
+          "samples": 108,
+          "p50": 0.5,
+          "p95": 4,
+          "p99": 5.5,
+          "max": 27.600000023841858
+        },
+        "riderContactMs": {
+          "samples": 108,
+          "p50": 13.700000047683716,
+          "p95": 36.19999998807907,
+          "p99": 43.10000002384186,
+          "max": 61.60000002384186
+        },
+        "audioMs": {
+          "samples": 108,
+          "p50": 0.30000001192092896,
+          "p95": 0.800000011920929,
+          "p99": 1.300000011920929,
+          "max": 1.600000023841858
+        },
+        "renderSubmitMs": {
+          "samples": 108,
+          "p50": 5,
+          "p95": 15.099999964237213,
+          "p99": 21.000000059604645,
+          "max": 27.000000059604645
+        },
+        "intervalsOver33ms": 60,
+        "intervalsOver50ms": 24
+      }
+    },
+    "resources": [
+      {
+        "name": "p46-0a27c3623401cdba.css",
+        "durationMs": 110.5,
+        "transferBytes": 12228,
+        "encodedBytes": 11928,
+        "decodedBytes": 11928
+      },
+      {
+        "name": "p46-68325862e4878044.svg",
+        "durationMs": 143.20000004768372,
+        "transferBytes": 80226,
+        "encodedBytes": 79926,
+        "decodedBytes": 79926
+      },
+      {
+        "name": "p46-c455364ae605a43f.svg",
+        "durationMs": 144.5,
+        "transferBytes": 614,
+        "encodedBytes": 314,
+        "decodedBytes": 314
+      },
+      {
+        "name": "p46-6d646cc5fda9843a.svg",
+        "durationMs": 133.60000002384186,
+        "transferBytes": 937,
+        "encodedBytes": 637,
+        "decodedBytes": 637
+      },
+      {
+        "name": "p111-app-2IJBLW5F.js",
+        "durationMs": 82.80000001192093,
+        "transferBytes": 55273,
+        "encodedBytes": 54973,
+        "decodedBytes": 54973
+      },
+      {
+        "name": "p111-chunk-LXLY5QTL.js",
+        "durationMs": 175.80000001192093,
+        "transferBytes": 649908,
+        "encodedBytes": 649608,
+        "decodedBytes": 649608
+      },
+      {
+        "name": "p111-chunk-LVDOPTLM.js",
+        "durationMs": 174.79999995231628,
+        "transferBytes": 984711,
+        "encodedBytes": 984411,
+        "decodedBytes": 984411
+      },
+      {
+        "name": "p46-ec8828f4ee51cd30.model.gz",
+        "durationMs": 431.4000000357628,
+        "transferBytes": 2589903,
+        "encodedBytes": 2589603,
+        "decodedBytes": 2589603
+      },
+      {
+        "name": "p46-2a5899f90ef01d45.model.gz",
+        "durationMs": 44.19999998807907,
+        "transferBytes": 132552,
+        "encodedBytes": 132252,
+        "decodedBytes": 132252
+      },
+      {
+        "name": "p46-aae58cff565320e0.model.gz",
+        "durationMs": 429,
+        "transferBytes": 4713589,
+        "encodedBytes": 4713289,
+        "decodedBytes": 4713289
+      },
+      {
+        "name": "p46-271af8fd89480805.svg",
+        "durationMs": 45.60000002384186,
+        "transferBytes": 5705,
+        "encodedBytes": 5405,
+        "decodedBytes": 5405
+      },
+      {
+        "name": "p46-b6149aafeddc6440.model.gz",
+        "durationMs": 110.60000002384186,
+        "transferBytes": 1035995,
+        "encodedBytes": 1035695,
+        "decodedBytes": 1035695
+      },
+      {
+        "name": "p46-60a8ee95a6ff1200.png",
+        "durationMs": 70.5,
+        "transferBytes": 348862,
+        "encodedBytes": 348562,
+        "decodedBytes": 348562
+      },
+      {
+        "name": "p46-4cc02217767cd227.png",
+        "durationMs": 43.40000003576279,
+        "transferBytes": 247061,
+        "encodedBytes": 246761,
+        "decodedBytes": 246761
+      },
+      {
+        "name": "p46-53c4ad35759c4412.png",
+        "durationMs": 59.299999952316284,
+        "transferBytes": 202474,
+        "encodedBytes": 202174,
+        "decodedBytes": 202174
+      },
+      {
+        "name": "p46-24272fa937e3ea6d.png",
+        "durationMs": 46.90000003576279,
+        "transferBytes": 346230,
+        "encodedBytes": 345930,
+        "decodedBytes": 345930
+      },
+      {
+        "name": "p46-bbbfa2bba4d57c87.model.gz",
+        "durationMs": 106.60000002384186,
+        "transferBytes": 1144508,
+        "encodedBytes": 1144208,
+        "decodedBytes": 1144208
+      },
+      {
+        "name": "p46-f44ed243e087f14a.model.gz",
+        "durationMs": 111.90000003576279,
+        "transferBytes": 1145530,
+        "encodedBytes": 1145230,
+        "decodedBytes": 1145230
+      },
+      {
+        "name": "p46-3aefcdc6151f9e74.model.gz",
+        "durationMs": 356.39999997615814,
+        "transferBytes": 5384284,
+        "encodedBytes": 5383984,
+        "decodedBytes": 5383984
+      },
+      {
+        "name": "p46-377bd70eaca0c092.model.gz",
+        "durationMs": 48.59999996423721,
+        "transferBytes": 455542,
+        "encodedBytes": 455242,
+        "decodedBytes": 455242
+      },
+      {
+        "name": "p46-fc9307cbd4b23a47.png",
+        "durationMs": 146.89999997615814,
+        "transferBytes": 1129951,
+        "encodedBytes": 1129651,
+        "decodedBytes": 1129651
+      },
+      {
+        "name": "p46-fbfb3b61565aa652.model.gz",
+        "durationMs": 67.09999996423721,
+        "transferBytes": 562158,
+        "encodedBytes": 561858,
+        "decodedBytes": 561858
+      },
+      {
+        "name": "p46-3e9d3471b33eb1f8.jpg",
+        "durationMs": 59.89999997615814,
+        "transferBytes": 308189,
+        "encodedBytes": 307889,
+        "decodedBytes": 307889
+      },
+      {
+        "name": "p46-c21b8d915764e946.model.gz",
+        "durationMs": 103.69999998807907,
+        "transferBytes": 332025,
+        "encodedBytes": 331725,
+        "decodedBytes": 331725
+      },
+      {
+        "name": "p46-cea6422dd43c32cf.model.gz",
+        "durationMs": 450.4000000357628,
+        "transferBytes": 6480654,
+        "encodedBytes": 6480354,
+        "decodedBytes": 6480354
+      },
+      {
+        "name": "p46-114f83b6a43a02cb.png",
+        "durationMs": 70.19999998807907,
+        "transferBytes": 582592,
+        "encodedBytes": 582292,
+        "decodedBytes": 582292
+      },
+      {
+        "name": "p46-df9ff1883f589022.png",
+        "durationMs": 54.30000001192093,
+        "transferBytes": 550933,
+        "encodedBytes": 550633,
+        "decodedBytes": 550633
+      },
+      {
+        "name": "p46-c97af528f657b9f1.png",
+        "durationMs": 49.80000001192093,
+        "transferBytes": 502549,
+        "encodedBytes": 502249,
+        "decodedBytes": 502249
+      },
+      {
+        "name": "p46-9379a7ca5c14417b.png",
+        "durationMs": 36.19999998807907,
+        "transferBytes": 253644,
+        "encodedBytes": 253344,
+        "decodedBytes": 253344
+      },
+      {
+        "name": "p46-de83756c8728d940.jpg",
+        "durationMs": 20.600000023841858,
+        "transferBytes": 58720,
+        "encodedBytes": 58420,
+        "decodedBytes": 58420
+      },
+      {
+        "name": "p46-7437a9f078e76ac6.jpg",
+        "durationMs": 19.099999964237213,
+        "transferBytes": 32083,
+        "encodedBytes": 31783,
+        "decodedBytes": 31783
+      },
+      {
+        "name": "p46-50b5a9204619bbe4.jpg",
+        "durationMs": 21.600000023841858,
+        "transferBytes": 42004,
+        "encodedBytes": 41704,
+        "decodedBytes": 41704
+      },
+      {
+        "name": "p46-a2d5604a688af572.jpg",
+        "durationMs": 54,
+        "transferBytes": 481749,
+        "encodedBytes": 481449,
+        "decodedBytes": 481449
+      },
+      {
+        "name": "p46-3978428480020f39.png",
+        "durationMs": 154.30000001192093,
+        "transferBytes": 2509797,
+        "encodedBytes": 2509497,
+        "decodedBytes": 2509497
+      },
+      {
+        "name": "p46-d4fb607c9417f7c5.jpg",
+        "durationMs": 31.80000001192093,
+        "transferBytes": 265663,
+        "encodedBytes": 265363,
+        "decodedBytes": 265363
+      },
+      {
+        "name": "p46-e5038b8562544f1d.model.gz",
+        "durationMs": 185.69999998807907,
+        "transferBytes": 1074719,
+        "encodedBytes": 1074419,
+        "decodedBytes": 1074419
+      },
+      {
+        "name": "p46-889324b5dfede33e.model.gz",
+        "durationMs": 67.80000001192093,
+        "transferBytes": 920010,
+        "encodedBytes": 919710,
+        "decodedBytes": 919710
+      },
+      {
+        "name": "p46-545d606f1e92b531.model.gz",
+        "durationMs": 43.09999996423721,
+        "transferBytes": 399706,
+        "encodedBytes": 399406,
+        "decodedBytes": 399406
+      },
+      {
+        "name": "p46-3198cabcaf5107e5.jpg",
+        "durationMs": 66.10000002384186,
+        "transferBytes": 629631,
+        "encodedBytes": 629331,
+        "decodedBytes": 629331
+      },
+      {
+        "name": "p46-cb78919f60c92912.jpg",
+        "durationMs": 48.80000001192093,
+        "transferBytes": 448720,
+        "encodedBytes": 448420,
+        "decodedBytes": 448420
+      },
+      {
+        "name": "p46-78a0c93b1d8d394b.jpg",
+        "durationMs": 50.5,
+        "transferBytes": 553396,
+        "encodedBytes": 553096,
+        "decodedBytes": 553096
+      },
+      {
+        "name": "p46-d769443de69cc164.jpg",
+        "durationMs": 43.59999996423721,
+        "transferBytes": 425813,
+        "encodedBytes": 425513,
+        "decodedBytes": 425513
+      },
+      {
+        "name": "p46-dd7fc03e152eb8c2.jpg",
+        "durationMs": 71.10000002384186,
+        "transferBytes": 1042365,
+        "encodedBytes": 1042065,
+        "decodedBytes": 1042065
+      },
+      {
+        "name": "p46-ddf9224e9cfa3eb2.jpg",
+        "durationMs": 54.80000001192093,
+        "transferBytes": 697930,
+        "encodedBytes": 697630,
+        "decodedBytes": 697630
+      },
+      {
+        "name": "p46-06fcdb0cebacdcb1.mp3",
+        "durationMs": 190.4000000357628,
+        "transferBytes": 114680,
+        "encodedBytes": 114380,
+        "decodedBytes": 114380
+      },
+      {
+        "name": "p46-95d14d68377f4428.mp3",
+        "durationMs": 203.19999998807907,
+        "transferBytes": 146648,
+        "encodedBytes": 146348,
+        "decodedBytes": 146348
+      },
+      {
+        "name": "p46-be0bb8ad136498b9.wav",
+        "durationMs": 94.69999998807907,
+        "transferBytes": 42584,
+        "encodedBytes": 42284,
+        "decodedBytes": 42284
+      },
+      {
+        "name": "p46-1820d49f6d2f28f1.wav",
+        "durationMs": 95.10000002384186,
+        "transferBytes": 27224,
+        "encodedBytes": 26924,
+        "decodedBytes": 26924
+      },
+      {
+        "name": "p46-5e79355fa979a053.wav",
+        "durationMs": 122.40000003576279,
+        "transferBytes": 18014,
+        "encodedBytes": 17714,
+        "decodedBytes": 17714
+      },
+      {
+        "name": "p46-7f1bcfc2c78f4f0c.wav",
+        "durationMs": 115.69999998807907,
+        "transferBytes": 39384,
+        "encodedBytes": 39084,
+        "decodedBytes": 39084
+      },
+      {
+        "name": "p46-d4b143cef48c98c7.wav",
+        "durationMs": 135.70000004768372,
+        "transferBytes": 67544,
+        "encodedBytes": 67244,
+        "decodedBytes": 67244
+      },
+      {
+        "name": "p46-2663935733aff8f3.wav",
+        "durationMs": 141.4000000357628,
+        "transferBytes": 38744,
+        "encodedBytes": 38444,
+        "decodedBytes": 38444
+      },
+      {
+        "name": "p46-fbcc017c4b4da121.wav",
+        "durationMs": 150.39999997615814,
+        "transferBytes": 164824,
+        "encodedBytes": 164524,
+        "decodedBytes": 164524
+      },
+      {
+        "name": "p46-0311b80459596e8b.wav",
+        "durationMs": 157.69999998807907,
+        "transferBytes": 89944,
+        "encodedBytes": 89644,
+        "decodedBytes": 89644
+      },
+      {
+        "name": "p46-8b931f59d66a47d0.wav",
+        "durationMs": 87.79999995231628,
+        "transferBytes": 32344,
+        "encodedBytes": 32044,
+        "decodedBytes": 32044
+      },
+      {
+        "name": "p46-072361572177c965.wav",
+        "durationMs": 247,
+        "transferBytes": 38744,
+        "encodedBytes": 38444,
+        "decodedBytes": 38444
+      },
+      {
+        "name": "p46-71da9b1a482002db.wav",
+        "durationMs": 183,
+        "transferBytes": 21464,
+        "encodedBytes": 21164,
+        "decodedBytes": 21164
+      },
+      {
+        "name": "p46-e537b8cdd8153991.wav",
+        "durationMs": 114.80000001192093,
+        "transferBytes": 249944,
+        "encodedBytes": 249644,
+        "decodedBytes": 249644
+      },
+      {
+        "name": "p46-4b4688c2419fd54d.wav",
+        "durationMs": 139.9000000357628,
+        "transferBytes": 249944,
+        "encodedBytes": 249644,
+        "decodedBytes": 249644
+      },
+      {
+        "name": "p46-af8c383d8593fb29.wav",
+        "durationMs": 134.19999998807907,
+        "transferBytes": 249944,
+        "encodedBytes": 249644,
+        "decodedBytes": 249644
+      },
+      {
+        "name": "p46-b555185e8abd3105.wav",
+        "durationMs": 143.80000001192093,
+        "transferBytes": 313944,
+        "encodedBytes": 313644,
+        "decodedBytes": 313644
+      },
+      {
+        "name": "p46-ca4797eeb2928c4f.wav",
+        "durationMs": 72.5,
+        "transferBytes": 93034,
+        "encodedBytes": 92734,
+        "decodedBytes": 92734
+      },
+      {
+        "name": "p46-e0f78322e4279657.wav",
+        "durationMs": 55.19999998807907,
+        "transferBytes": 53464,
+        "encodedBytes": 53164,
+        "decodedBytes": 53164
+      },
+      {
+        "name": "p46-a3f61cec9e95a2ee.wav",
+        "durationMs": 94.80000001192093,
+        "transferBytes": 51544,
+        "encodedBytes": 51244,
+        "decodedBytes": 51244
+      },
+      {
+        "name": "p46-27f7bee591618394.wav",
+        "durationMs": 99.5,
+        "transferBytes": 8470,
+        "encodedBytes": 8170,
+        "decodedBytes": 8170
+      },
+      {
+        "name": "p46-863cd7c44bafcdd6.wav",
+        "durationMs": 246.60000002384186,
+        "transferBytes": 9694,
+        "encodedBytes": 9394,
+        "decodedBytes": 9394
+      },
+      {
+        "name": "p46-81e7dc049307717b.wav",
+        "durationMs": 167,
+        "transferBytes": 21784,
+        "encodedBytes": 21484,
+        "decodedBytes": 21484
+      },
+      {
+        "name": "p46-796029dc1ea76bfc.wav",
+        "durationMs": 79.69999998807907,
+        "transferBytes": 19544,
+        "encodedBytes": 19244,
+        "decodedBytes": 19244
+      },
+      {
+        "name": "p46-4c790484e87b9caa.wav",
+        "durationMs": 201.89999997615814,
+        "transferBytes": 512344,
+        "encodedBytes": 512044,
+        "decodedBytes": 512044
+      },
+      {
+        "name": "world.js",
+        "durationMs": 45.39999997615814,
+        "transferBytes": 0,
+        "encodedBytes": 8364,
+        "decodedBytes": 8364
+      },
+      {
+        "name": "segment-index.js",
+        "durationMs": 23.80000001192093,
+        "transferBytes": 0,
+        "encodedBytes": 1671,
+        "decodedBytes": 1671
+      },
+      {
+        "name": "junction-shape.js",
+        "durationMs": 50.10000002384186,
+        "transferBytes": 0,
+        "encodedBytes": 73387,
+        "decodedBytes": 73387
+      }
+    ],
+    "resourceNote": "Zero transfer bytes can indicate a cache hit or unavailable timing data; these are not classified automatically."
+  },
+  "contextLost": false,
+  "phase": "ended",
+  "audioErrors": []
+}

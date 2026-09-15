@@ -1,0 +1,40 @@
+{
+  "results": [
+    {
+      "mode": 0,
+      "changedBytes": 0,
+      "pixels": 65536,
+      "timings": [
+        {
+          "legacy": true,
+          "p50": 2.5,
+          "p95": 25.100000001490116
+        },
+        {
+          "legacy": false,
+          "p50": 2.399999998509884,
+          "p95": 26.5
+        }
+      ]
+    },
+    {
+      "mode": 1,
+      "changedBytes": 0,
+      "pixels": 65536,
+      "timings": [
+        {
+          "legacy": true,
+          "p50": 2.399999998509884,
+          "p95": 4.399999998509884
+        },
+        {
+          "legacy": false,
+          "p50": 1.3000000044703484,
+          "p95": 2.7000000029802322
+        }
+      ]
+    }
+  ],
+  "contextLost": false,
+  "scope": "256px diagnostic color texture, blocking software rendering plus pixel readback; not phone GPU time"
+}
