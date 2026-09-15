@@ -1,0 +1,32 @@
+{
+  "initial": {
+    "injected": {
+      "fetchFailures": 2,
+      "playFailures": 2,
+      "playCalls": 2,
+      "failedUrl": "./p46-be0bb8ad136498b9.wav"
+    },
+    "loaded": false,
+    "buffers": 24,
+    "radioPaused": false,
+    "state": "running",
+    "phase": "riding"
+  },
+  "recovered": {
+    "loaded": true,
+    "state": "running",
+    "buffers": 25,
+    "loops": 9,
+    "radioPaused": false,
+    "radioIndex": 0,
+    "radioAttempts": 2
+  },
+  "blockedCalls": 0,
+  "gesture": {
+    "calls": 3,
+    "paused": false,
+    "state": "running",
+    "contextLost": false
+  },
+  "errors": []
+}
