@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 70" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round">
+  <title>Ride — hand-lettered marker</title>
+  <g stroke-width="5.6">
+    <path transform="rotate(-3 32 35)" d="M16 58 Q23 35 31 12 M25 16 Q54 6 56 22 Q56 35 24 36 M32 35 Q44 44 51 58"/>
+    <path transform="rotate(3 64 42)" d="M69 33 Q64 45 61 56 M72 19 L72.5 18"/>
+    <path transform="rotate(-2 91 37)" d="M100 36 Q84 24 77 44 Q73 58 85 57 Q96 54 106 15 Q97 44 98 56"/>
+    <path transform="rotate(3 123 44)" d="M110 46 Q128 47 133 36 Q129 29 119 35 Q107 44 110 54 Q116 65 136 51"/>
+  </g>
+</svg>

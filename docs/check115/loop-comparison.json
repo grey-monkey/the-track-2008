@@ -1,0 +1,226 @@
+[
+  {
+    "alignedEnd": {
+      "bad": 0,
+      "max": 0.27019181847572327
+    },
+    "explicitEnd": {
+      "bad": 0,
+      "max": 0.27019181847572327
+    },
+    "trim128": {
+      "bad": 0,
+      "max": 0.27019181847572327
+    }
+  },
+  {
+    "alignedEnd": {
+      "bad": 0,
+      "max": 0.29740798473358154
+    },
+    "explicitEnd": {
+      "bad": 0,
+      "max": 0.29740798473358154
+    },
+    "trim128": {
+      "bad": 0,
+      "max": 0.29740798473358154
+    }
+  },
+  {
+    "alignedEnd": {
+      "bad": 0,
+      "max": 0.3386216163635254
+    },
+    "explicitEnd": {
+      "bad": 0,
+      "max": 0.3386216163635254
+    },
+    "trim128": {
+      "bad": 0,
+      "max": 0.3386216163635254
+    }
+  },
+  {
+    "alignedEnd": {
+      "bad": 0,
+      "max": 0.3572257161140442
+    },
+    "explicitEnd": {
+      "bad": 0,
+      "max": 0.3572257161140442
+    },
+    "trim128": {
+      "bad": 0,
+      "max": 0.3572257161140442
+    }
+  },
+  {
+    "alignedEnd": {
+      "bad": 0,
+      "max": 0.2759893536567688
+    },
+    "explicitEnd": {
+      "bad": 0,
+      "max": 369962188800
+    },
+    "trim128": {
+      "bad": 0,
+      "max": 0.2759893536567688
+    }
+  },
+  {
+    "alignedEnd": {
+      "bad": 0,
+      "max": 0.3816360831260681
+    },
+    "explicitEnd": {
+      "bad": 2048,
+      "max": null
+    },
+    "trim128": {
+      "bad": 0,
+      "max": 0.3816360831260681
+    }
+  },
+  {
+    "alignedEnd": {
+      "bad": 0,
+      "max": 0.3146393597126007
+    },
+    "explicitEnd": {
+      "bad": 2048,
+      "max": null
+    },
+    "trim128": {
+      "bad": 0,
+      "max": 0.3146393597126007
+    }
+  },
+  {
+    "alignedEnd": {
+      "bad": 0,
+      "max": 0.5586686134338379
+    },
+    "explicitEnd": {
+      "bad": 2048,
+      "max": null
+    },
+    "trim128": {
+      "bad": 0,
+      "max": 0.5586686134338379
+    }
+  },
+  {
+    "alignedEnd": {
+      "bad": 0,
+      "max": 0.23746494948863983
+    },
+    "explicitEnd": {
+      "bad": 2048,
+      "max": null
+    },
+    "trim128": {
+      "bad": 0,
+      "max": 0.23746494948863983
+    }
+  },
+  {
+    "alignedEnd": {
+      "bad": 0,
+      "max": 0.42747581005096436
+    },
+    "explicitEnd": {
+      "bad": 2048,
+      "max": null
+    },
+    "trim128": {
+      "bad": 0,
+      "max": 0.42747581005096436
+    }
+  },
+  {
+    "alignedEnd": {
+      "bad": 0,
+      "max": 0.2524292767047882
+    },
+    "explicitEnd": {
+      "bad": 2048,
+      "max": null
+    },
+    "trim128": {
+      "bad": 0,
+      "max": 0.2524292767047882
+    }
+  },
+  {
+    "alignedEnd": {
+      "bad": 0,
+      "max": 0.4690835773944855
+    },
+    "explicitEnd": {
+      "bad": 2048,
+      "max": null
+    },
+    "trim128": {
+      "bad": 0,
+      "max": 0.4690835773944855
+    }
+  },
+  {
+    "alignedEnd": {
+      "bad": 0,
+      "max": 0.3231211006641388
+    },
+    "explicitEnd": {
+      "bad": 2048,
+      "max": null
+    },
+    "trim128": {
+      "bad": 0,
+      "max": 0.3231211006641388
+    }
+  },
+  {
+    "alignedEnd": {
+      "bad": 0,
+      "max": 0.33922234177589417
+    },
+    "explicitEnd": {
+      "bad": 2048,
+      "max": null
+    },
+    "trim128": {
+      "bad": 0,
+      "max": 0.327530175447464
+    }
+  },
+  {
+    "alignedEnd": {
+      "bad": 0,
+      "max": 0.2257552444934845
+    },
+    "explicitEnd": {
+      "bad": 2048,
+      "max": null
+    },
+    "trim128": {
+      "bad": 0,
+      "max": 0.2257552444934845
+    }
+  },
+  {
+    "alignedEnd": {
+      "bad": 0,
+      "max": 0.259951114654541
+    },
+    "explicitEnd": {
+      "bad": 2048,
+      "max": null
+    },
+    "trim128": {
+      "bad": 0,
+      "max": 0.3130999803543091
+    }
+  }
+]

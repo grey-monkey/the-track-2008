@@ -1,0 +1,158 @@
+{
+  "wind_source": {
+    "bad": 0,
+    "max": 0.11891413480043411
+  },
+  "wind_filter": {
+    "bad": 0,
+    "max": 0.11978328973054886
+  },
+  "wind_gain": {
+    "bad": 0,
+    "max": 0.004800789523869753
+  },
+  "wind_pan": {
+    "bad": 0,
+    "max": 0.0029559587128460407
+  },
+  "night_source": {
+    "bad": 0,
+    "max": 0.28266429901123047
+  },
+  "night_filter": {
+    "bad": 0,
+    "max": 0.3460783064365387
+  },
+  "night_gain": {
+    "bad": 0,
+    "max": 0
+  },
+  "night_pan": {
+    "bad": 0,
+    "max": 0
+  },
+  "brake_source": {
+    "bad": 0,
+    "max": 0.20804093778133392
+  },
+  "brake_filter": {
+    "bad": 0,
+    "max": 0.2091902643442154
+  },
+  "brake_gain": {
+    "bad": 0,
+    "max": 0
+  },
+  "brake_pan": {
+    "bad": 0,
+    "max": 0
+  },
+  "idle_source": {
+    "bad": 0,
+    "max": 0.36208951473236084
+  },
+  "idle_filter": {
+    "bad": 0,
+    "max": 0.3760063350200653
+  },
+  "idle_gain": {
+    "bad": 0,
+    "max": 0.018329452723264694
+  },
+  "idle_pan": {
+    "bad": 0,
+    "max": 0.012899001128971577
+  },
+  "load_source": {
+    "bad": 0,
+    "max": 0.37183186411857605
+  },
+  "load_filter": {
+    "bad": 0,
+    "max": 0.37330877780914307
+  },
+  "load_gain": {
+    "bad": 0,
+    "max": 0
+  },
+  "load_pan": {
+    "bad": 0,
+    "max": 0
+  },
+  "exhaust_source": {
+    "bad": 0,
+    "max": 0.2093363255262375
+  },
+  "exhaust_filter": {
+    "bad": 0,
+    "max": 0.21596509218215942
+  },
+  "exhaust_gain": {
+    "bad": 0,
+    "max": 0.006824742071330547
+  },
+  "exhaust_pan": {
+    "bad": 0,
+    "max": 0.004825766198337078
+  },
+  "tires_source": {
+    "bad": 0,
+    "max": 0
+  },
+  "tires_filter": {
+    "bad": 2048,
+    "max": null
+  },
+  "tires_gain": {
+    "bad": 2048,
+    "max": null
+  },
+  "tires_pan": {
+    "bad": 2048,
+    "max": null
+  },
+  "roll_source": {
+    "bad": 0,
+    "max": 0.35770562291145325
+  },
+  "roll_filter": {
+    "bad": 0,
+    "max": 0.3613188564777374
+  },
+  "roll_gain": {
+    "bad": 0,
+    "max": 0
+  },
+  "roll_pan": {
+    "bad": 0,
+    "max": 0
+  },
+  "slide_source": {
+    "bad": 0,
+    "max": 0.1597011387348175
+  },
+  "slide_filter": {
+    "bad": 0,
+    "max": 0.1652171015739441
+  },
+  "slide_gain": {
+    "bad": 0,
+    "max": 0
+  },
+  "slide_pan": {
+    "bad": 0,
+    "max": 0
+  },
+  "radio_gain": {
+    "bad": 0,
+    "max": 0
+  },
+  "radio_panner": {
+    "bad": 0,
+    "max": 0
+  },
+  "radio_otherWindow": {
+    "bad": 0,
+    "max": 0
+  }
+}
