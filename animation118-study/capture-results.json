@@ -1,0 +1,350 @@
+{
+  "straight": {
+    "117": [
+      {
+        "name": "straight-117-01.png",
+        "state": {
+          "phase": "riding",
+          "speedMps": 7.616080053577341,
+          "carSpeedMps": 7.589791666666614,
+          "tension": 1.2964043598007864,
+          "lean": 0,
+          "height": 0
+        }
+      },
+      {
+        "name": "straight-117-02.png",
+        "state": {
+          "phase": "riding",
+          "speedMps": 8.160899899308195,
+          "carSpeedMps": 8.156458333333283,
+          "tension": 1.3572997904644188,
+          "lean": 0,
+          "height": 0
+        }
+      },
+      {
+        "name": "straight-117-03.png",
+        "state": {
+          "phase": "riding",
+          "speedMps": 8.678680286541768,
+          "carSpeedMps": 8.687708333333333,
+          "tension": 1.446406413474032,
+          "lean": 0,
+          "height": 0
+        }
+      },
+      {
+        "name": "straight-117-04.png",
+        "state": {
+          "phase": "riding",
+          "speedMps": 9.20567069623886,
+          "carSpeedMps": 9.211875000000049,
+          "tension": 1.5467175877978936,
+          "lean": 0,
+          "height": 0
+        }
+      },
+      {
+        "name": "straight-117-05.png",
+        "state": {
+          "phase": "riding",
+          "speedMps": 9.753072807565358,
+          "carSpeedMps": 9.743125000000099,
+          "tension": 1.620390191145372,
+          "lean": 0,
+          "height": 0
+        }
+      }
+    ],
+    "118": [
+      {
+        "name": "straight-118-01.png",
+        "state": {
+          "phase": "riding",
+          "speedMps": 3.5125075330528643,
+          "carSpeedMps": 3.474375000000045,
+          "tension": 1.1762546201988378,
+          "lean": 0,
+          "height": 0
+        }
+      },
+      {
+        "name": "straight-118-02.png",
+        "state": {
+          "phase": "riding",
+          "speedMps": 4.154263958192034,
+          "carSpeedMps": 4.041041666666727,
+          "tension": 1.3509179087861687,
+          "lean": 0,
+          "height": 0
+        }
+      },
+      {
+        "name": "straight-118-03.png",
+        "state": {
+          "phase": "riding",
+          "speedMps": 4.472007810063576,
+          "carSpeedMps": 4.551041666666711,
+          "tension": 1.3077536175532916,
+          "lean": 0,
+          "height": 0
+        }
+      },
+      {
+        "name": "straight-118-04.png",
+        "state": {
+          "phase": "riding",
+          "speedMps": 5.0071005731059115,
+          "carSpeedMps": 5.075208333333361,
+          "tension": 1.4418870786872298,
+          "lean": 0,
+          "height": 0
+        }
+      },
+      {
+        "name": "straight-118-05.png",
+        "state": {
+          "phase": "riding",
+          "speedMps": 5.564176222138744,
+          "carSpeedMps": 5.599375000000011,
+          "tension": 1.511299586728219,
+          "lean": 0,
+          "height": 0
+        }
+      }
+    ]
+  },
+  "carve": {
+    "117": [
+      {
+        "name": "carve-117-01.png",
+        "state": {
+          "phase": "crashed",
+          "speedMps": 0.5051072964843146,
+          "carSpeedMps": 4.958020833333363,
+          "tension": 0,
+          "lean": 0.21221052631475307,
+          "height": 0
+        }
+      },
+      {
+        "name": "carve-117-02.png",
+        "state": {
+          "phase": "crashed",
+          "speedMps": 0.13493199017149124,
+          "carSpeedMps": 4.087083333333357,
+          "tension": 0,
+          "lean": 0.21221052631475307,
+          "height": 0
+        }
+      },
+      {
+        "name": "carve-117-03.png",
+        "state": {
+          "phase": "crashed",
+          "speedMps": 0.03229042914414429,
+          "carSpeedMps": 2.982083333333355,
+          "tension": 0,
+          "lean": 0.21221052631475307,
+          "height": 0
+        }
+      },
+      {
+        "name": "carve-117-04.png",
+        "state": {
+          "phase": "crashed",
+          "speedMps": 0.007870363176588494,
+          "carSpeedMps": 1.891250000000022,
+          "tension": 0,
+          "lean": 0.21221052631475307,
+          "height": 0
+        }
+      },
+      {
+        "name": "carve-117-05.png",
+        "state": {
+          "phase": "crashed",
+          "speedMps": 0.001687257126427363,
+          "carSpeedMps": 0.7492187500000137,
+          "tension": 0,
+          "lean": 0.21221052631475307,
+          "height": 0
+        }
+      }
+    ],
+    "118": [
+      {
+        "name": "carve-118-01.png",
+        "state": {
+          "phase": "riding",
+          "speedMps": 2.8195734847073552,
+          "carSpeedMps": 2.730625000000022,
+          "tension": 1.8899534770971511,
+          "lean": 0.21195966792415066,
+          "height": 0
+        }
+      },
+      {
+        "name": "carve-118-02.png",
+        "state": {
+          "phase": "riding",
+          "speedMps": 3.848595070116026,
+          "carSpeedMps": 3.254791666666705,
+          "tension": 3.509628353247308,
+          "lean": 0.2122071787885476,
+          "height": 0
+        }
+      },
+      {
+        "name": "carve-118-03.png",
+        "state": {
+          "phase": "riding",
+          "speedMps": 5.648803103003521,
+          "carSpeedMps": 3.807291666666722,
+          "tension": 7.07022595047927,
+          "lean": 0.21221049094178498,
+          "height": 0
+        }
+      },
+      {
+        "name": "carve-118-04.png",
+        "state": {
+          "phase": "riding",
+          "speedMps": 7.314131273063502,
+          "carSpeedMps": 4.3952083333333825,
+          "tension": 7.550435822067674,
+          "lean": 0.21221052603655105,
+          "height": 0
+        }
+      },
+      {
+        "name": "carve-118-05.png",
+        "state": {
+          "phase": "riding",
+          "speedMps": 7.8914294638697795,
+          "carSpeedMps": 4.961875000000031,
+          "tension": 6.762846663142534,
+          "lean": 0.2122105263131636,
+          "height": 0
+        }
+      }
+    ]
+  },
+  "coast": {
+    "117": [
+      {
+        "name": "coast-117-01.png",
+        "state": {
+          "phase": "coasting",
+          "speedMps": 1.4178526109810543,
+          "carSpeedMps": 1.765666171312689,
+          "tension": 0,
+          "lean": 0,
+          "height": 0
+        }
+      },
+      {
+        "name": "coast-117-02.png",
+        "state": {
+          "phase": "coasting",
+          "speedMps": 1.4093208623682436,
+          "carSpeedMps": 1.7295732455533968,
+          "tension": 0,
+          "lean": 0,
+          "height": 0
+        }
+      },
+      {
+        "name": "coast-117-03.png",
+        "state": {
+          "phase": "coasting",
+          "speedMps": 1.4284368403167311,
+          "carSpeedMps": 1.722259787200064,
+          "tension": 0,
+          "lean": 0,
+          "height": 0
+        }
+      },
+      {
+        "name": "coast-117-04.png",
+        "state": {
+          "phase": "crashed",
+          "speedMps": 0.42790168793572597,
+          "carSpeedMps": 1.5024322196064213,
+          "tension": 0,
+          "lean": 0,
+          "height": 0
+        }
+      },
+      {
+        "name": "coast-117-05.png",
+        "state": {
+          "phase": "crashed",
+          "speedMps": 0.09692073389685342,
+          "carSpeedMps": 0.6883123055700017,
+          "tension": 0,
+          "lean": 0,
+          "height": 0
+        }
+      }
+    ],
+    "118": [
+      {
+        "name": "coast-118-01.png",
+        "state": {
+          "phase": "coasting",
+          "speedMps": 2.039868255845748,
+          "carSpeedMps": 2.4311428058044044,
+          "tension": 0,
+          "lean": 0,
+          "height": 0
+        }
+      },
+      {
+        "name": "coast-118-02.png",
+        "state": {
+          "phase": "coasting",
+          "speedMps": 1.8734942158439643,
+          "carSpeedMps": 2.30125113975646,
+          "tension": 0,
+          "lean": 0,
+          "height": 0
+        }
+      },
+      {
+        "name": "coast-118-03.png",
+        "state": {
+          "phase": "coasting",
+          "speedMps": 1.760216717780931,
+          "carSpeedMps": 2.1894701648341197,
+          "tension": 0,
+          "lean": 0,
+          "height": 0
+        }
+      },
+      {
+        "name": "coast-118-04.png",
+        "state": {
+          "phase": "coasting",
+          "speedMps": 1.642459253812133,
+          "carSpeedMps": 2.0614278479312653,
+          "tension": 0,
+          "lean": 0,
+          "height": 0
+        }
+      },
+      {
+        "name": "coast-118-05.png",
+        "state": {
+          "phase": "coasting",
+          "speedMps": 1.5477153961161059,
+          "carSpeedMps": 1.9502045341256478,
+          "tension": 0,
+          "lean": 0,
+          "height": 0
+        }
+      }
+    ]
+  }
+}
