@@ -1,0 +1,53 @@
+{
+  "physicsUnchangedAllFourBoards": true,
+  "rampTrajectoryUnchanged": true,
+  "acceptedFieldsPreserved": true,
+  "slidePatchRegression": true,
+  "menuCrashTrickOwnership": true,
+  "lockedAnkleMaxErrorMetres": 1.8189185285171422e-7,
+  "peaks": {
+    "slide": {
+      "load": 0,
+      "brake": 0,
+      "flight": 0,
+      "compression": 0.6
+    },
+    "slide-right": {
+      "load": 0,
+      "brake": 0,
+      "flight": 0,
+      "compression": 0.6
+    },
+    "takeup": {
+      "load": 0.7057073386133431,
+      "brake": 0,
+      "flight": 0,
+      "compression": 0
+    },
+    "load": {
+      "load": 0.8735440800518862,
+      "brake": 0,
+      "flight": 0,
+      "compression": 0
+    },
+    "brake": {
+      "load": 0.045834117555704636,
+      "brake": 0.976728692031782,
+      "flight": 0,
+      "compression": 0.4870352723386001
+    },
+    "ramp": {
+      "load": 0,
+      "brake": 0,
+      "flight": 0.85,
+      "compression": 0.8008990179640716
+    },
+    "patch": {
+      "load": 0,
+      "brake": 0,
+      "flight": 0,
+      "compression": 0.2924
+    }
+  },
+  "samplerMicroseconds": 0.36091199999999957
+}

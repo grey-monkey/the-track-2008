@@ -1,0 +1,1 @@
+Source overlay and validation snapshot for Build125. The authoritative complete editable project is outputs/painted-prototype in the shared workspace. package.cjs records the inherited source routing; these overlay files alone are not a standalone build. clips.js is study-only and excluded from the game.
