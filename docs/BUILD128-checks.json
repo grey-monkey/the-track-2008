@@ -1,0 +1,75 @@
+{
+  "towPhysicsAllBoardsUnchanged": true,
+  "carIndependentOfSkaterSpeed": true,
+  "cameraVelocityAligned": true,
+  "yawRateBounded": true,
+  "lowSpeedBearingStable": true,
+  "crashBearingStable": true,
+  "menuReset": true,
+  "pathSlopes": [
+    {
+      "i": 0,
+      "length": 14.98217740814721,
+      "drop": -1.8334300070033993
+    },
+    {
+      "i": 1,
+      "length": 25.938871075800133,
+      "drop": -0.7413064277494783
+    },
+    {
+      "i": 2,
+      "length": 33.222610863328875,
+      "drop": 1.5448096772795403
+    },
+    {
+      "i": 3,
+      "length": 36.89684210526316,
+      "drop": -0.8994148140571638
+    },
+    {
+      "i": 4,
+      "length": 32.443150090760824,
+      "drop": -1.0696991238390694
+    },
+    {
+      "i": 5,
+      "length": 25.589267140693654,
+      "drop": -0.6122099650708206
+    },
+    {
+      "i": 6,
+      "length": 19.85019218143465,
+      "drop": 0.21849260430299178
+    },
+    {
+      "i": 7,
+      "length": 21.98282280815998,
+      "drop": 0.7158591839348105
+    },
+    {
+      "i": 8,
+      "length": 23.848303969382524,
+      "drop": 0.6415682587649172
+    },
+    {
+      "i": 9,
+      "length": 23.216448462768316,
+      "drop": 0.29108523470904374
+    },
+    {
+      "i": 10,
+      "length": 28.920316546353245,
+      "drop": 0.19254352568373231
+    },
+    {
+      "i": 11,
+      "length": 16.298512278520246,
+      "drop": 0.14320020315578816
+    }
+  ],
+  "halfMphHalfSecondFinish": true,
+  "restTimerReset": true,
+  "airtimeExcluded": true,
+  "regroupCameraStable": true
+}
