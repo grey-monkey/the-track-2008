@@ -1,0 +1,3 @@
+
+# Keep generated Build154 assets byte-identical to the tested package.
+build154/** -text
