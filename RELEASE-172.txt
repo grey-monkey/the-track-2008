@@ -1,0 +1,26 @@
+THE TRACK 2008 - BUILD 172
+Car albums and continuous playback
+
+Albums in How to ride: Lo and Behold, Dude Ranch, Nevermind, In Rainbows.
+The three supplied archives add 38 tracks in their supplied numerical order.
+Full audio duration is preserved, including any silence and bonus material.
+Audio is streamed track-by-track, not preloaded as entire albums.
+
+Playback is attempted when the selection screen finishes loading. Browsers
+that block autoplay start it on the first interaction. Music and ambient audio
+continue through pause, instructions, crashes, another run and back to car.
+The same album choice does not restart a track; changing albums starts the
+new album at track one. Album choice is remembered between visits.
+Explicit Sound off and switching away from the browser still suspend audio.
+
+Secret Mixtape remains hidden. Its ten tracks and persistent discovery hook
+are prepared, but a physical findable tape has not yet been placed in the world.
+How to ride is also available while paused. Crash screens retain only
+Another run and Back to the car.
+
+Validation: 51 automated checks pass. All 38 new encoded tracks passed full
+audio decoding. Browser results are in validation172/build172-browser-check.json.
+Gameplay handling, camera, world and scoring are unchanged.
+
+Play: https://grey-monkey.github.io/the-track-2008/build172/playtest172.html?v=172
+Local: node serve.cjs

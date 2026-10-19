@@ -22,3 +22,6 @@ build170/** -text
 
 # Keep tested Build171 assets byte-identical.
 build171/** -text
+
+# Keep tested Build172 assets byte-identical.
+build172/** -text

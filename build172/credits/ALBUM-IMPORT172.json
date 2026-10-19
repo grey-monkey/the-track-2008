@@ -1,0 +1,880 @@
+{
+  "source": "User-provided ZIP archives; audio tracks only, preserving supplied numerical order and full audio duration.",
+  "encoding": "MP3 160 kbps, stereo 44.1 kHz; each output fully decoded for validation.",
+  "tracks": [
+    {
+      "album": "dude-ranch",
+      "track": 1,
+      "source": "01. Blink-182 - Pathetic.mp3",
+      "sourceSHA256": "a4ea34b0e7e7d955e2441a88eff9d3e8205ab5220209e39c971a0aba59a70f82",
+      "file": "source/assets/dude-ranch/01.mp3",
+      "bytes": 2975048,
+      "sha256": "c7081f55036a4e2367ade31d46e71cf62da310c52c21343a1756fcadeb82a4c2",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "148.666667"
+        }
+      }
+    },
+    {
+      "album": "dude-ranch",
+      "track": 2,
+      "source": "02. Blink-182 - Voyeur.mp3",
+      "sourceSHA256": "6b84a36b4a8e2a2183317106e18ed29da0e77c8a837abb74a094f697aad291fd",
+      "file": "source/assets/dude-ranch/02.mp3",
+      "bytes": 3279634,
+      "sha256": "9d1b26ef8d97ca7c03a184647cecbde9e28b02b263a07d7b8d2734eef856a949",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "163.893333"
+        }
+      }
+    },
+    {
+      "album": "dude-ranch",
+      "track": 3,
+      "source": "03. Blink-182 - Dammit.mp3",
+      "sourceSHA256": "835349bc682261b936cfb7ce0766974094aa0f4a4cd322f7499e1aef605bce92",
+      "file": "source/assets/dude-ranch/03.mp3",
+      "bytes": 3307846,
+      "sha256": "d4125b2d1e8e3d669691f18b5eb0cf99e12b643154974e8baaa9f73262ad3343",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "165.306667"
+        }
+      }
+    },
+    {
+      "album": "dude-ranch",
+      "track": 4,
+      "source": "04. Blink-182 - Boring.mp3",
+      "sourceSHA256": "07051d0b89291e1fffcff47b9e1292daf16e07d594afb8f3727e9d98a4c4f622",
+      "file": "source/assets/dude-ranch/04.mp3",
+      "bytes": 2032548,
+      "sha256": "d7bee60d4c4ee79ad56c22ed24c9ccc5e9960af7c684f8725f4f20c15c77160b",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "101.560000"
+        }
+      }
+    },
+    {
+      "album": "dude-ranch",
+      "track": 5,
+      "source": "05. Blink-182 - Dick Lips.mp3",
+      "sourceSHA256": "9d2d916711a8f31c9d570a5ca1e53ddfac300a073879feabf66dc2a49798d5e0",
+      "file": "source/assets/dude-ranch/05.mp3",
+      "bytes": 3545563,
+      "sha256": "e881fcb9d691493f93ee3246f0bb2b21deb390b49d1f3ac8b105790539daea0d",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "177.200000"
+        }
+      }
+    },
+    {
+      "album": "dude-ranch",
+      "track": 6,
+      "source": "06. Blink-182 - Waggy.mp3",
+      "sourceSHA256": "9a6b823df55cd665ca3592b70738323a6f11261ef7ddc1b2830fdf9d05656e4b",
+      "file": "source/assets/dude-ranch/06.mp3",
+      "bytes": 3934784,
+      "sha256": "72c9fc4ba5c25e862e4660b6985300a089fc7895021b4a53ef6da37a759e3e57",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "196.666667"
+        }
+      }
+    },
+    {
+      "album": "dude-ranch",
+      "track": 7,
+      "source": "07. Blink-182 - Enthused.mp3",
+      "sourceSHA256": "64cd0f57dc41e35aa39b755644dcc255d18cc9dcee3461b82fef2aa75609d94c",
+      "file": "source/assets/dude-ranch/07.mp3",
+      "bytes": 3362183,
+      "sha256": "44accf9a5eb5ebd6a99563283c97483a6a81b64976a5b3bf28dee336fe48af14",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "168.040000"
+        }
+      }
+    },
+    {
+      "album": "dude-ranch",
+      "track": 8,
+      "source": "08. Blink-182 - Untitled.mp3",
+      "sourceSHA256": "266c7bd71034648d369703478843083a53113f76b57e95b3ff387aba0ca06353",
+      "file": "source/assets/dude-ranch/08.mp3",
+      "bytes": 3336060,
+      "sha256": "0f788abdf0632af3e6c39f07c4cf9175353eda68d797708f994f57eca0088092",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "166.733333"
+        }
+      }
+    },
+    {
+      "album": "dude-ranch",
+      "track": 9,
+      "source": "09. Blink-182 - Apple Shampoo.mp3",
+      "sourceSHA256": "5adebd6a2cc8c0d7e18f0932b9643375fc4234531c05f691b081d90efd01d8d3",
+      "file": "source/assets/dude-ranch/09.mp3",
+      "bytes": 3443167,
+      "sha256": "2603fa3d69c2de2e2ae2aec52bd6c9c89d04658de46ffb3ae2f673dc59b83935",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "172.093333"
+        }
+      }
+    },
+    {
+      "album": "dude-ranch",
+      "track": 10,
+      "source": "10. Blink-182 - Emo.mp3",
+      "sourceSHA256": "9128dd42bb9d89a0fa1c5b74a50f89fad75ea229b20af984f05843d911e90f3c",
+      "file": "source/assets/dude-ranch/10.mp3",
+      "bytes": 3412856,
+      "sha256": "a02b0705d6a997c6e91657665018fe68642979269577d2171d0bbf599ec0ee3e",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "170.560000"
+        }
+      }
+    },
+    {
+      "album": "dude-ranch",
+      "track": 11,
+      "source": "11. Blink-182 - Josie.mp3",
+      "sourceSHA256": "4616dcc1cd47bf956de50cc47a4ce0cc8528504d23524ac7f9ac5b892274fd9a",
+      "file": "source/assets/dude-ranch/11.mp3",
+      "bytes": 3998524,
+      "sha256": "fd5f1b6ef7c96d50e48fb1b29f03e03e94f92629be1dd0d96706f8e07cd9044d",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "199.840000"
+        }
+      }
+    },
+    {
+      "album": "dude-ranch",
+      "track": 12,
+      "source": "12. Blink-182 - A New Hope.mp3",
+      "sourceSHA256": "a09716e5c424c3f200ffed030a147095f733f8ee135eb1369be252a0520d4c98",
+      "file": "source/assets/dude-ranch/12.mp3",
+      "bytes": 4507916,
+      "sha256": "fe96e5938f8b95d38f3ff510155322a2af3617d8461c94839289656d6c81b0de",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "225.307188"
+        }
+      }
+    },
+    {
+      "album": "dude-ranch",
+      "track": 13,
+      "source": "13. Blink-182 - Lemmings.mp3",
+      "sourceSHA256": "e18d64b4237574308c1ed7d31dd402eac217b80fb45384990516f678d3fe9da5",
+      "file": "source/assets/dude-ranch/13.mp3",
+      "bytes": 3162086,
+      "sha256": "a2c376574df595358ccb942371b3ca9bcf7cad8728030282cf3a51787e986ba9",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "158.026667"
+        }
+      }
+    },
+    {
+      "album": "dude-ranch",
+      "track": 14,
+      "source": "14. Blink-182 - I'm Sorry.mp3",
+      "sourceSHA256": "ba38e4aa6450fa7b94c1a5f6e8e3c483df1d5953303f651f904e520fd350f50a",
+      "file": "source/assets/dude-ranch/14.mp3",
+      "bytes": 5350626,
+      "sha256": "fd919e0ebc8ac0e365495df85681abf04ff51a5baa9cc190d859f809bfcc642d",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "267.466667"
+        }
+      }
+    },
+    {
+      "album": "dude-ranch",
+      "track": 15,
+      "source": "15. Blink-182 - Degenerate.mp3",
+      "sourceSHA256": "ccbf5f5cebafa92a589fa25e5c79f654817be2ecbc3d70d30bb1b947b233e970",
+      "file": "source/assets/dude-ranch/15.mp3",
+      "bytes": 3028863,
+      "sha256": "d7b92c0eb37fd7969fa1f119a2308da30d3c64883dfc60be3973c354e46ef2dd",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "151.373333"
+        }
+      }
+    },
+    {
+      "album": "dude-ranch",
+      "track": 16,
+      "source": "16. Blink-182 - Dog Lapping (Live).mp3",
+      "sourceSHA256": "7f209c154831781a0cf92f71556844473526567b65336f4b026a88c99e5476dd",
+      "file": "source/assets/dude-ranch/16.mp3",
+      "bytes": 8512496,
+      "sha256": "503efcd23aef382235f03608dac034a3cc8fcd9266fa9f467effe12c319633ed",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "425.560000"
+        }
+      }
+    },
+    {
+      "album": "nevermind",
+      "track": 1,
+      "source": "01 Nirvana - Smells Like Teen Spirit.wav",
+      "sourceSHA256": "53be38d7a019412840993083d98114686aadfe352011ceb4f56b0ebcab0ce24c",
+      "file": "source/assets/nevermind/01.mp3",
+      "bytes": 6023893,
+      "sha256": "631f9fcca1121c4ded48d0c499c9ba4035e4811c82e6aba36619c741500532b7",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "301.093333"
+        }
+      }
+    },
+    {
+      "album": "nevermind",
+      "track": 2,
+      "source": "02 Nirvana - In Bloom.wav",
+      "sourceSHA256": "86f9af3c5b699e80b2ba28916ce39892b283ddfc9ed7b3ae99e777d09c278d7a",
+      "file": "source/assets/nevermind/02.mp3",
+      "bytes": 5100188,
+      "sha256": "d2b1cbad31552116182591ef8682480de1cf96c25117170a50ff83ce81430897",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "254.906667"
+        }
+      }
+    },
+    {
+      "album": "nevermind",
+      "track": 3,
+      "source": "03 Nirvana - Come As You Are.wav",
+      "sourceSHA256": "af1b1b9c08d57739fa9645d564a057e40c1d1ddf910f01f4ee5bcdcae7858204",
+      "file": "source/assets/nevermind/03.mp3",
+      "bytes": 4387575,
+      "sha256": "8a15df60b1d2dfbab508431bd85a90f453b1a6f7af7376c6c375b86e8558ae1b",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "219.293333"
+        }
+      }
+    },
+    {
+      "album": "nevermind",
+      "track": 4,
+      "source": "04 Nirvana - Breed.wav",
+      "sourceSHA256": "e85f35c6919552b92b296ccf44c67c3c03f17193936830f85d8ccfb25be5a4ac",
+      "file": "source/assets/nevermind/04.mp3",
+      "bytes": 3673899,
+      "sha256": "8a5d3eec0e6faae1a8e6bb6e829ba82ed9e172392278adc80722514ccbce8646",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "183.600000"
+        }
+      }
+    },
+    {
+      "album": "nevermind",
+      "track": 5,
+      "source": "05 Nirvana - Lithium.wav",
+      "sourceSHA256": "cbdbbc9b1038bdcbf5cdd5d9f680d7dd3468f86a7486e0a8121fdd364416a6e4",
+      "file": "source/assets/nevermind/05.mp3",
+      "bytes": 5141461,
+      "sha256": "e875b2dae7d1b650592891150b907a884358c6ac55a384931bf972886770d2ae",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "256.973333"
+        }
+      }
+    },
+    {
+      "album": "nevermind",
+      "track": 6,
+      "source": "06 Nirvana - Polly.wav",
+      "sourceSHA256": "32db1438ebbd506e3a3b011659099adbaafa45ca6f850d2b642acade00d1acac",
+      "file": "source/assets/nevermind/06.mp3",
+      "bytes": 3542242,
+      "sha256": "0b258c6bbb70cbebdc168c4e6a2a294cdd69f8de5d135f40aefe488073b1a5de",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "177.026667"
+        }
+      }
+    },
+    {
+      "album": "nevermind",
+      "track": 7,
+      "source": "07 Nirvana - Territorial Pissings.wav",
+      "sourceSHA256": "a793a4b2c370e0dc3a4935268e0db7c8d6f72f89f7b138f16e08ab8b24e4263a",
+      "file": "source/assets/nevermind/07.mp3",
+      "bytes": 2866731,
+      "sha256": "f15ecc53acfaa33827572a1dd1fdb821b02af8114e9320428567b282aa120221",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "143.240000"
+        }
+      }
+    },
+    {
+      "album": "nevermind",
+      "track": 8,
+      "source": "08 Nirvana - Drain You.wav",
+      "sourceSHA256": "c6e48aa441affbeffa23c860bcf076a7ee037d484369b9833ae9b761f69ef4d4",
+      "file": "source/assets/nevermind/08.mp3",
+      "bytes": 4479520,
+      "sha256": "f55a1798b58b6f8addd7173224c2465667dc51d945350fd51ef80757237ac2fa",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "223.893333"
+        }
+      }
+    },
+    {
+      "album": "nevermind",
+      "track": 9,
+      "source": "09 Nirvana - Lounge Act.wav",
+      "sourceSHA256": "09854a6aa654a484c5fc9734d334a8ce2cc7208cb5e6fb4462510412425f39ad",
+      "file": "source/assets/nevermind/09.mp3",
+      "bytes": 3135259,
+      "sha256": "d6f0dab884262d7d756e8324e7ba8d15bcfae177f0873c25452118c5e9134fd3",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "156.666667"
+        }
+      }
+    },
+    {
+      "album": "nevermind",
+      "track": 10,
+      "source": "10 Nirvana - Stay Away.wav",
+      "sourceSHA256": "86ba3b954889f9e1323db48c6338db3b176ec9ebf422c4a9815dc54b60174f2a",
+      "file": "source/assets/nevermind/10.mp3",
+      "bytes": 4250689,
+      "sha256": "dbf5a8d01bb731465f74f7fa3337267edbe2185faa36f7f7e1c28ba5ef38da42",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "212.440000"
+        }
+      }
+    },
+    {
+      "album": "nevermind",
+      "track": 11,
+      "source": "11 Nirvana - On A Plain.wav",
+      "sourceSHA256": "1f2ad2d40d63e0edc40828395f05ea2fa26e5ae1103a198f051bf889daabfd09",
+      "file": "source/assets/nevermind/11.mp3",
+      "bytes": 3928861,
+      "sha256": "fb640486cf991fa280f5557af8728cc3089a15077f4b71173e479687b0c4e9f3",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "196.360000"
+        }
+      }
+    },
+    {
+      "album": "nevermind",
+      "track": 12,
+      "source": "12 Nirvana - Something In The Way.wav",
+      "sourceSHA256": "a3474c988b6ca5f8d753d8fadd080268d88425147bfb904fd33d37bbcf5256c3",
+      "file": "source/assets/nevermind/12.mp3",
+      "bytes": 24711894,
+      "sha256": "98142b75f6f0c45c44f756cd0a1aec4d0844e31c8cf85865f84c8e1fefa9af5d",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "1235.506667"
+        }
+      }
+    },
+    {
+      "album": "in-rainbows",
+      "track": 1,
+      "source": "In Rainbows - Radiohead/01 Radiohead - 15 Step.flac",
+      "sourceSHA256": "d791378dc0617fc4155ed05405013c834613110a0b5c8f00bad092285236cdf9",
+      "file": "source/assets/in-rainbows/01.mp3",
+      "bytes": 4747405,
+      "sha256": "726a3e4c3dc863671c28bae3d465dc2e3161f79707b66061554f178fa069cd8c",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "237.293333"
+        }
+      }
+    },
+    {
+      "album": "in-rainbows",
+      "track": 2,
+      "source": "In Rainbows - Radiohead/02 Radiohead - Bodysnatchers.flac",
+      "sourceSHA256": "7d051446afdfca10110bdd7c0336537d4f7737ab5c03bbf61aa0e66e8766ae67",
+      "file": "source/assets/in-rainbows/02.mp3",
+      "bytes": 4847721,
+      "sha256": "f959e71ffc06e87421f7b0218a58be653ec74b6921cf7c31478ddccd2874f582",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "242.293333"
+        }
+      }
+    },
+    {
+      "album": "in-rainbows",
+      "track": 3,
+      "source": "In Rainbows - Radiohead/03 Radiohead - Nude.flac",
+      "sourceSHA256": "1a998fcecaa5710e435f101a62f015b146492808f8c6dd167b3665d558d9e13a",
+      "file": "source/assets/in-rainbows/03.mp3",
+      "bytes": 5109459,
+      "sha256": "2d73edc9751498508a0c3434fb9d35761c85f3f54a9dab8b22abc1f08c429113",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "255.386667"
+        }
+      }
+    },
+    {
+      "album": "in-rainbows",
+      "track": 4,
+      "source": "In Rainbows - Radiohead/04 Radiohead - Weird Fishes \uff0f Arpeggi.flac",
+      "sourceSHA256": "e5f2205a2dd3cec57f0afac7369224162113ef33012cfa1db085f3f4b6570eb7",
+      "file": "source/assets/in-rainbows/04.mp3",
+      "bytes": 6365445,
+      "sha256": "bf258837a3bd10eb1489ceba37f9a322fa60cddd8bb02efd5e1f97af90ed042b",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "318.186667"
+        }
+      }
+    },
+    {
+      "album": "in-rainbows",
+      "track": 5,
+      "source": "In Rainbows - Radiohead/05 Radiohead - All I Need.flac",
+      "sourceSHA256": "73f7d68403102be33695cfb4f9b9e99ab96219104886ebf4c55b629ca9817bec",
+      "file": "source/assets/in-rainbows/05.mp3",
+      "bytes": 4576567,
+      "sha256": "7c79ad4d17e6b50cf74b7e721d8ee9138d1e195757b78c3333489bfc250ae701",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "228.746667"
+        }
+      }
+    },
+    {
+      "album": "in-rainbows",
+      "track": 6,
+      "source": "In Rainbows - Radiohead/06 Radiohead - Faust Arp.flac",
+      "sourceSHA256": "5e667ca34c8987834834539e47d525bdd289134fb7300de6840ebd08f342a2a6",
+      "file": "source/assets/in-rainbows/06.mp3",
+      "bytes": 2595440,
+      "sha256": "1acb1ee4c9e3ef6ef1ed70291c0235247435d0b2c11a884aa9fa76fab2d83e5a",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "129.680000"
+        }
+      }
+    },
+    {
+      "album": "in-rainbows",
+      "track": 7,
+      "source": "In Rainbows - Radiohead/07 Radiohead - Reckoner.flac",
+      "sourceSHA256": "191623172e3095b54c43df029ec32c122cbdff813f2664c07253ca51701818ed",
+      "file": "source/assets/in-rainbows/07.mp3",
+      "bytes": 5805888,
+      "sha256": "9b5b18292ec8d2321c1c4f63a083d1cff1140dadb764163354d8175989d55d80",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "290.213333"
+        }
+      }
+    },
+    {
+      "album": "in-rainbows",
+      "track": 8,
+      "source": "In Rainbows - Radiohead/08 Radiohead - House of Cards.flac",
+      "sourceSHA256": "c44207efeafb43b539ae8bba110775361d07dbc8c3c56c6ac79ff1c59dcb83c9",
+      "file": "source/assets/in-rainbows/08.mp3",
+      "bytes": 6567624,
+      "sha256": "ad5690e4fbe5c4fda17e75edc591caed33910e202645dd9ee196026120741370",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "328.293333"
+        }
+      }
+    },
+    {
+      "album": "in-rainbows",
+      "track": 9,
+      "source": "In Rainbows - Radiohead/09 Radiohead - Jigsaw Falling Into Place.flac",
+      "sourceSHA256": "3a0747972d06b4baf5cbc6da6d44743c44683f4982b636505ed37b24077bc010",
+      "file": "source/assets/in-rainbows/09.mp3",
+      "bytes": 4979390,
+      "sha256": "e98be3caa57e46b55c0a089b63d33ed7e2604fad14903d371a7c80c1493b5fc4",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "248.893333"
+        }
+      }
+    },
+    {
+      "album": "in-rainbows",
+      "track": 10,
+      "source": "In Rainbows - Radiohead/10 Radiohead - Videotape.flac",
+      "sourceSHA256": "474f6e254008f8bf07e9d594118b3719cfc13bfb802f001ca0b2f6e3a2b021d2",
+      "file": "source/assets/in-rainbows/10.mp3",
+      "bytes": 5594298,
+      "sha256": "58baa74824f0dafe791b2860382ead5bdc6efddba7c32f2e2c6d5a4f432ddce8",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "44100",
+            "channels": 2
+          }
+        ],
+        "format": {
+          "duration": "279.640000"
+        }
+      }
+    }
+  ]
+}

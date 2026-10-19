@@ -1,7 +1,7 @@
-# The Track: 2008 - Build 171
+# The Track: 2008 - Build 172
 
-[Play](https://grey-monkey.github.io/the-track-2008/) | [Previous published build](build170/playtest170.html?v=170)
+[Play](https://grey-monkey.github.io/the-track-2008/) | [Previous build](build171/playtest171.html?v=171)
 
-Pintail slides now earn 20 base points per second of actual sliding, with no upfront bonus or per-slide cap. Points accumulate gradually in the HUD and bank after clean recovery. Countersteering remains one continuous attempt; crashes lose pending points. Build170 handling is unchanged.
+Choose Lo and Behold, Dude Ranch, Nevermind or In Rainbows inside How to ride. Playback begins on selection when the browser permits autoplay, or on the first interaction. Music continues through pause, retries and back to car. Album choice is saved. Secret Mixtape is prepared but remains hidden pending its in-world collectible.
 
-Includes the existing character, terrain, world and Easter egg refinements. [Release notes](RELEASE-171.txt). Earlier builds remain available. [Asset credits](build171/credits/ASSET-CREDITS-09.md).
+[Release notes](RELEASE-172.txt). Earlier builds remain available.
