@@ -1,3 +1,6 @@
 
 # Keep generated Build154 assets byte-identical to the tested package.
 build154/** -text
+
+# Keep tested Build165 assets byte-identical.
+build165/** -text
