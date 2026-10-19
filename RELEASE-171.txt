@@ -1,0 +1,26 @@
+THE TRACK 2008 - BUILD 171
+Gradual, uncapped Pintail slide scoring
+
+Powerslides earn 20 base points per second of qualifying sideways sliding.
+There is no upfront 100-point award, distance bonus, or 250-point cap.
+Examples: 1 second = 20, 3 seconds = 60, 10 seconds = 200, 20 seconds = 400.
+Only actual slide time accumulates points. Recovery or straight-line time
+does not count. A brief skid still must meet the existing minimum duration
+and distance before it qualifies. Pending HUD points use exactly the same
+calculation as the final award, and bank only after a clean recovery.
+Countersteering carries the same attempt, without extra multiplier awards.
+A wipeout still loses the pending points. Existing combo rules remain.
+
+Build170 speed thresholds, slide angles, grip, steering and recovery remain
+unchanged. Sally, Black and Dog can score Pintail slides; Boss cannot.
+There are no new controls, menus or tricks.
+
+Validation: 47 passing gameplay tests, including rate consistency across
+30/60/120Hz, long slides beyond 250, countersteering, recovery freeze,
+permissions, combo preservation and bail loss. 32 before/after physics
+traces match exactly. Browser checks cover gradual HUD accumulation, clean
+banking and an uncapped 400-point HUD layout in portrait. The portrait
+400-point sample is a UI-only fixture, not a recorded 20-second ride.
+
+Play: https://grey-monkey.github.io/the-track-2008/build171/playtest171.html?v=171
+Local: node serve.cjs
