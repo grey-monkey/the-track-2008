@@ -1,0 +1,33 @@
+THE TRACK 2008 - BUILD 178
+Canopy revision from the supplied cul-de-sac sketch
+
+The secret entrance sits within a circular concrete island in the cul-de-sac.
+Its beveled edge rises 9 cm (about 3.5 inches) above the asphalt. Sally, Black
+and Dog can ride it; Boss trips on it unless his existing smoke immunity is
+active. The opened ramp joins the asphalt directly and remains usable by Boss.
+The orange barrier and dirt patch sit on the island before the reveal, then
+move aside. Six smooth driving lines give the car room to pass the island.
+
+The construction trigger is now at the clay edge of the cul-de-sac. Its plank,
+paint can and support retract out of the road during towing, and extend after
+release into free ride. Boss can safely roll over the activation plank. The
+exception does not permit tricks or make other obstacles safe.
+
+The Canopy now has a circular knee-high concrete wall, evenly spaced warm
+wall-mounted footpath lights, and a clearly marked, usable return tunnel.
+The concrete floor, moonlit bistro table, four metal chairs and umbrella remain.
+
+Mixtape discovery now accepts a complete circuit throughout the usable room,
+rather than resetting outside the old narrow ring. Pausing and small course
+corrections preserve progress; back-and-forth rocking does not count as a lap.
+A small white CD progress meter and a subtle ring around the table show progress.
+One full circuit unlocks Secret Mixtape without replacing the current music.
+
+Validation: 71 automated checks pass, including real tight and wide circuits
+with every rider/board combination, Boss's island and trigger rules, containment
+and return passage, and 36 car circuits across six lines and three pace settings.
+Desktop and portrait browser checks cover stowing, activation, tunnel entry,
+partial progress, discovery, exit, retry, score retention and Back to the car.
+
+Play: https://grey-monkey.github.io/the-track-2008/build178/playtest178.html?v=178
+Local: node serve.cjs

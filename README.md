@@ -1,11 +1,12 @@
-# The Track: 2008 - Build 177
+# The Track: 2008 - Build 178
 
-[Play](https://grey-monkey.github.io/the-track-2008/) | [Previous build](build176/playtest176.html?v=176)
+[Play](https://grey-monkey.github.io/the-track-2008/) | [Previous build](build177/playtest177.html?v=177)
 
-Roll over the construction plank to reveal a secret passage to The Canopy.
-Circle the moonlit bistro set to discover the Secret Mixtape. All riders,
-including Boss, can trigger the reaction without a trick.
+The Canopy entrance now opens from a low concrete island in the cul-de-sac.
+The clay-side construction trigger extends in free ride and retracts during towing.
+A circular wall, warm footpath lights, marked exit and forgiving full-circuit
+mixtape discovery make the hidden room easier to explore.
 
-[Release notes](RELEASE-177.txt)
+[Release notes](RELEASE-178.txt)
 
 Earlier builds remain available.
