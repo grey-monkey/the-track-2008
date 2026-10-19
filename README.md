@@ -1,7 +1,11 @@
-# The Track: 2008 - Build 174
+# The Track: 2008 - Build 175
 
-[Play](https://grey-monkey.github.io/the-track-2008/) | [Previous build](build173/playtest173.html?v=173)
+[Play](https://grey-monkey.github.io/the-track-2008/) | [Previous build](build174/playtest174.html?v=174)
 
-Each rider keeps an independent score total for the open evening session. Earned points survive retries, rider and board switches, stance changes and returning to the car. Reloading or reopening the game resets every rider to zero. Existing banked-versus-pending combo rules are unchanged. The small ramp now shows one continuous plywood sheet without the tiled panel pattern.
+Boss now gets high-speed wheel wobble: half Dog's strength, with three times the
+time to a fall at the same speed. Carving recovers; secondhand-smoke immunity
+protects him and clears buildup. Dog's tuning is unchanged.
 
-[Release notes](RELEASE-174.txt). Earlier builds remain available.
+Includes separate rider scores for the evening and the single-sheet plywood ramp.
+
+[Release notes](RELEASE-175.txt). Earlier builds remain available.
