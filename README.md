@@ -1,9 +1,7 @@
-# The Track: 2008 — Build 167
+# The Track: 2008 — Build 168
 
-[Play](https://grey-monkey.github.io/the-track-2008/) · [Second-Hand Smoke preview](build167/comparison167.html) · [Previous published build](build166/playtest166.html?v=166)
+[Play](https://grey-monkey.github.io/the-track-2008/) · [Second-Hand Smoke preview](build168/comparison168.html) · [Previous published build](build167/playtest167.html?v=167)
 
-The selected rider now stands farther into the foreground, clear of the exhaust and grounded on asphalt. The car and all friends stay in frame in desktop and portrait views.
+Boss earns Second-Hand Smoke after 30 distinct smoke puffs. Another run preserves his earned hits; Back to the car clears progress. The reward still gives one minute of rainbow sky and immunity, without releasing the rope or changing gravity. Only Boss can collect smoke; Boss cannot collect Secret Spliff.
 
-Only Boss can collect 50 distinct smoke puffs per run to trigger Second-Hand Smoke. He stays on the rope with normal gravity and cannot wipe out for 60 seconds. The rainbow waves and pulse run twice as fast, retaining the illustrated clouds, with a six-second visual fade afterward. Boss cannot collect Secret Spliff; Sally, Black and Dog still can.
-
-Includes the intervening character, movement, world, North Carolina terrain, material, and selection-screen refinements. [Release notes](RELEASE-167.txt). Earlier builds remain available. [Asset credits](build167/credits/ASSET-CREDITS-09.md).
+Includes the existing foreground selection framing, character movement, North Carolina terrain, material and world refinements. [Release notes](RELEASE-168.txt). Earlier builds remain available. [Asset credits](build168/credits/ASSET-CREDITS-09.md).
