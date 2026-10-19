@@ -1,0 +1,34 @@
+THE TRACK 2008 — BUILD 167
+Foreground gathering and Boss's 50-hit rainbow protection
+
+Selected rider moved from car-local (-1.25, 3.95) to (0.20, 6.10),
+providing clear space behind the exhaust while retaining asphalt support.
+Landscape and portrait camera positions/aims were adjusted independently.
+The car and all five people stay in frame, with the selected rider in front.
+Landscape controls remain to the right; portrait keeps its stacked controls.
+
+Boss now needs 50 distinct Sprad smoke puffs per run, replacing three.
+The user revised the initial 420 request to 50. The reward lasts 60 seconds;
+the existing illustrated cloud shapes remain and rainbow wave/pulse rates
+are both exactly doubled. Colors fade out over six seconds afterward.
+
+During those 60 seconds only Boss is immune to every wipeout cause.
+Rope holding, normal gravity, momentum, and normal trick restrictions remain.
+Solid collisions still resolve instead of allowing passage through the car
+or barriers. Crash-only board/pose mutations are skipped when protected.
+Strict Boss surface checks no longer stop him at defects while protected.
+Immunity ends exactly at 60 seconds, before the visual fade completes.
+Boss remains excluded from Secret Spliff; other riders retain their effect.
+
+Validation: 41 gameplay test entries passed. Tests cover 50 distinct hits,
+no repeated puff counting, all boards, non-Boss rejection, no pickup launch,
+all crash causes, exact immunity expiry, preserved solid collision response,
+car/deck impacts, grates, ramps, pavement defects and restart behavior.
+Desktop/phone views inspected at 1200x800, 844x390, 390x844 and 360x640.
+Browser reward test seeds progress to 47 solely in its isolated test session,
+then collects the last three real puffs through normal car/rope physics.
+HUD countdown, shader compilation, nighttime, fade and restart also checked.
+Physical phone performance was not measured.
+
+Play: https://grey-monkey.github.io/the-track-2008/build167/playtest167.html?v=167
+Local: node serve.cjs (http://127.0.0.1:4173/)
