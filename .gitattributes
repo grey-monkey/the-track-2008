@@ -13,3 +13,6 @@ build167/** -text
 
 # Keep tested Build168 assets byte-identical.
 build168/** -text
+
+# Keep tested Build169 assets byte-identical.
+build169/** -text

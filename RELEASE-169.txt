@@ -1,0 +1,32 @@
+THE TRACK 2008 — BUILD 169
+Pintail arcade drift handling
+
+Only Sally, Black and Dog on the Hand-Me-Down Pintail use the new drift.
+Entry: hold a firm carve (.48 input) for .10s at >=3.6m/s. Hold down to
+2.5m/s and .16 input, with .22s input-gap grace. Keyboard A/D or arrows and
+existing mobile drag controls work; there is no new button.
+The target deck yaw reaches 86.4 degrees relative to travel. Traction blends
+down progressively; heading, grip and stance recover smoothly when released.
+Deliberate lateral slip is forgiven during the drift and its recovery. Solid
+collisions, curbs, dirt and Dog's high-speed straight-line wobble still apply.
+Boss and all other boards retain exactly their previous handling.
+No ollie/trick eligibility changes. Rope and normal gravity are preserved.
+One pending Powerslide award appears while sliding; it banks after clean
+recovery. Countersteering carries the same attempt, not extra multiplier credit.
+Existing 100–250 point reward cap remains. Low-speed clean finishes now count.
+
+THPS4 reference: recovered groundtricks.q PowerSlide dispatch and paired
+FSPowerslide/BSPowerslide animation data. Source pre-switch range extended
+to 48% with matching board-relative pose, planted feet and travel-facing gaze.
+The sustained arcade physics are Track-specific, not claimed native behavior.
+See authoring/THPS4-pintail169-evidence.txt for provenance and limitations.
+
+Validation: 46 gameplay tests; 26 unchanged before/after physics traces for
+other boards and Boss; 793 garment samples without audit-limit failures;
+six real-road left/right slides with clean recovery and scoring; towed slide
+without rope release; desktop and portrait rendering; no browser errors.
+Typical flat-road test at 6m/s, .7 steering: peak slip 30.7° before, 85.4° after.
+Physical phone performance was not measured.
+
+Play: https://grey-monkey.github.io/the-track-2008/build169/playtest169.html?v=169
+Local: node serve.cjs
