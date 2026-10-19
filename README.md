@@ -1,7 +1,7 @@
-# The Track: 2008 - Build 173
+# The Track: 2008 - Build 174
 
-[Play](https://grey-monkey.github.io/the-track-2008/) | [Previous build](build172/playtest172.html?v=172)
+[Play](https://grey-monkey.github.io/the-track-2008/) | [Previous build](build173/playtest173.html?v=173)
 
-The question mark opens Settings: album picker, Sound and HUD controls, stance, How to ride, Credits, and the Grey Dog Loves You publisher mark. Stance is no longer on the main selection screen. Preferences persist and HUD-off retains a small touch pause button. Album playback stays continuous through menus and retries.
+Each rider keeps an independent score total for the open evening session. Earned points survive retries, rider and board switches, stance changes and returning to the car. Reloading or reopening the game resets every rider to zero. Existing banked-versus-pending combo rules are unchanged. The small ramp now shows one continuous plywood sheet without the tiled panel pattern.
 
-[Release notes](RELEASE-173.txt). Earlier builds remain available.
+[Release notes](RELEASE-174.txt). Earlier builds remain available.
