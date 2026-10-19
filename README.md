@@ -1,11 +1,11 @@
-# The Track: 2008 - Build 175
+# The Track: 2008 - Build 176
 
-[Play](https://grey-monkey.github.io/the-track-2008/) | [Previous build](build174/playtest174.html?v=174)
+[Play](https://grey-monkey.github.io/the-track-2008/) | [Previous build](build175/playtest175.html?v=175)
 
-Boss now gets high-speed wheel wobble: half Dog's strength, with three times the
-time to a fall at the same speed. Carving recovers; secondhand-smoke immunity
-protects him and clears buildup. Dog's tuning is unchanged.
+Boss has a subtle, purely visual low-speed wheel wobble at one eighth of Dog's
+full amplitude. It cannot cause a fall or affect steering. Existing high-speed
+wobble and smoke immunity are unchanged.
 
-Includes separate rider scores for the evening and the single-sheet plywood ramp.
+[Release notes](RELEASE-176.txt) | [The Canopy design proposal](Canopy-Secret-Route-Design176.txt)
 
-[Release notes](RELEASE-175.txt). Earlier builds remain available.
+The Canopy is planned, not yet playable. Earlier builds remain available.
