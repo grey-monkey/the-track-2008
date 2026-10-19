@@ -1,0 +1,24 @@
+THE TRACK 2008 - BUILD 173
+Settings panel based on the supplied sketch
+
+The question mark opens Settings: album previous/next and picker, sound on/off,
+HUD on/off, regular/goofy stance, a scrollable How to ride, expandable Credits.
+White marker headings and clean sans-serif controls on a black reading surface.
+Main selection now has Rider, Board, Rope, Speed; Stance moved into Settings.
+
+Sound, HUD, stance and album choices persist. HUD off leaves a small pause icon
+for touch access. Paused stance changes preserve run position, score and time.
+Music remains continuous through Settings and pause. The modal keeps keyboard
+focus inside, makes the background inactive, and restores focus on close.
+
+Publisher footer includes the Grey Dog Loves You wordmark reconstructed from
+the user's poster reference. Apple, Android and ESRB marks are excluded.
+The original publisher source/vector file was unavailable.
+
+Local preview: http://127.0.0.1:4173/?build=173
+
+Validation: album tests pass. Browser checks pass for saved settings, album
+cycling, mute, paused-run continuity, touch pause with HUD off, keyboard focus,
+credits, and four desktop/phone layouts. No browser errors.
+
+Play: https://grey-monkey.github.io/the-track-2008/build173/playtest173.html?v=173

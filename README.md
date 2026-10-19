@@ -1,7 +1,7 @@
-# The Track: 2008 - Build 172
+# The Track: 2008 - Build 173
 
-[Play](https://grey-monkey.github.io/the-track-2008/) | [Previous build](build171/playtest171.html?v=171)
+[Play](https://grey-monkey.github.io/the-track-2008/) | [Previous build](build172/playtest172.html?v=172)
 
-Choose Lo and Behold, Dude Ranch, Nevermind or In Rainbows inside How to ride. Playback begins on selection when the browser permits autoplay, or on the first interaction. Music continues through pause, retries and back to car. Album choice is saved. Secret Mixtape is prepared but remains hidden pending its in-world collectible.
+The question mark opens Settings: album picker, Sound and HUD controls, stance, How to ride, Credits, and the Grey Dog Loves You publisher mark. Stance is no longer on the main selection screen. Preferences persist and HUD-off retains a small touch pause button. Album playback stays continuous through menus and retries.
 
-[Release notes](RELEASE-172.txt). Earlier builds remain available.
+[Release notes](RELEASE-173.txt). Earlier builds remain available.
