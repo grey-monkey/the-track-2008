@@ -4,3 +4,6 @@ build154/** -text
 
 # Keep tested Build165 assets byte-identical.
 build165/** -text
+
+# Keep tested Build166 assets byte-identical.
+build166/** -text

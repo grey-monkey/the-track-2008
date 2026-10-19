@@ -1,0 +1,26 @@
+THE TRACK 2008 — BUILD 166
+Boss: sky-only Second-Hand Smoke
+
+Only Boss collects Sprad's smoke puffs. Three distinct puffs activate the
+existing 30-second rainbow sky and six-second fade. The illustrated cloud
+artwork remains unchanged. The upper-left title and countdown stay visible.
+
+The reward changes no rider state: no automatic rope release, backflip,
+launch, speed boost, or gravity change. Boss continues the normal tow ride.
+Its countdown is now independent of the Secret Spliff gravity timer.
+
+Boss cannot collect Secret Spliff, on any board or in either riding phase.
+Sally, Black and Dog retain the existing Secret Spliff effect on all boards.
+Their usual character/board trick restrictions remain unchanged.
+
+Validation: all 40 gameplay test entries pass. The smoke pickup is checked
+against a control Boss run over 1,440 physics steps: rider, car and phase
+remain identical before and after collection. Boss Secret Spliff rejection
+is tested for all four boards while riding and coasting. The other 12
+rider/board combinations still launch correctly from Secret Spliff.
+Browser check: three real smoke puffs, grounded Boss still holding the rope,
+no trick or gravity timer, independent 30-second HUD countdown, sky fade,
+portrait HUD, night sky, restart, no shader errors or runtime exceptions.
+
+Play: https://grey-monkey.github.io/the-track-2008/build166/playtest166.html?v=166
+Local: node serve.cjs (http://127.0.0.1:4173/)
