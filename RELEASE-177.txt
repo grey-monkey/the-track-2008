@@ -26,10 +26,11 @@ informed the gated reveal, brief camera sequence and one-time discovery.
 The construction gag, Canopy models and route implementation are original.
 No claim is made that this is a copied THPS4 quest or animation.
 
-Validation: 66 automated checks, including actual steering/pushing through
+Validation: 67 automated checks, including actual steering/pushing through
 the full discovery lap with all sixteen rider/board combinations. Desktop
 and portrait browser checks cover Boss's activation, physical tunnel entry,
 CD unlock, unchanged music stream, return, retry and Back to the car.
+All six driving lines clear the opened tunnel with the full car footprint.
 
 Play: https://grey-monkey.github.io/the-track-2008/build177/playtest177.html?v=177
 Local: node serve.cjs
