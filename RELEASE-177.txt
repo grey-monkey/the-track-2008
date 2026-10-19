@@ -1,0 +1,35 @@
+THE TRACK 2008 - BUILD 177
+The Canopy: construction chain reaction and Secret Mixtape
+
+Release the rope and roll over the loose plank beside the portable generator
+on the first stretch of road. It tips a paint can along scrap lumber into the
+generator starter. A short camera sequence shows the reaction and the orange
+cul-de-sac barrier moving aside to reveal a descending concrete passage.
+
+Every rider can activate this flush plank without a trick, including Boss.
+This exception does not change Boss's trick restrictions or normal hazards.
+
+Skate down the passage through darkness into The Canopy: concrete pavement,
+soft moonlight, a round metal bistro table, four chairs and a patio umbrella.
+Complete one continuous circle around the furniture, in either direction, to
+collect the CD. The discovery message and chime unlock Secret Mixtape in
+Settings without restarting or replacing the album already playing.
+
+The passage back returns you to the cul-de-sac. Retry stays in the Canopy;
+Back to the car returns to selection. Character scores remain intact. The
+route stays open for this evening, including rider changes and retries; a
+new page session closes it. Secret Mixtape discovery uses the existing saved
+album unlock. The room's furniture remains a real collision obstacle.
+
+Reference: supplied THPS4 Alcatraz goal/door scripts and goal camera utilities
+informed the gated reveal, brief camera sequence and one-time discovery.
+The construction gag, Canopy models and route implementation are original.
+No claim is made that this is a copied THPS4 quest or animation.
+
+Validation: 66 automated checks, including actual steering/pushing through
+the full discovery lap with all sixteen rider/board combinations. Desktop
+and portrait browser checks cover Boss's activation, physical tunnel entry,
+CD unlock, unchanged music stream, return, retry and Back to the car.
+
+Play: https://grey-monkey.github.io/the-track-2008/build177/playtest177.html?v=177
+Local: node serve.cjs
