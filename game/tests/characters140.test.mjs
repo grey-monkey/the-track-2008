@@ -22,15 +22,15 @@ for(const board of boards){
  // Dog must wobble on every board, in either rope state. Real carving recovers.
  for(const holding of [true,false]){
   const s=make('DOG',board);s.rider.holding=holding;
-  let peak=0,signs=new Set();for(let i=0;i<550&&s.phase!=='crashed';i++){riderSpeedWobble(s,0,8,STEP);peak=Math.max(peak,s.rider.speedWobble);if(peak>.4)signs.add(Math.sign(s.rider.speedWobbleOffset));}
+  let peak=0,signs=new Set();for(let i=0;i<750&&s.phase!=='crashed';i++){riderSpeedWobble(s,0,10,STEP);peak=Math.max(peak,s.rider.speedWobble);if(peak>.4)signs.add(Math.sign(s.rider.speedWobbleOffset));}
   assert.equal(s.stats.crashReason,'WOBBLE');assert(peak>=1);assert(signs.has(1)&&signs.has(-1));
-  const recovery=make('DOG',board);for(let i=0;i<300;i++)riderSpeedWobble(recovery,0,8,STEP);assert(recovery.rider.speedWobble>.5);
-  for(let i=0;i<240;i++)riderSpeedWobble(recovery,.4,8,STEP);assert.equal(recovery.rider.speedWobble,0);assert.equal(recovery.phase,'coasting');
-  for(let i=0;i<1200;i++)riderSpeedWobble(recovery,.4*Math.sin(i/90)>0?.4:-.4,8,STEP);assert.equal(recovery.rider.speedWobble,0);
+  const recovery=make('DOG',board);for(let i=0;i<400;i++)riderSpeedWobble(recovery,0,10,STEP);assert(recovery.rider.speedWobble>.5);
+  for(let i=0;i<240;i++)riderSpeedWobble(recovery,.4,10,STEP);assert.equal(recovery.rider.speedWobble,0);assert.equal(recovery.phase,'coasting');
+  for(let i=0;i<1200;i++)riderSpeedWobble(recovery,.4*Math.sin(i/90)>0?.4:-.4,10,STEP);assert.equal(recovery.rider.speedWobble,0);
  }
  for(const rider of ['SALLY','BLACK']){const s=make(rider,board);for(let i=0;i<1000;i++)riderSpeedWobble(s,0,10,STEP);assert.equal(s.rider.speedWobble,undefined);}
  {const s=make('DOG',board);for(let i=0;i<1000;i++)riderSpeedWobble(s,0,5,STEP);assert.equal(s.rider.speedWobble,0);s.rider.height=1;for(let i=0;i<1000;i++)riderSpeedWobble(s,0,9,STEP);assert.equal(s.rider.speedWobble,0);}
  // Integrated physics: a fast straight run actually develops alternating yaw.
- {const s=make('DOG',board);s.rider.vx=9*Math.cos(s.rider.heading);s.rider.vz=9*Math.sin(s.rider.heading);for(let i=0;i<800&&s.phase==='coasting';i++)s.step();assert.equal(s.stats.crashReason,'WOBBLE');}
+ {const s=make('DOG',board);s.rider.vx=14*Math.cos(s.rider.heading);s.rider.vz=14*Math.sin(s.rider.heading);for(let i=0;i<1100&&s.phase==='coasting';i++)s.step();assert.equal(s.stats.crashReason,'WOBBLE');}
 }
 console.log('PASS Boss wheel-level hazards and swept ramp contacts; Dog all-board wobble, both rope states, carving recovery, low-speed/air immunity and integrated straight-run bails.');

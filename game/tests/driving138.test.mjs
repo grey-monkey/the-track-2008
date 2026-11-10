@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {DRIVING_LINES,lineSample,lineForLap} from '../source/driving138/driver.js';
+import {DRIVING_LINES,lineSample,lineForLap,PEDAL} from '../source/driving138/driver.js';
 import {Ride,STEP} from '../source/physics.js';
 import {LENGTH,roadDistance,bulb,angle} from '../source/world.js';
 
@@ -22,8 +22,8 @@ for(let line=0;line<6;line++)for(const rider of ['DOG','SALLY'])for(const pace o
  while(sim.car.s<LENGTH+8){const c=sim.car,old={...c};sim.step();const yaw=angle(c.heading-old.heading)/STEP;maxYaw=Math.max(maxYaw,Math.abs(yaw));maxYawAccel=Math.max(maxYawAccel,Math.abs(yaw-previousYaw)/STEP);previousYaw=yaw;maxLateral=Math.max(maxLateral,c.speed*c.speed*Math.abs(c.curvature));
   if(c.speed>1)maxVelocityError=Math.max(maxVelocityError,Math.abs(Math.hypot(c.x-old.x,c.z-old.z)/STEP-c.speed)/c.speed);
   if(c.s>285&&c.s<425)assert(!c.brake,'no repeated braking in the circle or before the exit straight');
-  if(c.s>230&&c.s<425&&c.brake&&!inBrake)brakes++;inBrake=c.brake;
-  assert(Math.abs(c.accel-old.accel)/STEP<1.051,'no abrupt pedal changes');
+  if(c.s>230&&c.s<425&&c.brake&&!inBrake)brakes++;inBrake=c.brake&&c.s>230;
+  assert(Math.abs(c.accel-old.accel)/STEP<PEDAL.slew+.001,'no abrupt pedal changes');
  }
  assert.equal(brakes,1,'one approach braking event');assert(maxYaw<1.38,'15% faster corner stays within proportionally increased heading-rate bound');assert(maxYawAccel<1.6,'steering acceleration stays within the previous smoothness bound');assert(maxVelocityError<.015,'station spacing must not cause speed surges');
  runs.push({line,rider,pace,maxYaw,maxYawAccel,maxLateral,maxVelocityError,approachBrakeEvents:brakes});

@@ -28,7 +28,8 @@ export const TOW_FEEL=Object.freeze({carveRetention:.62,springFrequency:11,dampi
 // Carving: steering asks for a share of the board's grip as a turn.
 // authority above 1 means full lock asks for more than the wheels hold (it drifts wide).
 export const CARVE=Object.freeze({
- stiffness:9,inputRate:8.5,follow:14,yawLimit:3.4,trackHeading:1.6,trackOffset:1.8,maxAuthority:1.18,
+ // Urethane on fresh asphalt holds more than the old tables allowed.
+ gripScale:1.3,stiffness:9,inputRate:8.5,follow:14,yawLimit:3.4,trackHeading:1.6,trackOffset:1.8,maxAuthority:1.18,
  authority:Object.freeze({LONGBOARD:.86,HANDMEDOWN:1.08,CRUISER:1.0,STREET:1.04}),
  minRadius:Object.freeze({LONGBOARD:3.4,HANDMEDOWN:3.1,CRUISER:2.0,STREET:1.8})
 });

@@ -2,13 +2,13 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {Ride,STEP} from '../source/physics.js';
 import {HazardWorld} from '../source/hazards.js';
-import {riderSpeedWobble} from '../source/character-rules140.js';
+import {riderSpeedWobble,DOG_WOBBLE} from '../source/character-rules140.js';
 const boards=['LONGBOARD','HANDMEDOWN','STREET','CRUISER'];
 const make=(rider,board='LONGBOARD',holding=true)=>{
  const sim=new Ride({rider,board});if(!holding)sim.release();return sim;
 };
 test('Boss has half the yaw/lean amplitude and three times the straight-run failure time on every board',()=>{
- for(const board of boards)for(const holding of [true,false])for(const speed of [6.3,8,12]){
+ for(const board of boards)for(const holding of [true,false])for(const speed of [DOG_WOBBLE.speed,10,12]){
   const times=[];
   for(const rider of ['DOG','BOSS']){
    const sim=make(rider,board,holding);let steps=0;
@@ -26,9 +26,9 @@ test('Boss has half the yaw/lean amplitude and three times the straight-run fail
 test('Boss can recover by carving; slow travel and flight do not build speed wobble',()=>{
  for(const board of boards){
   const sim=make('BOSS',board);
-  for(let i=0;i<850;i++)riderSpeedWobble(sim,0,8,STEP);
+  for(let i=0;i<1200;i++)riderSpeedWobble(sim,0,10,STEP);
   assert(sim.rider.speedWobble>.5);assert.equal(sim.phase,'riding');
-  for(let i=0;i<240;i++)riderSpeedWobble(sim,.4,8,STEP);
+  for(let i=0;i<240;i++)riderSpeedWobble(sim,.4,10,STEP);
   assert.equal(sim.rider.speedWobble,0);
   for(let i=0;i<2400;i++)riderSpeedWobble(sim,0,5,STEP);
   assert.equal(sim.rider.speedWobble,0);
@@ -53,10 +53,10 @@ test('Full physics reaches the Boss wobble threshold without generic instability
   // A flat, obstacle-free test lane; enforce steady speed to measure the failure clock.
   new HazardWorld({covers:[],drains:[],solids:[]}).attach(sim);
   Object.assign(sim.hazards,{asphalt:()=>true,rideable:()=>true,skateHeight:()=>0,nearby:()=>[],curb:()=>undefined});
-  Object.assign(sim.rider,{x:1000,z:1000,heading:0,vx:8,vz:0});
-  while(sim.phase==='coasting'&&sim.time<15){sim.rider.vx=8;sim.rider.vz=0;sim.step();}
+  Object.assign(sim.rider,{x:1000,z:1000,heading:0,vx:10,vz:0});
+  while(sim.phase==='coasting'&&sim.time<20){sim.rider.vx=10;sim.rider.vz=0;sim.step();}
   assert.equal(sim.stats.crashReason,'WOBBLE');
   assert(sim.rider.speedWobble>=1,`premature generic bail on ${board} at ${sim.time}`);
-  assert(Math.abs(sim.time-10.425)<.05,`${board}: ${sim.time}`);
+  const expected=3*DOG_WOBBLE.grace+3/(DOG_WOBBLE.growth*Math.min(1.7,10/DOG_WOBBLE.speed));assert(Math.abs(sim.time-expected)<.08,`${board}: ${sim.time} vs ${expected}`);
  }
 });

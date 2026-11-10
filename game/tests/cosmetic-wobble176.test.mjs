@@ -17,8 +17,8 @@ test('Boss low-speed wobble is one eighth strength, cosmetic only, and follows t
 });
 test('Cosmetic wobble fades at speed boundaries and is absent at rest, in menus, falls, air and other riders',()=>{
  const sim=new Ride({rider:'BOSS'});sim.time=1/(4*2.4);sim.rider.vz=0;
- for(const speed of [0,.35,6.3,9]){sim.rider.vx=speed;assert.equal(cosmeticWobble(sim),0);}
- for(const speed of [.36,6.29]){sim.rider.vx=speed;assert(Math.abs(cosmeticWobble(sim))<.0001);}
+ for(const speed of [0,.35,8.4,9]){sim.rider.vx=speed;assert.equal(cosmeticWobble(sim),0);}
+ for(const speed of [.36,8.39]){sim.rider.vx=speed;assert(Math.abs(cosmeticWobble(sim))<.0001);}
  sim.rider.vx=3;assert.equal(cosmeticWobble(sim,true),0);
  for(const rider of ['SALLY','BLACK','DOG']){sim.options.rider=rider;assert.equal(cosmeticWobble(sim),0);}
  sim.options.rider='BOSS';for(const phase of ['crashed','ended','regroup']){sim.phase=phase;assert.equal(cosmeticWobble(sim),0);}

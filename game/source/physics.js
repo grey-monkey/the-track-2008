@@ -72,7 +72,7 @@ export class Ride {
  // Steering commands a turn (lateral acceleration), the way leaning a deck does.
  // The board points along its travel with only the small slip angle that turn
  // needs, so a held carve is an arc across the road rather than a skid.
- const gripBase=b.grip*feel.cornerGrip*cfg.grip*novice;
+ const gripBase=b.grip*CARVE.gripScale*feel.cornerGrip*cfg.grip*novice;
  r.carve=(r.carve??0)+(steer-(r.carve??0))*(1-Math.exp(-dt*CARVE.inputRate*feel.response));
  const authority=Math.min(CARVE.maxAuthority,CARVE.authority[this.options.board]*cfg.control);
  // The rope leans the rider back toward the hitch when they are not carving.
@@ -115,7 +115,7 @@ export class Ride {
  const slideTraction=drift?driftTraction(drift,angle(r.heading-velAngle)):personalitySlide(r,feel,steer,sp,lat,dt);
  // A held thumb can crouch while sliding; don't let that silently cancel slide entry.
  const crouchGrip=crouch?1+.15*Math.max(0,1-(r.slide??0)/SLIDE_INTENT.maximumAmount):1;
- const grip=b.grip*feel.cornerGrip*cfg.grip*novice*crouchGrip*(r.dirt?.28:1)*(r.height>.05?.04:1);
+ const grip=b.grip*CARVE.gripScale*feel.cornerGrip*cfg.grip*novice*crouchGrip*(r.dirt?.28:1)*(r.height>.05?.04:1);
  const traction=grip*slideTraction;
  const lateralA=clamp(-lat*CARVE.stiffness,-traction,traction);
  r.vx+=nx*lateralA*dt;r.vz+=nz*lateralA*dt;

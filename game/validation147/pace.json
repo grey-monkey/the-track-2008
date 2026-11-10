@@ -2,85 +2,85 @@
   {
     "line": 0,
     "rider": "SALLY",
-    "minimumMps": 5.988956179357376,
-    "culDeSacSeconds": 18.533333333332923,
-    "straightMps": 6.652799999999962
+    "minimumMps": 4.965429755036752,
+    "culDeSacSeconds": 21.05833333333278,
+    "straightMps": 6.6528000000006795
   },
   {
     "line": 0,
     "rider": "DOG",
-    "minimumMps": 6.638219636477505,
-    "culDeSacSeconds": 16.63333333333303,
-    "straightMps": 7.459199999999532
+    "minimumMps": 5.5037291334883385,
+    "culDeSacSeconds": 18.941666666666233,
+    "straightMps": 7.459200000005718
   },
   {
     "line": 1,
     "rider": "SALLY",
-    "minimumMps": 5.873967522961443,
-    "culDeSacSeconds": 17.716666666666303,
+    "minimumMps": 4.870090270940131,
+    "culDeSacSeconds": 20.224999999999493,
     "straightMps": 7.068599999999963
   },
   {
     "line": 1,
     "rider": "DOG",
-    "minimumMps": 6.510771660429673,
-    "culDeSacSeconds": 15.899999999999737,
-    "straightMps": 7.92539999999813
+    "minimumMps": 5.398054051434692,
+    "culDeSacSeconds": 18.183333333332943,
+    "straightMps": 7.9253999999995335
   },
   {
     "line": 2,
     "rider": "SALLY",
-    "minimumMps": 6.094701760059204,
-    "culDeSacSeconds": 18.249999999999606,
-    "straightMps": 6.791399999999962
+    "minimumMps": 5.053103498464777,
+    "culDeSacSeconds": 20.833333333332792,
+    "straightMps": 6.791400000000429
   },
   {
     "line": 2,
     "rider": "DOG",
-    "minimumMps": 6.755428180894363,
-    "culDeSacSeconds": 16.383333333333045,
-    "straightMps": 7.614599999999173
+    "minimumMps": 5.600907523277092,
+    "culDeSacSeconds": 18.741666666666244,
+    "straightMps": 7.614599999999963
   },
   {
     "line": 3,
     "rider": "SALLY",
-    "minimumMps": 6.0290985958765715,
-    "culDeSacSeconds": 17.91666666666629,
+    "minimumMps": 4.998708905936037,
+    "culDeSacSeconds": 20.35833333333282,
     "straightMps": 6.929999999999962
   },
   {
     "line": 3,
     "rider": "DOG",
-    "minimumMps": 6.682721241435015,
-    "culDeSacSeconds": 16.07499999999973,
-    "straightMps": 7.769999999998776
+    "minimumMps": 5.540616169414293,
+    "culDeSacSeconds": 18.299999999999603,
+    "straightMps": 7.769999999999963
   },
   {
     "line": 4,
     "rider": "SALLY",
-    "minimumMps": 5.765527855885399,
-    "culDeSacSeconds": 18.449999999999594,
-    "straightMps": 6.722099999999962
+    "minimumMps": 4.780185382196928,
+    "culDeSacSeconds": 21.041666666666114,
+    "straightMps": 6.722100000000644
   },
   {
     "line": 4,
     "rider": "DOG",
-    "minimumMps": 6.390570643568416,
-    "culDeSacSeconds": 16.566666666666368,
-    "straightMps": 7.53689999999969
+    "minimumMps": 5.298402540112687,
+    "culDeSacSeconds": 18.916666666666234,
+    "straightMps": 7.536900000004786
   },
   {
     "line": 5,
     "rider": "SALLY",
-    "minimumMps": 6.211115216866326,
-    "culDeSacSeconds": 17.466666666666317,
-    "straightMps": 7.207199999999963
+    "minimumMps": 5.149617498610034,
+    "culDeSacSeconds": 19.908333333332845,
+    "straightMps": 7.20719999999995
   },
   {
     "line": 5,
     "rider": "DOG",
-    "minimumMps": 6.884472413791225,
-    "culDeSacSeconds": 15.666666666666417,
-    "straightMps": 8.080799999996522
+    "minimumMps": 5.707884708296495,
+    "culDeSacSeconds": 17.899999999999626,
+    "straightMps": 8.080799999998158
   }
 ]

@@ -11,7 +11,7 @@ export const DRIVING_LINES=Object.freeze([
  {name:'Brisk exit',offset:-.12,wave:.27,phase:5,cruise:1.04,corner:1.03,throttle:.86,exit:-1}
 ]);
 // The driver gets on the gas like a teenager with friends on a rope, not a chauffeur.
-export const PEDAL=Object.freeze({gas:2.3,slew:2.4,bulbCarry:Number(globalThis.process?.env?.BULB??.45)});
+export const PEDAL=Object.freeze({gas:2.3,slew:2.4,bulbCarry:1.0});
 const N=Math.ceil(LENGTH/.5),DS=LENGTH/N,wrap=s=>(s%LENGTH+LENGTH)%LENGTH;
 const smooth=t=>{t=clamp(t,0,1);return t*t*t*(10+t*(-15+6*t));};
 // Gaussian convolution removes tangent discontinuities at the old Bezier joins.

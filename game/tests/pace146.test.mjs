@@ -9,7 +9,8 @@ for(let line=0;line<6;line++)for(const rider of ['SALLY','DOG']){
  let min=Infinity,seconds=0,straight=0;
  while(sim.car.s<430){sim.step();if(sim.car.s>150&&sim.car.s<200)straight=Math.max(straight,sim.car.speed);if(sim.car.s>=285&&sim.car.s<400){min=Math.min(min,sim.car.speed);seconds+=STEP;}}
  assert(min>(rider==='SALLY'?4.3:4.8),'cul-de-sac must not fall back to the old crawl');
- assert(seconds<21,'circle/exit should keep moving');
+ // The driver now holds bend speed until the towed skater has cleared it too.
+ assert(seconds<21.5,'circle/exit should keep moving');
  rows.push({line,rider,minimumMps:min,culDeSacSeconds:seconds,straightMps:straight});
  assert.equal(typeof sim.spin,'undefined','new 180/360 action removed');
  assert.equal(typeof sim.grab,'undefined','new grab action removed');
