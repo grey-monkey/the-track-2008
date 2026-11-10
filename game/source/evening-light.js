@@ -1,7 +1,7 @@
 import {visual85} from './visual85/state.js';
 import * as T from './vendor/three.module.js';
 import {sunDirection,memoryLight} from './memory-light.js';
-export const eveningUniforms={eveningCloudTime:{value:0},eveningNight:{value:0},eveningSun:{value:sunDirection},eveningDirect:{value:1},eveningLamp:{value:.3},eveningCar:{value:new T.Vector3()},eveningForward:{value:new T.Vector3()}};
+export const eveningUniforms={eveningBlue:{value:0},eveningCloudTime:{value:0},eveningNight:{value:0},eveningSun:{value:sunDirection},eveningDirect:{value:1},eveningLamp:{value:.3},eveningCar:{value:new T.Vector3()},eveningForward:{value:new T.Vector3()}};
 const smooth=(a,b,x)=>{const t=T.MathUtils.clamp((x-a)/(b-a),0,1);return t*t*(3-2*t);};
 export function applyEvening(view,clock){
  if(!view.rope.material.userData.eveningRope){
@@ -29,6 +29,7 @@ export function applyEvening(view,clock){
  Object.assign(view.sky.material.uniforms,visual85);view.sky.material.uniforms.eveningSun=eveningUniforms.eveningSun;
  view.sky.material.uniforms.eveningNight=eveningUniforms.eveningNight;
  const gold=smooth(0,6,s.altitude),blue=smooth(2,7,-s.altitude)*(1-smooth(10,18,-s.altitude));
+ eveningUniforms.eveningBlue.value=smooth(1,5,-s.altitude)*(1-smooth(12,18,-s.altitude));
  view.scene.fog.color.set('#937d94').lerp(new T.Color('#a08b71'),gold*.55).lerp(new T.Color('#435d91'),blue*.65).lerp(new T.Color('#080e18'),night);
  if(view.memoryAir)view.memoryAir.value.copy(view.scene.fog.color);
 }
@@ -79,7 +80,7 @@ void main(){
  float gold=smoothstep(0.,.105,eveningSun.y);
  float rose=(1.-gold)*(1.-smoothstep(.06,.15,-eveningSun.y));
  float blue=smoothstep(.035,.12,-eveningSun.y)*(1.-smoothstep(.20,.31,-eveningSun.y));
- c*=mix(vec3(1.),vec3(1.09,1.21,.76),gold);
+ c*=mix(vec3(1.),vec3(1.09,1.21,.76),gold*(1.-zenith*.85));
  c*=mix(vec3(1.),vec3(1.10,.88,1.12),rose*.7);
  c*=mix(vec3(1.),vec3(.73,.92,1.28),blue*.8);
  float sun=1.-smoothstep(.006,.013,distance(v,normalize(eveningSun)));

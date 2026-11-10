@@ -1,3 +1,4 @@
+import {eveningUniforms} from './evening-light.js';
 import {SMOKE_LIFETIME,smokePosition} from './second-hand165.mjs';
 import {SeatedPortrait,upperBody} from './crew129/seated-portrait.js';
 import {fitPassenger} from './crew129/seated-fit.mjs';
@@ -18,7 +19,7 @@ this.sprad=new PassengerSprad();for(const mesh of this.sprad.bodyMeshes){const o
  if(!this.smoke){const c=document.createElement('canvas');c.width=c.height=32;const x=c.getContext('2d'),g=x.createRadialGradient(16,16,0,16,16,16);g.addColorStop(0,'rgba(170,164,154,.55)');g.addColorStop(1,'rgba(170,164,154,0)');x.fillStyle=g;x.fillRect(0,0,32,32);const map=new T.CanvasTexture(c);this.smoke=Array.from({length:8},()=>{const sprite=new T.Sprite(new T.SpriteMaterial({map,transparent:true,opacity:0,depthWrite:false}));sprite.name='Sprad smoke puff';this.view.scene.add(sprite);return {sprite};});}
  const puffs=sim.spradSmoke?.puffs??[];
  this.smoke.forEach(({sprite},i)=>{const p=puffs[i],age=p?sim.time-p.born:99;sprite.visible=!menu&&!!p&&!p.collected&&age>=0&&age<SMOKE_LIFETIME;if(!sprite.visible)return;
- const pos=smokePosition(p,sim.time);sprite.position.set(pos.x,pos.y,pos.z);sprite.scale.setScalar(.16+age*.16);sprite.material.opacity=.38*Math.sin(Math.PI*age/SMOKE_LIFETIME);sprite.userData.puffId=p.id;
+ const pos=smokePosition(p,sim.time);sprite.position.set(pos.x,pos.y,pos.z);sprite.scale.setScalar(.16+age*.16);const night=eveningUniforms.eveningNight.value;sprite.material.opacity=.38*(1-.55*night)*Math.sin(Math.PI*age/SMOKE_LIFETIME);sprite.material.color.setRGB(1-.72*night,1-.68*night,1-.58*night);sprite.userData.puffId=p.id;
  });
  }
 

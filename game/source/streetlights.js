@@ -24,7 +24,7 @@ export function addStreetlights(view){view.memoryLamps=[];view.streetlights=[];v
  for(const {g,m}of parts)root.add(new T.Mesh(g,m));
  // A small footing closes gaps beneath the cast base on unfinished sloping verges.
  const low=Math.min(...ys)-.06,pad=new T.Mesh(new T.CylinderGeometry(.22,.24,y-low,12),paintedMaterial(0x817b6c,{architecture:true}));pad.position.y=-(y-low)/2;root.add(pad);
- const glow=new T.Sprite(new T.SpriteMaterial({map:haloMap,transparent:true,depthWrite:false}));glow.position.fromArray(lampAsset.emitter);glow.scale.set(1.15,1.15,1);root.add(glow);view.scene.add(root);root.updateMatrixWorld(true);view.memoryLamps.push(root.localToWorld(new T.Vector3(...lampAsset.emitter)));view.streetlights.push(root);view.contactAudit.streetlights.push({x,z,height:lampAsset.height,minBaseClearance:y-Math.max(...ys),roadClearance:roadDistance(x,z)});
+ const glow=new T.Sprite(new T.SpriteMaterial({map:haloMap,transparent:true,depthWrite:false,blending:T.AdditiveBlending}));glow.position.fromArray(lampAsset.emitter);glow.scale.set(2.6,2.6,1);root.add(glow);view.scene.add(root);root.updateMatrixWorld(true);view.memoryLamps.push(root.localToWorld(new T.Vector3(...lampAsset.emitter)));view.streetlights.push(root);view.contactAudit.streetlights.push({x,z,height:lampAsset.height,minBaseClearance:y-Math.max(...ys),roadClearance:roadDistance(x,z)});
  }
  view.siteTargets.streetlight=view.streetlights[1].position.clone().add(new T.Vector3(0,2.3,0));view.siteTargets.lantern=view.streetlights[1].localToWorld(new T.Vector3(...lampAsset.emitter));
 }

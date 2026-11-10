@@ -15,7 +15,13 @@ export const EVENING_START=Date.parse('2008-10-15T22:13:00Z'),EVENING_END=Date.p
 // same October ephemeris, then move faster through blue hour. Continuous,
 // monotonic, with no lighting jumps or changes to the approved palette.
 export const EVENING_TIME_EASING=2.5;
-export const eveningSolarProgress=progress=>Math.pow(Math.max(0,Math.min(1,progress)),EVENING_TIME_EASING);
+// Ten minutes of play, scheduled by what the light is doing rather than by one curve:
+// low sun and long shadows, sunset, the pink afterglow, a long blue hour, then night.
+// Each pair is [share of the ten minutes, share of the real 22:13-00:12 UTC evening].
+export const EVENING_SCHEDULE=Object.freeze([[0,.04],[.30,.27],[.45,.40],[.52,.45],[.82,.60],[1,1]]);
+export const eveningSolarProgress=progress=>{const p=Math.max(0,Math.min(1,progress)),k=EVENING_SCHEDULE;
+ for(let i=1;i<k.length;i++)if(p<=k[i][0]){const t=(p-k[i-1][0])/(k[i][0]-k[i-1][0]);return k[i-1][1]+(k[i][1]-k[i-1][1])*t;}
+ return 1;};
 export class EveningClock{
  constructor(){this.seconds=0;}
  advance(dt,playing){if(playing&&Number.isFinite(dt))this.seconds=Math.min(600,this.seconds+Math.max(0,dt));}
