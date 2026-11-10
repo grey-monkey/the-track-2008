@@ -1,14 +1,11 @@
-# The Track: 2008 - Build 180
+# The Track: 2008 - Build 179
 
-[Play](https://grey-monkey.github.io/the-track-2008/) | [Previous build](build179/playtest179.html?v=179)
+[Play](https://grey-monkey.github.io/the-track-2008/) | [Previous build](build178/playtest178.html?v=178)
 
-The ride itself has been rebuilt. Carving is an arc that keeps its speed, the
-rope has give and can be heard, the rider settles into the car's tracks when
-left alone, and swinging wide through the cul-de-sac gives a real whip. The
-evening now runs sunset, afterglow, a long blue hour and night, with a dusk
-colour grade, soft bloom and working anti-aliasing. Touch controls were rewritten.
+The Canopy has a slower, continuous cinematic reveal with a recessed sliding
+hatch, a curved arrival beside the table, and clean visual wayfinding. Surface
+black flashes and unnecessary room instructions have been removed.
 
-[Release notes](RELEASE-180.txt)
+[Release notes](RELEASE-179.txt)
 
-The editable source, tests and build script now live in [game/](game).
 Earlier builds remain available.

@@ -1,3 +1,0 @@
-REFERENCE EVIDENCE
-Reparsed the supplied THPS4 PC Sch, Jnk and Sk4Ed scene artifacts using the retained decoder. All three parse to EOF; all 2,415 sectors carry vertex colors (248,845 vertices total). Retained material evidence shows filtered textures and separate detail layers. These observations informed shading and trim treatment; this is an original adaptation, not a recovered native lighting model or a claim of visual equivalence. No new native executable decompilation or reference-game runtime capture was performed in this pass.
-

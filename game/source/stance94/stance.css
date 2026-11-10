@@ -1,4 +1,0 @@
-/* Keep five matching controls in the open sky on small phone screens. */
-#setup .selection-row{min-height:40px}
-@media(max-height:720px){#setup .selection-row{min-height:36px}#setup{top:18%}#setup .selection-caption output{font-size:9px}}
-#stanceSlider{touch-action:none}
