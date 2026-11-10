@@ -9,12 +9,17 @@ export class IllustrationFinish{
  constructor(renderer){
   // Multisampled so edges are actually smoothed (the canvas's own antialias flag never
   // reaches an offscreen target), and mipmapped so the grade can read a soft copy for bloom.
-  this.target=new T.WebGLRenderTarget(1,1,{depthBuffer:true,samples:4});
-  this.target.texture.generateMipmaps=true;this.target.texture.minFilter=T.LinearMipmapLinearFilter;
+  // iPhone and iPad browsers get the plain target: their WebGL is the least forgiving of
+  // multisampled, mipmapped render targets, and a game that loads beats a smoother edge.
+  // ?msaa=1 or ?msaa=0 overrides the choice for testing.
+  const query=new URLSearchParams(globalThis.location?.search??''),apple=/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+  this.smooth=query.has('msaa')?query.get('msaa')!=='0':!apple;
+  this.target=new T.WebGLRenderTarget(1,1,this.smooth?{depthBuffer:true,samples:4}:{depthBuffer:true});
+  if(this.smooth){this.target.texture.generateMipmaps=true;this.target.texture.minFilter=T.LinearMipmapLinearFilter;}
   this.target.texture.colorSpace=T.LinearSRGBColorSpace;
   this.scene=new T.Scene();this.camera=new T.OrthographicCamera(-1,1,1,-1,0,1);
-  this.material=new T.ShaderMaterial({depthTest:false,depthWrite:false,uniforms:{...visual85,eveningNight:eveningUniforms.eveningNight,eveningBlue:eveningUniforms.eveningBlue,dusk:{value:1},picture:{value:this.target.texture},pixel:{value:new T.Vector2()},amount:{value:1},secretGold:{value:0},exitFade:{value:0}},vertexShader:'varying vec2 uvp;void main(){uvp=uv;gl_Position=vec4(position.xy,0.,1.);}',fragmentShader:`
-  uniform float illustrationExperiment;uniform float eveningNight;uniform float eveningBlue;uniform float dusk;uniform sampler2D picture;uniform vec2 pixel;uniform float amount;uniform float secretGold;uniform float exitFade;varying vec2 uvp;
+  this.material=new T.ShaderMaterial({depthTest:false,depthWrite:false,uniforms:{...visual85,eveningNight:eveningUniforms.eveningNight,eveningBlue:eveningUniforms.eveningBlue,dusk:{value:1},softCopy:{value:this.smooth?1:0},picture:{value:this.target.texture},pixel:{value:new T.Vector2()},amount:{value:1},secretGold:{value:0},exitFade:{value:0}},vertexShader:'varying vec2 uvp;void main(){uvp=uv;gl_Position=vec4(position.xy,0.,1.);}',fragmentShader:`
+  uniform float illustrationExperiment;uniform float eveningNight;uniform float eveningBlue;uniform float dusk;uniform float softCopy;uniform sampler2D picture;uniform vec2 pixel;uniform float amount;uniform float secretGold;uniform float exitFade;varying vec2 uvp;
   ${noiseGLSL}
   void main(){
    vec2 paper=uvp/pixel;
@@ -44,10 +49,12 @@ export class IllustrationFinish{
    const vec3 LUM=vec3(.2126,.7152,.0722);
    // A soft copy of the frame, from its mip chain: bright things bleed light
    // (lamps, tail lights, the last of the sky) and the whole image gains a faint haze.
-   vec3 soft=texture2D(picture,uvp,3.5).rgb*.55+texture2D(picture,uvp,5.5).rgb*.45;
-   vec3 bleed=max(soft-vec3(.30),0.);
-   c+=bleed*(.35+.45*eveningBlue+.55*eveningNight)*dusk;
-   c=mix(c,1.-(1.-clamp(c,0.,1.))*(1.-clamp(soft,0.,1.)*.5),.16*dusk);
+   if(softCopy>.5){
+    vec3 soft=texture2D(picture,uvp,3.5).rgb*.55+texture2D(picture,uvp,5.5).rgb*.45;
+    vec3 bleed=max(soft-vec3(.30),0.);
+    c+=bleed*(.35+.45*eveningBlue+.55*eveningNight)*dusk;
+    c=mix(c,1.-(1.-clamp(c,0.,1.))*(1.-clamp(soft,0.,1.)*.5),.16*dusk);
+   }
    // Split tone: shadows lean indigo, lights lean peach; stronger as blue hour arrives.
    float tone=smoothstep(.03,.46,dot(c,LUM));
    vec3 shade=mix(vec3(.94,.98,1.09),vec3(.78,.93,1.24),eveningBlue);
