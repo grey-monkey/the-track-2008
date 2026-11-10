@@ -64,8 +64,11 @@ const canopyRoute=new CanopyRoute(null,{
 
 function unlockAmbience(){if(ready&&sound.enabled)sound.start(active&&!paused);}
 document.addEventListener('pointerdown',unlockAmbience,{passive:true});document.addEventListener('keydown',unlockAmbience);
+// A few words on the first rides only; after that the screen stays quiet.
+const coach={touch:matchMedia('(pointer: coarse)').matches,get rides(){try{return Number(localStorage.getItem('track-rides'))||0;}catch{return 0;}},get fresh(){return this.rides<=3;},count(){try{localStorage.setItem('track-rides',String(this.rides+1));}catch{}},
+ tow(){return this.touch?'Drag sideways to carve · flick up to let go':'A / D to carve · E to let go';},free(){return this.touch?'Tap to push · drag down to brake':'W to push · S to brake';}};
 function hint(text,seconds=5){$('hint').textContent=text;hintUntil=performance.now()+seconds*1000;}
-const gesture=new Gestures({isHolding:()=>sim?.rider.holding??true,trick:kind=>{if(active&&!paused&&!canopyRoute.busy&&launchRemaining<=0)sim.performTrick(kind);},release:()=>{if(active&&!paused&&!canopyRoute.busy&&launchRemaining<=0&&sim.release())hint('',0);},ollie:()=>{if(active&&!paused&&!canopyRoute.busy&&launchRemaining<=0)sim.ollie();}});
+const gesture=new Gestures({isHolding:()=>sim?.rider.holding??true,trick:kind=>{if(active&&!paused&&!canopyRoute.busy&&launchRemaining<=0)sim.performTrick(kind);},release:()=>{if(active&&!paused&&!canopyRoute.busy&&launchRemaining<=0&&sim.release())hint(coach.free(),coach.fresh?6:0);},ollie:()=>{if(active&&!paused&&!canopyRoute.busy&&launchRemaining<=0)sim.ollie();}});
 const riderChoices=[...Object.keys(RIDERS),'SPRAD'],boardChoices=Object.keys(BOARDS);
 for(const [kind,choices]of [['rider',riderChoices],['board',boardChoices]]){const slider=$(kind+'Slider');slider.max=choices.length-1;$(kind+'Stops').innerHTML=choices.map((_,i)=>'<i style="left:'+100*i/(choices.length-1)+'%"></i>').join('');slider.oninput=()=>{if(active)return;const choice=choices[Number(slider.value)];if(choice&&selection[kind]!==choice){selection[kind]=choice;updateSelection();}};}
 function syncChoice(kind,choices,label){const i=choices.indexOf(selection[kind]),fraction=i/(choices.length-1),slider=$(kind+'Slider');slider.value=i;slider.setAttribute('aria-valuetext',label);$(kind+'Name').style.setProperty('--stop',fraction);}
@@ -95,7 +98,7 @@ function updateSelection(){$('start').disabled=!ready||selection.rider==='SPRAD'
 
 $('rope').oninput=e=>{selection.rope=Number(e.target.value)/100;updateSelection();};
 $('pace').oninput=e=>{selection.pace=Number(e.target.value)/100;updateSelection();};
-function start(options={}){if(!view||!ready||selection.rider==='SPRAD')return;launchRemaining=active?0:1.05;selection.seed++;view.skating=null;view.riderFall=null;sim=canopyRoute.attach(view.hazards.attach(eveningScores.bind(new Ride({...selection,...options}))));view.setSelection(selection);view.consoleWorldLook?.refresh();view.camPos=null;view.camHeading=sim.car.heading;active=true;paused=false;finishedShown=false;accumulator=0;lastLap=0;gesture.reset();root.classList.add('playing');$('toolbar').hidden=false;$('panel').hidden=true;$('instructions').hidden=true;$('lapMessage').textContent='';$('scene').focus();sound.start(true);$('hint').textContent='';}
+function start(options={}){if(!view||!ready||selection.rider==='SPRAD')return;launchRemaining=active?0:1.05;coach.count();selection.seed++;view.skating=null;view.riderFall=null;sim=canopyRoute.attach(view.hazards.attach(eveningScores.bind(new Ride({...selection,...options}))));view.setSelection(selection);view.consoleWorldLook?.refresh();view.camPos=null;view.camHeading=sim.car.heading;active=true;paused=false;finishedShown=false;accumulator=0;lastLap=0;gesture.reset();root.classList.add('playing');$('toolbar').hidden=false;$('panel').hidden=true;$('instructions').hidden=true;$('lapMessage').textContent='';$('scene').focus();sound.start(true);$('hint').textContent='';if(coach.fresh)hint(coach.tow(),8);}
 $('start').onclick=()=>start();
 const scoreDisplay=createScoreHud(root),scoreHud=scoreDisplay.scoreHud;
 // The screen stays clear until there is something to show: the score card appears

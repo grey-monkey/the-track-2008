@@ -40,7 +40,10 @@ float skyNoise(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix
 void main(){
  vec3 v=normalize(vWorld);float u=abs(atan(v.z,v.x))/3.14159265;
  vec3 paint=texture2D(paintedSky,vec2(u,clamp(v.y*1.8+.10,0.,1.))).rgb;
- float clouds=1.-smoothstep(.17,.53,dot(paint,vec3(.299,.587,.114)));
+ // The painting ends at about thirty degrees up; above that, ease into open sky
+ // instead of smearing its top row to the zenith.
+ float zenith=smoothstep(.33,.50,v.y);
+ float clouds=(1.-smoothstep(.17,.53,dot(paint,vec3(.299,.587,.114))))*(1.-zenith);
  float horizon=pow(1.-clamp(v.y,0.,1.),3.);
  float west=pow(max(0.,dot(normalize(v.xz),normalize(eveningSun.xz))),5.);
  float afterglow=1.-smoothstep(.025,.19,-eveningSun.y);
@@ -58,7 +61,7 @@ void main(){
  vec3 original=paint*mix(vec3(.58,.66,1.08),vec3(1.13,.95,.90),sunward);
  float originalLuma=dot(original,vec3(.299,.587,.114));
  original=max(vec3(0.),mix(vec3(originalLuma),original,1.19));
- c=mix(c,original,afterglow*(1.-eveningNight)*.88);
+ c=mix(c,original,afterglow*(1.-eveningNight)*.88*(1.-zenith));
 
  // Sparse higher cloud veil sits behind the painted low cloud masses.
  vec2 highUV=vec2(v.x*8.+v.z*3.,v.y*27.+v.z*4.)+vec2(eveningCloudTime*.0007,0.);

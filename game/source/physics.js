@@ -19,7 +19,7 @@ import {BOARD_FEEL,SLIDE_INTENT,personalitySlide,TOW_FEEL,CARVE,carryCarveMoment
 import {bulbSpeedAllowance,sample,heading,curvature,height,roadDistance,clamp,mix,angle,LENGTH,RIDERS,BOARDS} from './world.js';
 export const STEP=1/120;
 // Rolling loss is shared whether towed or released; releasing is not braking.
-export const COAST_FEEL=Object.freeze({roadResistance:.108,dirtResistance:1.35,airDrag:.007,restSpeed:.22352,restSeconds:.5});
+export const COAST_FEEL=Object.freeze({roadResistance:.108,dirtResistance:3.2,dirtCrashSpeed:2.3,airDrag:.007,restSpeed:.22352,restSeconds:.5});
 export class Ride {
  constructor(options={}){this.options={rider:'DOG',board:'LONGBOARD',rope:.45,seed:8,...options};this.driver=this.options.rider==='DOG'?'SALLY':'DOG';this.rope=mix(2.44,7.62,this.options.rope);this.score=0;this.combo=null;this.lastCombo=null;this.time=0;this.phase='riding';this.phaseTime=0;this.laps=0;const pace=Number.isFinite(options.pace)?clamp(options.pace,.6,1.82):1;this.speedFactor=1.05*pace*(options.speedFactor??1);this.turnSpeedFactor=1.05*(pace<1?pace:1)*(options.speedFactor??1);this.driving=new Driver(this.options.seed,this.driver==='SALLY',this.speedFactor,this.turnSpeedFactor,this.rope+2.3+(options.trailMargin??1.5));this.car={s:options.start??0,speed:0,accel:0,brake:false};this.updateCarPosition();const c=this.car;this.rider={x:c.hx-Math.cos(c.heading)*(this.rope-.08),z:c.hz-Math.sin(c.heading)*(this.rope-.08),vx:0,vz:0,heading:c.heading,lean:0,wobble:0,tension:0,height:0,up:0,holding:true,dirt:false};this.prevRoad=roadDistance(this.rider.x,this.rider.z);this.stats={maxStretch:0,maxSpeed:0,maxStep:0,maxAhead:-Infinity,crashReason:null};}
  updateCarPosition(){const c=this.car,p=this.driving.sample(c.s);c.x=p.x;c.z=p.z;c.heading=p.heading;c.curvature=p.curvature;c.line=this.driving.index(c.s);c.hx=c.x-Math.cos(c.heading)*2.28;c.hz=c.z-Math.sin(c.heading)*2.28;}
@@ -173,7 +173,8 @@ export class Ride {
  // Concrete curb faces/tops and connected footpath are paved support, not dirt.
  r.dirt=!(this.hazards?.rideable?.(r.x,r.z)??roadDistance(r.x,r.z)<=0);
  if(!r.dirt&&r.height===0)r.lastSafe={x:r.x,z:r.z};
- if(r.dirt&&r.height<=.025&&r.up<=0){this.crash('DIRT');return;}
+ // Clay throws a rider at speed. At a walking roll the wheels just bog down and stop.
+ if(r.dirt&&r.height<=.025&&r.up<=0&&Math.hypot(r.vx,r.vz)>COAST_FEEL.dirtCrashSpeed){this.crash('DIRT');return;}
  if(r.wobble>1)this.crash('WOBBLE');
  // A collision with the actual car is preferable to an invisible rearward force.
  const relx=r.x-c.x,relz=r.z-c.z,along=relx*Math.cos(c.heading)+relz*Math.sin(c.heading),across=-relx*Math.sin(c.heading)+relz*Math.cos(c.heading);

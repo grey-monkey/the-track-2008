@@ -67,7 +67,7 @@ export class View {
   const cam=this.rideCamera??={speed:0,fov:0,roll:0,tug:0,phase:0},rideSpeed=Math.hypot(r.vx,r.vz),ease=k=>1-Math.exp(-dt*k);
   if(menu||crashed){cam.speed+=(0-cam.speed)*ease(2.5);cam.tug+=(0-cam.tug)*ease(4);cam.roll+=(0-cam.roll)*ease(4);}
   else{cam.speed+=(clamp((rideSpeed-2.5)/8.5,0,1)-cam.speed)*ease(2.2);cam.tug=Math.max(cam.tug*Math.exp(-dt*5.5),clamp(((r.tension??0)-3.5)/11,0,1));cam.roll+=((r.lean??0)*-.16-cam.roll)*ease(5);cam.phase+=dt*(9+rideSpeed*2.4);}
-  const fovTarget=menu?0:cam.speed*12+cam.tug*5;cam.fov+=(fovTarget-cam.fov)*ease(4);
+  const fovTarget=menu?0:(cam.speed*12+cam.tug*5)*(this.camera.aspect<1?.55:1);cam.fov+=(fovTarget-cam.fov)*ease(4);
   if(this.baseFov&&Math.abs(this.camera.fov-(this.baseFov+cam.fov))>.01){this.camera.fov=this.baseFov+cam.fov;this.camera.updateProjectionMatrix();}
   const behind=menu?8:5.35-cam.speed*.55-cam.tug*.35+Math.min(1,rideSpeed/10)*free*.65-free*(this.freeRideView?.grindBlend??0)*.22;const tx=r.x-Math.cos(this.camHeading)*behind-Math.sin(this.camHeading)*(.6-.35*free),tz=r.z-Math.sin(this.camHeading)*behind+Math.cos(this.camHeading)*(.6-.35*free);
   const flightHeight=menu?0:Math.max(0,crashed?(r.fallLift??0):r.height),follow=T.MathUtils.smoothstep(flightHeight,.4,1.5);
