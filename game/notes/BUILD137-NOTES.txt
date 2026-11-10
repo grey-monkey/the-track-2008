@@ -1,0 +1,18 @@
+THE TRACK 2008 / BUILD 137 / October 15, 2026
+
+Requested changes
+The score HUD is rebuilt around the existing Track logo and original code-drawn numerals, with heavy outlines, chipped ink edges, warm paper colors and slight print misalignment. Score digits are rendered identically across platforms without a system-font dependency. Both current combo and banked score share the new treatment. Dynamic HUD text/art updates only when values change. Cash, goals and other unrequested systems were not added.
+
+Skill rules are centralized in source/trick-rules.js and enforced in simulation, covering both touch and keyboard. Sally/Black + Element/Dogtown can score tricks. Their longboards cannot. Dog/Boss may attempt ollies on any board, but must bail at touchdown without points; flips, shove-its and manuals are blocked. Surface/ramp takeoff has a separate source from ollie attempts and does not trigger the novice failure rule. CRUISER is now visibly named Lords of Dogtown, matching its existing Dogtown deck artwork.
+
+Movement-stage progress
+A 120ms pre-landing input window remembers eligible trick commands for touchdown; novice attempts cannot use it to avoid their bail. Crash clears queued commands. Landing animation takes priority over a fresh push/manual transition for 240ms; both normals and positions blend between poses. Rope-first free riding, the original Track layout, and the accepted fast/soft fall distinction are preserved.
+
+Validation
+Eight test files pass. New rules matrix covers all 16 rider/board combinations: eligibility for flips/shove-its/manuals, successful skilled ollies, failed novice ollies, no novice points, ramp takeoff and landing for everyone, and buffered-input timing/cancellation. The legacy four-pose tests are comparison regressions only.
+Actual browser checks: Sally Element kickflip banks 150 points; Dog Element rejects a flip, attempts an ollie, bails and earns zero points; the result screen gives the exact two choices; Dog then launches and lands from the actual ramp with normal world collision enabled. No JavaScript or shader errors. HUD bounds/captures checked at 1050x720, 390x844, 844x390. Actual emulated touch verifies HUD-tap pause, rope release, Dog flip rejection, failed ollie and normal ramp landing. Isolated HUD checks cover seven-digit scores, reduced motion and size stability while banking. HUD layout stress captures use a controlled score/combo; the separate Sally score capture is from actual play.
+
+Remaining quality work
+Finish the full character/stance contact and animation pass, develop one polished skating line in the existing subdivision, add grind/transition gameplay and animation, then spread that standard across the world. Physical-phone performance and touch ergonomics still require hands-on playtesting. This is an iteration toward the THPS4 reference quality, not a claim of parity.
+
+Historical Build134/135/136 notes remain background. This file and README describe the current rules.

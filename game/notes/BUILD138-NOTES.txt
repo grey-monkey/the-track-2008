@@ -1,0 +1,23 @@
+THE TRACK 2008 - BUILD 138
+
+WHAT CHANGED
+- Removed the logo from the score HUD.
+- Shared jagged navy / faded-peach panel treatment on selection, score, pause, wipeout, help and error UI.
+- Bundled Permanent Marker for score/combo numbers and titles; Barlow for labels, controls and explanatory text. Existing main logo and Ride/help artwork retained.
+- Six authored driver profiles: Easy sweep, Early roll-on, Wide and patient, Tidy line, Inside sweep, Brisk exit.
+- New random seed each browser session. Deterministic shuffled bags visit all six profiles once per six laps, with no immediate repeated line across bags. Explicit simulation seeds remain repeatable for tests.
+- Continuous-curvature spline route removes sharp tangent joins. Small line offsets preserve the established road, entrance, cul-de-sac sweep and divot avoidance.
+- Speed planning anticipates bends, limits pedal jerk, and considers the cul-de-sac as a connected maneuver. One braking phase on approach, then progressive acceleration without renewed braking in the circle or just before the straight.
+- Travel uses physical arc distance; wheel steering/rolling uses the actual line instead of the old reference route.
+
+VALIDATION
+Nine test files pass. Driving tests cover six profiles x two drivers x three pace settings (36 full circuits). All sedan footprint samples remain on pavement, at least 0.28m inside the curb. Maximum curvature across profiles is 0.220 1/m, compared with the prior sampled peak of 0.530 1/m. Maximum measured change in turn rate is 0.569 rad/s^2. Lap seam position and heading are continuous. Every tested run has exactly one cul-de-sac approach brake event, no brake event from station 285 through 425, and physical position speed agrees with reported speed within 1.5% (actual error substantially smaller).
+Actual browser geometry checks find no missing wheel contact on any of the six cul-de-sac lines. Desktop/portrait/landscape UI, live scoring and the two crash choices pass. Scrolling help keeps its background and controls visible. No browser runtime errors.
+
+The original world/character artwork, trick eligibility, rope-first flow, gestures and accepted hard/soft wipeouts remain. This is a focused UI and driving pass, not completion of the larger character/world/skating-quality milestones.
+
+RUN / BUILD
+npm start -> http://127.0.0.1:4173/
+npm run build
+npm test
+Only files named in build-manifest.json are required for the browser build; playtest138.html is the entry. Earlier build notes are history, not the current behavior specification.

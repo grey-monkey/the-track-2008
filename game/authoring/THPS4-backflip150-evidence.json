@@ -1,0 +1,15 @@
+{
+  "source": "anims\\skater_specials\\StalefishBackFlipska.dat",
+  "sha256": "d6d314ad28e61e185717e17ec88aa62cbbda26f42b2aca88eb30f067b56150d1",
+  "duration": 1.2999999523162842,
+  "verification": {
+    "exactEOF": true,
+    "declaredRotationKeys": 458,
+    "declaredTranslationKeys": 93,
+    "actualRotationKeys": 458,
+    "actualTranslationKeys": 93,
+    "timestampsMonotoneAndInDuration": true
+  },
+  "script": "airtricks.q:74 binds Trick_StaleBackFlip to StalefishBackFlip, speed1.10, NoSpin.",
+  "adaptation": "Pickup-only clip retargeted to Track rig, slowed to1.85s, board follows recovered hip-centered orbit, original Track launch1.25m/s and gravity0 to9.81 over15s. Static assets decoded; no claim of native runtime recreation."
+}

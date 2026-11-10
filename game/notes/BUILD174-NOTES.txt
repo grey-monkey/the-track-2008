@@ -1,0 +1,29 @@
+THE TRACK 2008 - BUILD 174
+Per-rider evening scores
+
+Sally, Dog, Black and Boss keep independent accumulated scores for the current
+open game. Returning to the car, switching riders or boards, changing stance,
+and choosing Another run keep each rider's earned points.
+The HUD shows the selected rider's running evening total.
+
+Existing scoring is unchanged: only banked points count. A wipeout loses the
+unfinished combo, not points earned earlier. Pending combos do not transfer
+between attempts or riders.
+
+Scores live only in this page's memory. Reloading or closing and reopening the
+game starts every rider at zero. Returning to a suspended page through browser
+history starts a fresh evening. Pausing, opening Settings, or temporarily
+switching tabs does not erase points. Saved album/menu preferences are separate.
+No new evening duration or end-of-game behavior is introduced.
+
+Validation: 54 automated checks pass, including score isolation, retry, bank/bail
+and fresh-evening tests.
+Browser checks use the requested Sally 250 / Dog 500 example as seeded banked
+points and exercise actual rider, board, stance, retry and reload handlers.
+
+Play: https://grey-monkey.github.io/the-track-2008/build174/playtest174.html?v=174
+Local: node serve.cjs
+
+Plywood ramp: riding face maps one continuous veneer panel from the existing
+texture atlas. No repeated sheet seams. Ramp dimensions, edge plies, support
+blocks, collision and takeoff behavior are unchanged.

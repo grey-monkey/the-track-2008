@@ -1,0 +1,16 @@
+THE TRACK 2008 — CURRENT STATE, BUILD 160
+
+Current delivered milestone: the coordinated world/material pass is in the
+playable build, following the source-rendering study in 159. See BUILD160-NOTES.
+This includes terrain, houses, construction materials, rider surfaces and
+lighting together. The previous roadmap's grabs/spins expansion is superseded
+by the owner's simpler character-specific trick rules.
+
+Established rules remain authoritative in the tests and gameplay code: rope
+first, release to free ride, Sally ollie/grind, Black ollie/kickflip, no novice
+tricks, no longboard ollies, Boss hazard sensitivity, Dog wobble, and existing
+pickup/exit/crash flow. No new trick or obstacle expansion is part of Build 160.
+
+Remaining release validation: owner playtest of the coordinated art treatment,
+physical-phone frame pacing/load/input checks, and any corrections found there.
+Do not describe browser viewport checks as physical-phone performance tests.

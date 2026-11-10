@@ -1,0 +1,25 @@
+THE TRACK 2008 - BUILD 179
+The Canopy: cinematic reveal and clean arrival
+
+Fixed surface black flashes: tunnel darkening and transition detection are now
+bounded by the passage and require the rider's feet to be below road level.
+Removed the EXIT sign, circle instruction, HUD progress meter and floor progress
+ring. The wall and warm footpath lights provide the wayfinding. The discovery
+notification still appears when Secret Mixtape is actually earned.
+
+The tunnel arrival carries riders along a short curved arc beside the bistro,
+then hands back control on a tangent heading. Every rider and board is tested
+for safe arrival without steering directly into the table.
+
+The construction chain reaction now lasts 9.4 seconds. A continuous camera move
+follows the rolling can to the generator's visible starter paddle, lingers on
+ignition and the running indicator, then pans across to the island. The barrier
+clears before a recessed split concrete hatch lowers and slides underneath the
+surrounding pavement. The camera eases back to the rider after the reveal.
+
+Validation: 74 automated checks, desktop/portrait browser inspection, surface
+fade regression, ordered reaction beats, safe arrival for all 16 rider/board
+combinations, full-circle reward, return tunnel, score and album retention.
+
+Play: https://grey-monkey.github.io/the-track-2008/build179/playtest179.html?v=179
+Local: node serve.cjs

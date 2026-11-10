@@ -1,0 +1,402 @@
+{
+  "geometry": [
+    {
+      "line": "Easy sweep",
+      "maximumCurvature": 0.15013145469157882,
+      "curbClearance": 0.4703598169972104,
+      "centerClearance": 5.387005993576228
+    },
+    {
+      "line": "Early roll-on",
+      "maximumCurvature": 0.1658626087536236,
+      "curbClearance": 0.7172890284258164,
+      "centerClearance": 4.734985681246933
+    },
+    {
+      "line": "Wide and patient",
+      "maximumCurvature": 0.14797373472036954,
+      "curbClearance": 0.2598400367807451,
+      "centerClearance": 5.456065878189889
+    },
+    {
+      "line": "Tidy line",
+      "maximumCurvature": 0.15431095279207976,
+      "curbClearance": 0.550619970786204,
+      "centerClearance": 5.175799685894131
+    },
+    {
+      "line": "Inside sweep",
+      "maximumCurvature": 0.16371669334009703,
+      "curbClearance": 0.7205980146480511,
+      "centerClearance": 4.8241571004418935
+    },
+    {
+      "line": "Brisk exit",
+      "maximumCurvature": 0.1497688573264573,
+      "curbClearance": 0.6237840634615102,
+      "centerClearance": 5.426843907825719
+    }
+  ],
+  "runs": [
+    {
+      "line": 0,
+      "rider": "DOG",
+      "pace": 0.6,
+      "maxYaw": 0.5983282682136526,
+      "maxYawAccel": 0.33702717056841136,
+      "maxLateral": 2.383388745746673,
+      "maxVelocityError": 0.00044913108176063794,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 0,
+      "rider": "DOG",
+      "pace": 1,
+      "maxYaw": 0.9981956606786291,
+      "maxYawAccel": 0.9373184214837238,
+      "maxLateral": 6.637555309837377,
+      "maxVelocityError": 0.0007487762831043605,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 0,
+      "rider": "DOG",
+      "pace": 1.82,
+      "maxYaw": 0.9981771258561523,
+      "maxYawAccel": 1.0823237631449878,
+      "maxLateral": 6.637386275755964,
+      "maxVelocityError": 0.0007488345908564863,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 0,
+      "rider": "SALLY",
+      "pace": 0.6,
+      "maxYaw": 0.539834569100801,
+      "maxYawAccel": 0.2742216902895289,
+      "maxLateral": 1.939874792234542,
+      "maxVelocityError": 0.00040519713339051244,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 0,
+      "rider": "SALLY",
+      "pace": 1,
+      "maxYaw": 0.9000013036102672,
+      "maxYawAccel": 0.761697482297321,
+      "maxLateral": 5.391670491236274,
+      "maxVelocityError": 0.0006755466102726915,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 0,
+      "rider": "SALLY",
+      "pace": 1.82,
+      "maxYaw": 0.8999513860596409,
+      "maxYawAccel": 0.8905348614997255,
+      "maxLateral": 5.397987134782905,
+      "maxVelocityError": 0.0006755104647164509,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 1,
+      "rider": "DOG",
+      "pace": 0.6,
+      "maxYaw": 0.6570185793746397,
+      "maxYawAccel": 0.3988569475531212,
+      "maxLateral": 2.612070765013146,
+      "maxVelocityError": 0.00048679426514490666,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 1,
+      "rider": "DOG",
+      "pace": 1,
+      "maxYaw": 1.1018950298064742,
+      "maxYawAccel": 1.114237375581708,
+      "maxLateral": 7.330630676357592,
+      "maxVelocityError": 0.0008128398865501375,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 1,
+      "rider": "DOG",
+      "pace": 1.82,
+      "maxYaw": 1.101897789913231,
+      "maxYawAccel": 1.1534635824807626,
+      "maxLateral": 7.330700505333896,
+      "maxVelocityError": 0.0008131446825316378,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 1,
+      "rider": "SALLY",
+      "pace": 0.6,
+      "maxYaw": 0.5916342549144104,
+      "maxYawAccel": 0.32517427571718827,
+      "maxLateral": 2.118128243579304,
+      "maxVelocityError": 0.00043914315126169595,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 1,
+      "rider": "SALLY",
+      "pace": 1,
+      "maxYaw": 0.9949414160040957,
+      "maxYawAccel": 0.9049373255095228,
+      "maxLateral": 5.978322848645925,
+      "maxVelocityError": 0.0007330746374800353,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 1,
+      "rider": "SALLY",
+      "pace": 1.82,
+      "maxYaw": 0.9949632389454166,
+      "maxYawAccel": 0.949929078698204,
+      "maxLateral": 5.978394302380812,
+      "maxVelocityError": 0.0007333340988934687,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 2,
+      "rider": "DOG",
+      "pace": 0.6,
+      "maxYaw": 0.6001863100111926,
+      "maxYawAccel": 0.3542940032616637,
+      "maxLateral": 2.433013017046668,
+      "maxVelocityError": 0.00046202910357211516,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 2,
+      "rider": "DOG",
+      "pace": 1,
+      "maxYaw": 1.0002216972150888,
+      "maxYawAccel": 0.9865035886932239,
+      "maxLateral": 6.758022852202589,
+      "maxVelocityError": 0.0007703236802781403,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 2,
+      "rider": "DOG",
+      "pace": 1.82,
+      "maxYaw": 1.0002622596868704,
+      "maxYawAccel": 1.1151836866587939,
+      "maxLateral": 6.757807680729837,
+      "maxVelocityError": 0.0007703530414488471,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 2,
+      "rider": "SALLY",
+      "pace": 0.6,
+      "maxYaw": 0.541495196534445,
+      "maxYawAccel": 0.2885374139552255,
+      "maxLateral": 1.9803757315629313,
+      "maxVelocityError": 0.00041681385050868055,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 2,
+      "rider": "SALLY",
+      "pace": 1,
+      "maxYaw": 0.902480318521004,
+      "maxYawAccel": 0.8017002749852642,
+      "maxLateral": 5.500377356158815,
+      "maxVelocityError": 0.0006948748607500146,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 2,
+      "rider": "SALLY",
+      "pace": 1.82,
+      "maxYaw": 0.9024821126264548,
+      "maxYawAccel": 0.915500068151287,
+      "maxLateral": 5.5003621651795624,
+      "maxVelocityError": 0.0006948725450740032,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 3,
+      "rider": "DOG",
+      "pace": 0.6,
+      "maxYaw": 0.6277999174211324,
+      "maxYawAccel": 0.3829673200257844,
+      "maxLateral": 2.5636741283498594,
+      "maxVelocityError": 0.0004236175148406107,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 3,
+      "rider": "DOG",
+      "pace": 1,
+      "maxYaw": 1.0529746964756548,
+      "maxYawAccel": 1.0682604219134229,
+      "maxLateral": 7.193466695698845,
+      "maxVelocityError": 0.0007062745339444212,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 3,
+      "rider": "DOG",
+      "pace": 1.82,
+      "maxYaw": 1.052868650035652,
+      "maxYawAccel": 1.1520660103347513,
+      "maxLateral": 7.192852111451936,
+      "maxVelocityError": 0.0007062998721463304,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 3,
+      "rider": "SALLY",
+      "pace": 0.6,
+      "maxYaw": 0.5653130206274959,
+      "maxYawAccel": 0.31135602907426785,
+      "maxLateral": 2.079010517773934,
+      "maxVelocityError": 0.00038216243475960876,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 3,
+      "rider": "SALLY",
+      "pace": 1,
+      "maxYaw": 0.9507156600860611,
+      "maxYawAccel": 0.8689979910634804,
+      "maxLateral": 5.86957304044761,
+      "maxVelocityError": 0.0006371264289321576,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 3,
+      "rider": "SALLY",
+      "pace": 1.82,
+      "maxYaw": 0.9508003240848595,
+      "maxYawAccel": 0.9463820401545076,
+      "maxLateral": 5.869230132583606,
+      "maxVelocityError": 0.0006371557368450081,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 4,
+      "rider": "DOG",
+      "pace": 0.6,
+      "maxYaw": 0.6280872964643612,
+      "maxYawAccel": 0.38304189156831203,
+      "maxLateral": 2.408610459233479,
+      "maxVelocityError": 0.00047327599245740407,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 4,
+      "rider": "DOG",
+      "pace": 1,
+      "maxYaw": 1.0511385327537326,
+      "maxYawAccel": 1.0686206265667408,
+      "maxLateral": 6.757178233190243,
+      "maxVelocityError": 0.0007901337691631154,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 4,
+      "rider": "DOG",
+      "pace": 1.82,
+      "maxYaw": 1.0511387861239105,
+      "maxYawAccel": 1.070645482638355,
+      "maxLateral": 6.757149553743902,
+      "maxVelocityError": 0.0007905601260403982,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 4,
+      "rider": "SALLY",
+      "pace": 0.6,
+      "maxYaw": 0.5666197354419289,
+      "maxYawAccel": 0.31154363538875796,
+      "maxLateral": 1.9603213506598922,
+      "maxVelocityError": 0.0004269069911812847,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 4,
+      "rider": "SALLY",
+      "pace": 1,
+      "maxYaw": 0.947126575919075,
+      "maxYawAccel": 0.8654327588963762,
+      "maxLateral": 5.486823834995616,
+      "maxVelocityError": 0.0007125362253730455,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 4,
+      "rider": "SALLY",
+      "pace": 1.82,
+      "maxYaw": 0.9471296217558844,
+      "maxYawAccel": 0.8701930249952916,
+      "maxLateral": 5.4870184562390945,
+      "maxVelocityError": 0.0007129333748097607,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 5,
+      "rider": "DOG",
+      "pace": 0.6,
+      "maxYaw": 0.6278997107806816,
+      "maxYawAccel": 0.3567204863848872,
+      "maxLateral": 2.6418378003332927,
+      "maxVelocityError": 0.0004721549133079146,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 5,
+      "rider": "DOG",
+      "pace": 1,
+      "maxYaw": 1.0561552157165899,
+      "maxYawAccel": 0.9952042432260555,
+      "maxLateral": 7.458116723701323,
+      "maxVelocityError": 0.000787260608198169,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 5,
+      "rider": "DOG",
+      "pace": 1.82,
+      "maxYaw": 1.0561806311480026,
+      "maxYawAccel": 1.1788814938676162,
+      "maxLateral": 7.4586066118948775,
+      "maxVelocityError": 0.0007872710040228405,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 5,
+      "rider": "SALLY",
+      "pace": 0.6,
+      "maxYaw": 0.5653755678245709,
+      "maxYawAccel": 0.29037555971881845,
+      "maxLateral": 2.1422582147866174,
+      "maxVelocityError": 0.000425973508556051,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 5,
+      "rider": "SALLY",
+      "pace": 1,
+      "maxYaw": 0.9527580243211806,
+      "maxYawAccel": 0.8080546967164537,
+      "maxLateral": 6.07368292562299,
+      "maxVelocityError": 0.0007101292871886514,
+      "approachBrakeEvents": 1
+    },
+    {
+      "line": 5,
+      "rider": "SALLY",
+      "pace": 1.82,
+      "maxYaw": 0.9527996285494034,
+      "maxYawAccel": 0.9671902023626067,
+      "maxLateral": 6.073382008615758,
+      "maxVelocityError": 0.0007101953260683304,
+      "approachBrakeEvents": 1
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+THE TRACK 2008 — BUILD148
+
+Walking path
+- One continuous centripetal spline replaces the angular path and separate end connectors. The old cul-de-sac endpoint that bent back toward the road is omitted.
+- 2.1m riding width, widening to 4.6m at each road entry. The road-facing edge terminates at the curb gutter rather than projecting a concrete rectangle into the asphalt.
+- Both existing curb pours and their graded shoulders are lowered locally before ground and hazard contact indices are built.
+- Path geometry clears the complete underlying ground triangles, not only sampled vertices. Clearance lifts are accumulated independently to avoid cascading deformation. The slope envelope eases height transitions without burying pavement.
+- Rendering, board contact and rideable-path classification use the same final concrete triangles.
+- Narrow dark soil border and contraction joints approximately every2.1m. Joint opacity uses pixel-width antialiasing to reduce distant broken-line artifacts. These surface markings do not cast obstacle-box shadows.
+- Removed old straight-polyline path overlays that no longer matched the new centerline.
+
+Lighting
+- Restored the pre146 broad directional fill and previous atmospheric/warm-cool balance while retaining147 material colors and textures.
+- Woodland clusters, clouded sky, fresh dark asphalt, tire wear, concrete and varied earth retained. This is a Track lighting adaptation, not a claim of recovered native THPS4 lighting curves.
+
+Verification
+-33 Node test entries pass, including spline curvature/no-hook checks and existing driving, character, board, scoring, clothing and crash rules.
+- Four full-length free rides: Sally/Element and Dog/Pintail, both directions, under normal steering and push inputs; all finish coasting without a crash.
+-24 curb crossing tests: both entries, both directions, center and +/-0.5m lateral offsets, Sally and Dog. All passed; maximum measured ground-height increment below0.04m.
+- Browser review from the playing camera: both road entries, path, sunset/dusk/night, desktop and portrait/landscape viewports. No failed shaders or browser errors. Phone-sized viewports are not physical phone testing.
+- Path surface markings excluded from static obstacle shadow boxes; regression checked in the browser.
+
+Run npm run build, then npm start. Default local preview: http://127.0.0.1:4173/?build=148

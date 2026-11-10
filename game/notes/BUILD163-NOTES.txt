@@ -1,0 +1,17 @@
+THE TRACK 2008 — BUILD 163
+Muted sage grass and Black's navy/yellow shirt
+
+Grass pigment has reduced saturation and a slightly quieter value, retaining
+its textured detail, dry/thin patches and the ground layout approved in 162.
+Black's shared selection/riding shirt material is now medium navy blue with
+a yellow 311 print. Logo placement, clothing geometry and fabric shading stay.
+
+Validation: selection, shirt close-up, riding, hill/path and woodland renders.
+Both standing/riding shader variants contain the navy and yellow pigments.
+Grass shaders contain the sage adjustment. No shader or browser runtime errors.
+Only the two material files changed; gameplay and terrain placement are untouched.
+Physical-phone performance was not measured for this color-only revision.
+
+Run: node serve.cjs
+Play: http://127.0.0.1:4173/?build=163
+Color comparison: http://127.0.0.1:4173/comparison163.html

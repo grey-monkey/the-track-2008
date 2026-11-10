@@ -1,0 +1,25 @@
+THE TRACK 2008 - BUILD 144 - CHARACTER AND BOARD MOTION
+
+Based on Build143, preserving the Build133 world, controls, car routes and character rules.
+
+VISIBLE CHANGES
+- Source-driven front/back powerslide body poses, lower knees and hips, shoulders opposing the slide, bounded travel-facing head correction. The physical deck still determines heading. Boss does not get this skilled slide pose.
+- Actual moving-brake animation; pushing cycles now use six stable full-body source variants rather than a single repeated cycle.
+- Animated source palms and finger joints, with a corrected right-hand bind fitted to the existing Track character mesh. Existing head calibration retained after verification.
+- Both feet support the actual rendered board plane after animation blending, including board pitch, stance mirroring, grinds and manuals. The pushing/braking support leg stays on the board while the other foot clears the deck before reaching terrain.
+- Air turning, takeoff-to-air posture and preparation for landing, without changing jump height. Active flips retain their own board and foot tracks. Landing absorption and manuals take priority over residual slide motion.
+- Removed the generic idle arm override to retain the original motion's shoulder, elbow and palm relationship.
+
+REFERENCE AND ADAPTATION
+REA workflow inspected the supplied THPS4 executable and packaged QB/animation resources. Executable SHA256: 8661edc1a3df21d897ef9119e333d84079bbdf0ad97171eed3f4ad5bd4329e5b.
+Recovered 20 additional motion records (18 new names; complete bank now 73 clips). QB dispatch and exact decoded bone transforms informed this work. Source hashes and findings are retained under authoring.
+Native executable string references were located in pointer tables; no native head solver or complete animation engine was recovered. The original executable was not run. This is a browser implementation and retargeting of reference motion, not a claim of exact original engine behavior.
+The source powerslide is a 180-degree switch maneuver. Track uses a bounded pre-switch portion, removes its board yaw and adds a bounded gaze adaptation for the existing sustained Pintail slide. Timing, sole contact and scoring remain Track-specific.
+THPS4 skitch clips use a two-handed low car grip. They were researched but do not replace Track's one-handed rope reach. Tow motion remains the existing authored system; this pass primarily improves released skating and shared hands during articulated falls.
+
+VALIDATION
+Node regression suite, dedicated source-motion/hand/contact tests, 48 rendered character/stance/action checks, controlled before/after screenshots, 793 source/adapted garment poses, UI in desktop/portrait/landscape, all 16 character/board ramp combinations, and normal-input ramp-to-grind routes across six driving profiles. See validation144 for outputs.
+Desktop browser viewport checks are not physical-phone performance certification. Art quality and motion still require the owner's playtest; this does not claim THPS4 visual parity.
+
+PLAY
+Run npm install if dependencies are absent, npm run build, npm start; open http://127.0.0.1:4173/?build=144.

@@ -1,0 +1,12 @@
+THE TRACK 2008 — BUILD 154
+Homemade lumber grind ledge
+
+Replaced the industrial I-beam with stacked residential framing offcuts on three scrap-wood supports. Two boards across and five layers high, staggered butt joints, varied cut ends, pencil marks and nail heads. A narrow metal angle caps the street-facing edge for grinding.
+
+The ledge stays on the first long straight. Sally retains the same ollie approach, balance controls, grind length and scoring. Physical collision follows the wider lumber stack. Static wood and metal details are batched into eight material meshes. The minimalist white interface from Build153 remains.
+
+Validation: compiled-browser test captured Sally's ollie onto the new ledge, a 6.15-metre grind, clean exit and 522 banked points. All six car driving lines clear the wider prop in the sampled clearance check. Inspected close-up and gameplay screenshots. No browser errors.
+
+Run: node serve.cjs
+Open http://127.0.0.1:4173/?build=154
+Rebuild: npm install, then node build.cjs.

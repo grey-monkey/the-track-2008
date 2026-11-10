@@ -1,0 +1,22 @@
+THE TRACK 2008 — BUILD149
+
+Sidewalk geometry
+- Straight chamfered flares narrow from4.3m at the curb to the2.1m walk, with a straight initial centerline and no hooked return.
+- The first4m of each entrance are level along travel. A smooth height curve joins the existing path by18m.
+- Local terrain and shoulder triangles are cut down beneath the path. Surrounding earth is retained, with a narrow blend at the pavement edge. Local subdivision follows the corridor footprint instead of adding dense triangles across a whole rectangular area.
+- The regular terrain mesh omits the replaced cells; actual cut terrain triangles supply physics heights and conservative support bounds. Curb, ground, board and rider contact share the final geometry.
+- Concrete joints and dark path edging retained, along with148 lighting and approved147 textures.
+
+Secret Spliff
+- Original low-poly paper-cone collectible with a dark ember end and small orbiting glints, hovering/spinning at neck height at the path midpoint.
+- Once per run; a new Ride resets collection. Living rider proximity and vertical overlap are required. Crashed riders cannot collect it.
+- Collecting immediately launches every rider/board with3.4m/s upward velocity. At4.905m/s2 gravity, a level-ground launch reaches about1.16m and lasts about1.38s.
+- Half gravity lasts15 simulation seconds, respects pause, and returns to normal at expiry. Airborne motion, buffered landing timing and slope gravity use the active gravity value.
+- Pickup launch bypasses ordinary ollie permissions and does not force a novice failed-trick landing. Existing character-specific surface hazards and ordinary trick rules remain.
+- Score panel expands for Secret Spliff and a remaining-seconds readout, without covering the score or rider label. No unsolicited score bonus added.
+
+Verification
+-34 Node test entries passed, including16 rider/board pickup flights, exact expiry, no recollection and distance/height/phase rejection; existing character, board, scoring, driving and animation tests retained.
+- Browser: all16 combinations launch automatically in the actual scene. Pickup visible before collection, hidden afterward; HUD and countdown display correctly and disappear at expiry.
+- Full-path free rides in both directions;24 center/off-center entrance crossings passed. Flat entry profiles measured zero height variation along their centerlines.
+- Playing-camera review at both entrances and pickup; desktop, portrait and landscape sizes; sunset/dusk/night with no failed shaders/browser errors. Phone-sized browser viewports are not physical-device tests.

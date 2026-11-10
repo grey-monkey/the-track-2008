@@ -1,0 +1,3 @@
+export const GRAPHICS_PRESETS=Object.freeze({reference:{pixelRatio:1.5,paintSamples:8},resolution:{pixelRatio:1.25,paintSamples:8},paint:{pixelRatio:1.5,paintSamples:4},balanced:{pixelRatio:1.25,paintSamples:4},mobile:{pixelRatio:1.15,paintSamples:4}});
+export function graphicsProfile(search=globalThis.location?.search??'',mobile=globalThis.matchMedia?.('(pointer: coarse)').matches??globalThis.innerWidth<=700){const p=new URLSearchParams(search),name=p.get('quality')??(mobile?'mobile':'reference'),key=Object.hasOwn(GRAPHICS_PRESETS,name)?name:'balanced';return {...GRAPHICS_PRESETS[key],name:key,mobile,powerPreference:p.get('power')==='default'?'default':'low-power'};}
+export const graphics=graphicsProfile();

@@ -1,0 +1,21 @@
+THE TRACK 2008 — BUILD 151
+Secret Spliff: rising flight and restrained golden glow
+
+CHANGES
+- Stronger forward/upward launch on pickup, retaining the approved THPS4-derived backflip and1.85-second animation timing.
+- Forward speed keeps approach direction, with a1.2m/s boost and4.5m/s minimum. Upward launch2.8-4.2m/s, depending on approach speed; existing higher upward momentum is retained.
+- Gravity starts at zero and returns linearly to9.81m/s2 over30 seconds. This is30 seconds of reduced gravity, not30 seconds of guaranteed airtime. A low-speed level-ground launch reaches about7.7m and stays airborne about7.2 seconds; actual terrain changes landing time.
+- Camera follows elevated flights smoothly and returns to the normal low skating view on landing. Existing air steering and landing preparation resume after the backflip.
+- Airborne riders no longer receive rolling dirt/asphalt resistance or accumulate ground wobble from the terrain below. Air drag and steering remain.
+- Subtle warm scene-only color/exposure lift, with18 small depth-tested glints around the rider. Strength eases in over1.1 seconds and fades over the remaining effect. HUD and actual evening clock are unchanged. Reset/menu clears the effect.
+
+VALIDATION
+34 Node test entries passed. Focused checks include all16 rider/board pickup combinations,30-second gravity ramp, estimated versus simulated flight time across expiry, forward launch direction, zero/normal glow endpoints, airborne drag independence, post-flip steering and landing preparation.
+Compiled-browser checks passed: complete steered flight on actual path, rise/descent/landing, rider remains framed, effect fades to zero, HUD shows50% at15 seconds, no failed shader programs or browser errors, portrait/landscape HUD fits, and restarting clears the effect.
+Mobile layouts are desktop browser viewports, not physical-device tests.
+The prior recovered backflip data is unchanged; this build adds original Track flight and visual-effect tuning rather than new THPS4 reverse engineering.
+
+RUN
+node serve.cjs
+Open http://127.0.0.1:4173/?build=151
+Rebuild from source: npm install, then node build.cjs.

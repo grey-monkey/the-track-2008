@@ -1,0 +1,33 @@
+THE TRACK 2008 — BUILD 165
+Boss: Second-Hand Smoke
+
+Boss can collect three distinct puffs from Sprad's existing periodic exhale.
+Follow the smoke behind the car. The upper-left HUD shows 1 / 3, 2 / 3,
+then Second-Hand Smoke with a countdown. Other riders cannot collect them.
+Collected puffs disappear; expired puffs cannot count. Progress resets on a
+crash or new run. Three puffs need not come from the same exhale.
+
+Boss lets go of the rope through the usual release transition when it triggers.
+The reward reuses Secret Spliff's backflip, forward ascent, and zero-to-normal
+gravity over 30 seconds, on every board. It does not grant normal trick skills.
+The sky receives slowly radiating rainbow bands and a gentle pulse for
+30 seconds, followed by a smooth six-second fade. The painted cloud texture,
+cloud shapes and sky geometry remain intact. Normal sky color returns exactly.
+This reward uses rainbow sky instead of the Secret Spliff golden world tint.
+New puffs cannot extend an active reward. Pause also pauses its timer.
+
+Smoke now spawns in the fixed-step simulation, with the same world positions
+used by both rendering and swept pickup detection. Six puffs per exhale,
+every 26 seconds; lifetime 4.5 seconds. No render-frame-dependent collection.
+
+Validation: all 40 gameplay test entries pass. Browser test uses real car,
+rope and hazard geometry: default Boss/longboard collects puffs at 8.56,
+8.74 and 8.94 seconds with seed 52. Backflip/ascent checked in live physics.
+Sky shader compiles; no browser runtime errors. Countdown, original Spliff,
+all-board eligibility, other-rider rejection, unique pickup counting, expired
+puffs, fast swept crossings, menu/reset and exact fade endpoints verified.
+Desktop and portrait viewport inspected; physical phone performance unmeasured.
+
+Run: node serve.cjs
+Play: http://127.0.0.1:4173/?build=165
+Preview: http://127.0.0.1:4173/comparison165.html

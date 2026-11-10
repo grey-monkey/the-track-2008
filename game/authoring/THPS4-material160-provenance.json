@@ -1,0 +1,140 @@
+[
+  {
+    "role": "brick",
+    "archive": "install-disc\\Win\\program files\\Aspyr\\Tony Hawks Pro Skater 4\\Game\\data\\levels\\Sch\\Schtex.dat",
+    "archiveSHA256": "fd4eaa1f6e555448233d7e7c0332a911b615c63e5fbec3f344de1f966e0df4b9",
+    "record": {
+      "index": 247,
+      "offset": 2488456,
+      "end": 2532024,
+      "crc": "e9b751f4",
+      "width": 256,
+      "height": 256,
+      "mips": 4,
+      "depth": 32,
+      "paletteDepth": 32,
+      "format": 1,
+      "paletteBytes": 0,
+      "mipBytes": [
+        32768,
+        8192,
+        2048,
+        512
+      ]
+    },
+    "pngSHA256": "0d66234ee30a2adf182d567ec83b2394fa619c025471dccbd9d155b4b8c629f2",
+    "interpretation": "Visual classification of decoded generic surface; source resolution preserved."
+  },
+  {
+    "role": "roof",
+    "archive": "install-disc\\Win\\program files\\Aspyr\\Tony Hawks Pro Skater 4\\Game\\data\\levels\\Sch\\Schtex.dat",
+    "archiveSHA256": "fd4eaa1f6e555448233d7e7c0332a911b615c63e5fbec3f344de1f966e0df4b9",
+    "record": {
+      "index": 365,
+      "offset": 3376052,
+      "end": 3387028,
+      "crc": "008c3e0c",
+      "width": 128,
+      "height": 128,
+      "mips": 6,
+      "depth": 32,
+      "paletteDepth": 32,
+      "format": 1,
+      "paletteBytes": 0,
+      "mipBytes": [
+        8192,
+        2048,
+        512,
+        128,
+        32,
+        8
+      ]
+    },
+    "pngSHA256": "7cea9b433dacb4833b33d6f06955f5b6dcc510a8be2270afe60b9ded5e7d04ba",
+    "interpretation": "Visual classification of decoded generic surface; source resolution preserved."
+  },
+  {
+    "role": "siding",
+    "archive": "install-disc\\Win\\program files\\Aspyr\\Tony Hawks Pro Skater 4\\Game\\data\\levels\\Sch\\Schtex.dat",
+    "archiveSHA256": "fd4eaa1f6e555448233d7e7c0332a911b615c63e5fbec3f344de1f966e0df4b9",
+    "record": {
+      "index": 157,
+      "offset": 1723420,
+      "end": 1734396,
+      "crc": "85770644",
+      "width": 128,
+      "height": 128,
+      "mips": 6,
+      "depth": 32,
+      "paletteDepth": 32,
+      "format": 1,
+      "paletteBytes": 0,
+      "mipBytes": [
+        8192,
+        2048,
+        512,
+        128,
+        32,
+        8
+      ]
+    },
+    "pngSHA256": "e4d82fa499c5c192f3056a93d80d6579c2ee7090d90296e80d3a0c5fa215c9df",
+    "interpretation": "Visual classification of decoded generic surface; source resolution preserved."
+  },
+  {
+    "role": "gravel",
+    "archive": "install-disc\\Win\\program files\\Aspyr\\Tony Hawks Pro Skater 4\\Game\\data\\levels\\Sch\\Schtex.dat",
+    "archiveSHA256": "fd4eaa1f6e555448233d7e7c0332a911b615c63e5fbec3f344de1f966e0df4b9",
+    "record": {
+      "index": 92,
+      "offset": 1087512,
+      "end": 1098488,
+      "crc": "b588a99c",
+      "width": 128,
+      "height": 128,
+      "mips": 6,
+      "depth": 32,
+      "paletteDepth": 32,
+      "format": 1,
+      "paletteBytes": 0,
+      "mipBytes": [
+        8192,
+        2048,
+        512,
+        128,
+        32,
+        8
+      ]
+    },
+    "pngSHA256": "79eb11dc4a46a9e8f779a728650aa4caf1554a690905f68814889f44d065a955",
+    "interpretation": "Visual classification of decoded generic surface; source resolution preserved."
+  },
+  {
+    "role": "soil",
+    "archive": "install-disc\\Win\\program files\\Aspyr\\Tony Hawks Pro Skater 4\\Game\\data\\levels\\Sch\\Schtex.dat",
+    "archiveSHA256": "fd4eaa1f6e555448233d7e7c0332a911b615c63e5fbec3f344de1f966e0df4b9",
+    "record": {
+      "index": 124,
+      "offset": 1442304,
+      "end": 1453280,
+      "crc": "20131464",
+      "width": 128,
+      "height": 128,
+      "mips": 6,
+      "depth": 32,
+      "paletteDepth": 32,
+      "format": 1,
+      "paletteBytes": 0,
+      "mipBytes": [
+        8192,
+        2048,
+        512,
+        128,
+        32,
+        8
+      ]
+    },
+    "pngSHA256": "1995a1ecf583b44c5922e9975e09c763faed9159e519d811620624e46926cfd4",
+    "interpretation": "Visual classification of decoded generic surface; source resolution preserved."
+  }
+]

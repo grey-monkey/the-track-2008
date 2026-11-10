@@ -1,0 +1,24 @@
+THE TRACK 2008 — BUILD 162
+Ground layout from the user's October 18 drawing
+
+Grass follows the bent walking-path spine rather than the previous ellipse.
+Unequal dirt shoulders lie between central grass and roadside clay. Outer dirt
+pockets near the side verges, entrance and cul-de-sac transition to woodland
+grass. Red-orange clay remains strongest beside the roads. Boundaries blend
+with irregular edges and retain the current textured dirt/clay/grass surfaces.
+The drawing is interpreted against the actual gate, houses and cul-de-sac;
+it is not a literal scale tracing of the hand sketch.
+
+Only ground material placement changed. Existing terrain heights, paths, trees,
+lighting, road surfaces, character movement, collision and trick rules remain.
+No new THPS4 extraction was necessary: the existing decoded diffuse tiles remain.
+
+Validation: rendered hill, path, woodland and three matched riding views.
+A separate overhead inspection disables fog only in the test harness.
+Finite tree geometry, valid material shaders, no browser runtime errors.
+Added one 512x512 RGBA material mask (1 MiB), generated once at world startup.
+Physical-phone performance was not measured.
+
+Run: node serve.cjs
+Play: http://127.0.0.1:4173/?build=162
+Compare: http://127.0.0.1:4173/comparison162.html

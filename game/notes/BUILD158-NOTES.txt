@@ -1,0 +1,21 @@
+THE TRACK 2008 — BUILD 158
+House architecture and visual refinement
+
+CHANGES
+- Partial rebuild of all three entrance houses, preserving their footprints and layout: 64 recessed windows, deeper jambs and sills, six cleaned-up garage doors, attic louvers, thicker roof edges, ridge caps, and porch column bases/capitals.
+- Window shading now uses preserved local pane coordinates after geometry batching. Normal house windows share materials, reducing house rendering batches from 76 to 14.
+- Nine fitted house-body volumes and fourteen pitched-roof volumes now participate in the existing directional scenery shadow system. Roof shadows follow gable/hip profiles instead of full enclosing boxes.
+- Restrained vertex shading under architectural surfaces, stronger directional contrast on painted architecture and props, and warmer ground-facing/cooler sky-facing character fill.
+- Retains Build 157's car-shadow depth fix, terrain-fitted car contact shadow, residential work-area dressing, and text-free balance meter.
+- Existing sky, trees, asphalt, concrete, earth palette, driving and trick rules are retained.
+
+REFERENCE EVIDENCE
+Reparsed the supplied THPS4 PC Sch, Jnk and Sk4Ed scene artifacts using the retained decoder. All three parse to EOF; all 2,415 sectors carry vertex colors (248,845 vertices total). Retained material evidence shows filtered textures and separate detail layers. These observations informed shading and trim treatment; this is an original adaptation, not a recovered native lighting model or a claim of visual equivalence. No new native executable decompilation or reference-game runtime capture was performed in this pass.
+
+VALIDATION
+39 automated gameplay test entries passed. Desktop Edge checks cover four matched gameplay positions, all three house close views, sunset and night. Final browser run reports zero shader or page errors, finite geometry, and valid local window UVs. Static-shadow lookup uses 30 candidates in its busiest cell, below its 192-candidate limit. Screenshots and reports are in validation158. This is not a physical-phone performance test.
+
+RUN
+node serve.cjs
+Open http://127.0.0.1:4173/?build=158
+Rebuild: npm install, then node build.cjs.

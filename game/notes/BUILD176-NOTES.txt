@@ -1,0 +1,22 @@
+THE TRACK 2008 - BUILD 176
+Boss cosmetic low-speed wobble
+
+Boss has a faint wheel wobble at low rolling speeds: one eighth of Dog's full
+wobble amplitude (about 1.07 degrees either side). It fades in from slow rolling
+and fades out before high-speed instability. It is absent at rest, in menus,
+in flight, during crashes and while pushing or braking.
+
+This motion affects only rendered rider/deck transforms. It cannot change
+steering, traction, velocity, points or crash buildup. Rider and board rotate
+together to keep the feet planted. Existing high-speed Boss wobble and smoke
+immunity remain as in Build175. Existing real obstacles can still cause a fall.
+
+Validation: 60 automated checks pass. Browser rendering confirms 0.01875-radian
+visual yaw with unchanged physical rider state and no runtime errors.
+
+The Canopy secret tunnel is a design proposal, not included in this playable
+build. See Canopy-Secret-Route-Design176.txt for the agreed setting and proposed
+switch, barrier reveal, dark transition and Secret Mixtape discovery sequence.
+
+Play: https://grey-monkey.github.io/the-track-2008/build176/playtest176.html?v=176
+Local: node serve.cjs

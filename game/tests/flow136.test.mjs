@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {Ride} from '../source/physics.js';import {chooseFall} from '../source/motion135/sequences.mjs';import {Gestures} from '../source/input.js';
+const ride=(speed,reason,impact=0)=>{const s=new Ride({start:40});s.hazards={tick(){},riding(){},crashed(){},event(){},rideable(){return true}};s.rider.vx=speed*Math.cos(s.rider.heading);s.rider.vz=speed*Math.sin(s.rider.heading);s.crash(reason,impact);return s};
+for(const [speed,reason,impact,hard]of [[8,'GRATE',0,true],[2,'CAR',5,true],[7,'WOBBLE',0,true],[2,'TRIP',0,false],[5,'GRATE',0,false],[3,'CAR',0,false],[3,'WOBBLE',0,false]]){const s=ride(speed,reason,impact),sequence=chooseFall(s);assert.equal(sequence.hard,hard);if(hard)assert.equal(sequence.getup,null);for(let i=0;i<1200&&s.phase==='crashed';i++)s.step();assert.equal(s.phase,'ended');if(hard)assert.equal(s.rider.recoverStart,null);assert.equal(s.release(),false);assert.equal(s.ollie(),false);assert.equal(s.performTrick('kickflip'),false);}
+let holding=true,events=[];const g=new Gestures({isHolding:()=>holding,release:()=>{holding=false;events.push('release')},ollie:()=>events.push('ollie'),trick:k=>events.push(k)});
+g.down(1,100,200,0);g.move(1,100,140,90);g.up(1,100);assert.deepEqual(events,['release']);g.down(1,100,200,200);g.up(1,280);g.tick(281);assert(g.state.push);g.tick(500);assert(!g.state.push);
+g.down(1,100,200,600);g.move(1,100,250,800);g.tick(900);assert(g.state.brake);assert(!g.state.crouch);g.up(1,1000);assert.equal(events.length,1);
+g.down(1,100,200,1100);g.move(1,160,130,1200);g.up(1,1250);assert.equal(events.at(-1),'kickflip');g.down(1,100,200,1300);g.move(1,40,130,1400);g.up(1,1450);assert.equal(events.at(-1),'shoveit');
+g.down(1,100,200,1500);g.tick(1800);g.up(1,1850);assert.equal(events.at(-1),'ollie');g.down(1,100,200,1900);g.down(2,200,200,1950);g.tick(2200);assert(g.state.manual);assert(!g.state.crouch);g.up(2,2250);assert(!g.state.manual);const count=events.length;g.up(1,2300);assert.equal(events.length,count);g.reset();assert(Object.values(g.state).every(v=>!v));
+console.log('PASS hard/soft crashes end the run, free skate requires release, and touch gestures map without unwanted jumps or releases.');
+
+// A second finger after the ollie flick must unlock steering for rail balance.
+events=[];g.down(1,100,200,2400);g.move(1,100,140,2490);assert.deepEqual(events,['ollie']);g.down(2,200,140,2500);g.move(1,150,140,2580);assert(g.state.steer>.5);assert.equal(g.secondary,2);g.tick(2800);assert(!g.state.crouch);g.up(2,2850);g.up(1,2900);assert.deepEqual(events,['ollie']);assert.equal(g.secondary,null);assert.equal(g.state.steer,0);

@@ -1,0 +1,61 @@
+BUILD142 THPS4 ART REFERENCE — observed supplied PC artifacts, not runtime footage
+Date: 2026-10-16. Read-only research; no game-source modification.
+
+METHOD / COVERAGE
+- Parent owns REA active binary. This independent packaged-resource investigation never opened or switched it.
+- Custom format-aware decoder work/142-art-textures.py consumed all29 level *tex.dat archives, 5,729 texture records, validating dimensions, palette bounds, all mip bounds and exact EOF.
+- work/142-art-materials.py consumed complete Sch/Schscn.dat, Jnk/jnkscn.dat, Sk4Ed/Sk4Edscn.dat: material records, sector planar attributes, mesh/material references and vertex indices, hierarchy count, exact EOF. Decoding agrees with the pinned upstream THPS4 PC record layouts.
+- Upstream format cross-check: https://github.com/slfx77/neversoft-multitool/tree/3c9028e0178deb9060190362d1c47039a32846e2 . Relevant source snapshots and original URL-identifiable names retained beside the inventory. Header layout validation is independent byte evidence, not a claim that this reimplemented parser equals native execution.
+
+OBSERVED
+- 5,729 textures over29 level/environment archives. Top-level dimensions predominantly64x64,128x128 and rectangular128x64/64x128;256px is reserved for many recognizable ground/wood panels. The texture archive is not a universal64px pixel-art palette.
+- Stored DXT-version1 and2 carry8 bytes per4x4 block (BC1/DXT1-compatible);5 carries16 (BC3-compatible); some sky textures have8-bit indices +BGRA palettes. BC1/BC3 previews decode coherent material detail, labels and architecture.
+- Every sampled scene sector carries vertex colors: Sch952/952, Jnk1248/1248, Sk4Ed215/215. Normals occur in only15,4,0 sectors respectively. Their total248,845 vertices include extensive nonwhite RGB modulation. This is direct evidence for authored vertex shading, not an all-white diffuse scene.
+- Sch629materials:497one-pass,103two-pass,19three-pass,10four-pass. Jnk809:607/132/58/12. Sk4Ed386:325/52/8/1. Selected ordinary concrete/plywood/asphalt/soil use flags0x24; source flag mapping names Textured +Smooth. Transparent overlays0x64 are also common.
+- Selected nonlogo materials use UV addressing[0,0], filteringMode65540(0x10004), mip MMAG1/MMIN4/K-8/L-8, blend0, hasColor=false. Raw color triple(0.5,0.5,0.5) is retained but not asserted as a literal0.5 multiply when hasColor=false. Do not blindly darken the Track to half brightness.
+- Nearly every material ambient/diffuse/specular serialized triple is allzero (2,347of2,350passes); three are uniformly0.5. Do not interpret those zero triples as proof the world has no lighting: vertex colors supply the strongest observed shading channel.
+
+VISUAL OBSERVATIONS FROM DECODED CONTACT SHEETS
+- Concrete and asphalt contain fine photographic aggregate at low source resolution, with broad value variation and stains. Wood has visible grain, knots, dark nail marks and panel-edge weathering.
+- Narrow trim textures separately carry dirty base edges, rust rims, seams and curb transitions; separate alpha masks carry cracks, drips, scuffs and soft darkness. Whole-surface noisy color alone misses this authored hierarchy.
+- Palette is material-specific: neutral cool concrete/asphalt, tan/orange wood, earthy gray-brown dirt, restrained colored painted metal. These are diffuse samples before scene vertex tint and runtime fog; not a final screen palette.
+- Texture resolution should remain limited and filtered. Aggressive nearest-neighbor pixelation is not established by these files.
+
+BUILD142 GUIDANCE — inference/design adaptation
+1. Establish a consistent base texture scale across road/concrete/wood, then add panel seams, dark underedges and contact shading. Keep the Track peach/indigo sunset tint as an adaptation; avoid flattening every material to the same peach/navy solid.
+2. Let large face/vertex shading express the ramp slope and underside; use diffuse+vertex colors rather than shiny PBR as the main look. Keep specularity low for dirt, asphalt and dry plywood.
+3. Author panel sizes deliberately: plywood grain runs up the ramp; screws/seams follow supports; the underside is substantially darker. Ground marks should read as use, not evenly distributed random scratches.
+4. Broad clay uses fine opaque soil/gravel plus slower color breakup. Avoid repeating alpha-border dirt patches over the entire ground.
+5. The contact sheet establishes materials, not gameplay camera, native dynamic light positions, tonemapping, or final frame color. Those remain separate research questions.
+
+SELECTED EXACT DECODED GENERIC SURFACES
+The seven PNGs and selected-surfaces.json retain archive identity, offsets, checksumIDs, native dimensions, PNG SHA256. PNGs are vertically flipped from stored pixels; no repaint/upscale.
+- Sk4Ed#55 587dee18 256x256 asphalt aggregate: repeat candidate, blend0 UV[0,0].
+- Sk4Ed#54 5edbb3f0 256x256 pale concrete: repeat candidate, more uniform than worn variant.
+- Sk4Ed#49 bb9d35c8 256x256 plywood: use panel UVs, dark nails/edges create recognizable authored structure.
+- Jnk#10 73888b68 256x256 worn concrete: broad mottling/stains; suitable repeated patch or sidewalk surface, watch visible recurrence.
+- Sk4Ed#51 24ee9114 256x256 weathered wood: directional strong stain band; individual panels better than blanketrepeat.
+- Sk4Ed#172 678929a4 64x64 soil/gravel: opaque alpha255 throughout, fine repeat candidate, suitable clay tint.
+- Sch#105 972e9034 128x128 dryearth: alpha and shaded edges, localized patch ONLY; do not select for broadground.
+
+UNKNOWNS / LIMITATIONS
+- Texture semantic names in this report are visual classification, not recovered original names.
+- Raw sampler enums above are exact observations; precise runtime interpretation of65540 andmipK/L is unconfirmed. Repeat is a practical interpretation of UV[0,0], not a verified render capture.
+- Native scene lighting direction, fog curve, shader-stage math, monitor gamma, platform-specific compression differences and runtime texture LOD are not recovered here.
+- No native THPS4 gameplay was launched or filmed; no claim of pixel-perfect screenshot match.
+- This research does not establish redistribution rights. Local source provenance is preserved for any selected textures used by parent.
+
+SOURCE HASHES
+install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\levels\Jnk\jnktex.dat SHA256 225f6829a490267fdf51df64148139b10a7a70747650b03777cc88859c46f852
+install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\levels\Sch\Schtex.dat SHA256 fd4eaa1f6e555448233d7e7c0332a911b615c63e5fbec3f344de1f966e0df4b9
+install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\levels\Sk4Ed\Sk4Edtex.dat SHA256 759d56a4ca8d853f54e71571d44cc7ac12b825d4c5ea1458e9673008cb08777b
+install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\levels\Sch\Schscn.dat SHA256 b250903897fefbf8ed41ee7c40d66922ffcfc0510156a457174b3aca9f30d16c
+install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\levels\Jnk\jnkscn.dat SHA256 d5d337ed6a5db16fd1ba4df40d92660de774d37d0dd18049d2577f01208a54e4
+install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\levels\Sk4Ed\Sk4Edscn.dat SHA256 2a9f6ac6477ca553b247ec6a92665009fcc766932559617a98bb5b52ccc0de93
+Thps4PcDatSceneFile.cs SHA256 5b2bf0efee8dffc97b1422f89adff4c609a982cebc795b24fbdd8f5b5113b3d8
+Thps4PcDatTextureFile.cs SHA256 998445ab9466c119e679a1b9d6513114ae336d5ff4b2814819948ad8e078ed6d
+XbxMaterialFlags.cs SHA256 9ca59bc24a659eae752bcba14aa8eb253ab60392fd769b92e4ff9e0b9322e235
+XbxMaterialRenderMetadata.cs SHA256 af11b391d87c0ab8cfbaf4b0225194f4998d424f5b344cc24c8238793755dec7
+XbxSceneMaterialReader.cs SHA256 1d0f0bd2a4abfa432a7d1646d5019bbb8fcf1157b812a9f4331f2a1794febfdc
+
+See texture-inventory.json for all29 archive hashes/5729 source records; material-inventory.json for exact material and sector records. Contact sheets: Sch-sheet-0..4, Jnk-sheet-0..3, Sk4Ed-sheet-0..2; selected-surfaces.png is six representative tiles (soil-gravel is separate).

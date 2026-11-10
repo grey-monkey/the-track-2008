@@ -1,0 +1,24 @@
+THE TRACK 2008 — BUILD 159
+Whole-scene rendering and source-derived woodland study
+
+WHY THIS PASS
+Build 158 improved house details but did not materially resolve the whole-scene stylistic gap. This pass addresses foreground vegetation construction, common surface lighting, ground contact shading and distance separation. It is a direction study, not a claim that the complete game has reached THPS4 production quality.
+
+CHANGES
+- Rebuild the near woodland with three complete source-derived tree variants: branching trunks, layered canopy/underside geometry, original foliage/bark textures, UVs and authored vertex color shading. Preserve existing woodland placement, varied heights, distant backdrop and the open construction clearing. Batch the new geometry into three draws, blending into the retained varied woodland backdrop. Source canopy lighting uses stored vertex shading rather than adding harsh per-face lighting.
+- Replace competing paint-plane color washes on world materials with a shared cool fill/warm directional diffuse treatment. Keep the approved cloudy sky and evening progression.
+- Use a continuous distance haze to separate nearer scenery from distant woodland.
+- Add a 256x256 world-space soil shade field under woodland and existing work areas. It does not affect terrain geometry or ride physics.
+- Preserve Build 158 house details, Build 157 car-shadow fix and minimal balance meter, and all existing gameplay/character rules.
+
+REFERENCE WORK
+REA/Ghidra inspected the supplied Skate4.exe. The recovered ambient/falloff reader is an editor-specific routine, not a retail-level lighting formula. Full evidence and limitations are retained in authoring/REA159-native.json.
+Decoded and reconstructed the supplied College scene locally to compare its base texture pass with stored vertex shading enabled/disabled. That diagnostic renderer does not reproduce native fog, all material passes, animation or dynamic lighting, and is not represented as native gameplay footage. Source-derived tree sectors and texture provenance are recorded in authoring/THPS4-visual159-evidence.json. No complete original level is included in the playable build.
+
+VALIDATION
+39 gameplay test entries pass. Matched desktop Edge camera checks cover the straight, cul-de-sac and gate, all three houses, sunset and night. Shader compilation, actual shared-lighting call sites, finite geometry, house UVs, new tree road clearance and static-shadow lookup budgets are checked. Reports and screenshots are in validation159. No physical-phone performance claim.
+
+RUN
+node serve.cjs
+http://127.0.0.1:4173/?build=159
+Rebuild: npm install, then node build.cjs.

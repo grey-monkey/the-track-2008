@@ -1,0 +1,24 @@
+THE TRACK 2008 - BUILD 175
+Boss high-speed wheel wobble
+
+Boss now develops wheel wobble above the same speed threshold as Dog (6.3 m/s,
+about 14 mph), on every board. Real steering settles the wobble.
+Boss's yaw and lean oscillations have half Dog's amplitude, and both his initial
+grace period and instability buildup take three times as long. At a steady
+8 m/s, Dog bails after about 3.48 seconds and Boss after about 10.43 seconds.
+Dog's existing tuning is unchanged. Other riders do not get this speed wobble.
+
+Boss's 60-second secondhand-smoke immunity prevents wobble and clears its buildup,
+so expiry starts a fresh buildup rather than an immediate fall. He remains on
+the rope with normal gravity. Existing curb, dirt and obstacle rules still apply.
+
+Includes Build174's separate page-lifetime rider scores and single-sheet plywood
+ramp mapping. See BUILD174-NOTES.txt for those changes.
+
+Validation: 58 automated tests pass, covering amplitude, timing at several speeds,
+all boards and rope states, carving, slow/airborne behavior, immunity/expiry,
+full physics and existing game regressions. Browser checks verify the bundled
+game boots and reproduces the alternating yaw and three-to-one failure timing.
+
+Play: https://grey-monkey.github.io/the-track-2008/build175/playtest175.html?v=175
+Local: node serve.cjs

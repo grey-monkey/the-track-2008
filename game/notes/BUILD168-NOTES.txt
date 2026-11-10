@@ -1,0 +1,19 @@
+THE TRACK 2008 — BUILD 168
+Boss: 30 smoke hits carried through Another run
+
+Thirty distinct Sprad smoke puffs trigger Second-Hand Smoke for Boss.
+Earned hits survive a wipeout and both Another run paths. Back to the car
+clears progress. Progress stays in the current play session, not browser storage.
+Retry transfers only the unspent hit count, not old particles or effect timers.
+Reaching 30 consumes the hits. The existing one-minute rainbow and immunity,
+double-speed sky motion, six-second visual fade, normal gravity and rope remain.
+Boss still cannot collect Secret Spliff. Other riders remain unchanged.
+Build167 selection spacing and landscape/portrait framing are preserved.
+
+Validation: all 43 gameplay tests passed. Browser checks exercise the actual
+Another run and Back to the car handlers, natural collection of the last three
+puffs (starting at 27 solely in QA), 60-second immunity expiry, sky fade,
+normal rope/grounded motion, portrait HUD, and shader/runtime errors.
+
+Play: https://grey-monkey.github.io/the-track-2008/build168/playtest168.html?v=168
+Local: node serve.cjs

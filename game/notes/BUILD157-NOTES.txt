@@ -1,0 +1,19 @@
+THE TRACK 2008 — BUILD 157
+Environment polish, car shadows and minimal balance meter
+
+CHANGES
+- Dynamic actor shadow capture now carries a depth texture. Pavement receives a shadow only when it lies behind the caster relative to the sun; the old silhouette-only projection could darken surfaces on the light-facing side as well.
+- The sedan's soft contact shadow is narrower, follows sampled pavement height and stays separate from suspension pitch and roll.
+- Five existing residential work areas gain varied tarp-covered lumber, housewrap rolls or sheathing offcuts, plus sparse irregular grass tufts. Placement is kept outside the road, curb, walking path and entrance-house clearances.
+- Existing supply stacks gain wood/concrete surface texture from the already integrated reference texture library, plus restrained face shading. No new THPS4 reverse-engineering was performed for this pass.
+- New dressing is merged into six material batches, totaling 2,118 triangles. No additional shadow rendering pass; the existing 512x512 actor pass gains a depth attachment.
+- Removed visible text from the balance meter. Only its rail, center tick and moving marker remain; screen-reader values are retained.
+- Existing sky, tree layout, road/sidewalk/earth palette, driving and trick rules remain in place.
+
+VALIDATION
+39 automated test entries pass. Browser comparisons cover the entrance turn at three road positions, early evening, low sun and just after sunset. The GPU depth check retained the entire valid silhouette and rejected every upstream shadow sample. All five new work-area footprints passed road, path and entrance clearance checks. Geometry/shader checks and matched before/after screenshots are included in validation157. Browser verification is desktop Edge, not a physical-phone performance test.
+
+RUN
+node serve.cjs
+Open http://127.0.0.1:4173/?build=157
+Rebuild: npm install, then node build.cjs.

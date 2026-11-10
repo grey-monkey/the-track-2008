@@ -1,0 +1,20 @@
+THE TRACK 2008 — BUILD 152
+Gate exit and construction-scrap grind
+
+CHANGES
+- Free riding outward through either open gate lane darkens the edges and fades the world fully to black over 3.2 seconds. The existing return panel offers Another run and Back to the car. Riding past the gates while towing does not trigger the exit. A carried combo is banked when exiting.
+- A low, weathered steel I-beam on timber blocks sits on the asphalt on the first long straight. It has a physical collision shape and a grind surface, with scraped edges, rust-colored webbing and bolt marks. All six car lines clear it.
+- Sally: ollie and grind. Black: ollie and kickflip. Dog and Boss: no regular tricks. Element and Lords of Dogtown are the eligible trick boards. Manuals and shove-its are disabled to keep the trick set simple.
+- To grind as Sally, ollie onto the steel beam and hold two fingers while descending (keyboard G for 50-50; B for boardslide). Steer to keep balance and roll off to bank points. Existing curb grinds are also Sally-only.
+- Existing Pintail powerslide scoring for Sally, Black and Dog is retained. Secret Spliff remains a special backflip/flight exception for all riders and boards, with the previous 30-second gravity return and restrained golden glow.
+
+VALIDATION
+35 Node test entries passed, zero failures. Includes character/board permissions, gate direction and lane checks, score banking, fade endpoints, and prior flight/animation/physics checks.
+Compiled-browser playtest: Sally ollies onto the actual beam, grinds over 6 metres, exits and banks 522 points. Beam is on asphalt; all six driving lines clear its collision bounds by at least 1.29 metres in the sampled clearance check.
+Actual gate crossing fades to black and opens the return panel. Another run clears the fade. Portrait/landscape return-button and Back to the car checks are recorded in validation152. These are desktop browser viewports, not physical-device tests.
+No new THPS4 assets or animation data were extracted for this build.
+
+RUN
+node serve.cjs
+Open http://127.0.0.1:4173/?build=152
+Rebuild from source: npm install, then node build.cjs.

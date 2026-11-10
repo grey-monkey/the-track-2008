@@ -1,0 +1,200 @@
+THPS4 motion, grind, camera and sound reference for Track Build142
+2026-10-16. READ-ONLY shipped-resource investigation; no game executable run.
+
+Evidence boundary
+Observed facts below come from the user's extracted PC game .qb scripts and .ska.dat animation streams. Existing REA session belongs to parent; this worker did not open, switch or close it. This is a continuation of retained packaged-resource evidence, not native runtime confirmation. qdump.exe decompiles the literal QB control flow; decode_ska.py validates each compressed key stream. Sources and digests are below. No assertion that static assets establish actual rendered behavior, nor that the Track integrates these clips merely because they are decoded.
+
+1. Ground and turn animation dispatch [OBSERVED CONTROL FLOW]
+work/thps4/decoded/tricks142.q:193-352 OnGroundAI selects turns by LeftPressed/RightPressed and Crouched, reversing animation side when Flipped. TurnLeft or TurnRight runs NoRestart; when AnimFinished, TurnLeftIdle or TurnRightIdle cycles NoRestart. CrouchTurnLeft/Right follows the same entry/idle sequence. This is authored full-body motion rather than just tilting a frozen idle.
+tricks142.q:295-345 selects actual PushCycle plus PushCycleArms1..5; manual push waits for animation completion before returning to Idle. Mongo has its separate Push then PushCycle path. The existence of PushCycleOut alone does NOT prove the standard manual-push path uses it: the inspected dispatch goes directly to Idle after completed push. Avoid describing that exit asset as a verified universal transition.
+tricks142.q:362-398 DoCrouch_slope chooses CrouchBumpUp/Down for slope changes >5 degrees, with0.30 blend; otherwise selects one of three CrouchIdle variants with0.30 blend. DoCrouch_Slope_old explicitly has '_old' suffix and should not be used as evidence for current dispatch.
+tricks142.q:418-470 just_coasting/DoAPush preserves running animation using NoRestart and advances at AnimFinished. Some idle/push variation is random. That does not establish the exact random distribution of the engine's RandomRange.
+anim.q:7-13 declares Ollie/Kickflip/Heelflip/Land/FiftyFifty/init blend0; PushCycleBlendPeriod0.30. These constants do not override explicit0.10 blends in observed landing paths; do not flatten all transitions to a universal blend time.
+
+2. Landing selection and interruption [OBSERVED CONTROL FLOW]
+tricks142.q:893-926 Land checks pitch>60, high-speed yaw60..120, roll>50 and DoingTrick to route to named bail scripts. It sets camera lerp reduction timer0. These are literal script checks, not full physics safety conditions.
+tricks142.q:918-925 tags LittleAir if airtime<0.20s.
+tricks142.q:928-1025 Land2: LittleAir selects CrouchBumpDown if crouched, else IdleBump. Backwards uses turn landings and FlipAndRotate/BoardRotate. Misaligned yaw45..60 and longer airtime routes sketchy variants. Other normal arrivals call PlayLandAnim.
+tricks142.q:1026-1035 PlayLandAnim: airtime<0.50s CrouchBumpDown; .50..75s one of CrouchedLand1_small/2_small/3_small; >=.75s one of CrouchedLand,1,2,3,StretchLegsLand. Small/deep variants explicitly blend0.10s. Thus the normal landing bank is frequently crouched even when the player was not holding crouch. Playback waits while checking for tricks/manuals, then returns to OnGroundAI. Long authored clip duration need not mean locking all player controls for that duration.
+
+3. Grind entry / balance / exit [OBSERVED CONTROL FLOW + DECODED POSES]
+grindscripts.q:248-417 Grind creates onrail state/tags, registers Ollied, OffRail, Landed, balance-meter extreme and collision exceptions. IsGrind turns sparks on; slide branch increments board scuff and disables sparks. SetRailSound Type distinguishes Grind vs Slide. Balance starts with right/left buttons and DoFlipCheck.
+grindscripts.q:341-395 plays initanim with0.00 if NoBlend, else0.30; waits10frames before assigning normal trick name/score (initial value50 'Kissed the Rail'); waits animation completion; then plays range animation with Wobble and grindwobble_params unless a special Idle flag explicitly cycles.
+grindscripts.q:442-452 grindwobble_params has AmpA0.1,AmpB0.04,K1.0022,K2.0017,Spaz1.5. Native engine interpretation/equations were not decoded; do not copy these raw coefficients into different equations and claim exactness.
+grindscripts.q:478-510 OffRail sets state Air, chooses OutAnim (optionally backwards), or reverses initanim;0.10 blend; waits animation completion then Airborne.
+grindscripts.q:6-90 SkateInOrBail can step off toward safe terrain if SkateInAble, turn+/-30deg over.20s, play out or reversed init at.30 blend, and go SkateInLand. Otherwise uses specified GrindBail or FiftyFiftyFall.
+grindscripts.q:92-121 SkateInLand chooses CrouchedLand or Land with.10 blend, re-enables rail tricks, then returns to OnGroundAI.
+grindscripts.q:523-530:50-50 uses Init_FiftyFifty, FiftyFifty_Range, Type Grind, score100. Boardslides546-554:FS/BS each have distinct init/range/out, Type Slide, score200, GrindTweak14, NoBlend yes and Nutter bail.
+
+Raw pose check (grind142-world-samples.json):
+At range midpoint,50-50 ankles lie chiefly along native Z (rightZ9.72,leftZ-10.92), FSboardslide ankles chiefly along X (rightX9.30,leftX-10.12,Z~4.4). The balance range changes pelvis/arms/leg bend from one extreme through neutral to opposite extreme; this is not a looping temporal animation. Board stays at a stable position while body shifts. Range duration1.3333s encodes80 nominal60Hz intervals; map balance to a position in that range rather than playing it continuously.
+INFERENCE FOR TRACK: sample time=(balance+1)*.5*duration with safety clamp; retain a spring/damped balance state and actual lateral player correction; apply board contact before target retarget foot locking. Existing feet constrained to longitudinal deck anchors would erase boardslide's perpendicular stance. Exact native Wobble-to-frame transfer remains unresolved.
+
+4. Camera [OBSERVED PARAMETERS, ENGINE INTERPRETATION UNKNOWN]
+physics.q:194 standard medium: horizontalFOV72, behind12, above4.3, tilt.18, slerp.04, vert_air_slerp.04, vert_air_landed_slerp.38, lerp_xz.25,lerp_y.75, big_air_trick_zoom.70,grind_zoom1,origin_offset.20. Near/far alternatives at195-196. Camera.q:4-6 has standardFOV72,widescreen88.18,compact80. camera.q:43-56 uses SetScreen with aspect1.33 or1.78.
+INFERENCE FOR TRACK: asymmetric heading/position and height damping, faster settling on landing, and enough horizontal view to read the next obstacle are justified patterns. Do not put horizontal72 directly into Three's vertical-FOV field; convert for aspect and preserve portrait usability. Units and exact native smoothing update law not proven by these literals.
+
+5. Surface sounds [OBSERVED TABLES]
+terrain142.q:98-112 sets concrete/metal/wood pitch and volume ranges. Smooth concrete wheelroll minPitch30 max120, rough min10 max120; wood roll min30 max120 and volume20..100. Concrete ollie/land volume70..140; wood60..120.
+terrain142.q:151-178 maps concrete rolling, jump, land, bonk, grind, grind-on/jump, slide, slide-on/jump to distinct tables. Concrete GrindConc differs from SlideConc. terrain142.q:344-361 plywood maps RollWoodPlywood_11 to wheelroll with pitch80..120 and volume20..100, then separate OllieWood/LandWood/BonkWood/RevertWood. These are literal configuration scales, not browser gain values.
+INFERENCE FOR TRACK: distinct wheel texture for road/plywood, clear contact one-shot on entering grind/slide, continuous scraping only while in contact, exit pop distinct from landing. Pitch/gain should follow speed/intensity, and sound should stop airborne or paused. The tables alone do not prove the engine interpolation function; synthesize/adapt implementation with our own sound assets.
+
+6. Implementation priorities informed by evidence
+A. Replace generic carved idle with source turn-entry then turn-idle, blended by actual carve strength and stance. Preserve current head-frame fixes and natural shoulder shape. Do not apply free-ride relaxed-arm override on grinds or wipeouts.
+B. Finish a push stroke and replace each state transition with parent-local rigid quaternion blend; avoid interpolating skin matrices. Keep grounded foot/board constraints without pinning the pushing foot. .30s crouch/push-type blends and .10s touchdown/out blends are useful reference points, not a mandate for every state.
+C. Select landing absorption by actual flight/impact, small bump on short curb hops, deeper crouched landing on ramp airtime. Give knees and pelvis the authored compression; keep steering live and blend out on a new deliberate action.
+D. Use entry/range/out states for the curb grind, especially boardslide perpendicular board angle. Balance extreme bail and safe exit must be separate. Keep Track's Sally/Black and board restrictions and Boss collision rules.
+E. Add material-specific scrape/roll/pop and restrained camera settlement after1-3 are visually coherent.
+
+7. New files / validation
+additions142.json:35 source clips in the existing articulated135-compatible clips dictionary. Numerical key values and raw byte offsets unchanged; boneName labels and canonical dict keys normalized. Exact raw path/hash/duration and stream validation for every clip in additions142-provenance.json. Header timestamps quantized at60Hz; interval count is duration*60, NOT a declaration that all bones have one key every frame.
+Every parsed clip: exact EOF, allocated stream boundaries, declared=actual quaternion and translation key counts, monotonic timestamps within duration;50bones. Existing upstream decoder cross-check applies to prior56bail clips only, not these35new clips; no false cross-check claim.
+Individual *-142.json files preserve per-clip inspection. grind142-world-samples.json supplies9FK samples for8grind clips, unchanged source coordinates. No game source edited.
+
+Unresolved / not claimed
+No native game runtime observed this turn. Full rail-capture detection, balance dynamics, native sound interpolation, actual camera interpolation and gameplay feel still depend on engine behavior not established by script names or static values. Authored skeleton root/world unit scaling and target body geometry need visual retarget review. Current body renderer's foot solver and clothing deformation can negate good source animation and must be checked in the actual Track preview. Test on both stances and each permitted character; source assets do not themselves prove likeness or quality.
+
+SOURCE IDENTITY LEDGER (absolute paths, SHA256)
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\scripts\tricks.qb
+SHA256 f2112ceae01866489441c00699d64d4484237cac46292895fcb7201448e8daff
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\scripts\grindscripts.qb
+SHA256 5cb372e720c2572925331c1741e51b5d9cb824cb9bb56b223efd855adff6b6af
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\scripts\anim.qb
+SHA256 c814fbbe4684f3ed462e255ce8daa880af17cd7715d34e75dc54f91dcf1c1820
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\scripts\physics.qb
+SHA256 91eb281a5c9416a11b12c4c34e132ff55000789d867cb50b4e4445a6f89f2a42
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\scripts\camera.qb
+SHA256 5ec4354f0287d39cf0e1d3704be78fd24b93ed749822bdfb7f7bbbeeb641bafd
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\scripts\terrain.qb
+SHA256 3756802e484d524022cb25fb6cd9b81a7e3d342bfd1a72d256041023ee74b0bf
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\scripts\skater_sfx.qb
+SHA256 aa37c6d6a6257d96c6cf92d46c5454911d74eb823f2975a4376fefcece7512c2
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\decoded\tricks142.q
+SHA256 6e9411d6b8dcee07a992b20a1aea4a67937274d64f2603ba3a2c8d5fb0ad3e8f
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\decoded\grindscripts.q
+SHA256 d1b57b73400c27e067a2b7a9b6ece0b1a0f9e5196b05afc0529c9e84dc171c38
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\decoded\anim.q
+SHA256 ca2f1cc44f1449a2667d06a4483b9f277ee628c54f436bc04b286544ed445124
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\decoded\physics.q
+SHA256 a9143353dd7c020648ffcfe89e3f5aeb14066c6ea773ba44d12a88ec0c0b586c
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\decoded\camera.q
+SHA256 dee5ea6bb75d063f5676d53591def2001f6fd173950da6c565f6f6a23af8033e
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\decoded\terrain142.q
+SHA256 2c786d8ed8bb985fc5c3ca6ed7853e4b800dee4f48353af9fc7ab9bdd11cc950
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\decoded\skater_sfx.q
+SHA256 120390b603710acfec600d16ec4ea817c71d076db92b8cd54bc035944d825f7a
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\qb-tools\bin\qdump.exe
+SHA256 a8289644e4b9e08e32f92b25646d30a3f89f3a006e5dbdac2ba08e92f86135bd
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\animation-reference\decode_ska.py
+SHA256 88648a5871cf3f85e1051af702334774663ceedea99d9a28f62ae3827358fdb5
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\animation-reference\human-skeleton.json
+SHA256 68756e73c6381bb953dc51d211fc1fd5be27a29296c2a5dd92e39830fd990695
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\animation-reference\additions142.json
+SHA256 cd83c95c9186dd87c87a3d19b2793a60cae76b18aa43c5366c471475d92d5781
+
+ANIMATION INVENTORY
+TurnLeft: 0.766666651s; 46 nominal60Hz intervals; rotations140,translations74
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\TurnLeftska.dat
+SHA256 f1d296695851d5c3c7aba107a60e6d568395e4af08780a8b21ad88f6ff15b547
+TurnRight: 0.766666651s; 46 nominal60Hz intervals; rotations126,translations57
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\TurnRightska.dat
+SHA256 82b01c169e292003be171d77059d25a1dc0405a9f62b453e6d614698bb040651
+TurnLeftIdle: 1.033333302s; 62 nominal60Hz intervals; rotations165,translations72
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\TurnLeftIdleska.dat
+SHA256 ac1f9d04b8f4ad40c4952aef2d5473b4b38389faf0dc3cd4f98e474101005b54
+TurnRightIdle: 1.033333302s; 62 nominal60Hz intervals; rotations157,translations72
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\TurnRightIdleska.dat
+SHA256 b3554d8e8edb2c640eb96057d1574833855a399310f1d619f43f3186eed469c0
+Crouch: 0.366666675s; 22 nominal60Hz intervals; rotations113,translations56
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\Crouchska.dat
+SHA256 42fe320688fef894c04c86b6e06288ba787cc082fd5b7718c12fca777b9f1076
+CrouchTurnLeft: 0.766666651s; 46 nominal60Hz intervals; rotations158,translations62
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\CrouchTurnLeftska.dat
+SHA256 58e6d0115037f2ac02b4eb73447b0d178c5fbf8ce499b3b3f5e674a0cbbe93e4
+CrouchTurnRight: 0.766666651s; 46 nominal60Hz intervals; rotations168,translations61
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\CrouchTurnRightska.dat
+SHA256 bbf2a8b7c51a610499a34e8e4cfc95aa693163962b0c81e4894070db1d5f3772
+CrouchTurnLeftIdle: 1.033333302s; 62 nominal60Hz intervals; rotations210,translations74
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\CrouchTurnLeftIdleska.dat
+SHA256 0eb88c9c9f6721a7570fdc9f8fcf1d87fc1b91387bd2e1f07639fcc28d8830c9
+CrouchTurnRightIdle: 1.033333302s; 62 nominal60Hz intervals; rotations183,translations73
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\CrouchTurnRightIdleska.dat
+SHA256 825b1f5612e7e7682b3347943d419406341c21f172d69f95f8859ef139c03b58
+CrouchBumpDown: 0.633333325s; 38 nominal60Hz intervals; rotations194,translations70
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\CrouchBumpDownska.dat
+SHA256 abe44c61f934318d0e9e34f2fa188ae5c7bcadfa4a4761b6390adef856616399
+IdleBump: 0.633333325s; 38 nominal60Hz intervals; rotations191,translations64
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\IdleBumpska.dat
+SHA256 3f66919e46129f803d6d6db0e745335ed2e5e282c3acfee5b431f5e0810de444
+SmallLand: 0.466666669s; 28 nominal60Hz intervals; rotations170,translations66
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\SmallLandska.dat
+SHA256 96d0ce08af57e5d033cc58ef13d82a1e5ee90e898160aa06625ea2fcf9bccca6
+CrouchedLand: 1.100000024s; 66 nominal60Hz intervals; rotations425,translations82
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\CrouchedLandska.dat
+SHA256 f6635bd84c9208e3f2aa5b621ca589f1b16441a63596aaba6dc89416b1444b73
+CrouchedLand1_small: 1.133333325s; 68 nominal60Hz intervals; rotations483,translations75
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\CrouchedLand1_smallska.dat
+SHA256 e6beb4366aa854609e50e36a769bdc5033262cbba722d25681b72856cbc9df46
+CrouchedLand2_small: 1.200000048s; 72 nominal60Hz intervals; rotations537,translations78
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\CrouchedLand2_smallska.dat
+SHA256 032fb810f560897ebb798914ac7801a799b02c6fba3abe13523b455386a71560
+CrouchedLand3_small: 0.866666675s; 52 nominal60Hz intervals; rotations363,translations71
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\CrouchedLand3_smallska.dat
+SHA256 056a9e298c243a5dbc429d367da7ead877fc920104138b6f7702c4446b890dbe
+CrouchedLand1: 1.133333325s; 68 nominal60Hz intervals; rotations502,translations74
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\CrouchedLand1ska.dat
+SHA256 3e5a405bf9bc681d905cfd2ee0bd0c6d263793a18b071c25bc26eef41a144211
+CrouchedLand2: 1.200000048s; 72 nominal60Hz intervals; rotations552,translations77
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\CrouchedLand2ska.dat
+SHA256 64a3cdab1d9e357f9e9f0e214ea4bb13c2cad186b337be1a9c448dda6094e42d
+CrouchedLand3: 1.200000048s; 72 nominal60Hz intervals; rotations454,translations76
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\CrouchedLand3ska.dat
+SHA256 42dce73efe7eb4b9733088708220608f9d6ac533be24e566ee0975d64bb269b9
+StretchLegsLand: 0.833333313s; 50 nominal60Hz intervals; rotations304,translations82
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\StretchLegsLandska.dat
+SHA256 09bc81a89048fe00a4e5bb9a0f8bc5701384c2b1337858fd537b319ab1d69713
+Idle2InAir: 0.366666675s; 22 nominal60Hz intervals; rotations133,translations57
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\Idle2InAirska.dat
+SHA256 57bf2982d0045c9ad3ec2c7632806da2cd96fbfc849a8a53c4648f67cb1b3554
+Crouch2InAir: 0.333333343s; 20 nominal60Hz intervals; rotations115,translations58
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\Crouch2InAirska.dat
+SHA256 73a36944d78f95b787efd231907f66d2bf51c27b252d41f286d23c8f18f84ebc
+PushCycleArms1: 0.966666639s; 58 nominal60Hz intervals; rotations370,translations74
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\PushCycleArms1ska.dat
+SHA256 f48a90973fae200efea95493b2e2d6e0384a8cffee790e0ced7727396056202c
+PushCycleArms2: 0.966666639s; 58 nominal60Hz intervals; rotations388,translations71
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\PushCycleArms2ska.dat
+SHA256 6e3edd3e54c6c2e92263707835c94e83025f6d4eff2fa98f4c0f004f22c05476
+PushCycleArms3: 0.966666639s; 58 nominal60Hz intervals; rotations422,translations79
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\PushCycleArms3ska.dat
+SHA256 beec2b6155bb7945cf9d647b7d5eb7859d1d3361f8e8b495a210cc0f5e169d47
+PushCycleArms4: 0.966666639s; 58 nominal60Hz intervals; rotations391,translations73
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\PushCycleArms4ska.dat
+SHA256 0e5e9032eab9a36fd71fdcc0dae9917bd60ba4e20fc2f4af16ff84f3987d0e0b
+PushCycleArms5: 0.966666639s; 58 nominal60Hz intervals; rotations465,translations77
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_basics\PushCycleArms5ska.dat
+SHA256 bdc288a1b8481945b3d6aae2e2c120cf21407e3ee097cc1d94c6d1a32d98115c
+Init_FiftyFifty: 0.166666672s; 10 nominal60Hz intervals; rotations112,translations60
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_grind\Init_FiftyFiftyska.dat
+SHA256 68d821132d7f980306af57dc22b5902c3f79a76d8ba791ec3a6efb624feec0b1
+FiftyFifty_Range: 1.333333373s; 80 nominal60Hz intervals; rotations361,translations62
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_grind\FiftyFifty_Rangeska.dat
+SHA256 7a206da7138fff968276e596e5c16c54f0e80d239e62e66f79e1afc9ecff96ed
+Init_FSBoardSlide: 0.633333325s; 38 nominal60Hz intervals; rotations237,translations66
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_grind\Init_FSBoardSlideska.dat
+SHA256 91a6fe19236aa88edcc3deaa2a08848b0620ddc5b299fa211c8367be63a48324
+FSBoardSlide_Range: 1.333333373s; 80 nominal60Hz intervals; rotations425,translations64
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_grind\FSBoardSlide_Rangeska.dat
+SHA256 f74df058a2699d7de4d819a87409ebc2ea0d2fa6fb1f1593839fd1ee3ac0813f
+FSBoardSlide_Out: 0.400000006s; 24 nominal60Hz intervals; rotations190,translations63
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_grind\FSBoardSlide_Outska.dat
+SHA256 8ffdf58cb73e817a24760c2fb53b0b194507fe7044b2637e2d2350a691c532a5
+Init_BSBoardSlide: 0.633333325s; 38 nominal60Hz intervals; rotations273,translations69
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_grind\Init_BSBoardSlideska.dat
+SHA256 d7554b0e56a6b37b4799f0e9cff7860a5f4c1e1d84e0db67753ca4fdd73ee4da
+BSBoardSlide_Range: 1.333333373s; 80 nominal60Hz intervals; rotations351,translations67
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_grind\BSBoardSlide_Rangeska.dat
+SHA256 385ade61ee18b0c2af8ff95bc06f1248186ae878c3043c08795f91a0f6f5cd63
+BSBoardSlide_Out: 0.400000006s; 24 nominal60Hz intervals; rotations161,translations61
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\anims\skater_grind\BSBoardslide_Outska.dat
+SHA256 b9331f5d4f7f7998b1b9f0d447c0d7a6d62cdac2565d6c4a007ad25f2afd1c9a

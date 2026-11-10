@@ -1,0 +1,27 @@
+THE TRACK 2008 — BUILD 164
+Landscape gathering, house textures, warm board shading
+
+The selected rider now stands at car-local x=-1.25,z=3.95, with the display
+board alongside on the asphalt, closer to the car. Landscape uses a revised
+camera and off-center projection so the car/crew remain to the left; logo,
+sliders and launch controls occupy the right. Portrait keeps its stacked UI.
+Projection offset clears when riding begins or the viewport becomes portrait.
+
+Board contact shading now uses the streetlamp bulb color 0xffd29a at reduced
+intensity. Its size, opacity curve and night fade remain unchanged. The car's
+contact tint remains unchanged.
+House brick tile coverage increased from 1.35x0.72m to 2.05x1.08m; siding
+coverage increased from 0.90x1.25m to 2.16x3.20m; roof from 1.65x0.92m to
+3.30x1.84m. Siding/roof contrast is softened, broad variation added, and
+horizontal siding courses, eave shading and local metric UVs retained.
+
+Validation: 1200x800, 1920x1080, 844x390, 390x844 and return to desktop.
+No horizontal overflow; Ride remains onscreen. Rider/board points have actual
+pavement triangle support; landscape UI is clear of the selected rider.
+Normal riding projection restored. All three houses inspected. No shader or
+browser runtime errors. Gameplay, world heights and grass/shirt colors unchanged.
+Physical phone performance was not measured.
+
+Run: node serve.cjs
+Play: http://127.0.0.1:4173/?build=164
+Preview: http://127.0.0.1:4173/comparison164.html

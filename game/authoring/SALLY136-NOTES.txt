@@ -1,0 +1,5 @@
+The runtime-ready artifact is source/assets/articulated135.json.gz. It includes all normalized garment weights and needs no Blender or authoring dependencies to run.
+
+recover-sally136-weights.py records the recovery of the original hoodie topology and weights from the earlier local authoring workspace. Its source dependencies remain at the explicit legacy paths in that script. UV and vertex identity are checked for every exported garment vertex. 16 iterations smooth only the connected hoodie surface; pants and collar preserve their authored weights.
+
+The final runtime asset additionally includes rig.characters.SALLY.skin.visibleIndices: skin triangles fully beneath the long sleeves are omitted in articulated poses. A vertex is covered when upperarm+lowerarm weight > 0.5 and hand+finger weight < 0.2. This removes 1,597 hidden arm triangles; hands and wrists remain. Other characters and the original towing geometry are unchanged.

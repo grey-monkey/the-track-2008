@@ -1,0 +1,19 @@
+THE TRACK 2008 — BUILD 155
+Board contact and camera refinement
+
+CHANGES
+- Grounded decks bank gently with the rider's carving lean instead of having their bank erased by the road-contact correction. The response fades out at walking/standing speed.
+- Independent wheel support accounts for surface slope along the board's tilted up-axis, keeping tires supported while the rigid deck banks. Existing foot-on-deck and push-foot contact solving remains active.
+- Camera elevation follows a critically damped surface anchor rather than instantly pitching its aim at each terrain-height change. Elevated flight has a faster vertical response. The camera also checks clearance beneath its actual smoothed position.
+- Tow camera follows the sedan's actual driving heading, including its selected driving line. Free-ride heading stays steady at very low speed instead of turning toward deck yaw as the rider stops.
+- Landing-camera response eases into a small dip over 75 milliseconds and recovers over 300 milliseconds. Works for towed and free-ride landings, and follows the simulation event time rather than the display frame rate.
+- Jump height, movement physics, character permissions, existing animation clips, world materials and lighting are unchanged.
+
+VALIDATION
+36 automated test entries passed. Includes frame-rate consistency at 30/60/120 Hz, terrain-chatter filtering, gentle bank at speed, slope-aware wheel support, and prior character/contact/landing/flight tests.
+A deterministic before/after browser sequence uses the same seed, start position and inputs: towing, carving, rope release, ollie and landing. Comparison frames and traces are stored under validation155. High-flight framing and mobile-sized view checks are also recorded there. Desktop browser viewports are not physical-device tests.
+
+RUN
+node serve.cjs
+Open http://127.0.0.1:4173/?build=155
+Rebuild: npm install, then node build.cjs.

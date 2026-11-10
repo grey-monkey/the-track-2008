@@ -1,0 +1,7 @@
+Publisher: Grey Dog Loves You
+Reference: user-provided the track poster.jpg, bottom-right publisher wordmark.
+Asset: source/assets/greydog-lovesyou-publisher.png
+Method: built-in image_gen, reconstructed from the poster reference; not the unavailable original vector/source logo.
+Opaque black background is blended into the dark settings footer using CSS screen blending. Apple, Android and ESRB symbols are excluded.
+Final prompt:
+Reconstruct the small publisher logo in the bottom right of the supplied poster as a clean web UI logo tile. EXACT WORDS in two lines: GREYDOG on line 1, LOVESYOU on line 2. Match the poster's two-line wordmark: bold compact Helvetica/Arial-like sans serif, tightly spaced letters, equal width lines, only a narrow gap between rows. SOLID PURE WHITE LETTERS on SOLID PURE BLACK background. Pristine flat typography with smooth crisp edges, no distress, no speckles, no texture, no noise, no outline, no wear. No other artwork, no Apple or Android icons. White letters with normal black letter counters. Wide 3:1 image, tightly framed with only 3% padding. This must be an ordinary clean professional publisher wordmark, identical in design to the small logo, not painted or illustrated. Keep the background opaque black; do not produce transparency.

@@ -1,0 +1,13 @@
+THE TRACK 2008 — BUILD 146
+
+Direction correction
+Build144 is the gameplay and character-motion baseline. Removed Build145 180/360, Indy and Melon actions, score labels, input bindings and their animation additions. Existing simple ollies/flips, manuals, curb interaction and Pintail powerslides retain their prior rules. Retains145 construction scenery only; no new obstacles or features in146.
+
+Graphics
+Material changes use retained THPS4 packaged texture/scene analysis, not a guessed screen filter. Colored asphalt, concrete, soil, wood and plywood diffuse samples replace the previous luminance-only colorization. Warm sunlight and cool ambient shading establish face contrast; localized repairs, scrapes, seams and contact shadows remain. The sky uses decoded original256px cloud panels mapped using recovered sky-scene geometry, then relit for Track evening colors. Forest cards preserve tree proportions and layered detail. Detailed evidence, source hashes, interpretations and boundaries are in authoring/WORLD146-SKY-EVIDENCE.txt and the material evidence note.
+
+Driving
+The tight cul-de-sac pace is25.36% higher across all six lines at normal speed, with3.21–3.72 seconds saved across the circle/exit section. The curvature-aware plan and progressive exit retain one approach braking event. Straight speed limits, six route shapes, pavement clearance and smooth pedal slew are unchanged. The faster heading-rate bound is1.2rad/s (observed maximum1.097), with the previous heading-acceleration bound1.6rad/s² retained.
+
+Evidence limits
+Native THPS4 was not executed for a frame-for-frame match. Original archive/geometry observations guide a new Track-specific browser renderer. This is a substantial visual pass, not a claim of complete THPS4 production quality. Browser phone-sized viewport tests are not physical-device performance tests.

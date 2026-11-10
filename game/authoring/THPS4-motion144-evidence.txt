@@ -1,0 +1,74 @@
+THPS4 motion source investigation for The Track Build144
+2026-10-16; read-only packaged-resource analysis under REA workflow.
+
+BOUNDARY
+Observed facts are recovered QB control flow and decoded .ska.dat transforms from the user's extracted PC game. The parent owns the native REA target; this worker did not open, close, or alter that native session and did not execute Skate4.exe. Clip names are not treated as proof of runtime dispatch. No claim of exact engine physics, rendered motion, or complete franchise equivalence follows from static assets.
+
+POWERSLIDE: important semantic distinction [OBSERVED SCRIPT]
+decoded/groundtricks.q:28 binds HoldThree R1,L1,Down to ToggleSwitchRegular with PowerSlide.
+groundtricks.q:150-227 sets ground exceptions, disallows trick queues, allows Ollied -> Ollie NoDoNextTrick, and stops nollie. PowerSlide branch rotates actor Y180 over .30 seconds. Direction and Flipped select FSPowerslide/BSPowerslide: left+notflipped BS, left+flipped FS; right reverses that; no direction FS. Wait30% -> PlayCessSound; Wait65% -> Jump/Ground trick queues enabled, FlipAfter, BoardRotateAfter, zero blend out; wait while checking manual actions; PowerSlide path then CrouchIdle. The ordinary switch path uses CessSlide180_FS/BS and may resume PushCycle. These are transient switch maneuvers, not a duration-controlled sideways powerslide loop.
+Source score reward for The Track's sustained Pintail slide remains Track design; this script block does not establish a THPS4 sustained-slide points mechanic.
+
+POWERSLIDE: decoded bone motion [OBSERVED FK]
+FSPowerslide and BSPowerslide both last .966666639s,58 nominal60Hz intervals,50bones, exact EOF and declared key counts validated. Values below are skeleton-world yaw of each bone relative to native bind; external actor rotation and FlipAfter/BoardRotateAfter NOT applied. Full 21-sample data: animation-reference/motion144-world-samples.json.
+fraction     BS board / pelvis / head         FS board / pelvis / head
+0.00         -0.9 / 76.0 / 0.4               1.7 / 76.9 / 3.7
+0.20         -15.6 / 80.0 / 9.3              31.9 / 99.4 / 62.7
+0.30         -32.9 / 58.8 / 8.2              57.2 / 120.2 / 108.6
+0.40         -65.3 / 11.9 / -0.7             94.5 / 148.2 / 165.9
+0.50         -104.6 / -32.9 / -11.0          135.6 / 179.7 / -137.1
+0.60         -150.4 / -70.3 / -14.3          167.8 / -148.1 / -84.2
+1.00         179.6 / -76.0 / -0.7            -179.0 / -76.0 / -0.7
+BS at40% has pelvisY34.3 native units; source ordinary CessSlide starts39.2. It is already low in the knees, with chest/hips turning and head held near travel direction. FS performs a pronounced head turn through the maneuver. These are authored differences, not decoder errors.
+
+TRACK ADAPTATION RECOMMENDATION [INFERENCE, NOT SOURCE BEHAVIOR]
+Existing Track traction/heading is the authority. Do not blindly apply full native board yaw on top of the physically sideways board, or play the 180-degree clip to completion during a sustained slide. Use a limited pre-switch portion (BS approximately30-43% as slide loading grows), hold or smoothly vary with actual slide amount, and reverse that preparation on recovery. Neutralize the source board yaw in the whole pose around board contact before placing the body on Track's actual board orientation. Preserve source knee/hip/arm offsets relative to the board. The body and board must use the SAME corrected frame. For opposite slide direction, select the genuine paired source with constrained head look, or explicitly describe mirrored BS as an adaptation. Do not imply it is original FS behavior. Any mirror must preserve joint handedness and foot stance; do not merely negate Euler yaw on the head. Exact mirror method belongs to retarget implementation and visual QA.
+Concrete yaw neutralization: deltaQ=sampledBoardQ*inverse(nativeBindBoardQ), yaw=atan2((deltaQ*Z).x,(deltaQ*Z).z), Q=Ry(-yaw); M=T(boardPosition)*Q*T(-boardPosition). Premultiply all world and skin matrices by M, transform joint positions with M, premultiply all joint rotations and board rotation by Q; board position stays fixed; update pelvis. Then standard anchoring and the physical board heading apply once. Head look should reference actual velocity after this correction. This is a Track adaptation, not recovered native runtime math.
+Towing requires separate rope reach. A free-skating full-body powerslide must not break the holding hand; retain the rope hand solution if applied while towing.
+
+BRAKING [OBSERVED SCRIPT + NEW DECODE]
+tricks142.q:284-294: moving Braking with Down held>.20s invokes CessBrake, otherwise PlayBrakeAnim. Near stopped (<1 native speed) continues PlayBrakeAnim, then enters HandBrake after Down held2seconds.
+PlayBrakeAnim487-493 chooses SlowDownBrake or SlowDownBrake_Mongo, NoRestart.
+CessBrake494-505 if speed>300: CessSlide180_FS Start->28 Speed1.20; atframe5 PlayCessSound; atframe25 reverse27->Start Speed1.20; finish then PlayBrakeAnim. This is explicit partial-and-reversed source slide, directly supporting a bounded braking pose rather than the full180 switch.
+HandBrake565-637 plays NewBrake/NewBrake_Mongo with rolling friction100, interruptible by trick/crouch; then NewBrakeIdle variants or stance-swapped NewBrakeTurnLeft/Right loops; on departure NewBrakeIdleToIdle, wait.25s before restoring friction, finish while checking actions.
+Decoded: SlowDownBrake4.3333s, NewBrake.8333s, NewBrakeIdle3.8667s, NewBrakeIdleToIdle1s, NewBrakeTurnLeft/Right.6667s. These are useful lower-speed weight/foot placement references. Exact original friction numbers do not translate directly to Track units.
+CessSlide180_FS has board yaw-65.6,head-12.5,pelvisY38.2 at40%; it remains head-forward like BSPowerslide, but less deeply crouched. Source FS/BS names do not imply identical yaw sign across different animation families.
+
+PUSHING [OBSERVED SCRIPT + FK]
+tricks142.q295-345 and418-470 select PushCycle OR PushCycleArms1..5 with PlayAnim Random, NoRestart. Manual push waits full animation and goes Idle. These are full50-bone alternatives, NOT additive arm masks. They already existed in additions142, but Build143 always selected PushCycle. Activate original alternatives with a stable choice per push, not a new random choice every render frame. Sequence order/random distribution is Track adaptation unless native Random is reimplemented.
+FK of21 evenly spaced times: Arms1..5 share ankle trajectories with one another, but maximum ankle difference from base PushCycle is6.2513 native units. Left pushing ankle minimumY occurs at15% (3.8301), base PushCycle minimum at10% (2.6985). Wrist maxima relative to base differ: variant3 is restrained (L8.10,R9.88units), variant4 R26.43, variant5 R20.58. For reliable garment QA begin variant3, then expand. The normal source plant foot is right; pushing foot is left before stance reflection.
+Current Track physics applies push force at7-18% of.9s cycle; this broadly overlaps source contact, but original variations contact later. Recommend coordinating force/contact window with selected pose rather than introducing a disconnected constant force.
+Push(.3s), StartSkatingPush(1.2667), PushCycleOut(.7333) decoded as candidates. No use of these three was found in the inspected decoded script set, so do not label them mandatory normal push transitions.
+
+AIR / OLLIE / PRE-LANDING [OBSERVED SCRIPT]
+groundtricks.q353-412 Ollie performs Jump, sets air exceptions, PlayAnim Ollie zero blend NoRestart unless special OutAnim; waits while checking actions then Airborne. Source pop plays at authored timing rather than universally stretching the entire clip across all airtime.
+tricks142.q816-843 GroundGone picks Crouch2InAir or Idle2InAir based on crouch, waits for finish with tricks/late-jump window, then Airborne. Both transition clips were already decoded in142.
+Airborne844-890 checks GetAirTimeLeft: <.20s plays StretchLegsInit NoRestart, else stance-swapped AirTurnLeft/Right with Hold,Blendperiod.30,NoRestart; no directional input AirIdle Cycle. HoldingR2/L2 selects SpineTransfer. Thus pop -> air posture -> prepare legs -> land is explicit staged motion. AirTurn animations are held, NOT cycling turn loops.
+New AirTurnLeft/Right each.7667s, StretchLegsInit.5333s. Adapt time-to-ground using actual Track height/up/gravity and collision surface. Do not let anticipatory leg extension overwrite an active flip/boardslide exit. Transitions should remain interruptible and never change Dog/Boss trick permissions.
+
+TOW / SKITCH [OBSERVED SCRIPT + FK]
+groundtricks.q611-679 Skitch clears trick/manual queues, starts skitch and balance, plays SkitchInit and waits completion. Then score500, balance with Right/Left Type Skitch Tweak5, and SkitchRange wobble. Down or balance extremes calls SkitchOut: StopSkitch, StopBalanceTrick, PlayAnim SkitchInit Backwards, restore ground exceptions, clear Skitched exception, wait completion, OnGroundAI. No independent SkitchLeft/Right clips were found in the original animation inventory.
+Added SkitchInit(.666667s) and SkitchRange(1.333333s). Midrange head yaw relative bind6.37deg; pelvisY29.56, wrists L(2.817,29.895,18.457),R(-4.651,27.210,19.997) native units. Both hands are forward and low. Board yaw0 through range; board lateral translation shifts fromX5.875 to-4.281 across balance range. This is a low two-hand vehicle grip, not The Track's elevated one-hand rope grip. A reverse SkitchInit release is a source basis only if blended from the actual holding-hand pose; blindly swapping to it at release creates a hand/body discontinuity. Native reverse ends in a crouch-like posture, so finish with a controlled blend to Track coasting rather than a snap. Original Skitch input/score rules do not override Track rope-first mode design.
+
+OUTPUTS / VALIDATION
+animation-reference/additions144.json has20 new full original clips, same existing articulated135-compatible clips dictionary. additions144-provenance.json includes every absolute source path, SHA256, duration, exactEOF, declared/actual keycounts, monotonic/in-range timestamps and bundle/decoderhash.
+motion144-world-samples.json contains26clips x21FK samples including existing six push alternatives. push144-diagnostics.json preserves numeric comparisons. Eleven *-reference144.svg sheets show original unmodified FK. Native model dimensions remain unchanged in research outputs. No retarget quality claim follows from decoder success; check actual Track hands/head/sole contact, opposite stance, transitions and Sally's sweater.
+
+ADDITIONAL TARGET GARMENT CHECK (baseline Build143 only)
+work/144-source-garment-audit.mjs reads the existing Sally mesh/retarget/sleeve mask without modifying them. 234 poses across18clips; powerslide/cess clips bounded0-.45fraction, other clips entire duration,13uniform samples each. Source FS powerslide P99max3.030/edge.218m; BS2.895/.221m; CessFS2.873/.120m; SlowDownBrake2.715/.118m; AirTurnLeft3.040/.265m,Right3.091/.295m; PushArms3 2.957/.284m. All18clips except SkitchRange meet existing P99<3.3/edge<.33 thresholds. SkitchInit3.214/.264m passes. SkitchRange upper third fails P99 (max3.601); do not assume that range is safe for Sally. Rigid yaw neutralization preserves these metrics, but final modified head/hand/foot IK and any new rig need rechecking. Baseline test output work/144-source-garment-audit.json is diagnostic, not a final Build144 pass claim.
+
+SOURCE IDENTITY LEDGER
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\scripts\groundtricks.qb
+SHA256 885230c2be275f3ae56b4b7b44c36f436ee2d339a520994e5bbec3fbee5f1a14
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\install-disc\Win\program files\Aspyr\Tony Hawks Pro Skater 4\Game\data\scripts\tricks.qb
+SHA256 f2112ceae01866489441c00699d64d4484237cac46292895fcb7201448e8daff
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\decoded\groundtricks.q
+SHA256 37b1d156284a674e95fa625646d8b32706ce0c08f12f00a8c2fd130c685aaeab
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\decoded\tricks142.q
+SHA256 6e9411d6b8dcee07a992b20a1aea4a67937274d64f2603ba3a2c8d5fb0ad3e8f
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\animation-reference\decode_ska.py
+SHA256 88648a5871cf3f85e1051af702334774663ceedea99d9a28f62ae3827358fdb5
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\animation-reference\research144.py
+SHA256 2fa21a21582b144c6916834648abe75448d2b9efa5ddac8062174d3e2ff76ecb
+C:\Users\grey\Documents\Codex\2026-10-15\download-reverse-engineer-anything-rea-and\work\thps4\animation-reference\additions144.json
+SHA256 86d1a8b5a9b5484390b3a2565d526327b7aa9587d100a4fba7be36cb9c85b454

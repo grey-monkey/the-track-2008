@@ -1,0 +1,25 @@
+BUILD146 MATERIAL AND LIGHTING EVIDENCE
+
+Owned source changes
+- source/console135/world-look.js
+- source/spot142/materials.js
+
+Reference evidence reused
+work/thps4/reference142-art.txt and authoring/THPS4-surfaces142-provenance.json describe format-aware decoding of the supplied PC archives. Selected asphalt, concrete, plywood/wood and soil are exact low-resolution source diffuse images. The saved survey found vertex colors in all 952 Sch, 1,248 Jnk and 215 Sk4Ed sectors, with extensive nonwhite vertex modulation. Source diffuse texture color and broad authored shading are therefore better grounded than reducing every sample to luminance over the same painted palette. Texture filtering stays linear and mipmapped; no nearest-neighbor screen filter was added.
+
+Implementation
+- Asphalt, concrete and soil now retain source RGB rather than acting only as a grayscale multiplier over blue/tan paint. Explicit sample decoding handles the shared images' existing NoColorSpace storage, without changing legacy data-sampling users.
+- Road repair and divot modulation is retained as a local albedo ratio, so those hazards remain legible.
+- Replaced the broad brush stage with consistent warm sunlight plus cool ambient face light. Concrete crowns and underneath/vertical faces separate in value; wood retains its source grain and deliberately dark underside materials.
+- Removed the distance-based flat clay replacement, but kept placed grading scrapes, runoff marks, neighborhood wear and downstream contact/occlusion shadows.
+- Preserved character shading, black enamel, reflections, lamps, headlights, nighttime attenuation and selection rendering stages.
+- Stronger lighting exposed inconsistent triangle winding in shoulder meshes. The ground-family shading normal is now oriented upward. This is a material lighting correction only: collision geometry and topology are unchanged. Before/after normal-camera screenshots confirmed the dark shoulder band and alternating triangles disappear.
+- No new draw calls, new simulation update or new interaction mechanic was added by this material pass.
+
+Validation
+work/material146-check.cjs generates shaders for road, earth, concrete, architecture and human families. The new surface stage appeared exactly once for world materials, the original broad brush stage was absent there, and human shading remained unchanged. The ground-stage replacement matched and retained all later used variables.
+work/material146-review.cjs rendered Build145 and Build146 with the same normal gameplay cameras at the ramp, then road stations96/350/490. It also rendered portrait390x844 and landscape844x390. Final material captures: outputs/build146-world146-*.png. Report: outputs/build146-world-material-review.json. No page exceptions or WebGL shader compile messages occurred. Two generic console404 messages remained; resource identity was not established by this worker and is not asserted as a material failure or as harmless.
+Latest material captures included the corrected shoulder lighting and the earlier recovered sky UV bands, but preceded the sky worker's final cloud/seam/forest polish. Parent owns the final combined rebuild and visual review.
+
+Limits
+Native THPS4 runtime light direction, lighting coefficients, fog curve, color conversion and final monitor output were not recovered. The lighting here is an authored adaptation of the observed diffuse/vertex-shading hierarchy to The Track's setting, not a claim of pixel-perfect THPS4 rendering. No native gameplay capture was performed by this worker.
