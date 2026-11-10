@@ -26,7 +26,9 @@ export function bossSurfaceContact(sim,old){
  sim.crash(first.reason);haz?.event?.(sim,first.reason,1,{character:'BOSS'});return true;
 }
 
-export const DOG_WOBBLE=Object.freeze({speed:6.3,grace:.85,carve:.22,growth:.30,recovery:1.35,frequency:3.8});
+// Speed wobble starts above an ordinary tow: it belongs to fast driving and whips,
+// so the default rider is not thrown off a straight road at normal pace.
+export const DOG_WOBBLE=Object.freeze({speed:8.4,grace:1.1,carve:.22,growth:.26,recovery:1.35,frequency:3.8});
 // This state is driven only by real steering input. Its oscillation cannot
 // count as a corrective carve or rescue itself by pointing the board sideways.
 export function riderSpeedWobble(sim,steer,speed,dt){

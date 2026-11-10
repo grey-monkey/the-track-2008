@@ -23,11 +23,28 @@ export function personalitySlide(r,p,steer,speed,lat,dt){
  return 1-r.slide*(1-p.slideGrip);
 }
 
-// Only 6.4 percent of carving loss is retained (Study 45 retained ninety).
-export const TOW_FEEL=Object.freeze({carveRetention:.064,springFrequency:32,dampingRatio:.684});
+// A clean carve keeps most of its speed; only a slide scrubs it off.
+export const TOW_FEEL=Object.freeze({carveRetention:.62,springFrequency:11,dampingRatio:.9,softPull:11,hardStretch:.5,firmFrequency:30,edgeScrub:.55,edgeScrubLimit:10,slackCheck:1.3,slackCheckLimit:3.4});
+// Carving: steering asks for a share of the board's grip as a turn.
+// authority above 1 means full lock asks for more than the wheels hold (it drifts wide).
+export const CARVE=Object.freeze({
+ stiffness:9,inputRate:8.5,follow:14,yawLimit:3.4,trackHeading:1.6,trackOffset:1.8,maxAuthority:1.18,
+ authority:Object.freeze({LONGBOARD:.86,HANDMEDOWN:1.08,CRUISER:1.0,STREET:1.04}),
+ minRadius:Object.freeze({LONGBOARD:3.4,HANDMEDOWN:3.1,CRUISER:2.0,STREET:1.8})
+});
+export function ropePull(extension,radial,dt){
+ const w=TOW_FEEL.springFrequency,c=2*w*TOW_FEEL.dampingRatio;
+ if(!(extension>0||extension+radial*dt>0))return 0;
+ let a=Math.max(0,(w*w*extension+(c+w*w*dt)*radial)/(1+c*dt+w*w*dt*dt));
+ // Past the soft range the pull keeps rising, but at a third of the rate.
+ if(a>TOW_FEEL.softPull)a=TOW_FEEL.softPull+(a-TOW_FEEL.softPull)*.34;
+ // Beyond half a metre of stretch there is no more give left.
+ const over=extension-TOW_FEEL.hardStretch;
+ if(over>0){const k=TOW_FEEL.firmFrequency;a+=Math.max(0,k*k*over+2*k*Math.max(0,radial));}
+ return a;
+}
 export function carryCarveMomentum(r,before){
  if(r.dirt||r.height>0)return;
  const after=Math.hypot(r.vx,r.vz);
  if(after>.001&&after<before){const retained=after+(before-after)*TOW_FEEL.carveRetention*(1-(r.slide??0));r.vx*=retained/after;r.vz*=retained/after;}
 }
-

@@ -10,6 +10,8 @@ export const DRIVING_LINES=Object.freeze([
  {name:'Inside sweep',offset:.44,wave:.12,phase:4,cruise:.97,corner:.97,throttle:.72,exit:2},
  {name:'Brisk exit',offset:-.12,wave:.27,phase:5,cruise:1.04,corner:1.03,throttle:.86,exit:-1}
 ]);
+// The driver gets on the gas like a teenager with friends on a rope, not a chauffeur.
+export const PEDAL=Object.freeze({gas:2.3,slew:2.4,bulbCarry:Number(globalThis.process?.env?.BULB??.45)});
 const N=Math.ceil(LENGTH/.5),DS=LENGTH/N,wrap=s=>(s%LENGTH+LENGTH)%LENGTH;
 const smooth=t=>{t=clamp(t,0,1);return t*t*t*(10+t*(-15+6*t));};
 // Gaussian convolution removes tangent discontinuities at the old Bezier joins.
@@ -45,7 +47,7 @@ export function lineSample(s,index=0){
 function shuffled(seed,cycle){let state=((seed|0)^Math.imul(cycle+1,0x9e3779b9))>>>0;const a=[0,1,2,3,4,5];for(let i=5;i>0;i--){state=(Math.imul(state,1664525)+1013904223)>>>0;const j=state%(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;}
 export function lineForLap(seed,lap){lap=Math.max(0,lap);const cycle=Math.floor(lap/6),a=shuffled(seed,cycle);if(cycle){const previous=shuffled(seed,cycle-1);if(a[0]===previous[5])[a[0],a[1]]=[a[1],a[0]];}return a[lap%6];}
 export class Driver {
- constructor(seed,sally,speedFactor,turnFactor){this.seed=seed;this.sally=sally;this.speedFactor=speedFactor;this.turnFactor=turnFactor;this.plans=new Map();}
+ constructor(seed,sally,speedFactor,turnFactor,trail=0){this.seed=seed;this.sally=sally;this.speedFactor=speedFactor;this.turnFactor=turnFactor;this.trail=trail;this.plans=new Map();}
  index(s){return lineForLap(this.seed,Math.floor(s/LENGTH));}
  sample(s){return lineSample(s,this.index(s));}
  plan(index){if(this.plans.has(index))return this.plans.get(index);
@@ -53,7 +55,10 @@ export class Driver {
   const geometry=Array.from({length:N},(_,i)=>curve(paths[index],i*DS));
   // The cul-de-sac carries momentum: 15% higher tight-bend speed than Build146.
   // Keep curvature limits, continuous pedals and one progressive exit.
-  const speeds=geometry.map((p,i)=>{const s=i*DS,seam=smooth(Math.min(s,LENGTH-s)/45);return Math.min(cruise*(1+(profile.cruise-1)*seam),Math.sqrt(corner*(1+1.9095*smooth((s-225)/30)*(1-smooth((s-410)/35)))/Math.max(.0001,Math.abs(p.curvature))));});
+  const speeds=geometry.map((p,i)=>{const s=i*DS,seam=smooth(Math.min(s,LENGTH-s)/45);return Math.min(cruise*(1+(profile.cruise-1)*seam),Math.sqrt(corner*(1+PEDAL.bulbCarry*smooth((s-225)/30)*(1-smooth((s-410)/35)))/Math.max(.0001,Math.abs(p.curvature))));});
+  // The driver holds a bend's speed until the skater on the rope has cleared it too,
+  // instead of rolling on the moment the car itself straightens out.
+  if(this.trail>0){const span=Math.ceil(this.trail/DS),copy=speeds.slice();for(let i=0;i<N;i++){let v=copy[i];for(let j=1;j<=span;j++)v=Math.min(v,copy[(i-j+N)%N]);speeds[i]=v;}}
   // Treat the entry, circle and diagonal exit as one maneuver. No throttle burst
   // between its bends and therefore no second brake tap in the circle or at exit.
   const first=Math.floor(275/DS),last=Math.ceil((395+profile.exit)/DS);let maneuver=Infinity;
@@ -65,15 +70,15 @@ export class Driver {
   // Two passes cover the periodic boundary, independent of render frame rate.
   for(let pass=0;pass<2;pass++){
    for(let j=N-1;j>=0;j--){const next=(j+1)%N,d=DS*(geometry[j].metric+geometry[next].metric)/2;speeds[j]=Math.min(speeds[j],Math.sqrt(speeds[next]**2+2*1.05*d));}
-   for(let j=0;j<N;j++){const prev=(j+N-1)%N,d=DS*(geometry[j].metric+geometry[prev].metric)/2;speeds[j]=Math.min(speeds[j],Math.sqrt(speeds[prev]**2+2*profile.throttle*.85*d));}
+   for(let j=0;j<N;j++){const prev=(j+N-1)%N,d=DS*(geometry[j].metric+geometry[prev].metric)/2;speeds[j]=Math.min(speeds[j],Math.sqrt(speeds[prev]**2+2*profile.throttle*PEDAL.gas*.85*d));}
   }
   this.plans.set(index,speeds);return speeds;
  }
  target(s){const v=this.plan(this.index(s)),f=wrap(s)/DS,i=Math.floor(f);return v[i]+(v[(i+1)%N]-v[i])*(f-i);}
  advance(c,dt){const index=this.index(c.s),profile=DRIVING_LINES[index],p=this.sample(c.s);
   // Preview by reaction distance, then ease both pedal pressure and steering.
-  const target=this.target(c.s+Math.max(1,c.speed*.65)),desired=clamp((target-c.speed)*1.4,-1.5,profile.throttle);
-  c.accel+=clamp(desired-c.accel,-1.05*dt,1.05*dt);c.speed=Math.max(0,c.speed+c.accel*dt);
+  const target=this.target(c.s+Math.max(1,c.speed*.65)),desired=clamp((target-c.speed)*1.4,-1.5,profile.throttle*PEDAL.gas);
+  c.accel+=clamp(desired-c.accel,-PEDAL.slew*dt,PEDAL.slew*dt);c.speed=Math.max(0,c.speed+c.accel*dt);
   c.brake=c.brake?c.accel<-.08:c.accel<-.24;
   c.s+=c.speed*dt/Math.max(.5,p.metric);c.distance=(c.distance??0)+c.speed*dt;
   c.line=index;

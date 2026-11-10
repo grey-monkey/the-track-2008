@@ -10,7 +10,7 @@ export function stepPintailDrift(sim,steer,speed,dt){
  const travel=Math.atan2(r.vz,r.vx),slip=angle(r.heading-travel);
  // Load the wheels in the requested direction before breaking traction.
  // Backwards motion and an opposite turn cannot instantly start a new drift.
- const loaded=Math.sign(slip)===sign&&Math.abs(slip)>.06&&Math.cos(slip)>.55;
+ const loaded=Math.sign(slip)===sign&&Math.abs(slip)>.035&&Math.cos(slip)>.55;
  const reversing=d.active&&input>=g.holdInput&&sign!==d.sign;
  if(reversing){d.active=false;d.hold=0;}
  const entering=grounded&&speed>=g.entrySpeed&&input>=g.entryInput&&loaded&&!reversing;
