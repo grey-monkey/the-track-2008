@@ -35,3 +35,6 @@
 @media(orientation:landscape) and (max-height:540px){#instructions.settings-panel{width:min(620px,calc(100% - 32px))}#instructions .settings-head{padding-top:12px}#instructions .settings-body{padding-top:0}.settings-panel .how-copy{height:210px}}
 
 #instructions #publisherMark img{mix-blend-mode:screen}
+
+#game.hud-quiet #scoreHud{display:none!important}
+#minimalPause{opacity:.55}

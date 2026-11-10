@@ -47,7 +47,7 @@ export class View {
  setSelection(o){const c=RIDERS[o.rider];this.torso.material=this.mat(c.shirt);this.hair.material=this.mat(c.hair);for(let i=0;i<4;i++)this.limbs[i].material=this.mat(c.pants);this.deck.scale.z=BOARDS[o.board].length/1.05;this.deck.material=this.mat(o.board==='CRUISER'?0x9b5945:o.board==='STREET'?0x5d676a:0x807458);}
  resize(){const w=this.canvas.clientWidth,h=this.canvas.clientHeight;this.renderer.setSize(w,h,false);this.camera.aspect=w/h;// THPS4 scripts specify 72-degree horizontal FOV at 4:3. Keep its
  // equivalent vertical framing in landscape; open portrait for nearby obstacles.
- this.camera.fov=w/h<1?65:2*Math.atan(Math.tan(36*Math.PI/180)/(4/3))*180/Math.PI;this.camera.updateProjectionMatrix();}
+ this.baseFov=w/h<1?65:2*Math.atan(Math.tan(36*Math.PI/180)/(4/3))*180/Math.PI;this.camera.fov=this.baseFov+(this.rideCamera?.fov??0);this.camera.updateProjectionMatrix();}
  draw(sim,dt,input={},menu=false){const c=sim.car,r=sim.rider,ground=(['crashed','ended'].includes(sim.phase)?height(r.x,r.z):(r.groundY??height(r.x,r.z))),crashed=sim.phase==='crashed'||sim.phase==='ended',crouch=input.crouch&&!crashed;
   this.car.position.set(c.x,height(c.x,c.z),c.z);this.car.rotation.y=-c.heading-Math.PI/2;const fore=sample(c.s+1),aft=sample(c.s-1);this.car.rotation.x=Math.atan2(height(fore.x,fore.z)-height(aft.x,aft.z),2)*-1;
   const h=r.heading;this.rider.position.set(r.x,ground+r.height+.08,r.z);this.rider.rotation.set(0,-h-Math.PI/2,crashed?Math.min(sim.phaseTime*2,1.5):0);this.rider.position.y=crashed?ground+.28:ground+r.height+.08;
@@ -62,13 +62,21 @@ export class View {
   // Bearing includes rope swing but is damped independently from translation.
   const bearing=r.holding?Math.atan2(c.z-r.z,c.x-r.x):r.heading;const oldDesired=c.heading+angle(bearing-c.heading)*.4,free=menu?0:(this.freeRideView?.blend??0);const desired=oldDesired+angle((this.freeRideView?.heading??oldDesired)-oldDesired)*free;
   this.camHeading+=angle(desired-this.camHeading)*(1-Math.exp(-dt*(2.8+free*2.7)));
-  const behind=menu?8:5.7+Math.min(1,Math.hypot(r.vx,r.vz)/10)*( .65+free*.65)-free*(this.freeRideView?.grindBlend??0)*.22;const tx=r.x-Math.cos(this.camHeading)*behind-Math.sin(this.camHeading)*(.6-.35*free),tz=r.z-Math.sin(this.camHeading)*behind+Math.cos(this.camHeading)*(.6-.35*free);
+  // The camera feels the ride: it drops and widens with speed, leans into a carve,
+  // lurches when the rope snatches, and trembles a little over fast pavement.
+  const cam=this.rideCamera??={speed:0,fov:0,roll:0,tug:0,phase:0},rideSpeed=Math.hypot(r.vx,r.vz),ease=k=>1-Math.exp(-dt*k);
+  if(menu||crashed){cam.speed+=(0-cam.speed)*ease(2.5);cam.tug+=(0-cam.tug)*ease(4);cam.roll+=(0-cam.roll)*ease(4);}
+  else{cam.speed+=(clamp((rideSpeed-2.5)/8.5,0,1)-cam.speed)*ease(2.2);cam.tug=Math.max(cam.tug*Math.exp(-dt*5.5),clamp(((r.tension??0)-3.5)/11,0,1));cam.roll+=((r.lean??0)*-.16-cam.roll)*ease(5);cam.phase+=dt*(9+rideSpeed*2.4);}
+  const fovTarget=menu?0:cam.speed*12+cam.tug*5;cam.fov+=(fovTarget-cam.fov)*ease(4);
+  if(this.baseFov&&Math.abs(this.camera.fov-(this.baseFov+cam.fov))>.01){this.camera.fov=this.baseFov+cam.fov;this.camera.updateProjectionMatrix();}
+  const behind=menu?8:5.35-cam.speed*.55-cam.tug*.35+Math.min(1,rideSpeed/10)*free*.65-free*(this.freeRideView?.grindBlend??0)*.22;const tx=r.x-Math.cos(this.camHeading)*behind-Math.sin(this.camHeading)*(.6-.35*free),tz=r.z-Math.sin(this.camHeading)*behind+Math.cos(this.camHeading)*(.6-.35*free);
   const flightHeight=menu?0:Math.max(0,crashed?(r.fallLift??0):r.height),follow=T.MathUtils.smoothstep(flightHeight,.4,1.5);
   const cameraLift=flightHeight*(.3+.7*follow),aimLift=flightHeight*follow;
   const resetCamera=!this.camPos||menu;this.cameraGround??={};this.cameraAir??={};
   const stableGround=cameraElevation(this.cameraGround,ground,dt,resetCamera),stableAir=cameraElevation(this.cameraAir,aimLift,dt,resetCamera,flightHeight>.1);
-  const floor=Math.max(this.terrainSurface?.(tx,tz)??-Infinity,this.roadContact?.height(tx,tz)??-Infinity);const ty=Math.max(stableGround+(menu?3.25:2.65+free*.15-(this.freeRideView?.landDip??0))+cameraLift,floor+1.1);if(!this.camPos)this.camPos=new T.Vector3(tx,ty,tz);this.camPos.lerp(new T.Vector3(tx,ty,tz),1-Math.exp(-dt*5));const actualFloor=Math.max(this.terrainSurface?.(this.camPos.x,this.camPos.z)??-Infinity,this.roadContact?.height(this.camPos.x,this.camPos.z)??-Infinity);this.camPos.y=Math.max(this.camPos.y,actualFloor+.85);this.camera.position.copy(this.camPos);
-  const aimDistance=menu?16:4.5+((this.freeRideView?.lookAhead??4.5)-4.5)*free;this.camera.lookAt(r.x+Math.cos(this.camHeading)*aimDistance,stableGround+stableAir+(menu?2.0:crashed?.45:.95),r.z+Math.sin(this.camHeading)*aimDistance);
+  const floor=Math.max(this.terrainSurface?.(tx,tz)??-Infinity,this.roadContact?.height(tx,tz)??-Infinity);const ty=Math.max(stableGround+(menu?3.25:2.3-cam.speed*.42+free*.15-(this.freeRideView?.landDip??0))+cameraLift,floor+1.1);if(!this.camPos)this.camPos=new T.Vector3(tx,ty,tz);this.camPos.lerp(new T.Vector3(tx,ty,tz),1-Math.exp(-dt*5));const actualFloor=Math.max(this.terrainSurface?.(this.camPos.x,this.camPos.z)??-Infinity,this.roadContact?.height(this.camPos.x,this.camPos.z)??-Infinity);this.camPos.y=Math.max(this.camPos.y,actualFloor+.85);this.camera.position.copy(this.camPos);
+  const aimDistance=menu?16:7+((this.freeRideView?.lookAhead??4.5)-4.5)*free;this.camera.lookAt(r.x+Math.cos(this.camHeading)*aimDistance,stableGround+stableAir+(menu?2.0:crashed?.45:1.2),r.z+Math.sin(this.camHeading)*aimDistance);
+  if(!menu){const tremble=cam.speed*cam.speed*.0045;this.camera.rotateZ(cam.roll+Math.sin(cam.phase*1.7)*tremble);this.camera.rotateX(Math.sin(cam.phase)*tremble+Math.sin(cam.phase*2.3+1)*tremble*.6-cam.tug*.012);}
   this.sky.position.copy(this.camera.position);const evening=clamp(sim.time/550,0,1);this.sky.material.uniforms.top.value.set('#536b83').lerp(new T.Color('#111d36'),evening);this.sky.material.uniforms.bottom.value.set('#b99d8d').lerp(new T.Color('#485b73'),evening);this.scene.fog.color.set('#586974').lerp(new T.Color('#34445b'),evening);this.sunlight.intensity=mix(.85,.15,evening);this.hemi.intensity=mix(1.3,.75,evening);for(const l of this.lamps)if(l.material.transparent)l.material.opacity=.06+evening*.13;
   if(new URLSearchParams(location.search).has('entrance-review')){this.camera.position.set(100,115,-15);this.camera.lookAt(28,0,-61);this.sky.position.copy(this.camera.position);}
   if(!this.deferRender)this.renderer.render(this.scene,this.camera);

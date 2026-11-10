@@ -120,6 +120,10 @@ export class MemorySound{
   if(previous?.grinding&&!grinding&&sim.phase==='coasting')this.impact(.18*state.board.click);
   if(previous&&sim.time>previous.time&&sim.time-previous.time<.4){if(previous.airborne&&state.ground&&!grinding&&state.speed>.5){this.impact(clamp((r.rideLanding?.speed??2.5)/5,.25,.95)*state.board.click,0,this.scene.enabled&&r.dirt);this.scene.riderEvent('land',state);if(this.scene.enabled&&r.dirt)this.shot('dirtScuff',.06,.95);}if(r.trickStart!==previous.trickStart&&r.up>0){this.impact(.22*state.board.click);this.scene.riderEvent('jump',state);}}
   for(const e of sim.hazardEvents??[]){if(e.serial<=this.serial)continue;this.serial=e.serial;if(sim.time-e.time>.18)continue;if(this.scene.material(e,state,sim))continue;const power=clamp(e.strength,.1,1.5)*state.board.click;if(e.kind==='CAR_IMPACT'){this.shot('metal',.28*power,.74,boardPan,3);this.impact(.9*power,boardPan);}else if(e.kind==='SEAM')this.impact(.28*power);else if(e.kind==='BODY_IMPACT')this.bodyImpact(false,.65*power);else if(e.kind==='BOARD_IMPACT'){this.impact(.65*power*boardGain,boardPan,false);if(['CURB','CINDER_BLOCK'].includes(e.obstacle))this.shot('scrape',.055*power*boardGain,.95,boardPan);}else this.impact(.45*power);}
+  // The rope is heard: a soft snatch as slack comes up, a strained creak through a whip.
+  {const pull=r.holding?(r.tension??0):0,was=this.ropePull??0;this.ropePull=pull;
+   if(pull>4.2&&was<=4.2&&t>(this.nextRopeSnatch??0)){this.shot('cloth',.10+.16*clamp((pull-4)/10),.62+clamp(pull/30)*.2,0,1);this.nextRopeSnatch=t+.45;}
+   if(pull>8.5&&t>(this.nextRopeCreak??0)){this.shot('suspension',.05+.07*clamp((pull-8)/10),1.25,0);this.nextRopeCreak=t+.9;}}
   if(state.ground&&state.speed>2&&(state.slide>.15||r.dirt||r.wobble>.35)&&t>this.nextChatter){this.shot('chatter',(.014+state.slide*.0175)*state.board.chatter,.9+clamp(state.speed/15)*.2);this.nextChatter=t+.16+((this.counter++*37)%13)/100;}
   this.insects(t,view);
   this.scene.update(sim,state,view);
