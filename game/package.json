@@ -1,8 +1,8 @@
 {
   "name": "the-track-2008-handoff",
-  "version": "0.179.0",
+  "version": "0.180.0",
   "private": true,
-  "description": "The Track 2008: The Canopy secret route and mixtape",
+  "description": "The Track 2008: Rebuilt tow feel, dusk look, touch controls",
   "scripts": {
     "build": "node build.cjs",
     "start": "node serve.cjs",

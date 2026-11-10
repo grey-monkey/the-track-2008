@@ -1,0 +1,7 @@
+Build135 local motion study
+
+Track character meshes, clothing, portraits, boards, car and setting come from the supplied Build133 handoff. Existing attribution files remain applicable.
+
+Selected skeletal-motion tracks and the source skeleton are decoded from the user-supplied Tony Hawk's Pro Skater 4 PC disc data. They are original-game animation data retargeted onto Track characters, not newly authored Track animations. No THPS character models, level meshes, audio or logos are added here. Simulation, controls, retargeting integration, combinations and scenery integration are Track development code.
+
+Parser cross-check: slfx77/neversoft-multitool commit 3c9028e0178deb9060190362d1c47039a32846e2. Saved analysis is in parent workspace work/thps4/animation-reference and work/rig135. This package is a local development study and has not been published.
