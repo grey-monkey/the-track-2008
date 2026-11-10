@@ -1,10 +1,18 @@
 import * as T from '../vendor/three.module.js';
-import {riderCache as DOG} from './binary-DOG.js';
-import {riderCache as SALLY} from './binary-SALLY.js';
-import {riderCache as BOSS} from './binary-BOSS.js';
-import {riderCache as BLACK} from './binary-BLACK.js';
+import {loadBinary} from './binary.js';
 import {contactClusters} from '../motion131/contact-clusters.mjs';
-const packed={DOG,SALLY,BOSS,BLACK},decoded=new Map();
+// Each rider's baked motion is several megabytes. Only the rider about to be
+// shown is fetched before the first frame; the rest arrive in the background.
+const sources={DOG:'./assets/rider-dog-133.bin.gz',SALLY:'./assets/rider-sally-133.bin.gz',BOSS:'./assets/rider-boss-133.bin.gz',BLACK:'./assets/rider-black-133.bin.gz'};
+const packed={},pending=new Map(),decoded=new Map();
+export const riderLoaded=name=>!!packed[name];
+export function ensureRider(name){
+ if(packed[name])return Promise.resolve();
+ if(!pending.has(name))pending.set(name,loadBinary(sources[name]).then(data=>{packed[name]=data;pending.delete(name);},error=>{pending.delete(name);throw error;}));
+ return pending.get(name);
+}
+let boot='DOG';
+export function bootRider(name){if(name)boot=name;return boot;}
 function unpack(p,binary){const out=new Float32Array(p.length);if(p.scale){const v=new DataView(binary.buffer,binary.offset+p.offset,p.length*2);for(let i=0;i<out.length;i++)out[i]=v.getInt16(i*2,true)*p.scale;}return out;}
 function indices(p,binary){return p?new Uint32Array(binary.buffer,binary.offset+p.offset,p.length):null;}
 function geometry(p,ride,binary){const g=new T.BufferGeometry();if(ride){for(const [key,a]of Object.entries(ride.attributes))g.setAttribute(key,a);g.setIndex(ride.index);}else{for(const [key,a]of Object.entries(p.attributes))g.setAttribute(key,new T.BufferAttribute(unpack(a.packed,binary),a.itemSize));g.setIndex(p.index?new T.BufferAttribute(indices(p.index,binary),1):null);}g.morphTargetsRelative=true;for(const [key,arrays]of Object.entries(p.morph))g.morphAttributes[key]=arrays.map(a=>new T.BufferAttribute(unpack(a,binary),3));g.userData.supportIndices=indices(p.support,binary);g.computeBoundingSphere();return g;}

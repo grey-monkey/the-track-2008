@@ -1,1 +1,0 @@
-import {loadBinary} from './binary.js';export const riderCache=await loadBinary('./assets/rider-black-133.bin.gz');
